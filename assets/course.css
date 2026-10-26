@@ -121,6 +121,12 @@ ol.sources li { margin-bottom: 0.35rem; }
 .source .box-title { color: var(--ink); }
 .ask { border: 1px dashed var(--sea); }
 .ask .box-title { color: var(--sea); }
+/* Handzeichen für Tiere unter Wasser */
+.signs { border: 1px solid var(--sea); }
+.signs .box-title { color: var(--sea); }
+/* Begriff, der im Glossar steht und in späteren Lektionen wiederkommt */
+.define { border: 1px solid var(--rule); background: var(--sand); }
+.define .box-title { color: var(--ink); }
 /* „Weißt du noch?“ am Anfang einer Lektion: Abruf aus früheren Lektionen */
 .recall { border-left: 3px solid var(--coral); }
 .recall .box-title { color: var(--coral); }

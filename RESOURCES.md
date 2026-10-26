@@ -38,6 +38,22 @@
   Johnston-Atoll. Use for: Dämmerung als Zeit mit wenigen Raubfischen.
 - [Reef Smart Guides: Titan triggerfish](https://reefsmartguides.com/titan-triggerfish/) / [PADI: Guide to the Titan Triggerfish](https://blog.padi.com/guide-to-the-titan-triggerfish/)
   Sekundär. Use for: Nest, Revierkegel, waagerecht ausweichen. Primärquelle zur Brutpflege des Riesendrückerfisches fehlt noch.
+- [McGee & Clark (2014): All puffed out: do pufferfish hold their breath while inflated?, Biology Letters](https://pmc.ncbi.nlm.nih.gov/articles/PMC4298192)
+  Frei. Use for: Aufblasen mit Wasser, fünffacher Sauerstoffverbrauch, 5,6 h Erholung.
+- [Noguchi & Arakawa (2008): Tetrodotoxin – Distribution and Accumulation in Aquatic Organisms, Marine Drugs](https://pmc.ncbi.nlm.nih.gov/articles/PMC2525488/)
+  Übersichtsarbeit. Use for: Gift aus Bakterien über die Nahrungskette, Zuchtfische ungiftig, Leber und Eierstöcke.
+- [Van Wassenbergh et al. (2015): Boxfish swimming paradox resolved, J R Soc Interface](https://pmc.ncbi.nlm.nih.gov/articles/PMC4305415)
+  Use for: Kofferfischform macht wendig statt stabil, Bionic Car, Schwimmen mit den Flossen.
+- [Albins & Lyons (2012): Invasive red lionfish blow directed jets of water at prey fish, MEPS 448:1–5](https://int-res.com/abstracts/meps/v448/p1-5)
+  Bahamas, mit Videos. Use for: Wasserstrahl-Jagd des Rotfeuerfischs.
+- [Smith et al. (2018), Copeia 106(1)](https://doi.org/10.1643/CG-17-669) / [University of Kansas](https://news.ku.edu/news/article/2018/04/09/discovery-switchblade-defensive-system-redraws-family-tree-stonefishes)
+  Use for: Tränenbein-Säbel des Steinfischs, Stammbaum der Skorpionsfischverwandten.
+- [Aquarium of the Pacific: Reef stonefish](https://www.aquariumofpacific.org/onlinelearningcenter/species/reef_stonefish)
+  Use for: Lebensraum, Lauerjagd, Gift nur zur Verteidigung.
+- [Atkinson et al. (2006): Is hot water immersion an effective treatment for marine envenomation?, Emerg Med J](https://pmc.ncbi.nlm.nih.gov/articles/PMC2579537)
+  Use for: Heißwasser bei Stichen durch Giftfische, 42–45 °C, 30–90 min. Beleglage schwach (Fallserien).
+- [PADI: Marine Life Hand Signals](https://blog.padi.com/marine-life-hand-signals-for-underwater-communication/)
+  Use for: Handzeichen für Tiere. Bilder sind urheberrechtlich geschützt, nur verlinken. Cloudflare liefert Bilder je nach `Accept`-Header als WebP aus, unter derselben URL wie das Original.
 - Buch: Jonathan Balcombe, _Was Fische wissen_ (mare, 2018)
   Populärwissenschaft eines Verhaltensbiologen. Use for: Wahrnehmung, Sozialleben, Klugheit von Fischen.
 
@@ -55,4 +71,6 @@
 - Ein guter Bestimmungsführer für das Rote Meer (deutsch), noch nicht geprüft.
 - Belastbare Quellen zu Haien, Dugongs und Delfinen bei Hurghada/Safaga.
 - Primärquelle zu Nest und Brutpflege von Drückerfischen (Riesendrückerfisch, Gelbsaum-Drückerfisch).
-- Giftige Tiere: Primärquellen zu Steinfisch, Rotfeuerfisch, Feuerkoralle.
+- Feuerkoralle und Rotfeuerfisch stützen sich noch auf Wikipedia. Primärquellen zu Nesselwirkung von *Millepora* im Roten Meer und zum Verhalten von *Pterois miles* im Roten Meer fehlen.
+- Messung der Schnappgeschwindigkeit des Steinfischs: Die oft genannten 0,015 s haben keine auffindbare Primärquelle.
+- Maskenkugelfisch: Gruppenbildung zur Paarungszeit ist nur unbelegt erwähnt.

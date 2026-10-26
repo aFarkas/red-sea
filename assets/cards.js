@@ -167,4 +167,92 @@ window.CARDS = [
     antwort: `<p>Das Revier ist ein Kegel: Er beginnt am Nest, wird nach oben breiter und reicht bis zur Oberfläche. Steigst du auf, bleibst du länger darin.</p>
       <p>Also waagerecht wegschwimmen. Die Angriffe sind Warnungen, können aber mit einem Biss enden.</p>`,
   },
+  {
+    id: "kugel-flossen",
+    lektion: 4,
+    frage: "Was haben Kugelfisch, Kofferfisch und Drückerfisch gemeinsam, das du beim Tauchen sehen kannst?",
+    antwort: `<p>Sie sind Vettern, alle drei Kugelfischverwandte. Und sie schwimmen gleich: Der Körper bleibt steif, Rücken- und Afterflosse rudern, der Schwanz lenkt wie ein Steuer.</p>
+      <p>Den Schwanz nehmen sie nur für einen kurzen Sprint. Darum sieht es aus, als würden sie schweben.</p>`,
+  },
+  {
+    id: "kugel-aufblasen",
+    lektion: 4,
+    frage: "Hält ein Kugelfisch die Luft an, solange er aufgeblasen ist?",
+    antwort: `<p>Nein. Er schluckt Wasser in den Magen, bis er drei- bis viermal so groß ist, und atmet dabei fünfmal so viel wie in Ruhe, über die Kiemen.</p>
+      <p>Danach braucht er im Schnitt 5,6 Stunden, bis sein Stoffwechsel wieder normal läuft. Wer ihn zum Aufblasen bringt, nimmt ihm für Stunden seine beste Verteidigung.</p>`,
+  },
+  {
+    id: "kugel-gift-bakterien",
+    lektion: 4,
+    frage: "Woher hat der Kugelfisch sein Gift?",
+    antwort: `<p>Nicht von sich selbst. Das Tetrodotoxin stammt von Meeresbakterien und kommt über die Nahrungskette in den Fisch, vor allem in Leber und Eierstöcke.</p>
+      <p>In Japan wurden über 6000 Kugelfische mit giftfreiem Futter gezüchtet. Kein einziger war giftig.</p>`,
+  },
+  {
+    id: "gift-passiv-aktiv",
+    lektion: 4,
+    frage: "Was ist der Unterschied zwischen passiv und aktiv giftig? Je ein Beispiel.",
+    antwort: `<p><strong>Passiv giftig</strong>, englisch „poisonous“: Das Gift wirkt, wenn man das Tier berührt oder isst. Kugelfisch, Kofferfisch.</p>
+      <p><strong>Aktiv giftig</strong>, englisch „venomous“: Das Tier spritzt sein Gift mit Stachel oder Biss ein. Steinfisch, Rotfeuerfisch.</p>`,
+  },
+  {
+    id: "koffer-auto",
+    lektion: 4,
+    frage: "Welches Auto hat ein Fisch inspiriert, und was war daran ein Irrtum?",
+    antwort: `<p>Das Mercedes-Benz Bionic Car von 2005, nach dem Gelbbraunen Kofferfisch. Die Kastenform sollte das Auto ruhig geradeaus halten.</p>
+      <p>2015 zeigten Messungen: Das Wasser um den Kasten bringt den Fisch aus der Spur. Das macht ihn wendig, ideal zwischen Korallen. Gebaut für enge Kurven, nicht für die Autobahn.</p>`,
+    bild: {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Ostracion_cubicus_%28juvenile%29.jpg/960px-Ostracion_cubicus_%28juvenile%29.jpg",
+      alt: "Junger Kofferfisch, gelb mit schwarzen Punkten",
+      credit: "Foto: Leonard Low. Wikimedia Commons, CC BY 2.0",
+    },
+  },
+  {
+    id: "koffer-gift",
+    lektion: 4,
+    frage: "Wie wehrt sich ein Kofferfisch unter Stress?",
+    antwort: `<p>Seine Haut gibt ein Gift ins Wasser ab, das Pahutoxin. Es löst sich schnell und schadet Fischen in der Nähe. Dazu kommt der Panzer aus Knochenplatten.</p>`,
+  },
+  {
+    id: "stachel-verteidigung",
+    lektion: 5,
+    frage: "Wofür benutzen Rotfeuerfisch, Drachenkopf und Steinfisch ihre Giftstacheln, und wann wird ein Taucher gestochen?",
+    antwort: `<p>Nur zur Verteidigung, nie zum Jagen. Keiner von ihnen greift an. Gestochen wird, wer drauftritt oder sich abstützt.</p>
+      <p>Darum: nichts anfassen, nicht hinknien, über Sand und Geröll schweben.</p>`,
+  },
+  {
+    id: "rotfeuer-wasserstrahl",
+    lektion: 5,
+    frage: "Welchen Trick benutzt der Rotfeuerfisch kurz vor dem Zuschnappen?",
+    antwort: `<p>Er bläst der Beute kleine Wasserstrahlen entgegen. Das verwirrt sie, und oft dreht sie sich zu ihm hin. So kann er sie mit dem Kopf voran schlucken.</p>
+      <p>Vorher treibt er sie mit seinen großen Brustflossen in eine Ecke, meist in der Dämmerung.</p>`,
+  },
+  {
+    id: "teufelsfisch-beine",
+    lektion: 5,
+    frage: "Wie bewegt sich der Teufelsfisch über den Sand, und wie warnt er?",
+    antwort: `<p>Er läuft. Die beiden hintersten Strahlen jeder Brustflosse sind vom Rest getrennt, auf ihnen stakst er wie auf Beinen.</p>
+      <p>Tagsüber gräbt er sich halb ein. Wird er bedroht, klappt er plötzlich leuchtend bunte Brust- und Schwanzflossen auf.</p>`,
+  },
+  {
+    id: "steinfisch-saebel",
+    lektion: 5,
+    frage: "Was hat der Steinfisch unter den Augen, und seit wann weiß man das?",
+    antwort: `<p>Eine Knochenklinge unter jedem Auge, die er ausklappen und einrasten lassen kann, wie ein Klappmesser. Beschrieben erst 2018 von William Leo Smith, „lachrymal saber“.</p>
+      <p>Dabei ist der Steinfisch berühmt: bis 40 cm, 13 Giftstacheln, giftigster Fisch der Welt.</p>`,
+  },
+  {
+    id: "feuerkoralle",
+    lektion: 5,
+    frage: "Warum ist die Feuerkoralle keine echte Koralle, und was passiert, wenn man sie berührt?",
+    antwort: `<p>Sie ist ein Hydrozoon, näher verwandt mit dem Süßwasserpolypen Hydra. Aus winzigen Poren ragen Härchen mit Nesselzellen.</p>
+      <p>Berührt man sie, brennt die Haut wie nach Brennnesseln, manchmal tagelang. Gefährlich ist das nicht. Erkennbar: gelbbraun, glatt, weiße Spitzen.</p>`,
+  },
+  {
+    id: "stich-heisswasser",
+    lektion: 5,
+    frage: "Was hilft nach einem Stich durch einen Steinfisch oder Rotfeuerfisch, und warum?",
+    antwort: `<p>Heißes, aber nicht verbrühendes Wasser, 42 bis 45 °C, 30 bis 90 Minuten oder bis der Schmerz nachlässt. Das Gift verträgt keine Hitze.</p>
+      <p>Dazu dem Guide Bescheid sagen und zum Arzt.</p>`,
+  },
 ];
