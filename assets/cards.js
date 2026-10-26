@@ -123,4 +123,48 @@ window.CARDS = [
     antwort: `<p>Sie funktioniert weiter. Bei 123 gefilmten Paaren am Great Barrier Reef blieben Grundeln und Krebse bei Bootslärm zwar kürzer draußen, die Krebse bis zu 34&nbsp;%. Die Verständigung lief aber weiter.</p>
       <p>Berührung braucht kein ruhiges Wasser.</p>`,
   },
+  {
+    id: "laich-wolke",
+    lektion: 3,
+    frage: "Am späten Nachmittag ballen sich dunkle Fische zu einer Wolke, kleine Trupps schießen blitzartig nach oben. Was passiert da?",
+    antwort: `<p>Braune Doktorfische beim Laichen. Vor Eilat treffen sich in der Laichzeit von Mai bis September jeden Tag 2000 bis 2500 Tiere an festen Plätzen. Kleine Trupps lösen sich aus der Wolke, schießen nach oben und geben gleichzeitig Eier und Samen ab.</p>
+      <p>Gelaicht wird zwischen 18 und 18:30 Uhr. Den Startschuss gibt das schwindende Licht.</p>`,
+    bild: {
+      src: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Acanthurus_nigrofuscus%2C_Egipto.jpg",
+      alt: "Dunkelbrauner, hochrückiger Fisch über hellem Riffboden",
+      credit: "Foto: Andrey Velichko, Ägypten. Wikimedia Commons, CC BY 3.0",
+    },
+  },
+  {
+    id: "laich-sprint",
+    lektion: 3,
+    frage: "Warum ist der Sprint nach oben beim Laichen so blitzschnell?",
+    antwort: `<p>Wegen der Raubfische. Jack Moyer zählte in Japan 171 Angriffe während solcher Sprints. Kein einziger war erfolgreich.</p>
+      <p>Die Eltern sind also sicher, die Eier nicht: Bei 42&nbsp;% der Laichvorgänge fraßen Planktonfresser wie Riffbarsche die Eier weg.</p>`,
+  },
+  {
+    id: "laich-dammerung",
+    lektion: 3,
+    frage: "Wann und wo laichen Braune Doktorfische, und was wird danach aus den Eiern?",
+    antwort: `<p>Am Abend, kurz vor Sonnenuntergang, an der äußersten, meerseitigen Spitze des Riffs. Die Eier treiben ins offene Wasser, niemand passt auf sie auf.</p>
+      <p>In der Dämmerung sind weniger Raubfische unterwegs. Danach ziehen die Doktorfische zu ihren Schlafplätzen im Riff.</p>`,
+  },
+  {
+    id: "nest-drucker",
+    lektion: 3,
+    frage: "Wie kümmert sich ein Riesendrückerfisch um seine Eier?",
+    antwort: `<p>Ganz anders als der Doktorfisch: Er laicht paarweise in eine Mulde, die er in Sand oder Geröll gräbt. Meist bewacht das Weibchen das Gelege. Es umkreist das Nest, jagt andere Fische weg und bläst Wasser auf die Eier.</p>`,
+    bild: {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pez_ballesta_%28Balistes_capriscus%29_y_su_nido%2C_Monte_da_Guia%2C_isla_de_Fayal%2C_Azores%2C_Portugal%2C_2020-07-26%2C_DD_29.jpg/960px-Pez_ballesta_%28Balistes_capriscus%29_y_su_nido%2C_Monte_da_Guia%2C_isla_de_Fayal%2C_Azores%2C_Portugal%2C_2020-07-26%2C_DD_29.jpg",
+      alt: "Drückerfisch über einer runden Mulde im Sand",
+      credit: "Foto: Diego Delso, Azoren. Wikimedia Commons, CC BY-SA 4.0",
+    },
+  },
+  {
+    id: "nest-kegel",
+    lektion: 3,
+    frage: "Ein Riesendrückerfisch greift dich an. Welche Form hat sein Revier, und wohin weichst du aus?",
+    antwort: `<p>Das Revier ist ein Kegel: Er beginnt am Nest, wird nach oben breiter und reicht bis zur Oberfläche. Steigst du auf, bleibst du länger darin.</p>
+      <p>Also waagerecht wegschwimmen. Die Angriffe sind Warnungen, können aber mit einem Biss enden.</p>`,
+  },
 ];

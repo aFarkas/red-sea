@@ -28,6 +28,16 @@
   Eilat. Use for: Partnergrundeln gewöhnen sich an Taucher (kürzere Fluchtdistanz, schnelleres Wiederauftauchen).
 - [Helfman & Schultz (1984): Social transmission of behavioural traditions in a coral reef fish](https://digitalcommons.lib.uconn.edu/eeb_articles/33) / [Warner (1988): Traditionality of mating-site preferences, Nature 335:719](https://dx.doi.org/10.1038/335719a0)
   Karibik. Use for: Traditionen bei Riffischen, Versetzungsexperimente.
+- [Myrberg, Montgomery & Fishelson (1988), Ethology 79:31–61](https://experts.nau.edu/en/publications/the-reproductive-behavior-of-acanthurus-nigrofuscus-forskal-and-o/) / [Fishelson et al. (1987), MEPS 39:37–47](https://doi.org/10.3354/meps039037)
+  Eilat. Use for: Laichschwärme des Braunen Doktorfisches, 2000–2500 Tiere, Mai–September, 18–18:30 Uhr, Licht als Taktgeber, Wanderungen in Formation.
+- [Shlesinger (2023): Spawning Storm, Smithsonian Photo Contest](https://photocontest.smithsonianmag.com/photocontest/detail/spawning-storm/)
+  Foto des Laichschwarms in Eilat. Use for: Anschauung, nicht frei lizenziert, nur verlinken.
+- [Moyer (1987): Predation during spawning rushes of Thalassoma cupido, Jpn J Ichthyol 34:76–81](https://doi.org/10.1007/BF02904147)
+  Use for: 171 Angriffe während Laichsprints, keiner erfolgreich; Eier bei 42,3 % der Laichvorgänge gefressen.
+- [Sancho, Petersen & Lobel (2000), MEPS 203:275–288](https://int-res.com/abstracts/meps/v203/p275-288)
+  Johnston-Atoll. Use for: Dämmerung als Zeit mit wenigen Raubfischen.
+- [Reef Smart Guides: Titan triggerfish](https://reefsmartguides.com/titan-triggerfish/) / [PADI: Guide to the Titan Triggerfish](https://blog.padi.com/guide-to-the-titan-triggerfish/)
+  Sekundär. Use for: Nest, Revierkegel, waagerecht ausweichen. Primärquelle zur Brutpflege des Riesendrückerfisches fehlt noch.
 - Buch: Jonathan Balcombe, _Was Fische wissen_ (mare, 2018)
   Populärwissenschaft eines Verhaltensbiologen. Use for: Wahrnehmung, Sozialleben, Klugheit von Fischen.
 
@@ -44,4 +54,5 @@
 
 - Ein guter Bestimmungsführer für das Rote Meer (deutsch), noch nicht geprüft.
 - Belastbare Quellen zu Haien, Dugongs und Delfinen bei Hurghada/Safaga.
+- Primärquelle zu Nest und Brutpflege von Drückerfischen (Riesendrückerfisch, Gelbsaum-Drückerfisch).
 - Giftige Tiere: Primärquellen zu Steinfisch, Rotfeuerfisch, Feuerkoralle.

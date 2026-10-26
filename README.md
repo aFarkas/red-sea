@@ -2,6 +2,13 @@
 
 Ein kleiner Kurs zum Staunen vor dem Tauchen bei Hurghada/Safaga. Die Startseite ist `index.html`.
 
+Eingebettete YouTube-Videos laufen nur über einen Webserver, als lokale Datei zeigt der Player Fehler 153.
+Im Kursordner starten und dann <http://localhost:8765> öffnen:
+
+```sh
+python3 -m http.server 8765 --bind 127.0.0.1
+```
+
 ## Steuerdateien
 
 Drei Dateien sagen dem Agenten, der den Kurs schreibt, was er tun soll.
