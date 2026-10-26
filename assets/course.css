@@ -1,0 +1,282 @@
+/* Gemeinsames Stylesheet für alle Lektionen und Referenzblätter. */
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;600&display=swap");
+
+:root {
+  --bg: #fbfaf6;
+  --ink: #1d2730;
+  --muted: #5c6b75;
+  --rule: #d9d4c7;
+  --sea: #0d6e8a;
+  --sea-soft: #e3f0f3;
+  --coral: #c8553d;
+  --coral-soft: #f8e6e0;
+  --sand: #f2ecdc;
+  --good: #2e7d4f;
+  --bad: #a33a2a;
+  --measure: 40rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11181d;
+    --ink: #e6e2d8;
+    --muted: #9aa8b0;
+    --rule: #2c3a42;
+    --sea: #5fb8d0;
+    --sea-soft: #16303a;
+    --coral: #e8866f;
+    --coral-soft: #3a2420;
+    --sand: #1c2328;
+    --good: #6cc48e;
+    --bad: #ef8a78;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11181d;
+  --ink: #e6e2d8;
+  --muted: #9aa8b0;
+  --rule: #2c3a42;
+  --sea: #5fb8d0;
+  --sea-soft: #16303a;
+  --coral: #e8866f;
+  --coral-soft: #3a2420;
+  --sand: #1c2328;
+  --good: #6cc48e;
+  --bad: #ef8a78;
+}
+
+* { box-sizing: border-box; }
+html { font-size: 18px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4", Georgia, serif;
+  line-height: 1.6;
+  padding: 3rem 16px 5rem;
+}
+main { max-width: var(--measure); margin: 0 auto; }
+
+.kicker {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sea);
+  margin: 0 0 0.4rem;
+}
+h1 { font-size: 2.1rem; line-height: 1.15; margin: 0 0 0.6rem; font-weight: 600; }
+h2 { font-size: 1.3rem; margin: 2.6rem 0 0.6rem; font-weight: 600; }
+h3 { font-size: 1.05rem; margin: 1.6rem 0 0.4rem; font-weight: 600; }
+.lede { font-size: 1.15rem; color: var(--muted); font-style: italic; margin-top: 0; }
+p, li { hyphens: auto; }
+a { color: var(--sea); text-underline-offset: 2px; }
+.sci { font-style: italic; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+/* Quellenverweise als hochgestellte Ziffern, aufgelöst unter "Quellen". */
+sup.cite a { text-decoration: none; font-family: Inter, sans-serif; font-size: 0.7em; }
+ol.sources { font-size: 0.85rem; color: var(--muted); padding-left: 1.4rem; }
+ol.sources li { margin-bottom: 0.35rem; }
+
+/* Randnotiz: auf breiten Schirmen rechts neben dem Text, sonst eingerückt. */
+.aside {
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-left: 2px solid var(--rule);
+  padding-left: 0.8rem;
+  margin: 1rem 0;
+}
+@media (min-width: 1100px) {
+  .aside {
+    float: right;
+    clear: right;
+    width: 15rem;
+    margin: 0.2rem -17rem 1rem 0;
+  }
+}
+
+/* Kästen */
+.box {
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  margin: 1.6rem 0;
+}
+.box > :first-child { margin-top: 0; }
+.box > :last-child { margin-bottom: 0; }
+.box-title {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.lookout { background: var(--sea-soft); }
+.lookout .box-title { color: var(--sea); }
+.talk { background: var(--sand); }
+.talk .box-title { color: var(--muted); }
+.caution { background: var(--coral-soft); }
+.caution .box-title { color: var(--coral); }
+.source { border: 1px solid var(--rule); }
+.source .box-title { color: var(--ink); }
+.ask { border: 1px dashed var(--sea); }
+.ask .box-title { color: var(--sea); }
+
+/* "Erst tippen, dann aufdecken" (assets/predict.js) */
+.predict {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  margin: 1.6rem 0;
+}
+.predict .box-title { color: var(--coral); }
+.predict .q { margin: 0 0 0.8rem; font-weight: 600; }
+.predict .options { display: flex; flex-direction: column; gap: 0.4rem; }
+.predict button {
+  font: inherit;
+  font-size: 0.95rem;
+  text-align: left;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+}
+.predict button:hover:not(:disabled) { border-color: var(--sea); }
+.predict button:disabled { cursor: default; }
+.predict button.right { border-color: var(--good); color: var(--good); }
+.predict button.wrong { border-color: var(--bad); color: var(--bad); text-decoration: line-through; }
+.predict .answer { display: none; margin-top: 0.9rem; }
+.predict.done .answer { display: block; }
+
+/* Aufklappen ohne Wahl */
+details.reveal { margin: 1rem 0; }
+details.reveal summary { cursor: pointer; color: var(--sea); font-family: Inter, sans-serif; font-size: 0.9rem; }
+
+figure { margin: 2rem 0; }
+figure svg { width: 100%; height: auto; display: block; }
+figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
+
+/* Fotos: volle Spaltenbreite, Bildnachweis klein unter der Unterschrift */
+figure.photo img { width: 100%; height: auto; display: block; border-radius: 4px; background: var(--sand); }
+figure.photo.tall img { max-height: 32rem; object-fit: cover; }
+.credit { display: block; font-size: 0.72rem; margin-top: 0.2rem; }
+.credit a { color: inherit; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+.pair figure { margin: 0; }
+@media (max-width: 540px) { .pair { grid-template-columns: 1fr; } }
+
+nav.course {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+  margin-top: 3rem;
+}
+
+/* Referenzblätter: dichter, tabellarisch */
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; margin: 1rem 0; }
+th, td { text-align: left; vertical-align: top; padding: 0.45rem 0.6rem 0.45rem 0; border-bottom: 1px solid var(--rule); }
+th { font-family: Inter, sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.wide { overflow-x: auto; }
+ul.check { list-style: none; padding-left: 0; }
+ul.check li { padding-left: 1.6rem; position: relative; margin-bottom: 0.5rem; }
+ul.check li::before { content: "☐"; position: absolute; left: 0; color: var(--sea); }
+
+@media print {
+  html { font-size: 11pt; }
+  body { background: #fff; color: #000; padding: 0; }
+  .predict .answer, details.reveal > :not(summary) { display: block !important; }
+  .predict button { border: none; padding: 0.1rem 0; }
+  .aside { float: none; width: auto; margin: 0.5rem 0; }
+  nav.course, .ask { display: none; }
+  a { color: inherit; }
+  .box, .predict, table { break-inside: avoid; }
+}
+
+/* Link zur Google-Bildersuche hinter einem Artnamen oder in einer Bildunterschrift */
+a.more-photos { font-family: Inter, system-ui, sans-serif; font-size: 0.78rem; white-space: nowrap; }
+a.more-photos::before { content: "↗ "; }
+@media print { a.more-photos { display: none; } }
+
+/* Wiederholung (assets/review.js): erst erinnern, dann aufdecken, dann selbst einschätzen */
+button.action {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.9rem;
+  background: var(--sea);
+  color: var(--bg);
+  border: 0;
+  border-radius: 4px;
+  padding: 0.55rem 1.1rem;
+  margin: 0.4rem 0.4rem 0.4rem 0;
+  cursor: pointer;
+}
+button.action.small { font-size: 0.8rem; padding: 0.3rem 0.7rem; }
+.card {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  margin: 1.6rem 0;
+}
+.card .q { font-weight: 600; font-size: 1.1rem; }
+.card .answer, .card .rate { display: none; }
+.card.revealed .answer { display: block; }
+.card.revealed .rate { display: flex; }
+.card .answer figure { margin: 1rem 0; }
+.rate {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 0.9rem;
+  margin-top: 1rem;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.rate button {
+  font: inherit;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.45rem 0.8rem;
+  cursor: pointer;
+}
+.rate button:hover { border-color: var(--sea); }
+.tag { font-family: Inter, sans-serif; font-size: 0.72rem; white-space: nowrap; color: var(--muted); }
+.tag.gewusst { color: var(--good); }
+.tag.neu { color: var(--coral); }
+ul.summary li { margin-bottom: 0.4rem; }
+textarea.export {
+  width: 100%;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.8rem;
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+.unread { font-family: Inter, system-ui, sans-serif; font-size: 0.85rem; color: var(--muted); }
+
+/* Inhaltsverzeichnis der Startseite (index.html) */
+.toc { list-style: none; padding-left: 0; }
+ol.toc { counter-reset: lektion; }
+.toc li { border-top: 1px solid var(--rule); padding: 0.9rem 0 0.2rem; }
+ol.toc li { counter-increment: lektion; }
+ol.toc li::before {
+  content: "Lektion " counter(lektion);
+  display: block;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sea);
+}
+.toc a { font-size: 1.15rem; font-weight: 600; margin-right: 0.5rem; }
+.toc p { margin: 0.3rem 0 0.6rem; color: var(--muted); }
