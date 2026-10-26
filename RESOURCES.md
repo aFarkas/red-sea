@@ -18,6 +18,14 @@
   Use for: Endemiten. Rund 12,9 % von 1071 Flachwasserfischarten kommen nur im Roten Meer vor; Korallen 5,5 %.
 - [Hebrew University (2025): Gulf of Aqaba corals survive record-breaking heatwaves](https://international.huji.ac.il/node/3209181)
   Pressemitteilung zur Studie von Maoz Fine, Sci Total Environ. Use for: Hitzetoleranz der Korallen im nördlichen Roten Meer, „thermal refuge“.
+- [NOAA Ocean Service: Corals Tutorial](https://oceanservice.noaa.gov/education/tutorial_corals/coral01_intro.html) / [Zooxanthellae](https://oceanservice.noaa.gov/education/tutorial_corals/coral02_zooxanthellae.html)
+  Behörde, einfach geschrieben. Use for: Polyp, Kolonie, Skelett, nachts fressen, Zooxanthellen (bis 90 %), Farbe, Bleiche.
+- [Kremien, Shavit, Mass & Genin (2013): Benefit of pulsation in soft corals, PNAS](https://pmc.ncbi.nlm.nih.gov/articles/PMC3670383)
+  Frei, Eilat. Use for: Pulsierende Weichkoralle, 1,6 s pro Takt, >95 % der Zeit, Sauerstoff wegwedeln, bis zehnfache Photosynthese, Lamarck 1816.
+- [Osman et al. (2018): Thermal refugia against coral bleaching throughout the northern Red Sea, Global Change Biology](https://doi.org/10.1111/gcb.13895)
+  Use for: Keine Massenbleiche im Norden 1982–2012 und 2015/16, Hitzeversuche in Hurghada.
+- [Fine, Gildor & Genin (2013): A coral reef refuge in the Red Sea, Global Change Biology](https://doi.org/10.1111/gcb.12356) / [ScienceDaily](https://www.sciencedaily.com/releases/2013/09/130929142700.htm)
+  Use for: Wärmebarriere im Süden als Auslese, Bleichschwelle 0,5–1,5 °C über Sommermaximum.
 - [Australian Museum: What is a shrimpgoby?](https://australian.museum/learn/animals/fishes/what-is-a-shrimpgoby/)
   Kurz, vertrauenswürdig. Use for: Arbeitsteilung Grundel/Knallkrebs, Gattungen der Partnergrundeln.
 - [Karplus, Szlep & Tsurnamal (1972), Marine Biology 15:95–104](https://doi.org/10.1007/BF00353637) und [Karplus et al. (1979), Z. Tierpsychol. 49:337–351](https://doi.org/10.1111/j.1439-0310.1979.tb00297.x)
@@ -73,4 +81,5 @@
 - Primärquelle zu Nest und Brutpflege von Drückerfischen (Riesendrückerfisch, Gelbsaum-Drückerfisch).
 - Feuerkoralle und Rotfeuerfisch stützen sich noch auf Wikipedia. Primärquellen zu Nesselwirkung von *Millepora* im Roten Meer und zum Verhalten von *Pterois miles* im Roten Meer fehlen.
 - Messung der Schnappgeschwindigkeit des Steinfischs: Die oft genannten 0,015 s haben keine auffindbare Primärquelle.
+- Korallenbleiche an Ägyptens Küste: HEPCA „Bleach Watch 2024“ (PDF zu groß zum Abrufen) und eine Studie zu 2020 (Hurghada bis Wadi El-Gemal, 32,7 % der Kolonien mit Bleiche, EJABF) noch nicht gelesen.
 - Maskenkugelfisch: Gruppenbildung zur Paarungszeit ist nur unbelegt erwähnt.

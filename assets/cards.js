@@ -255,4 +255,51 @@ window.CARDS = [
     antwort: `<p>Heißes, aber nicht verbrühendes Wasser, 42 bis 45 °C, 30 bis 90 Minuten oder bis der Schmerz nachlässt. Das Gift verträgt keine Hitze.</p>
       <p>Dazu dem Guide Bescheid sagen und zum Arzt.</p>`,
   },
+  {
+    id: "koralle-polypen",
+    lektion: 6,
+    frage: "Was ist ein Korallenblock eigentlich?",
+    antwort: `<p>Eine Kolonie aus Tausenden Polypen, kleinen Schläuchen mit Mund und Tentakelkranz, ein paar Millimeter breit. Alle sind Klone eines einzigen Polypen, entstanden durch Teilung und Knospung.</p>
+      <p>Korallen sind Verwandte der Seeanemonen und Quallen und fangen mit Nesselzellen kleine Tiere, meist nachts.</p>`,
+  },
+  {
+    id: "koralle-nacht",
+    lektion: 6,
+    frage: "Warum sieht eine Koralle beim Nachttauchgang oft pelzig aus?",
+    antwort: `<p>Die meisten Polypen fressen nachts. Dann strecken sie ihre Tentakel aus und fangen mit Nesselzellen winzige Tiere aus dem Wasser. Tagsüber sind sie meist eingezogen.</p>`,
+  },
+  {
+    id: "zooxanthellen",
+    lektion: 6,
+    frage: "Wer wohnt in den Zellen einer Koralle, und was hat die Koralle davon?",
+    antwort: `<p>Winzige Algen, die Zooxanthellen. Sie machen aus Sonnenlicht Zucker und geben bis zu 90 Prozent davon an die Koralle ab. Dafür bekommen sie Schutz und das Kohlendioxid der Koralle.</p>
+      <p>Die Algen geben vielen Steinkorallen auch ihre Farbe.</p>`,
+  },
+  {
+    id: "korallenbleiche",
+    lektion: 6,
+    frage: "Was passiert bei der Korallenbleiche, und ab wann beginnt sie?",
+    antwort: `<p>Wird es zu heiß, stößt die Koralle ihre Algen ab. Dann scheint das weiße Kalkskelett durch. Das beginnt schon 0,5 bis 1,5 °C über dem üblichen Sommermaximum.</p>
+      <p>Dauert es zu lange, verhungert die Koralle, denn die Algen haben sie gefüttert.</p>`,
+  },
+  {
+    id: "pulskoralle",
+    lektion: 6,
+    frage: "Warum pulsiert die Pulsierende Weichkoralle Tag und Nacht?",
+    antwort: `<p>Sie wedelt den Sauerstoff weg, den ihre Algen erzeugen. Zu viel Sauerstoff bremst die Algen. Mit Pulsieren schaffen sie bis zu zehnmal mehr. Das kostet die Koralle doppelt so viel Energie, bringt aber mehr als zehnmal so viel ein.</p>
+      <p>Rund 37 Takte pro Minute. Lamarck hat es 1816 bemerkt, gelöst wurde das Rätsel 2013 in Eilat.</p>`,
+  },
+  {
+    id: "hitze-refugium",
+    lektion: 6,
+    frage: "Warum halten die Korallen bei Hurghada mehr Hitze aus als anderswo?",
+    antwort: `<p>Wahrscheinlich wegen ihrer Herkunft. In der letzten Eiszeit verschwanden die Korallen aus dem Roten Meer. Neu besiedelt wurde es von Süden, und die Larven mussten durch sehr warmes Wasser treiben. Durch kamen nur Korallen, die Wärme vertragen.</p>
+      <p>Im El-Niño-Sommer 2015/16 bleichten nur die Riffe im Süden und in der Mitte des Roten Meers, und Korallen aus Hurghada hielten im Versuch mehr aus.</p>`,
+  },
+  {
+    id: "stein-weich",
+    lektion: 6,
+    frage: "Was unterscheidet Steinkorallen von Weichkorallen?",
+    antwort: `<p>Steinkorallen bauen ein festes Skelett aus Kalk. Darauf wachsen Generation um Generation neue Polypen, so entsteht das Riff. Weichkorallen haben kein festes Skelett, sie sind biegsam und wiegen sich in der Strömung.</p>`,
+  },
 ];
