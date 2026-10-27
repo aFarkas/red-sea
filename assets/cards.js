@@ -347,4 +347,46 @@ window.CARDS = [
     antwort: `<p>Nach 40 Nächten lebten dort doppelt so viele Jungfische wie an stillen Riffen und 50 Prozent mehr Arten. Ein Lautsprecher ohne Ton brachte nichts, es lag also am Klang.</p>
       <p>Allein retten Lautsprecher kein Riff. Die Forscher sehen sie als Hilfe, wenn ein Riff ohnehin wieder aufgebaut wird.</p>`,
   },
+  {
+    id: "barsch-muraene",
+    lektion: 8,
+    frage: "Ein großer Barsch steht vor einer Muräne und schüttelt den Kopf. Was passiert da?",
+    antwort: `<p>Er holt sie zur Jagd ab. Der Panther-Forellenbarsch schwimmt gezielt zu Muränen, die tagsüber in ihrer Spalte ruhen, und schüttelt den Kopf drei- bis sechsmal pro Sekunde vor ihrem Maul. Oft kommt die Muräne heraus und jagt mit.</p>
+      <p>Der Barsch ist schnell im freien Wasser, die Muräne schlängelt sich durch Spalten. Mit Muräne fängt der Barsch fast fünfmal so viel Beute. Redouan Bshary hat das bei Ras Mohammed beobachtet, schnorchelnd.</p>`,
+  },
+  {
+    id: "barsch-satt",
+    lektion: 8,
+    frage: "Barsch und Muräne jagen zusammen. Warum streiten sie nie um die Beute, und wann ruft der Barsch die Muräne nicht?",
+    antwort: `<p>Wer die Beute fängt, schluckt sie sofort im Ganzen. Es bleibt nichts zum Streiten übrig. Genau deshalb, sagt Bshary, gibt es so etwas bei Fischen, bei Säugetieren dagegen kaum: Die müssten ein erlegtes Tier gegen den Partner verteidigen.</p>
+      <p>Und wer satt ist, ruft nicht an: Bekam ein Barsch vorher einen Fisch zu fressen, schüttelte er zwei Stunden lang vor keiner Muräne den Kopf.</p>`,
+  },
+  {
+    id: "barsch-kopfstand",
+    lektion: 8,
+    frage: "Die Beute ist dem Barsch in eine Spalte entwischt. Was macht er, und was ist daran so besonders?",
+    antwort: `<p>Er stellt sich kopfüber über die Spalte und schüttelt den Kopf. Das lockt die Beute nicht heraus, es zeigt einem Partner, wo sie steckt: einer Riesenmuräne oder einem Napoleon-Lippfisch. Ist keiner da, wartet er, einmal 25 Minuten lang. Die Forscher halten es für möglich, dass sein Gedächtnis mit dem von Menschenaffen mithalten kann.</p>
+      <p>So eine Zeigegeste kannte man vorher nur von Menschen, Menschenaffen und Raben. Schwimmt die Muräne in die falsche Richtung, holt der Barsch sie zurück und schiebt sie sogar, wenn auch fast immer vergeblich.</p>`,
+  },
+  {
+    id: "meerbarben-rudel",
+    lektion: 8,
+    frage: "Wie jagen Gelbsattel-Meerbarben zwischen den Korallen?",
+    antwort: `<p>Zu zweit bis zu sechst. Einer treibt die Beute vor sich her, die anderen schwimmen außen um den Korallenblock und schneiden ihr den Weg ab.</p>
+      <p>Feste Rollen haben sie nicht. Es startet einfach der Fisch, der der Beute am nächsten ist. Jeder will die Beute für sich, und gerade so umzingeln sie sie gemeinsam.</p>`,
+  },
+  {
+    id: "floetenfisch",
+    lektion: 8,
+    frage: "Du siehst einen langen, dünnen Fisch mit einem Faden am Schwanz. Ist das ein Trompetenfisch?",
+    antwort: `<p>Im Roten Meer fast sicher nicht. Es ist ein Blaupunkt-Flötenfisch: bis 1,60 Meter lang, blaue Punkte oder Streifen auf dem Rücken, ein weißer Faden wie eine Peitsche am Schwanz. Den echten Trompetenfisch führt die Fischliste des Roten Meeres nur mit einem einzigen Fund aus Eritrea.</p>
+      <p>Flötenfische jagen im Trupp, an Daedalus und den Brothers bis zu 32 Tiere. Bricht einer aus, fangen die Nachbarn ab, was ihm entwischt.</p>`,
+  },
+  {
+    id: "krake-boxt",
+    lektion: 8,
+    frage: "Ein Krake jagt mit Meerbarben und Barschen. Wer bestimmt was, und warum boxt der Krake?",
+    antwort: `<p>Die Meerbarben schwimmen voraus und bestimmen, wohin es geht. Der Krake bestimmt, ob es weitergeht. Eduardo Sampaio hat das in Eilat gefilmt.</p>
+      <p>Mit einem Arm boxt der Krake Fische aus der Gruppe, am häufigsten den Baskenmützen-Zackenbarsch, der die Gruppe bremst. Die Forscher nennen das Partnerkontrolle, wie beim Stammgast, der den betrügenden Putzer jagt. Sampaio musste beim ersten Hieb so lachen, dass er sich fast am Atemregler verschluckte.</p>`,
+  },
 ];

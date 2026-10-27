@@ -10,6 +10,7 @@
 - Mitlesende: die Freundin des Nutzers, mit der er taucht. Sie ist Tauchanfängerin, Lektionenwünsche können von ihr kommen. Gefährliche Tiere locker erzählen, ohne Angst zu machen. Sicherheit läuft auf „nichts anfassen“ hinaus, dazu höchstens zwei Sätze Erste Hilfe. Kein eigener Sicherheitsteil.
 - Handzeichen für Tiere gehören in die Lektion, in der das Tier vorkommt, als Box `.signs` (Quelle: PADI, mit Hinweis, dass Zeichen regional abweichen). Kofferfisch-Zeichen vom Nutzer: Daumen und Zeigefinger beider Hände bilden ein Rechteck, kann auch „Blei“ heißen. Skorpionsfisch-Variante vom Nutzer: gekrümmter Zeigefinger (kann auch „Frage“ heißen), nicht belegt. Steinfisch-Variante vom Nutzer: Faust, gekrümmter Zeigefinger zeigt darauf; Gili Shark Conservation nennt genau das „Skorpionsfisch“.
 - Keine Fotos von gefangenen oder festgehaltenen Tieren (Angelhaken, Hand). Nur Tiere in ihrem Lebensraum.
+- Der lange, dünne Fisch, den Taucher im Roten Meer „Trompetenfisch“ nennen, ist fast immer der Blaupunkt-Flötenfisch (*Fistularia commersonii*). Der echte Trompetenfisch hat dort einen einzigen Fund (Eritrea 1973). Steht in Lektion 8.
 - Hat auch in Thailand getaucht; Vergleiche Thailand/Rotes Meer sind willkommen.
 - Tauchgebiet: Hurghada/Safaga. Beispiele möglichst von dort oder aus dem Roten Meer.
 - Nach dem Tauchgang nach Beobachtungen fragen. Das ist die echte Feedbackschleife.
@@ -33,9 +34,9 @@ Alle Fakten vor der Lektion an Quellen prüfen. Der Haken nach dem Doppelpunkt i
 - Korallen: Lektion 6 „Tier, Pflanze, Stein“ deckt Grundlagen, Pulsierende Weichkoralle und Hitzeresistenz ab. Ziel 1–3 Korallengeschichten, grob eine auf acht Tiergeschichten; die nächste also erst nach einigen Tierlektionen. Kandidaten, vorher prüfen: Wie sich Korallen fortpflanzen (Massenlaichen; im Golf von Akaba laichen sie nicht mehr gleichzeitig, Shlesinger & Loya 2019, Science), Wachstum und Alter großer Porites-Blöcke, Kämpfe zwischen Kolonien mit Fangtentakeln (sichtbar: Lücken zwischen Nachbarn), fluoreszierende Korallen beim UV-Nachttauchgang. Muster aus Lektion 1 gilt: ein Detail, das man selbst sieht.
 - Gefährlich & giftig steht in Lektion 4 (Kugelfisch, Kofferfisch, passiv/aktiv giftig) und Lektion 5 (Rotfeuerfisch, Drachenkopf, Teufelsfisch, Steinfisch, Feuerkoralle). Feuerkoralle in der Korallenlektion nur noch als Wiederholung mit Link auf Lektion 5.
 - Klang des Riffs steht in Lektion 7 „Das Riff knistert“ (Knall der Knallschere, Sonar im Weltkrieg, Fischlarven hören das Riff, Lautsprecher auf totem Riff). Lektion 2 wird nicht mehr erweitert.
-- Jagd- und Fressverhalten (vom Nutzer vorgeschlagen): Wer jagt wie? Knallkrebs betäubt mit dem Knall (Lektion 7, nur als Wiederholung), Fangschreckenkrebs schlägt mit der Keule und erzeugt dabei auch Kavitation (Patek 2004/2005, prüfen), Rotfeuerfisch bläst Wasserstrahlen (Lektion 5, Wiederholung), Trompetenfisch reitet im Schatten, Zackenbarsch und Muräne jagen gemeinsam. Papageifisch als Gegenbeispiel: frisst Algen vom Fels, knirscht hörbar, macht Sand. Muster aus Lektion 1 gilt: ein Detail, das man beim Tauchgang selbst sieht.
+- Gemeinsame Jagd steht in Lektion 8 „Wer jagt mit wem?“ (Barsch und Muräne, Kopfstand, Gelbsattel-Meerbarben, Flötenfische im Trupp, Krake boxt). Offen fürs Sammelthema Fressen: Fangschreckenkrebs schlägt mit der Keule und erzeugt dabei auch Kavitation (Patek 2004/2005, prüfen), Papageifisch frisst Fels und macht Sand (Lektion 7 kündigt das als „eigene Geschichte“ an).
 - Offen aus Lektion 3: Die Paarungsszene des Nutzers in Thailand (überall Paare, einer liegt auf der Seite, der andere kreist, vielleicht ein Nest). Kandidat Gelbsaum-Drückerfisch, Gegenkandidat Putzerkunde in Pose. Nachfragen: Ort, Größe, Sandboden.
-- Weitere Beziehungen: Anemonenfisch (Rotmeer-Anemonenfisch ist endemisch?) prüfen, Zackenbarsch und Muräne jagen gemeinsam (Bshary, Rotes Meer).
+- Weitere Beziehungen: Anemonenfisch (Rotmeer-Anemonenfisch ist endemisch?) prüfen.
 - Große Begegnungen: Schildkröten, Rochen, Delfine, Dugong.
 - Papageifisch: Sand, Schlafsack aus Schleim.
 
@@ -44,8 +45,6 @@ Weitere Kandidaten nach dem Muster von Lektion 1 (häufig gesehen, sichtbares Ve
 - Anemonenfisch: alle starten männlich, das größte Tier wird Weibchen; strenge Größenrangfolge in der Anemone. Sichtbar: Größenstaffel, Angriffe auf Taucher. Prüfen: Rotmeer-Anemonenfisch endemisch?
 - Gärtner-Riffbarsche: halten eigene Algengärten und jäten sie, verjagen dabei auch Taucher. Sichtbar: winziger Fisch greift Maske oder Hand an.
 - Falscher Putzer (Säbelzahnschleimfisch): imitiert den Putzerlippfisch und beißt Flossenstücke ab. Gehört an Lektion 1 (erweitern, nicht neu); Unterscheidung am Maul ist unter Wasser zu sehen.
-- Trompetenfisch „reitet“ im Schatten von Zackenbarsch oder Papageifisch, um sich an Beute heranzuschleichen. Sichtbar bei vielen Tauchgängen.
-- Zackenbarsch und Muräne (schon oben): Zackenbarsch fordert die Muräne per Kopfschütteln zur Jagd auf und zeigt Verstecke mit dem Kopf nach unten (Bshary 2006, Rotes Meer).
 - Rotfeuerfisch beim Nachttauchgang: jagt im Licht der Taucherlampe. Prüfen, ob belegt. Gehört an Lektion 5 (erweitern). Nicht Lönnstedt et al. 2014 zur Gemeinschaftsjagd zitieren: Die Zeitschrift hat dazu eine „expression of concern“ veröffentlicht.
 - Napoleon: frisst giftige Tiere (Kofferfische, Dornenkronen), kann das Geschlecht wechseln, kommt neugierig nah an Taucher. Kofferfisch-Gift als Abruffrage aus Lektion 4.
 - Weihnachtsbaumwürmer: ziehen sich blitzschnell ein, wenn man nah kommt oder ein Schatten fällt. Kleines Mitmach-Experiment.

@@ -78,6 +78,22 @@
   Use for: Heißwasser bei Stichen durch Giftfische, 42–45 °C, 30–90 min. Beleglage schwach (Fallserien).
 - [PADI: Marine Life Hand Signals](https://blog.padi.com/marine-life-hand-signals-for-underwater-communication/)
   Use for: Handzeichen für Tiere. Bilder sind urheberrechtlich geschützt, nur verlinken. Cloudflare liefert Bilder je nach `Accept`-Header als WebP aus, unter derselben URL wie das Original.
+- [Bshary, Hohner, Ait-el-Djoudi & Fricke (2006): Interspecific communicative and coordinated hunting between groupers and giant moray eels in the Red Sea, PLoS Biology 4:e431](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0040431)
+  Frei, mit Videos, Ras Mohammed, beim Schnorcheln beobachtet. Use for: Kopfschütteln 3–6-mal pro Sekunde, Muräne kommt in 58 % heraus, satte Barsche signalisieren nicht, fast fünfmal so viel Beute, Beute wird sofort ganz geschluckt, Vergleich mit dem Honiganzeiger, Mondsichel-Juwelenbarsch signalisiert auch.
+- [Vail, Manica & Bshary (2013): Referential gestures in fish collaborative hunting, Nature Communications 4:1765](https://doi.org/10.1038/ncomms2781) ([Autoren-PDF](https://libra.unine.ch/bitstreams/79d80632-d56a-436f-8357-736b5c471b9e/download))
+  Ras Mohammed und Great Barrier Reef. Use for: Kopfstand als Zeigegeste, 34 Fälle, Barsch wartet bis 25 min auf einen Partner, signalisiert bis 7 min, schubst die Muräne; vorher nur von Menschenaffen und Raben bekannt; Napoleon-Lippfisch und Krake als Partner.
+- [Sampaio et al. (2024): Multidimensional social influence drives leadership and composition-dependent success in octopus–fish hunting groups, Nature Ecology & Evolution 8:2072](https://pmc.ncbi.nlm.nih.gov/articles/PMC11541198/)
+  Frei, Eilat 2018. Use for: Großer Blauer Krake jagt mit Gelbsattel-Meerbarben, Baskenmützen- und Mondsichel-Juwelenbarschen; Meerbarben bestimmen, wohin, der Krake, ob es weitergeht; Boxhiebe vor allem gegen Baskenmützen-Zackenbarsche.
+- Sampaio, Seco, Rosa & Gingins (2021, online Dezember 2020): Octopuses punch fishes during collaborative interspecific hunting events, Ecology 102:e03266 ([Smithsonian Magazine](https://www.smithsonianmag.com/smart-news/video-octopuses-sucker-punching-fish-180976629/))
+  Volltext nicht abrufbar (Wiley 403), gelesen über Smithsonian. Use for: acht Boxhiebe in Eilat und El Quseir 2018–2019, wen es trifft, Sampaio lacht in den Atemregler.
+- [Steinegger, Roche & Bshary (2018): Simple decision rules underlie collaborative hunting in yellow saddle goatfish, Proc R Soc B 285:20172488](https://pmc.ncbi.nlm.nih.gov/articles/PMC5805943)
+  Frei, Versuche in Dahab. Use for: Gelbsattel-Meerbarben jagen zu zweit bis sechst, Jäger und Blocker, der nächste Fisch startet; Rollen nicht fest (Strübin et al. 2011, Ethology).
+- [Golani & Fricke (2018): Checklist of the Red Sea fishes, Zootaxa 4509](https://doi.org/10.11646/zootaxa.4509.1.1) ([PDF](https://www.dafni.com/fish/2018%20Golani%20and%20Fricke%20Red%20Sea%20Fish%20checklist%20(1).pdf))
+  Use for: Kommt eine Fischart im Roten Meer vor, und wo genau (Golf von Suez, Golf von Akaba, Hauptbecken, Land, Erstnachweis). Trompetenfisch nur ein Fund (Eritrea 1973), Blaupunkt-Flötenfisch in Ägypten belegt.
+- [Auster (2023): Variation in group hunting strategies by Cornetfish on two Red Sea reefs, J Ocean Sci Found 40:70–73](https://doi.org/10.5281/zenodo.8419557)
+  Frei, Daedalus und Little Brother 2019. Use for: Flötenfische jagen im Trupp (2–17, einmal 32), Beute Fahnenbarsche und Riffbarsche, Jagdweise nach Tiefe und Hang, kaum Flötenfische an 17 flachen Küstenplätzen.
+- [FishBase](https://www.fishbase.se)
+  Use for: Vorkommen, Tiefe und Größe einzelner Arten (Riesenmuräne, Mondsichel-Juwelenbarsch, Panther-Forellenbarsch). Beim Panther-Forellenbarsch gilt die Rotmeer-Form inzwischen als eigene Art, *Plectropomus marisrubri*.
 - Buch: Jonathan Balcombe, _Was Fische wissen_ (mare, 2018)
   Populärwissenschaft eines Verhaltensbiologen. Use for: Wahrnehmung, Sozialleben, Klugheit von Fischen.
 
@@ -100,4 +116,5 @@
 - Korallenbleiche an Ägyptens Küste: HEPCA „Bleach Watch 2024“ (PDF zu groß zum Abrufen) und eine Studie zu 2020 (Hurghada bis Wadi El-Gemal, 32,7 % der Kolonien mit Bleiche, EJABF) noch nicht gelesen.
 - Maskenkugelfisch: Gruppenbildung zur Paarungszeit ist nur unbelegt erwähnt.
 - Klang der Riffe im Roten Meer: Keine Studie aus Eilat oder Ägypten gefunden. Aus dem zentralen Roten Meer gibt es eine KAUST-Dissertation (Havlik 2025, Fischchöre nach Jahreszeit) und eine Studie mit Glasfaser-Sensoren in Scientific Reports, beide noch nicht gelesen. Lektion 7 stützt sich auf Versuche am Great Barrier Reef.
+- Gemeinsame Jagd bei Hurghada/Safaga: Alle Studien stammen aus Ras Mohammed, Eilat, Dahab und El Quseir. Wie oft man so etwas bei Hurghada sieht, belegt keine Quelle.
 - Papageifische: Ob ein Taucher das Knirschen hört und aus welcher Entfernung, belegt keine Studie. Von Tricas & Boyle (2021) ist nur das Abstract gelesen, der Volltext noch nicht.
