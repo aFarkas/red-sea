@@ -306,7 +306,7 @@ window.CARDS = [
     id: "riff-knistern",
     lektion: 7,
     frage: "Du schwebst still am Riff und hörst ein feines Knistern. Woher kommt es?",
-    antwort: `<p>Von Knallkrebsen. Sie sind nur wenige Zentimeter groß und sitzen versteckt in Spalten und Bauen, aber auf den meisten Korallenriffen sind sie die lautesten Tiere. Hunderte Knalle zusammen ergeben das Knistern.</p>`,
+    antwort: `<p>Von Knallkrebsen. Sie sind nur wenige Zentimeter groß und sitzen versteckt in Spalten und Bauen, aber sie gelten als die lautesten Tiere am Riff. Viele Knalle zusammen ergeben das Knistern.</p>`,
   },
   {
     id: "knall-tempo",

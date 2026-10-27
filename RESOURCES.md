@@ -40,6 +40,10 @@
   Use for: Fischlarven finden Riffe nach Gehör, etwa doppelt so viele Jungfische an Riffen mit Lautsprecher. Mongabay nennt „sechsmal“, nicht übernehmen.
 - [Gordon et al. (2018), PNAS 115:5193](https://pmc.ncbi.nlm.nih.gov/articles/PMC5960293/) / [Gordon et al. (2019), Nature Communications 10:5414](https://pmc.ncbi.nlm.nih.gov/articles/PMC6884498/)
   Frei. Use for: Geschädigte Riffe 15 dB leiser, weniger Knallkrebse, 40 % weniger Ansiedlung; Lautsprecher auf totem Riff, doppelt so viele Jungfische, 50 % mehr Arten.
+- [Tricas & Boyle (2021): Parrotfish soundscapes: implications for coral reef management, MEPS 666:149–169](https://int-res.com/abstracts/meps/v666/p149-169)
+  Hawaii. Use for: Bissgeräusche der Papageifische, mit Unterwassermikrofonen über drei Jahre aufgezeichnet; zeigen den Fressrhythmus nach Tag und Jahreszeit.
+- [Clements et al. (2017): Parrotfishes as microphages, Biol J Linn Soc 120:729–751](https://doi.org/10.1111/bij.12914) ([Autoren-PDF](https://german.bio.uci.edu/images/PDF/Clements%20et%20al.%20(2016)%20BJLS_online.pdf))
+  Use for: Papageifische fressen vor allem Cyanobakterien und andere Kleinstlebewesen auf und im Kalk, kaum sichtbare Algen.
 - [Looby et al. (2022): A quantitative inventory of global soniferous fish diversity, Rev Fish Biol Fisheries](https://doi.org/10.1007/s11160-022-09702-1)
   Use for: 989 Fischarten mit nachgewiesenen Lauten, 133 von 549 Familien.
 - [DOSITS: Snapping Shrimp](https://dosits.org/galleries/audio-gallery/marine-invertebrates/snapping-shrimp/)
@@ -96,4 +100,4 @@
 - Korallenbleiche an Ägyptens Küste: HEPCA „Bleach Watch 2024“ (PDF zu groß zum Abrufen) und eine Studie zu 2020 (Hurghada bis Wadi El-Gemal, 32,7 % der Kolonien mit Bleiche, EJABF) noch nicht gelesen.
 - Maskenkugelfisch: Gruppenbildung zur Paarungszeit ist nur unbelegt erwähnt.
 - Klang der Riffe im Roten Meer: Keine Studie aus Eilat oder Ägypten gefunden. Aus dem zentralen Roten Meer gibt es eine KAUST-Dissertation (Havlik 2025, Fischchöre nach Jahreszeit) und eine Studie mit Glasfaser-Sensoren in Scientific Reports, beide noch nicht gelesen. Lektion 7 stützt sich auf Versuche am Great Barrier Reef.
-- Papageifische: Das hörbare Knirschen ist nur populärwissenschaftlich belegt (Australian Geographic). Primärquelle zu Bissgeräuschen: MEPS 666:149–169 (2021, Hawaii), noch nicht gelesen.
+- Papageifische: Ob ein Taucher das Knirschen hört und aus welcher Entfernung, belegt keine Studie. Von Tricas & Boyle (2021) ist nur das Abstract gelesen, der Volltext noch nicht.
