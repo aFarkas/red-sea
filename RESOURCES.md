@@ -1,4 +1,4 @@
-# Meeresleben Rotes Meer: Ressourcen
+# Unser Ägypten: Ressourcen
 
 ## Knowledge
 

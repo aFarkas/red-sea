@@ -124,6 +124,9 @@ ol.sources li { margin-bottom: 0.35rem; }
 /* Handzeichen für Tiere unter Wasser */
 .signs { border: 1px solid var(--sea); }
 .signs .box-title { color: var(--sea); }
+/* Sätze auf Ägyptisch-Arabisch zum Benutzen über Wasser */
+.phrases { border: 1px solid var(--sea); }
+.phrases .box-title { color: var(--sea); }
 /* Begriff, der im Glossar steht und in späteren Lektionen wiederkommt */
 .define { border: 1px solid var(--rule); background: var(--sand); }
 .define .box-title { color: var(--ink); }
@@ -175,6 +178,9 @@ figure.photo.tall img { max-height: 32rem; object-fit: cover; }
 /* Eingebettetes Video im 16:9-Format, Link zum Original steht in der Bildunterschrift */
 figure.video iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; border-radius: 4px; background: var(--sand); }
 @media print { figure.video iframe { display: none; } }
+/* Eingebettete Google-Maps-Karte, Link nach Google Maps steht in der Bildunterschrift */
+figure.map iframe { width: 100%; aspect-ratio: 4 / 3; border: 0; display: block; border-radius: 4px; background: var(--sand); }
+@media print { figure.map iframe { display: none; } }
 .credit { display: block; font-size: 0.72rem; margin-top: 0.2rem; }
 .credit a { color: inherit; }
 .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
@@ -280,11 +286,10 @@ textarea.export {
 
 /* Inhaltsverzeichnis der Startseite (index.html) */
 .toc { list-style: none; padding-left: 0; }
-ol.toc { counter-reset: lektion; }
 .toc li { border-top: 1px solid var(--rule); padding: 0.9rem 0 0.2rem; }
-ol.toc li { counter-increment: lektion; }
+/* Die Nummer steht im Markup, weil die Nummern über zwei Listen (Stränge) fortlaufen */
 ol.toc li::before {
-  content: "Lektion " counter(lektion);
+  content: "Lektion " attr(data-lektion);
   display: block;
   font-family: Inter, system-ui, sans-serif;
   font-size: 0.72rem;
