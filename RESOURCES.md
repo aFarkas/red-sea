@@ -32,6 +32,18 @@
   Originalarbeiten, die von 1972 im Roten Meer. Use for: Signalabfolge, Antennenkontakt, Schwanzschlag als Warnung.
 - Versluis et al. (2000), Science 289:2114 / Lohse et al. (2001), Nature 413:477 ([Physics World](https://physicsworld.com/a/the-bubble-bursts-for-shrimps/))
   Use for: Wie der Knallkrebs knallt, Lichtblitz der Blase.
+- [Lillis (WHOI): Snap chat, Acoustical Society of America](https://acoustics.org/snap-chat-listening-in-on-the-peculiar-acoustic-patterns-of-snapping-shrimp-the-noisiest-animals-on-the-reef-ashlee-lillis/)
+  Kurz, von einer Forscherin. Use for: Knallkrebse als lauteste Tiere am Riff, Weltkrieg und Sonar (nach Johnson et al. 1947), Tagesrhythmus, wozu sie knallen.
+- [Wikipedia: Alpheidae](https://en.wikipedia.org/wiki/Alpheidae)
+  Use for: Zahlen zum Knall mit Belegen (25 m/s, 80 kPa in 4 cm, über 4700 °C), Scherentausch (McClure 1996), Staaten bildende *Synalpheus* (Duffy 1996).
+- [Simpson et al. (2005): Homeward sound, Science 308:221](https://doi.org/10.1126/science.1107406) / [Science News Explores](https://snexplores.org/article/fishy-sounds)
+  Use for: Fischlarven finden Riffe nach Gehör, etwa doppelt so viele Jungfische an Riffen mit Lautsprecher. Mongabay nennt „sechsmal“, nicht übernehmen.
+- [Gordon et al. (2018), PNAS 115:5193](https://pmc.ncbi.nlm.nih.gov/articles/PMC5960293/) / [Gordon et al. (2019), Nature Communications 10:5414](https://pmc.ncbi.nlm.nih.gov/articles/PMC6884498/)
+  Frei. Use for: Geschädigte Riffe 15 dB leiser, weniger Knallkrebse, 40 % weniger Ansiedlung; Lautsprecher auf totem Riff, doppelt so viele Jungfische, 50 % mehr Arten.
+- [Looby et al. (2022): A quantitative inventory of global soniferous fish diversity, Rev Fish Biol Fisheries](https://doi.org/10.1007/s11160-022-09702-1)
+  Use for: 989 Fischarten mit nachgewiesenen Lauten, 133 von 549 Familien.
+- [DOSITS: Snapping Shrimp](https://dosits.org/galleries/audio-gallery/marine-invertebrates/snapping-shrimp/)
+  University of Rhode Island. Use for: Tonaufnahme eines Knallkrebses, nur verlinken.
 - [Valerio, Mann & Shashar (2019): "Boo! Did we scare you?", Marine Biology 166:1](https://doi.org/10.1007/s00227-018-3447-3)
   Eilat. Use for: Partnergrundeln gewöhnen sich an Taucher (kürzere Fluchtdistanz, schnelleres Wiederauftauchen).
 - [Helfman & Schultz (1984): Social transmission of behavioural traditions in a coral reef fish](https://digitalcommons.lib.uconn.edu/eeb_articles/33) / [Warner (1988): Traditionality of mating-site preferences, Nature 335:719](https://dx.doi.org/10.1038/335719a0)
@@ -83,3 +95,5 @@
 - Messung der Schnappgeschwindigkeit des Steinfischs: Die oft genannten 0,015 s haben keine auffindbare Primärquelle.
 - Korallenbleiche an Ägyptens Küste: HEPCA „Bleach Watch 2024“ (PDF zu groß zum Abrufen) und eine Studie zu 2020 (Hurghada bis Wadi El-Gemal, 32,7 % der Kolonien mit Bleiche, EJABF) noch nicht gelesen.
 - Maskenkugelfisch: Gruppenbildung zur Paarungszeit ist nur unbelegt erwähnt.
+- Klang der Riffe im Roten Meer: Keine Studie aus Eilat oder Ägypten gefunden. Aus dem zentralen Roten Meer gibt es eine KAUST-Dissertation (Havlik 2025, Fischchöre nach Jahreszeit) und eine Studie mit Glasfaser-Sensoren in Scientific Reports, beide noch nicht gelesen. Lektion 7 stützt sich auf Versuche am Great Barrier Reef.
+- Papageifische: Das hörbare Knirschen ist nur populärwissenschaftlich belegt (Australian Geographic). Primärquelle zu Bissgeräuschen: MEPS 666:149–169 (2021, Hawaii), noch nicht gelesen.

@@ -302,4 +302,49 @@ window.CARDS = [
     frage: "Was unterscheidet Steinkorallen von Weichkorallen?",
     antwort: `<p>Steinkorallen bauen ein festes Skelett aus Kalk. Darauf wachsen Generation um Generation neue Polypen, so entsteht das Riff. Weichkorallen haben kein festes Skelett, sie sind biegsam und wiegen sich in der Strömung.</p>`,
   },
+  {
+    id: "riff-knistern",
+    lektion: 7,
+    frage: "Du schwebst still am Riff und hörst ein feines Knistern. Woher kommt es?",
+    antwort: `<p>Von Knallkrebsen. Sie sind nur wenige Zentimeter groß und sitzen versteckt in Spalten und Bauen, aber auf den meisten Korallenriffen sind sie die lautesten Tiere. Hunderte Knalle zusammen ergeben das Knistern.</p>`,
+  },
+  {
+    id: "knall-tempo",
+    lektion: 7,
+    frage: "Wie schnell schießt der Wasserstrahl aus der Knallschere, und wozu schießt der Krebs?",
+    antwort: `<p>Mit rund 25 Metern pro Sekunde, also etwa 90 km/h. Im Strahl reißt das Wasser zu einer Dampfblase auf, ihr Zusammenfallen macht den Knall. Alles dauert weniger als eine Tausendstelsekunde.</p>
+      <p>Der Druck vor der Schere betäubt oder tötet kleine Beutetiere. Der Krebs verteidigt sich auch damit und streitet mit Nachbarn um seinen Platz.</p>`,
+  },
+  {
+    id: "knall-hitze",
+    lektion: 7,
+    frage: "Wie heiß wird es in der Blase des Knallkrebses?",
+    antwort: `<p>Über 4700 °C, fast so heiß wie die Oberfläche der Sonne, für einen winzigen Augenblick. Das haben Detlef Lohse und sein Team aus dem Lichtblitz berechnet, den die Blase aussendet. Sehen kann man den Blitz mit bloßem Auge nicht.</p>`,
+  },
+  {
+    id: "knall-sonar",
+    lektion: 7,
+    frage: "Wer hat zuerst herausgefunden, dass Knallkrebse das Knistern im Meer machen?",
+    antwort: `<p>Das Militär. Im Zweiten Weltkrieg störte ein ständiges Knistern die Unterwassermikrofone der US-Marine, mit denen sie U-Boote suchte. Forscher fanden als Ursache versteckte Kolonien kleiner Krebse.</p>`,
+  },
+  {
+    id: "scherentausch",
+    lektion: 7,
+    frage: "Ein Knallkrebs verliert seine große Knallschere. Was passiert?",
+    antwort: `<p>Die Scheren tauschen die Rollen. Die kleine Schere wird zur neuen Knallschere, und wo die große war, wächst eine kleine nach. So einen Seitenwechsel kennt man sonst aus der Natur kaum.</p>`,
+  },
+  {
+    id: "larven-hoeren",
+    lektion: 7,
+    frage: "Wie finden junge Riffische aus dem offenen Meer zurück zum Riff?",
+    antwort: `<p>Unter anderem mit den Ohren. Stephen Simpson stellte 2005 Lautsprecher an kleine Riffe aus Korallenschutt und spielte nachts Riffgeräusche ab. Dorthin kamen etwa doppelt so viele junge Kardinalbarsche und Riffbarsche wie zu den stillen Riffen.</p>
+      <p>Ein krankes Riff klingt leiser. Nach Wirbelstürmen und Bleiche ließen sich beim Klang des kaputten Riffs 40 Prozent weniger Jungfische nieder.</p>`,
+  },
+  {
+    id: "lautsprecher-riff",
+    lektion: 7,
+    frage: "Was passierte, als Forscher auf totem Riff nachts den Klang eines gesunden Riffs abspielten?",
+    antwort: `<p>Nach 40 Nächten lebten dort doppelt so viele Jungfische wie an stillen Riffen und 50 Prozent mehr Arten. Ein Lautsprecher ohne Ton brachte nichts, es lag also am Klang.</p>
+      <p>Allein retten Lautsprecher kein Riff. Die Forscher sehen sie als Hilfe, wenn ein Riff ohnehin wieder aufgebaut wird.</p>`,
+  },
 ];
