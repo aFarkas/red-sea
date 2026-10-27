@@ -389,4 +389,53 @@ window.CARDS = [
     antwort: `<p>Die Meerbarben schwimmen voraus und bestimmen, wohin es geht. Der Krake bestimmt, ob es weitergeht. Eduardo Sampaio hat das in Eilat gefilmt.</p>
       <p>Mit einem Arm boxt der Krake Fische aus der Gruppe, am häufigsten den Baskenmützen-Zackenbarsch, der die Gruppe bremst. Die Forscher nennen das Partnerkontrolle, wie beim Stammgast, der den betrügenden Putzer jagt. Sampaio musste beim ersten Hieb so lachen, dass er sich fast am Atemregler verschluckte.</p>`,
   },
+  {
+    id: "sabah-ishta",
+    lektion: 9,
+    frage: "Der Kellner sagt „sabāh il-chēr“. Was antwortest du, und was ist der Witz daran?",
+    antwort: `<p>Üblich ist „sabāh in-nūr“, ein Morgen des Lichts. Man gibt den Gruß nicht einfach zurück, man legt etwas drauf.</p>
+      <p>Noch mehr drauf legen „sabāh il-full“, ein Morgen voller Jasmin, und „sabāh il-ʾishta“, ein Morgen voller Sahne.</p>`,
+  },
+  {
+    id: "ahlan-wa-sahlan",
+    lektion: 9,
+    frage: "Was heißt „ahlan wa sahlan“, und was antwortest du darauf?",
+    antwort: `<p>Willkommen, wörtlich etwa „Willkommen und Leichtigkeit“.</p>
+      <p>Du kannst dasselbe zurücksagen oder „ahlan bīk“ zu einem Mann und „ahlan bīki“ zu einer Frau.</p>`,
+  },
+  {
+    id: "izzayyak-izzayyik",
+    lektion: 9,
+    frage: "Wie fragt man auf Ägyptisch „Wie geht’s?“, und warum werdet ihr zwei verschieden gefragt?",
+    antwort: `<p>„Izzayyak?“ zu ihm, „izzayyik?“ zu ihr. Im Arabischen spricht man einen Mann anders an als eine Frau.</p>
+      <p>Eine fröhliche Antwort ist „mia mia, il-hamdu lillāh“, hundert Prozent, Gott sei Dank.</p>`,
+  },
+  {
+    id: "alf-shukr",
+    lektion: 9,
+    frage: "Danke, danke sehr, tausend Dank, gern geschehen: Wie heißt das auf Ägyptisch?",
+    antwort: `<p>„Schukran“, „schukran ʾawi“, „alf schukr“ und „ʿafwan“. „Alf schukr“ heißt wörtlich tausend Dank, genau wie im Deutschen.</p>
+      <p>Zum Abschied sagen beide „maʿa s-salāma“, wörtlich etwa „mit Unversehrtheit“, gemeint ist „komm heil an“.</p>`,
+  },
+  {
+    id: "vier-woerter",
+    lektion: 9,
+    frage: "Welche vier Wörter hörst du in Ägypten den ganzen Tag, und was heißen sie?",
+    antwort: `<p><em>Yalla</em>, los. <em>Tamām</em>, in Ordnung. <em>Maʿlisch</em>, macht nichts oder tut mir leid. <em>Inschallah</em>, so Gott will.</p>
+      <p>Maʿlisch passt auf beide Seiten. Wer sich entschuldigt, kann es sagen, und wer die Entschuldigung annimmt, auch.</p>`,
+  },
+  {
+    id: "gamal-ahwa",
+    lektion: 9,
+    frage: "Warum heißt das Kamel in Kairo „gamal“ und der Kaffee „ʾahwa“?",
+    antwort: `<p>Der Buchstabe, der im Hocharabischen wie ein J klingt, ist dort ein hartes G: <em>gamal</em>, <em>gamīl</em>. Das tiefe Q wird zu einem kurzen Stopp in der Kehle: Geschrieben steht <em>qahwa</em>, gesagt wird <em>ʾahwa</em>. Dasselbe Wort heißt auch Kaffeehaus.</p>
+      <p>Deshalb ist die Sahne eine <em>ʾishta</em>, geschrieben <em>qishta</em>.</p>`,
+  },
+  {
+    id: "gina-gawi",
+    lektion: 9,
+    frage: "Woran erkennst du, dass jemand aus Oberägypten kommt, etwa aus Qina am Nil?",
+    antwort: `<p>Dort wird das Q nicht verschluckt, es wird ein G. Der Pförtner aus Qina, den Mike Green fragte, sagte <em>gawi</em> statt <em>ʾawi</em> und nannte seine Stadt <em>Gina</em>.</p>
+      <p>So löste Green einen Streit über die Schreibweise von <em>ʾawi</em>: Alle Wörterbücher von 1895 bis 2004 schrieben es mit Q, und in Oberägypten hört man das Q noch, als G.</p>`,
+  },
 ];

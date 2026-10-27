@@ -127,6 +127,25 @@ ol.sources li { margin-bottom: 0.35rem; }
 /* Sätze auf Ägyptisch-Arabisch zum Benutzen über Wasser */
 .phrases { border: 1px solid var(--sea); }
 .phrases .box-title { color: var(--sea); }
+.phrase-list { list-style: none; padding-left: 0; margin: 0; }
+.phrase-list li { padding: 0.45rem 0; border-top: 1px solid var(--rule); }
+.phrase-list li:first-child { border-top: 0; }
+.phrase-list .say-word { font-weight: 600; }
+/* Anhören (assets/say.js): Aufnahme = Ägyptisch, .tts = Computerstimme auf Hocharabisch */
+button.say {
+  font: 600 0.72rem Inter, system-ui, sans-serif;
+  color: var(--sea);
+  background: var(--bg);
+  border: 1px solid var(--sea);
+  border-radius: 999px;
+  padding: 0.12rem 0.55rem;
+  margin-right: 0.35rem;
+  cursor: pointer;
+  vertical-align: 0.1em;
+}
+button.say.tts { color: var(--muted); border-color: var(--rule); border-style: dashed; }
+button.say.missing { opacity: 0.45; cursor: not-allowed; }
+@media print { button.say { display: none; } }
 /* Begriff, der im Glossar steht und in späteren Lektionen wiederkommt */
 .define { border: 1px solid var(--rule); background: var(--sand); }
 .define .box-title { color: var(--ink); }

@@ -97,6 +97,15 @@
 - Buch: Jonathan Balcombe, _Was Fische wissen_ (mare, 2018)
   Populärwissenschaft eines Verhaltensbiologen. Use for: Wahrnehmung, Sozialleben, Klugheit von Fischen.
 
+### Über Wasser
+
+- [Mike Green: Lisaan Masry, Egyptian Arabic Dictionary und Grammar](https://eu.lisaanmasry.org/grammar/courtesies.html)
+  Wörterbuch und Grammatik des gesprochenen Ägyptisch, mit Aufnahmen zu fast jedem Satz und Wort; entstanden mit Ägyptern, auch aus Hurghada. Der Host `www.lisaanmasry.org` brach beim Abruf die TLS-Verbindung ab, `eu.lisaanmasry.org` funktioniert. Aufnahmen: `/php/auto/getsound.php?language=grammar&sound_id=<id>` (Grammatik) und `language=ar` (Wörterbuch, id > 1000000). Lizenz: nichtkommerziell, mit Quellenangabe und Copyright. Use for: Grüße und Antworten, Höflichkeit, Aussprache, Aufnahmen für `assets/audio/`.
+- [Mike Green (2014): awy… alif or qaf?](https://eu.lisaanmasry.org/stories/qawy.html)
+  Use for: Q als Kehlstopp in Kairo und Hurghada, als G in Oberägypten (Qina, „gawi“, „Gina“).
+- [Wikipedia: Egyptian Arabic phonology](https://en.wikipedia.org/wiki/Egyptian_Arabic_phonology)
+  Wegweiser zu Watson (2002), The Phonology and Morphology of Arabic, S. 16–17. Use for: ج als [g] und ق als [ʔ] in Kairo.
+
 ## Wisdom (Communities)
 
 - Die Tauchbasis und Guides vor Ort in Hurghada/Safaga
@@ -107,6 +116,9 @@
   Große Taucher-Community. Use for: Erfahrungen zu Tauchplätzen, Begegnungen.
 
 ## Gaps
+
+- Ägyptische Aussprache stützt sich auf Lisaan Masry und, über Wikipedia, auf Watson (2002). Eine frei lesbare Primärquelle zur Dialektologie Oberägyptens (Behnstedt & Woidich 1985) ist nicht gelesen.
+- Ob die Aufnahmen bei Lisaan Masry von Muttersprachlern gesprochen sind, sagt die Seite nicht ausdrücklich.
 
 - Ein guter Bestimmungsführer für das Rote Meer (deutsch), noch nicht geprüft.
 - Belastbare Quellen zu Haien, Dugongs und Delfinen bei Hurghada/Safaga.
