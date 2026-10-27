@@ -56,7 +56,9 @@
 
   function stop() {
     if (playing) playing.pause();
-    if (synth && (synth.speaking || synth.pending)) synth.cancel();
+    // Immer abbrechen: Edge bleibt nach der ersten Äußerung hängen und meldet dabei speaking und
+    // pending als false.
+    if (synth) synth.cancel();
   }
 
   document.querySelectorAll("button.say").forEach((btn) => {
