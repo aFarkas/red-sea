@@ -4,6 +4,9 @@
 (function () {
   const STORE_KEY = "rotes-meer-wiederholung";
   const MAX_PER_SESSION = 6;
+  // Wörter sind kürzer als Geschichten, eine Runde darf mehr davon haben.
+  const MAX_WORDS_PER_SESSION = 10;
+  const AUDIO_DIR = "../assets/audio/";
   // Tage bis zur nächsten Wiederholung je Stufe; kurz gehalten, weil die Reise bald ist.
   const INTERVAL_DAYS = [1, 1, 2, 4, 8, 16];
   const RATINGS = {
@@ -13,6 +16,8 @@
   };
 
   const state = window.REVIEW_STATE;
+  const STORIES = window.CARDS;
+  const WORD_CARDS = (window.WORDS || []).flatMap(wordCards);
   const root = document.getElementById("review");
 
   function loadLocal() {
@@ -54,24 +59,55 @@
     return local.log.filter(isNew);
   }
 
-  function pickDue() {
+  // Jedes Wort wird zweimal abgefragt: einmal selbst sagen, einmal beim Hören verstehen.
+  function wordCards(w) {
+    const play = `<button class="say" type="button" data-src="${AUDIO_DIR}${w.audio}" aria-label="Aufnahme anhören">▶ Anhören</button>`;
+    const hint = (w.hinweis ? `<p>${w.hinweis}</p>` : "") + (w.variante ? `<p class="variante">${w.variante}</p>` : "");
+    const titel = `${w.wort} – ${w.de}`;
+    return [
+      {
+        id: `${w.id}~sprechen`,
+        lektion: w.lektion,
+        extra: !!w.extra,
+        art: "Sprechen",
+        titel,
+        frage: `Wie sagst du auf Ägyptisch: ${w.de}?`,
+        antwort: `<p class="word">${play}<span class="say-word">${w.wort}</span></p>${hint}<p class="aside">Sprich es laut nach.</p>`,
+      },
+      {
+        id: `${w.id}~hoeren`,
+        lektion: w.lektion,
+        extra: !!w.extra,
+        art: "Hören",
+        titel,
+        frage: `${play} Was heißt das?`,
+        antwort: `<p class="word"><span class="say-word">${w.wort}</span> – ${w.de}</p>${hint}`,
+      },
+    ];
+  }
+
+  function pickDue(deck, max) {
     const lessons = readLessons();
     const due = [];
     const fresh = [];
-    for (const card of window.CARDS) {
+    for (const card of deck) {
       if (!lessons.includes(card.lektion)) continue;
       const s = cardState(card.id);
       if (!s) fresh.push(card);
       else if (s.due <= today()) due.push(card);
     }
     due.sort((a, b) => cardState(a.id).due.localeCompare(cardState(b.id).due));
-    return [...due, ...fresh].slice(0, MAX_PER_SESSION);
+    return [...due, ...fresh].slice(0, max);
   }
-  function pickExtra() {
+  // Mischen vor dem Sortieren, damit bei gleicher Stufe nicht immer dieselben Karten kommen.
+  function pickExtra(deck, max) {
     const lessons = readLessons();
-    return window.CARDS.filter((c) => lessons.includes(c.lektion))
+    return deck.filter((c) => lessons.includes(c.lektion))
+      .map((c) => [Math.random(), c])
+      .sort((a, b) => a[0] - b[0])
+      .map(([, c]) => c)
       .sort((a, b) => (cardState(a.id)?.box ?? 0) - (cardState(b.id)?.box ?? 0))
-      .slice(0, 4);
+      .slice(0, max);
   }
 
   function rate(card, rating) {
@@ -124,7 +160,7 @@
 
   function renderUnreadLessons(parent) {
     const lessons = readLessons();
-    const unread = [...new Set(window.CARDS.map((c) => c.lektion))].filter((n) => !lessons.includes(n));
+    const unread = [...new Set([...STORIES, ...WORD_CARDS].map((c) => c.lektion))].filter((n) => !lessons.includes(n));
     if (!unread.length) return;
     const p = el("p", { className: "unread" }, "Schon gelesen und mit aufnehmen? ");
     for (const n of unread) {
@@ -142,29 +178,66 @@
   }
 
   function start() {
-    const queue = pickDue();
+    root.classList.toggle("extras", !!local.extras);
+    const queue = pickDue(STORIES, MAX_PER_SESSION);
     root.replaceChildren();
     if (!queue.length) {
-      const upcoming = window.CARDS.map((c) => cardState(c.id)?.due).filter(Boolean).sort()[0];
+      const upcoming = STORIES.map((c) => cardState(c.id)?.due).filter(Boolean).sort()[0];
       root.append(el("p", {}, upcoming
         ? `Heute ist nichts fällig. Die nächste Geschichte kommt am ${new Date(upcoming + "T12:00").toLocaleDateString("de-DE")} wieder.`
         : "Noch keine Karten. Lies eine Lektion und sag hier Bescheid."));
       const again = el("button", { className: "action", type: "button" }, "Trotzdem ein paar wiederholen");
-      again.addEventListener("click", () => run(pickExtra()));
+      again.addEventListener("click", () => run(pickExtra(STORIES, 4), "Geschichten"));
       if (readLessons().length) root.append(again);
-      renderUnreadLessons(root);
-      renderExport(root);
-      return;
+    } else {
+      const intro = el("p", {}, `${queue.length} Geschichten sind dran. Erinnere dich erst selbst, dann deck auf.`);
+      const go = el("button", { className: "action", type: "button" }, "Los");
+      go.addEventListener("click", () => run(queue, "Geschichten"));
+      root.append(intro, go);
     }
-    const intro = el("p", {}, `${queue.length} Geschichten sind dran. Erinnere dich erst selbst, dann deck auf.`);
-    const go = el("button", { className: "action", type: "button" }, "Los");
-    go.addEventListener("click", () => run(queue));
-    root.append(intro, go);
+    renderWords(root);
     renderUnreadLessons(root);
     renderExport(root);
   }
 
-  function run(queue) {
+  // Erst hören, dann selbst sagen. So stehen die beiden Karten eines Wortes nicht direkt hintereinander,
+  // und das leichtere Wiedererkennen kommt vor dem schwereren Sprechen.
+  function listenFirst(queue) {
+    return [...queue].sort((a, b) => (a.art === "Hören" ? 0 : 1) - (b.art === "Hören" ? 0 : 1));
+  }
+
+  // Ohne Haken nur der Grundwortschatz: lieber die Standards sicher als alles ein bisschen.
+  function wordDeck() {
+    return WORD_CARDS.filter((c) => local.extras || !c.extra);
+  }
+
+  // Wörter und Sätze bekommen eine eigene Runde, die man so oft spielen kann, wie man mag.
+  function renderWords(parent) {
+    const lessons = readLessons();
+    if (!WORD_CARDS.some((c) => lessons.includes(c.lektion))) return;
+    const due = pickDue(wordDeck(), MAX_WORDS_PER_SESSION);
+    const box = el("div", { className: "box phrases" });
+    box.append(
+      el("div", { className: "box-title" }, "Sprache üben"),
+      el("p", {}, due.length
+        ? `${due.length} Wörter und Sätze sind dran. Mal sagst du sie selbst, mal hörst du sie und sagst, was sie heißen.`
+        : "Heute ist kein Wort fällig. Üben kannst du trotzdem, so oft du magst."),
+    );
+    const go = el("button", { className: "action", type: "button" }, due.length ? "Sprache üben" : "Trotzdem üben");
+    go.addEventListener("click", () => run(listenFirst(due.length ? due : pickExtra(wordDeck(), MAX_WORDS_PER_SESSION)), "Wörter"));
+    const toggle = el("label", { className: "extras-toggle" });
+    const check = el("input", { type: "checkbox", checked: !!local.extras });
+    check.addEventListener("change", () => {
+      local.extras = check.checked;
+      saveLocal();
+      start();
+    });
+    toggle.append(check, " Auch Varianten und Extras üben, für alle, die gut mit Sprachen können: zweite Antworten, die Form für sie, seltene Zahlen, andere Aussprachen.");
+    box.append(go, toggle);
+    parent.append(box);
+  }
+
+  function run(queue, label) {
     const total = queue.length;
     const done = [];
     const retried = new Set();
@@ -172,10 +245,10 @@
     function show() {
       root.replaceChildren();
       const card = queue.shift();
-      if (!card) return finish(done);
+      if (!card) return finish(done, label);
       const node = el("div", { className: "card" });
       node.append(
-        el("p", { className: "kicker" }, `Lektion ${card.lektion} · ${Math.min(done.length + 1, total)} von ${total}`),
+        el("p", { className: "kicker" }, [`Lektion ${card.lektion}`, card.art, `${Math.min(done.length + 1, total)} von ${total}`].filter(Boolean).join(" · ")),
         el("p", { className: "q" }, card.frage),
       );
       const reveal = el("button", { className: "action", type: "button" }, "Aufdecken");
@@ -204,20 +277,32 @@
       reveal.addEventListener("click", () => {
         node.classList.add("revealed");
         reveal.remove();
+        // Beim Sprechen kommt die Aufnahme erst mit der Antwort.
+        if (card.art === "Sprechen") answer.querySelector("button.say")?.click();
       });
       node.append(reveal, answer, rateRow);
       root.append(node);
+      // Ein Klick hat die Karte gerade gebracht, also darf der Browser sofort abspielen.
+      if (card.art === "Hören") node.querySelector(".q button.say")?.click();
     }
     show();
   }
 
-  function finish(done) {
+  function finish(done, label) {
     root.replaceChildren();
-    root.append(el("h2", {}, `${done.length} Geschichten aufgefrischt`));
+    root.append(el("h2", {}, `${done.length} ${label} aufgefrischt`));
     const list = el("ul", { className: "summary" });
-    for (const { card, key } of done) list.append(el("li", {}, `${card.frage} <span class="tag ${key}">${RATINGS[key]}</span>`));
+    for (const { card, key } of done) {
+      const text = card.titel ? `${card.art}: ${card.titel}` : card.frage;
+      list.append(el("li", {}, `${text} <span class="tag ${key}">${RATINGS[key]}</span>`));
+    }
     root.append(list);
     renderExport(root);
+    if (label === "Wörter") {
+      const more = el("button", { className: "action", type: "button" }, "Noch eine Runde");
+      more.addEventListener("click", () => run(listenFirst(pickExtra(wordDeck(), MAX_WORDS_PER_SESSION)), label));
+      root.append(more, " ");
+    }
     const back = el("button", { className: "action", type: "button" }, "Zurück zum Anfang");
     back.addEventListener("click", start);
     root.append(back);

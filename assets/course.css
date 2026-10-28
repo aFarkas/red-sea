@@ -131,6 +131,9 @@ ol.sources li { margin-bottom: 0.35rem; }
 .phrase-list li { padding: 0.45rem 0; border-top: 1px solid var(--rule); }
 .phrase-list li:first-child { border-top: 0; }
 .phrase-list .say-word { font-weight: 600; }
+/* Standardform zum Lernen; dieselben Wörter fragt „Sprache üben“ ohne Haken ab (window.WORDS ohne extra) */
+.phrase-list li.std .say-word:first-of-type::before { content: "★ "; color: var(--sea); }
+.phrases .legend { margin-top: 0.6rem; }
 /* Anhören (assets/say.js): Aufnahme = Ägyptisch, .tts = Computerstimme auf Hocharabisch */
 button.say {
   font: 600 0.72rem Inter, system-ui, sans-serif;
@@ -222,6 +225,9 @@ table { border-collapse: collapse; width: 100%; font-size: 0.9rem; margin: 1rem 
 th, td { text-align: left; vertical-align: top; padding: 0.45rem 0.6rem 0.45rem 0; border-bottom: 1px solid var(--rule); }
 th { font-family: Inter, sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
 .wide { overflow-x: auto; }
+/* Ziffern nebeneinander: unsere oben, arabische darunter */
+table.digits td { text-align: center; font-size: 1.5rem; padding-right: 0; }
+table.digits th { white-space: nowrap; vertical-align: middle; }
 ul.check { list-style: none; padding-left: 0; }
 ul.check li { padding-left: 1.6rem; position: relative; margin-bottom: 0.5rem; }
 ul.check li::before { content: "☐"; position: absolute; left: 0; color: var(--sea); }
@@ -266,6 +272,12 @@ button.action.small { font-size: 0.8rem; padding: 0.3rem 0.7rem; }
 .card.revealed .answer { display: block; }
 .card.revealed .rate { display: flex; }
 .card .answer figure { margin: 1rem 0; }
+/* Wortkarte (Sprache üben): Umschrift groß, damit man sie beim Nachsprechen gut liest */
+.card .word { font-size: 1.25rem; }
+.card .variante { display: none; color: var(--muted); }
+.extras .card .variante { display: block; }
+.extras-toggle { display: block; margin-top: 0.9rem; font-family: Inter, system-ui, sans-serif; font-size: 0.8rem; color: var(--muted); }
+.card .q button.say { font-size: 0.85rem; padding: 0.3rem 0.8rem; }
 .rate {
   flex-wrap: wrap;
   align-items: center;

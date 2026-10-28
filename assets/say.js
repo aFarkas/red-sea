@@ -61,20 +61,21 @@
     if (synth) synth.cancel();
   }
 
-  document.querySelectorAll("button.say").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      stop();
-      if (btn.dataset.src) {
-        playing = new Audio(btn.dataset.src);
-        // AbortError heißt nur, dass ein neuer Klick die Aufnahme unterbrochen hat.
-        playing.play().catch((err) => {
-          if (err.name === "AbortError") return;
-          btn.title = "Die Aufnahme ließ sich nicht abspielen.";
-          btn.classList.add("missing");
-        });
-      } else {
-        speak(btn);
-      }
-    });
+  // Am Dokument statt an jeder Taste, damit auch Tasten in später gebauten Karten (review.js) klingen.
+  document.addEventListener("click", (event) => {
+    const btn = event.target.closest("button.say");
+    if (!btn) return;
+    stop();
+    if (btn.dataset.src) {
+      playing = new Audio(btn.dataset.src);
+      // AbortError heißt nur, dass ein neuer Klick die Aufnahme unterbrochen hat.
+      playing.play().catch((err) => {
+        if (err.name === "AbortError") return;
+        btn.title = "Die Aufnahme ließ sich nicht abspielen.";
+        btn.classList.add("missing");
+      });
+    } else {
+      speak(btn);
+    }
   });
 })();

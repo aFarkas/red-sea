@@ -12,6 +12,20 @@ Gilt zusätzlich zu `NOTES.md` für jede Lektion über Land, Leute, Sprache, Kul
 - Sätze zum Benutzen kommen als Box `.phrases` (wie `.signs` unter Wasser) in die Lektion, in der sie
   gebraucht werden, und als Karte in die Wiederholung. Ausprobieren im Urlaub ist die Feedbackschleife:
   danach fragen, wie es ankam.
+- Sprache und Zahlen fallen dem Nutzer schwer, also üben statt nur lesen. Jedes Wort, jeder Satz und
+  jede Zahl mit Aufnahme bekommt eine Wortkarte in `window.WORDS` (`assets/cards.js`), nicht nur die
+  Sätze, die eine Geschichte tragen. Die Geschichtenkarten in `window.CARDS` bleiben daneben.
+  „Weißt du noch?“ einer Sprachlektion holt ruhig auch Wörter der vorigen Sprachlektion zurück, zum
+  Anhören. Am Ende jeder Sprachlektion auf „Sprache üben“ in `reference/wiederholung.html` verweisen.
+- Lieber die Standards sicher als alles ein bisschen. Eine Sprachlektion bringt höchstens etwa ein
+  Dutzend neue Wörter zum Lernen, für jede Situation eine Standardform. Lektion 10 mit 17 Zahlen und
+  14 Sätzen war dem Nutzer zu viel. Varianten (zweite Antwort, Form für sie, seltene Zahl, andere
+  Aussprache) darf die Lektion zeigen, aber klar als Zugabe, nicht in der Lernliste. In `window.WORDS`
+  bekommen sie `extra: true`, ein Hinweis auf eine andere Aussprache oder Schreibweise kommt in
+  `variante` statt `hinweis`. Dann übt der Nutzer sie erst, wenn er „Auch Varianten und Extras“ anhakt.
+  In `.phrase-list` (Lektion und Sprachführer) bekommt jede Zeile mit einem Standardwort `class="std"`
+  und damit einen Stern. Unter jeder Liste mit Stern steht die Legende `p.aside.legend`. Stern und
+  `extra` müssen übereinstimmen.
 - Land und Leute ohne Klischees und ohne Belehrung. Was über das heutige Ägypten gesagt wird, braucht
   eine aktuelle Quelle, am liebsten aus Ägypten selbst (ägyptische Autoren, Behörden, Medien). Ein
   Reiseführer reicht nur als Wegweiser. Verhaltenstipps kurz und
@@ -64,4 +78,5 @@ Alles vor der Lektion an Quellen prüfen. Der Haken nach dem Doppelpunkt ist der
 - Memnonkolosse: In der Antike „sangen“ sie bei Sonnenaufgang, bis ein Kaiser sie reparieren ließ. Prüfen.
 - Karnak und Luxor-Tempel: Sphinx-Allee, Moschee Abu el-Haggag oben auf dem Luxor-Tempel. Prüfen.
 - Sprache und Alltag: Gebetsruf fünfmal am Tag, Freitag als Wochenende, Handeln als Gespräch, Bakschisch, Tee und Begrüßungsrituale, Gesten (Fingerspitzen zusammen = „Moment“). Prüfen.
-- Essen: Koschari, Ful, Fisch in El Quseir. Was man probieren sollte und wie man es bestellt.
+- Essen: Koschari, Ful, Fisch in El Quseir. Was man probieren sollte und wie man es bestellt. Sie kochen viel selbst (Lernnotiz 10): Wörter für Obst, Gemüse, Fisch und Mengen auf dem Markt.
+- Restaurant und Hotelrechnung: Der Servicezuschlag gilt in Ägypten als Lohn. Bis 2024 durfte ein Hotel per Erlass 20 % davon „für Bruch, Verlust und Beschädigung“ behalten, dann kippte das Verfassungsgericht die Klausel (Ad-Dostor, 2024). Prüfen, ob und wie viel Zuschlag auf Restaurantrechnungen steht.

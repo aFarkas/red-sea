@@ -105,6 +105,26 @@
   Use for: Q als Kehlstopp in Kairo und Hurghada, als G in Oberägypten (Qina, „gawi“, „Gina“).
 - [Wikipedia: Egyptian Arabic phonology](https://en.wikipedia.org/wiki/Egyptian_Arabic_phonology)
   Wegweiser zu Watson (2002), The Phonology and Morphology of Arabic, S. 16–17. Use for: ج als [g] und ق als [ʔ] in Kairo.
+- [Mike Green: Lisaan Masry, Numbers](https://eu.lisaanmasry.org/grammar/numbers.html) und [Questions](https://eu.lisaanmasry.org/grammar/questions.html)
+  Use for: Zahlen mit Aufnahmen und arabischen Ziffern, Einzahl nach Zahlen bei Geld und Gewicht, Einer vor Zehnern, *bi-kām?*. Wörterbuch-Aufnahmen für *ginēh*, *ʾirsch*, *baʾschīsch*, *ghāli*, *richīs* und andere mit `language=ar`.
+- [Gesetz Nr. 181/2018 über den Verbraucherschutz (arabisch)](https://alberonsy.com/?p=3138)
+  Use for: Art. 5 Angaben auf Arabisch, andere Sprachen zusätzlich; Art. 7 Preise klar angeschrieben inklusive Steuern; Art. 10 Rechnung.
+- [MacTutor: Arabic numerals](https://mathshistory.st-andrews.ac.uk/HistTopics/Arabic_numerals/) und [Al-Khwarizmi](https://mathshistory.st-andrews.ac.uk/Biographies/Al-Khwarizmi/)
+  Universität St Andrews. Use for: „indisches Rechnen“, *Algoritmi de numero Indorum*, Algorithmus, östliche und westliche Ziffernformen, Fibonacci in Bugia.
+- [Unicode Code Chart Arabic U+0600](https://www.unicode.org/charts/PDF/U0600.pdf)
+  Use for: Namen ARABIC-INDIC DIGIT ZERO bis NINE.
+- [Cairo 360: How the Egyptian Pound Came to Be Known As ‘Geneh’](https://cairo360.com/?p=1740949) und [Royal Mint: The story of the guinea](https://www.royalmint.com/stories/collect/the-story-of-the-guinea/)
+  Use for: *ginēh* von *guinea*; Guinea nach westafrikanischem Gold, 1663, Newton setzt 1717 21 Schilling fest. Jahr der Einführung des ägyptischen Pfunds ist in den Quellen uneinheitlich (1834, 1836, 1885).
+- [Australian War Memorial: 5 piastres note](https://awm.gov.au/collection/C1141385)
+  Use for: 1 ägyptisches Pfund = 100 Piaster, Währungsreform 1885.
+- [Auswärtiges Amt: Ägypten, Reise- und Sicherheitshinweise](https://www.auswaertiges-amt.de/de/service/laender/aegypten-node/aegyptensicherheit-212622)
+  Use for: Taxi (Preis vorher, App, Zahlen durchs Fenster), Geldautomaten, Devisen, Notrufnummern.
+- [Xe: EUR to EGP](https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=EUR&To=EGP)
+  Use for: aktueller Kurs (28.10.2026: 62,42 Pfund pro Euro).
+- [Egypt Tours Plus: Tipping in Egypt](https://www.egypttoursplus.com/tipping-in-egypt/)
+  Reiseveranstalter, nur als Richtwert. Use for: Trinkgeld-Beträge für Transfer, Taxi, Hotel; kleine Scheine. Andere Ratgeber nennen andere Beträge.
+- [Ad-Dostor (2024): Tarifvertrag Hotel und Tourismusgewerkschaft](https://www.dostor.org/4790050)
+  Use for: Servicezuschlag in Hotels gilt als Lohn; Ministerialerlass 125/2003 gab 20 % an das Haus „für Bruch, Verlust und Beschädigung“, das Verfassungsgericht hat diese Klausel gekippt. Kandidat für eine Lektion zu Alltag oder Restaurant.
 
 ## Wisdom (Communities)
 
@@ -119,6 +139,8 @@
 
 - Ägyptische Aussprache stützt sich auf Lisaan Masry und, über Wikipedia, auf Watson (2002). Eine frei lesbare Primärquelle zur Dialektologie Oberägyptens (Behnstedt & Woidich 1985) ist nicht gelesen.
 - Ob die Aufnahmen bei Lisaan Masry von Muttersprachlern gesprochen sind, sagt die Seite nicht ausdrücklich.
+- Trinkgeld in Ägypten: Keine amtliche oder ägyptische journalistische Quelle zu üblichen Beträgen gefunden, nur Reiseveranstalter, die sich widersprechen.
+- Ob Preisschilder in ägyptischen Supermärkten arabische oder westliche Ziffern tragen, belegt keine Quelle. Das Gesetz verlangt nur Arabisch.
 
 - Ein guter Bestimmungsführer für das Rote Meer (deutsch), noch nicht geprüft.
 - Belastbare Quellen zu Haien, Dugongs und Delfinen bei Hurghada/Safaga.
