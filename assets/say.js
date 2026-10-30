@@ -1,7 +1,10 @@
 // Aussprache anhören. button.say mit data-src spielt eine echte Aufnahme ab (Ägyptisch-Arabisch),
 // button.say mit data-tts liest den arabischen Text mit der Computerstimme des Geräts vor. Die
 // Computerstimmen sprechen Hocharabisch, deshalb taugen sie nur zum Vergleich.
+// Ein Element mit data-wort="<id aus window.WORDS>" bekommt beide Knöpfe davor gesetzt, auch in später
+// gebauten Karten. Dafür muss assets/cards.js vor dieser Datei geladen sein.
 (function () {
+  const AUDIO_DIR = new URL("audio/", document.currentScript.src).href;
   const synth = window.speechSynthesis;
   let playing = null;
   // Chrome räumt eine Äußerung ohne Verweis mitten im Sprechen weg und bleibt dann stumm hängen.
@@ -78,4 +81,22 @@
       speak(btn);
     }
   });
+
+  function buttons(w) {
+    return `<button class="say" type="button" data-src="${AUDIO_DIR}${w.audio}" aria-label="Anhören auf Ägyptisch: ${w.wort}">▶ Ägyptisch</button>`
+      + `<button class="say tts" type="button" data-tts="${w.ar}" aria-label="Anhören auf Hocharabisch, Computerstimme: ${w.hoch}">▶ Hocharabisch</button>`;
+  }
+
+  function expand(root) {
+    for (const node of root.querySelectorAll("[data-wort]:not([data-wort-done])")) {
+      const w = (window.WORDS || []).find((x) => x.id === node.dataset.wort);
+      if (!w) continue;
+      node.setAttribute("data-wort-done", "");
+      node.insertAdjacentHTML("beforebegin", buttons(w));
+    }
+  }
+
+  window.Say = { buttons };
+  expand(document);
+  new MutationObserver(() => expand(document)).observe(document.body, { childList: true, subtree: true });
 })();

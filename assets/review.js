@@ -6,7 +6,6 @@
   const MAX_PER_SESSION = 6;
   // Wörter sind kürzer als Geschichten, eine Runde darf mehr davon haben.
   const MAX_WORDS_PER_SESSION = 10;
-  const AUDIO_DIR = "../assets/audio/";
   // Tage bis zur nächsten Wiederholung je Stufe; kurz gehalten, weil die Reise bald ist.
   const INTERVAL_DAYS = [1, 1, 2, 4, 8, 16];
   const RATINGS = {
@@ -61,7 +60,7 @@
 
   // Jedes Wort wird zweimal abgefragt: einmal selbst sagen, einmal beim Hören verstehen.
   function wordCards(w) {
-    const play = `<button class="say" type="button" data-src="${AUDIO_DIR}${w.audio}" aria-label="Aufnahme anhören">▶ Anhören</button>`;
+    const play = window.Say.buttons(w);
     const hint = (w.hinweis ? `<p>${w.hinweis}</p>` : "") + (w.variante ? `<p class="variante">${w.variante}</p>` : "");
     const titel = `${w.wort} – ${w.de}`;
     return [
@@ -99,6 +98,11 @@
     due.sort((a, b) => cardState(a.id).due.localeCompare(cardState(b.id).due));
     return [...due, ...fresh].slice(0, max);
   }
+
+  const PRICES = window.UMRECHNEN;
+  const PRICES_PER_SESSION = 5;
+  const priceQueue = () => window.Umrechnen.queue(PRICES_PER_SESSION);
+
   // Mischen vor dem Sortieren, damit bei gleicher Stufe nicht immer dieselben Karten kommen.
   function pickExtra(deck, max) {
     const lessons = readLessons();
@@ -196,6 +200,7 @@
       root.append(intro, go);
     }
     renderWords(root);
+    renderPrices(root);
     renderUnreadLessons(root);
     renderExport(root);
   }
@@ -224,7 +229,8 @@
         : "Heute ist kein Wort fällig. Üben kannst du trotzdem, so oft du magst."),
     );
     const go = el("button", { className: "action", type: "button" }, due.length ? "Sprache üben" : "Trotzdem üben");
-    go.addEventListener("click", () => run(listenFirst(due.length ? due : pickExtra(wordDeck(), MAX_WORDS_PER_SESSION)), "Wörter"));
+    const more = () => listenFirst(pickExtra(wordDeck(), MAX_WORDS_PER_SESSION));
+    go.addEventListener("click", () => run(due.length ? listenFirst(due) : more(), "Wörter", more));
     const toggle = el("label", { className: "extras-toggle" });
     const check = el("input", { type: "checkbox", checked: !!local.extras });
     check.addEventListener("change", () => {
@@ -237,7 +243,22 @@
     parent.append(box);
   }
 
-  function run(queue, label) {
+  // Umrechnen ist Übung wie die Wörter: immer da, jede Runde mit neuen Beträgen.
+  function renderPrices(parent) {
+    if (!PRICES || !readLessons().includes(PRICES.lektion)) return;
+    const box = el("div", { className: "box phrases" });
+    box.append(
+      el("div", { className: "box-title" }, "Preise umrechnen"),
+      el("p", {}, `${PRICES_PER_SESSION} Preise, jedes Mal neue, in beide Richtungen. Rechne mit ${PRICES.faustregel} Pfund pro Euro. Pfund in Euro: durch 6 teilen, Komma eine Stelle nach links. Euro in Pfund: mal 6, eine Null dran.`),
+    );
+    const go = el("button", { className: "action", type: "button" }, "Preise umrechnen");
+    go.addEventListener("click", () => run(priceQueue(), "Preise", priceQueue));
+    box.append(go);
+    parent.append(box);
+  }
+
+  // more: baut die Karten für „Noch eine Runde“. Ohne more gibt es den Knopf nicht.
+  function run(queue, label, more) {
     const total = queue.length;
     const done = [];
     const retried = new Set();
@@ -245,7 +266,7 @@
     function show() {
       root.replaceChildren();
       const card = queue.shift();
-      if (!card) return finish(done, label);
+      if (!card) return finish(done, label, more);
       const node = el("div", { className: "card" });
       node.append(
         el("p", { className: "kicker" }, [`Lektion ${card.lektion}`, card.art, `${Math.min(done.length + 1, total)} von ${total}`].filter(Boolean).join(" · ")),
@@ -288,20 +309,20 @@
     show();
   }
 
-  function finish(done, label) {
+  function finish(done, label, more) {
     root.replaceChildren();
     root.append(el("h2", {}, `${done.length} ${label} aufgefrischt`));
     const list = el("ul", { className: "summary" });
     for (const { card, key } of done) {
-      const text = card.titel ? `${card.art}: ${card.titel}` : card.frage;
+      const text = card.titel ? `${card.art}: ${card.titel}` : card.frage.replace(/<[^>]+>/g, "");
       list.append(el("li", {}, `${text} <span class="tag ${key}">${RATINGS[key]}</span>`));
     }
     root.append(list);
     renderExport(root);
-    if (label === "Wörter") {
-      const more = el("button", { className: "action", type: "button" }, "Noch eine Runde");
-      more.addEventListener("click", () => run(listenFirst(pickExtra(wordDeck(), MAX_WORDS_PER_SESSION)), label));
-      root.append(more, " ");
+    if (more) {
+      const again = el("button", { className: "action", type: "button" }, "Noch eine Runde");
+      again.addEventListener("click", () => run(more(), label, more));
+      root.append(again, " ");
     }
     const back = el("button", { className: "action", type: "button" }, "Zurück zum Anfang");
     back.addEventListener("click", start);

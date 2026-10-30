@@ -392,50 +392,50 @@ window.CARDS = [
   {
     id: "sabah-ishta",
     lektion: 9,
-    frage: "Der Kellner sagt „sabāh il-chēr“. Was antwortest du, und was ist der Witz daran?",
-    antwort: `<p>Üblich ist „sabāh in-nūr“, ein Morgen des Lichts. Man gibt den Gruß nicht einfach zurück, man legt etwas drauf.</p>
-      <p>Noch mehr drauf legen „sabāh il-full“, ein Morgen voller Jasmin, und „sabāh il-ʾishta“, ein Morgen voller Sahne.</p>`,
+    frage: `Der Kellner sagt <span data-wort="w-sabah-il-kheer">„sabāh il-chēr“</span>. Was antwortest du, und was ist der Witz daran?`,
+    antwort: `<p>Üblich ist <span data-wort="w-sabah-in-nuur">„sabāh in-nūr“</span>, ein Morgen des Lichts. Man gibt den Gruß nicht einfach zurück, man legt etwas drauf.</p>
+      <p>Noch mehr drauf legen <span data-wort="w-sabah-il-full">„sabāh il-full“</span>, ein Morgen voller Jasmin, und <span data-wort="w-sabah-il-ishta">„sabāh il-ʾishta“</span>, ein Morgen voller Sahne.</p>`,
   },
   {
     id: "ahlan-wa-sahlan",
     lektion: 9,
-    frage: "Was heißt „ahlan wa sahlan“, und was antwortest du darauf?",
+    frage: `Was heißt <span data-wort="w-ahlan-wa-sahlan">„ahlan wa sahlan“</span>, und was antwortest du darauf?`,
     antwort: `<p>Willkommen, wörtlich etwa „Willkommen und Leichtigkeit“.</p>
-      <p>Du kannst dasselbe zurücksagen oder „ahlan bīk“ zu einem Mann und „ahlan bīki“ zu einer Frau.</p>`,
+      <p>Du kannst dasselbe zurücksagen oder <span data-wort="w-ahlan-biik">„ahlan bīk“</span> zu einem Mann und <span data-wort="w-ahlan-biiki">„ahlan bīki“</span> zu einer Frau.</p>`,
   },
   {
     id: "izzayyak-izzayyik",
     lektion: 9,
     frage: "Wie fragt man auf Ägyptisch „Wie geht’s?“, und warum werdet ihr zwei verschieden gefragt?",
-    antwort: `<p>„Izzayyak?“ zu ihm, „izzayyik?“ zu ihr. Im Arabischen spricht man einen Mann anders an als eine Frau.</p>
-      <p>Eine fröhliche Antwort ist „mia mia, il-hamdu lillāh“, hundert Prozent, Gott sei Dank.</p>`,
+    antwort: `<p><span data-wort="w-izzayyak">„Izzayyak?“</span> zu ihm, <span data-wort="w-izzayyik">„izzayyik?“</span> zu ihr. Im Arabischen spricht man einen Mann anders an als eine Frau.</p>
+      <p>Eine fröhliche Antwort ist <span data-wort="w-mia-mia">„mia mia, il-hamdu lillāh“</span>, hundert Prozent, Gott sei Dank.</p>`,
   },
   {
     id: "alf-shukr",
     lektion: 9,
     frage: "Danke, danke sehr, tausend Dank, gern geschehen: Wie heißt das auf Ägyptisch?",
-    antwort: `<p>„Schukran“, „schukran ʾawi“, „alf schukr“ und „ʿafwan“. „Alf schukr“ heißt wörtlich tausend Dank, genau wie im Deutschen.</p>
-      <p>Zum Abschied sagen beide „maʿa s-salāma“, wörtlich etwa „mit Unversehrtheit“, gemeint ist „komm heil an“.</p>`,
+    antwort: `<p><span data-wort="w-shukran">„Schukran“</span>, <span data-wort="w-shukran-awi">„schukran ʾawi“</span>, <span data-wort="w-alf-shukr">„alf schukr“</span> und <span data-wort="w-afwan">„ʿafwan“</span>. „Alf schukr“ heißt wörtlich tausend Dank, genau wie im Deutschen.</p>
+      <p>Zum Abschied sagen beide <span data-wort="w-maa-salaama">„maʿa s-salāma“</span>, wörtlich etwa „mit Unversehrtheit“, gemeint ist „komm heil an“.</p>`,
   },
   {
     id: "vier-woerter",
     lektion: 9,
     frage: "Welche vier Wörter hörst du in Ägypten den ganzen Tag, und was heißen sie?",
-    antwort: `<p><em>Yalla</em>, los. <em>Tamām</em>, in Ordnung. <em>Maʿlisch</em>, macht nichts oder tut mir leid. <em>Inschallah</em>, so Gott will.</p>
+    antwort: `<p><em data-wort="w-yalla">Yalla</em>, los. <em data-wort="w-tamaam">Tamām</em>, in Ordnung. <em data-wort="w-maalesh">Maʿlisch</em>, macht nichts oder tut mir leid. <em data-wort="w-inshallah">Inschallah</em>, so Gott will.</p>
       <p>Maʿlisch passt auf beide Seiten. Wer sich entschuldigt, kann es sagen, und wer die Entschuldigung annimmt, auch.</p>`,
   },
   {
     id: "gamal-ahwa",
     lektion: 9,
-    frage: "Warum heißt das Kamel in Kairo „gamal“ und der Kaffee „ʾahwa“?",
-    antwort: `<p>Der Buchstabe, der im Hocharabischen wie ein J klingt, ist dort ein hartes G: <em>gamal</em>, <em>gamīl</em>. Das tiefe Q wird zu einem kurzen Stopp in der Kehle: Geschrieben steht <em>qahwa</em>, gesagt wird <em>ʾahwa</em>. Dasselbe Wort heißt auch Kaffeehaus.</p>
+    frage: `Warum heißt das Kamel in Kairo <span data-wort="w-gamal">„gamal“</span> und der Kaffee <span data-wort="w-ahwa">„ʾahwa“</span>?`,
+    antwort: `<p>Der Buchstabe, der im Hocharabischen wie ein J klingt, ist dort ein hartes G: <em data-wort="w-gamal">gamal</em>, <em data-wort="w-gamiil">gamīl</em>. Das tiefe Q wird zu einem kurzen Stopp in der Kehle: Geschrieben steht <em>qahwa</em>, gesagt wird <em data-wort="w-ahwa">ʾahwa</em>. Dasselbe Wort heißt auch Kaffeehaus.</p>
       <p>Deshalb ist die Sahne eine <em>ʾishta</em>, geschrieben <em>qishta</em>.</p>`,
   },
   {
     id: "gina-gawi",
     lektion: 9,
     frage: "Woran erkennst du, dass jemand aus Oberägypten kommt, etwa aus Qina am Nil?",
-    antwort: `<p>Dort wird das Q nicht verschluckt, es wird ein G. Der Pförtner aus Qina, den Mike Green fragte, sagte <em>gawi</em> statt <em>ʾawi</em> und nannte seine Stadt <em>Gina</em>.</p>
+    antwort: `<p>Dort wird das Q nicht verschluckt, es wird ein G. Der Pförtner aus Qina, den Mike Green fragte, sagte <em>gawi</em> statt <em data-wort="w-awi">ʾawi</em> und nannte seine Stadt <em>Gina</em>.</p>
       <p>So löste Green einen Streit über die Schreibweise von <em>ʾawi</em>: Alle Wörterbücher von 1895 bis 2004 schrieben es mit Q, und in Oberägypten hört man das Q noch, als G.</p>`,
   },
   {
@@ -463,14 +463,14 @@ window.CARDS = [
     id: "irsch-filus",
     lektion: 10,
     frage: "Wie heißen Piaster und Geld auf Ägyptisch, und welche Regel aus Lektion 9 steckt im Piaster?",
-    antwort: `<p>Der Piaster heißt <em>ʾirsch</em>, hundert davon sind ein Pfund. Geld heißt <em>filūs</em>.</p>
-      <p>Geschrieben wird der Piaster <em>qirsch</em>. Das Q wird verschluckt, wie bei <em>ʾahwa</em>, dem Kaffee. Auch das Trinkgeld, <em>baʾschīsch</em>, wird mit Q geschrieben.</p>`,
+    antwort: `<p>Der Piaster heißt <em data-wort="w-irsh">ʾirsch</em>, hundert davon sind ein Pfund. Geld heißt <em data-wort="w-filuus">filūs</em>.</p>
+      <p>Geschrieben wird der Piaster <em>qirsch</em>. Das Q wird verschluckt, wie bei <em data-wort="w-ahwa">ʾahwa</em>, dem Kaffee. Auch das Trinkgeld, <em data-wort="w-baqshiish">baʾschīsch</em>, wird mit Q geschrieben.</p>`,
   },
   {
     id: "bikam-ginēh",
     lektion: 10,
     frage: "Wie fragst du nach dem Preis, und warum musst du dir bei „Pfund“ keine Mehrzahl merken?",
-    antwort: `<p><em>Bi-kām?</em>, wörtlich „für wie viel?“. Nach einer Zahl bleibt Geld immer in der Einzahl: <em>wāhid ginēh</em>, <em>itnēn ginēh</em>, <em>chamsa ginēh</em>, <em>ʿaschrīn ginēh</em>.</p>
+    antwort: `<p><em data-wort="w-bikaam">Bi-kām?</em>, wörtlich „für wie viel?“. Nach einer Zahl bleibt Geld immer in der Einzahl: <em data-wort="w-waahid-gineeh">wāhid ginēh</em>, <em>itnēn ginēh</em>, <em>chamsa ginēh</em>, <em>ʿaschrīn ginēh</em>.</p>
       <p>Und über zwanzig kommen die Einer zuerst, wie im Deutschen: <em>chamsa w talatīn</em>, fünfunddreißig.</p>`,
   },
   {
@@ -485,68 +485,91 @@ window.CARDS = [
     lektion: 10,
     frage: "Der Taxifahrer soll am Supermarkt halten und warten. Was klärt ihr vorher, und was bekommt er danach?",
     antwort: `<p>Ziel, Halt und Preis vor der Fahrt, am besten über das Hotel, so rät es das Auswärtige Amt. Bezahlt wird nach dem Aussteigen durch das Fenster.</p>
-      <p>Dazu <em>baʾschīsch</em>, Trinkgeld. Ein Reiseveranstalter nennt für einen privaten Flughafentransfer 100 bis 150 Pfund. Wer auf euch wartet, bekommt eher das Obere. Dafür braucht ihr kleine Scheine.</p>`,
+      <p>Dazu <em data-wort="w-baqshiish">baʾschīsch</em>, Trinkgeld. Ein Reiseveranstalter nennt für einen privaten Flughafentransfer 100 bis 150 Pfund. Wer auf euch wartet, bekommt eher das Obere. Dafür braucht ihr kleine Scheine.</p>`,
   },
 ];
 
+// Umrechenkarten in beide Richtungen, gebaut von assets/umrechnen.js. Für jede Karte wird bei jedem Zeigen
+// ein neuer Betrag zwischen von und bis gezogen, in Schritten von schritt. Die Schritte sind so gewählt,
+// dass die Faustregel aus Lektion 10 glatt aufgeht: 30 Pfund sind ein halber Euro, ein halber Euro sind
+// 30 Pfund. kurs und stand stehen dort in Quelle s11. richtung "euro": Euro in Pfund, sonst Pfund in Euro.
+// ziffern: "arabisch" zeigt den Betrag wie auf dem Preisschild.
+window.UMRECHNEN = {
+  lektion: 10,
+  faustregel: 60,
+  kurs: 62.42,
+  stand: "28. Oktober 2026",
+  karten: [
+    { id: "umrechnen-klein", von: 30, bis: 300, schritt: 30 },
+    { id: "umrechnen-mittel", von: 330, bis: 1500, schritt: 30 },
+    { id: "umrechnen-gross", von: 1500, bis: 6000, schritt: 60 },
+    { id: "umrechnen-schild", von: 30, bis: 900, schritt: 30, ziffern: "arabisch" },
+    { id: "umrechnen-euro-klein", richtung: "euro", von: 0.5, bis: 10, schritt: 0.5 },
+    { id: "umrechnen-euro-gross", richtung: "euro", von: 10, bis: 100, schritt: 5 },
+  ],
+};
+
 // Wortkarten für die Sprachübung. review.js macht aus jedem Wort zwei Karten: „sprechen“ (Deutsch,
 // aufdecken, Aufnahme hören) und „hoeren“ (Aufnahme hören, aufdecken, Bedeutung). Deren ids sind
-// `${id}~sprechen` und `${id}~hoeren`. audio ist eine Datei in assets/audio/.
+// `${id}~sprechen` und `${id}~hoeren`. audio ist eine Datei in assets/audio/, ar der Text für die
+// hocharabische Computerstimme, hoch dessen Umschrift. Ein Element mit data-wort="<id>" in einer Lektion
+// oder Karte bekommt über assets/say.js beide Knöpfe davor.
 // extra: Wort, das über den Grundwortschatz hinausgeht (zweite Antwort, Form für sie, seltene Zahl).
 // variante: Hinweis auf eine andere Aussprache oder Schreibweise. Beides kommt nur dran, wenn auf der
 // Wiederholungsseite „Auch Varianten und Extras“ angehakt ist.
 window.WORDS = [
-  { id: "w-sabah-il-kheer", lektion: 9, de: "Guten Morgen", wort: "sabāh il-chēr", audio: "sabah-il-kheer.mp3" },
-  { id: "w-sabah-in-nuur", lektion: 9, de: "Morgen des Lichts (Antwort auf Guten Morgen)", wort: "sabāh in-nūr", audio: "sabah-in-nuur.mp3" },
-  { id: "w-sabah-il-full", extra: true, lektion: 9, de: "Morgen voller Jasmin (Antwort auf Guten Morgen)", wort: "sabāh il-full", audio: "sabah-il-full.mp3" },
-  { id: "w-sabah-il-ishta", extra: true, lektion: 9, de: "Morgen voller Sahne (Antwort auf Guten Morgen)", wort: "sabāh il-ʾishta", audio: "sabah-il-ishta.mp3" },
-  { id: "w-ahlan-wa-sahlan", lektion: 9, de: "willkommen", wort: "ahlan wa sahlan", audio: "ahlan-wa-sahlan.mp3" },
-  { id: "w-ahlan-biik", extra: true, lektion: 9, de: "willkommen auch dir (zu einem Mann)", wort: "ahlan bīk", audio: "ahlan-biik.mp3" },
-  { id: "w-ahlan-biiki", extra: true, lektion: 9, de: "willkommen auch dir (zu einer Frau)", wort: "ahlan bīki", audio: "ahlan-biiki.mp3" },
-  { id: "w-izzayyak", lektion: 9, de: "Wie geht’s? (zu einem Mann)", wort: "izzayyak?", audio: "izzayyak.mp3" },
-  { id: "w-izzayyik", extra: true, lektion: 9, de: "Wie geht’s? (zu einer Frau)", wort: "izzayyik?", audio: "izzayyik.mp3" },
-  { id: "w-kulluh-tamaam", lektion: 9, de: "alles in Ordnung, Gott sei Dank", wort: "kuluh tamām, il-hamdu lillāh", audio: "kulluh-tamaam.mp3" },
-  { id: "w-mia-mia", extra: true, lektion: 9, de: "hundert Prozent, Gott sei Dank", wort: "mia mia, il-hamdu lillāh", audio: "mia-mia.mp3" },
-  { id: "w-shukran", lektion: 9, de: "danke", wort: "schukran", audio: "shukran.mp3" },
-  { id: "w-shukran-awi", lektion: 9, de: "danke sehr", wort: "schukran ʾawi", audio: "shukran-awi.mp3" },
-  { id: "w-alf-shukr", extra: true, lektion: 9, de: "tausend Dank", wort: "alf schukr", audio: "alf-shukr.mp3", hinweis: "Wörtlich tausend Dank, genau wie im Deutschen." },
-  { id: "w-afwan", lektion: 9, de: "gern geschehen", wort: "ʿafwan", audio: "afwan.mp3" },
-  { id: "w-la", lektion: 9, de: "nein", wort: "laʾ", audio: "la.mp3" },
-  { id: "w-maa-salaama", lektion: 9, de: "auf Wiedersehen", wort: "maʿa s-salāma", audio: "maa-salaama.mp3", hinweis: "Wörtlich etwa „mit Unversehrtheit“, gemeint ist „komm heil an“." },
-  { id: "w-yalla", lektion: 9, de: "los!", wort: "yalla", audio: "yalla.mp3" },
-  { id: "w-tamaam", lektion: 9, de: "gut, in Ordnung", wort: "tamām", audio: "tamaam.mp3" },
-  { id: "w-maalesh", lektion: 9, de: "macht nichts, tut mir leid", wort: "maʿlisch", audio: "maalesh.mp3", hinweis: "Passt auf beide Seiten: Wer sich entschuldigt, sagt es, und wer verzeiht, auch." },
-  { id: "w-inshallah", lektion: 9, de: "so Gott will", wort: "inschallah", audio: "inshallah.mp3" },
-  { id: "w-il-hamdu-lillah", lektion: 9, de: "Gott sei Dank", wort: "il-hamdu lillāh", audio: "il-hamdu-lillah.mp3" },
-  { id: "w-gamal", extra: true, lektion: 9, de: "Kamel", wort: "gamal", audio: "gamal.mp3", variante: "In Ägypten ein hartes G, wo das Hocharabische ein J hat." },
-  { id: "w-gamiil", lektion: 9, de: "schön", wort: "gamīl", audio: "gamiil.mp3" },
-  { id: "w-ahwa", lektion: 9, de: "Kaffee, auch Kaffeehaus", wort: "ʾahwa", audio: "ahwa.mp3", variante: "Geschrieben qahwa, das Q wird zum Stopp in der Kehle." },
-  { id: "w-awi", lektion: 9, de: "sehr", wort: "ʾawi", audio: "awi.mp3", variante: "In Oberägypten, also auch in Luxor: gawi." },
-  { id: "w-waahid", lektion: 10, de: "eins", wort: "wāhid", audio: "waahid.mp3" },
-  { id: "w-itneen", lektion: 10, de: "zwei", wort: "itnēn", audio: "itneen.mp3" },
-  { id: "w-talaata", lektion: 10, de: "drei", wort: "talāta", audio: "talaata.mp3", variante: "Hocharabisch thalātha, in Ägypten mit t." },
-  { id: "w-arbaa", lektion: 10, de: "vier", wort: "arbaʿa", audio: "arbaa.mp3" },
-  { id: "w-khamsa", lektion: 10, de: "fünf", wort: "chamsa", audio: "khamsa.mp3", hinweis: "Die arabische Fünf, ٥, sieht aus wie unsere Null." },
-  { id: "w-sitta", lektion: 10, de: "sechs", wort: "sitta", audio: "sitta.mp3" },
-  { id: "w-sabaa", lektion: 10, de: "sieben", wort: "sabʿa", audio: "sabaa.mp3" },
-  { id: "w-tamanya", lektion: 10, de: "acht", wort: "tamanya", audio: "tamanya.mp3" },
-  { id: "w-tisaa", lektion: 10, de: "neun", wort: "tisʿa", audio: "tisaa.mp3" },
-  { id: "w-aashara", lektion: 10, de: "zehn", wort: "ʿaschara", audio: "aashara.mp3" },
-  { id: "w-ishriin", lektion: 10, de: "zwanzig", wort: "ʿaschrīn", audio: "ishriin.mp3" },
-  { id: "w-khamsiin", lektion: 10, de: "fünfzig", wort: "chamsīn", audio: "khamsiin.mp3" },
-  { id: "w-mia", lektion: 10, de: "hundert", wort: "mia", audio: "mia.mp3", hinweis: "Wie in mia mia, hundert Prozent." },
-  { id: "w-miteen", extra: true, lektion: 10, de: "zweihundert", wort: "mitēn", audio: "miteen.mp3" },
-  { id: "w-alf", lektion: 10, de: "tausend", wort: "alf", audio: "alf.mp3" },
-  { id: "w-bikaam", lektion: 10, de: "Wie viel kostet das?", wort: "bi-kām?", audio: "bikaam.mp3" },
-  { id: "w-waahid-gineeh", lektion: 10, de: "ein Pfund", wort: "wāhid ginēh", audio: "waahid-gineeh.mp3", hinweis: "Gineh kommt von der britischen Goldmünze Guinea." },
-  { id: "w-irsh", extra: true, lektion: 10, de: "Piaster, ein Hundertstel Pfund", wort: "ʾirsch", audio: "irsh.mp3", variante: "Geschrieben qirsch, das Q wird verschluckt." },
-  { id: "w-ghaali", lektion: 10, de: "teuer", wort: "ghāli", audio: "ghaali.mp3" },
-  { id: "w-rikhiis", extra: true, lektion: 10, de: "billig", wort: "richīs", audio: "rikhiis.mp3" },
-  { id: "w-subirmarkit", lektion: 10, de: "Supermarkt", wort: "subirmarkit", audio: "subirmarkit.mp3" },
-  { id: "w-hina", lektion: 10, de: "hier", wort: "hina", audio: "hina.mp3" },
-  { id: "w-baqshiish", lektion: 10, de: "Trinkgeld", wort: "baʾschīsch", audio: "baqshiish.mp3" },
-  { id: "w-tultumiyya", extra: true, lektion: 10, de: "dreihundert", wort: "tultumiyya", audio: "tultumiyya.mp3" },
-  { id: "w-khamsumiyya", extra: true, lektion: 10, de: "fünfhundert", wort: "chumsumiyya", audio: "khamsumiyya.mp3" },
-  { id: "w-istanna", lektion: 10, de: "warte", wort: "istanna", audio: "istanna.mp3", hinweis: "Am Supermarkt: istanna hina, warte hier." },
-  { id: "w-thawaani", extra: true, lektion: 10, de: "einen Moment", wort: "thawāni", audio: "thawaani.mp3", hinweis: "Wörtlich „Sekunden“." },
+  { id: "w-sabah-il-kheer", lektion: 9, de: "Guten Morgen", wort: "sabāh il-chēr", audio: "sabah-il-kheer.mp3", ar: "صَبَاح الْخَيْر", hoch: "ṣabāḥ al-chair" },
+  { id: "w-sabah-in-nuur", lektion: 9, de: "Morgen des Lichts (Antwort auf Guten Morgen)", wort: "sabāh in-nūr", audio: "sabah-in-nuur.mp3", ar: "صَبَاح النُّور", hoch: "ṣabāḥ an-nūr" },
+  { id: "w-sabah-il-full", extra: true, lektion: 9, de: "Morgen voller Jasmin (Antwort auf Guten Morgen)", wort: "sabāh il-full", audio: "sabah-il-full.mp3", ar: "صَبَاح الْفُلّ", hoch: "ṣabāḥ al-full" },
+  { id: "w-sabah-il-ishta", extra: true, lektion: 9, de: "Morgen voller Sahne (Antwort auf Guten Morgen)", wort: "sabāh il-ʾishta", audio: "sabah-il-ishta.mp3", ar: "صَبَاح الْقِشْطَة", hoch: "ṣabāḥ al-qischṭa" },
+  { id: "w-ahlan-wa-sahlan", lektion: 9, de: "willkommen", wort: "ahlan wa sahlan", audio: "ahlan-wa-sahlan.mp3", ar: "أَهْلًا وَسَهْلًا", hoch: "ahlan wa sahlan" },
+  { id: "w-ahlan-biik", extra: true, lektion: 9, de: "willkommen auch dir (zu einem Mann)", wort: "ahlan bīk", audio: "ahlan-biik.mp3", ar: "أَهْلًا بِكَ", hoch: "ahlan bika" },
+  { id: "w-ahlan-biiki", extra: true, lektion: 9, de: "willkommen auch dir (zu einer Frau)", wort: "ahlan bīki", audio: "ahlan-biiki.mp3", ar: "أَهْلًا بِكِ", hoch: "ahlan biki" },
+  { id: "w-izzayyak", lektion: 9, de: "Wie geht’s? (zu einem Mann)", wort: "izzayyak?", audio: "izzayyak.mp3", ar: "كَيْفَ حَالُكَ", hoch: "kaifa ḥāluka" },
+  { id: "w-izzayyik", extra: true, lektion: 9, de: "Wie geht’s? (zu einer Frau)", wort: "izzayyik?", audio: "izzayyik.mp3", ar: "كَيْفَ حَالُكِ", hoch: "kaifa ḥāluki" },
+  { id: "w-kulluh-tamaam", lektion: 9, de: "alles in Ordnung, Gott sei Dank", wort: "kuluh tamām, il-hamdu lillāh", audio: "kulluh-tamaam.mp3", ar: "كُلُّهُ تَمَام، الْحَمْدُ لِلّٰه", hoch: "kulluhu tamām, al-ḥamdu lillāh" },
+  { id: "w-mia-mia", extra: true, lektion: 9, de: "hundert Prozent, Gott sei Dank", wort: "mia mia, il-hamdu lillāh", audio: "mia-mia.mp3", ar: "مِئَة مِئَة، الْحَمْدُ لِلّٰه", hoch: "miʾa miʾa, al-ḥamdu lillāh" },
+  { id: "w-shukran", lektion: 9, de: "danke", wort: "schukran", audio: "shukran.mp3", ar: "شُكْرًا", hoch: "schukran" },
+  { id: "w-shukran-awi", lektion: 9, de: "danke sehr", wort: "schukran ʾawi", audio: "shukran-awi.mp3", ar: "شُكْرًا جَزِيلًا", hoch: "schukran dschazīlan" },
+  { id: "w-alf-shukr", extra: true, lektion: 9, de: "tausend Dank", wort: "alf schukr", audio: "alf-shukr.mp3", ar: "أَلْف شُكْر", hoch: "alf schukr", hinweis: "Wörtlich tausend Dank, genau wie im Deutschen." },
+  { id: "w-afwan", lektion: 9, de: "gern geschehen", wort: "ʿafwan", audio: "afwan.mp3", ar: "عَفْوًا", hoch: "ʿafwan" },
+  { id: "w-la", lektion: 9, de: "nein", wort: "laʾ", audio: "la.mp3", ar: "لَا", hoch: "lā" },
+  { id: "w-maa-salaama", lektion: 9, de: "auf Wiedersehen", wort: "maʿa s-salāma", audio: "maa-salaama.mp3", ar: "مَعَ السَّلَامَة", hoch: "maʿa s-salāma", hinweis: "Wörtlich etwa „mit Unversehrtheit“, gemeint ist „komm heil an“." },
+  { id: "w-yalla", lektion: 9, de: "los!", wort: "yalla", audio: "yalla.mp3", ar: "هَيَّا", hoch: "hayyā" },
+  { id: "w-tamaam", lektion: 9, de: "gut, in Ordnung", wort: "tamām", audio: "tamaam.mp3", ar: "تَمَام", hoch: "tamām" },
+  { id: "w-maalesh", lektion: 9, de: "macht nichts, tut mir leid", wort: "maʿlisch", audio: "maalesh.mp3", ar: "لَا بَأْس", hoch: "lā baʾs", hinweis: "Passt auf beide Seiten: Wer sich entschuldigt, sagt es, und wer verzeiht, auch." },
+  { id: "w-inshallah", lektion: 9, de: "so Gott will", wort: "inschallah", audio: "inshallah.mp3", ar: "إِنْ شَاءَ اللّٰه", hoch: "in schāʾa llāh" },
+  { id: "w-il-hamdu-lillah", lektion: 9, de: "Gott sei Dank", wort: "il-hamdu lillāh", audio: "il-hamdu-lillah.mp3", ar: "الْحَمْدُ لِلّٰه", hoch: "al-ḥamdu lillāh" },
+  { id: "w-gamal", extra: true, lektion: 9, de: "Kamel", wort: "gamal", audio: "gamal.mp3", ar: "جَمَل", hoch: "jamal", variante: "In Ägypten ein hartes G, wo das Hocharabische ein J hat." },
+  { id: "w-gamiil", lektion: 9, de: "schön", wort: "gamīl", audio: "gamiil.mp3", ar: "جَمِيل", hoch: "jamīl" },
+  { id: "w-ahwa", lektion: 9, de: "Kaffee, auch Kaffeehaus", wort: "ʾahwa", audio: "ahwa.mp3", ar: "قَهْوَة", hoch: "qahwa", variante: "Geschrieben qahwa, das Q wird zum Stopp in der Kehle." },
+  { id: "w-awi", lektion: 9, de: "sehr", wort: "ʾawi", audio: "awi.mp3", ar: "قَوِي", hoch: "qawi", variante: "In Oberägypten, also auch in Luxor: gawi." },
+  { id: "w-waahid", lektion: 10, de: "eins", wort: "wāhid", audio: "waahid.mp3", ar: "وَاحِد", hoch: "wāḥid" },
+  { id: "w-itneen", lektion: 10, de: "zwei", wort: "itnēn", audio: "itneen.mp3", ar: "اِثْنَان", hoch: "ithnān" },
+  { id: "w-talaata", lektion: 10, de: "drei", wort: "talāta", audio: "talaata.mp3", ar: "ثَلَاثَة", hoch: "thalātha", variante: "Hocharabisch thalātha, in Ägypten mit t." },
+  { id: "w-arbaa", lektion: 10, de: "vier", wort: "arbaʿa", audio: "arbaa.mp3", ar: "أَرْبَعَة", hoch: "arbaʿa" },
+  { id: "w-khamsa", lektion: 10, de: "fünf", wort: "chamsa", audio: "khamsa.mp3", ar: "خَمْسَة", hoch: "chamsa", hinweis: "Die arabische Fünf, ٥, sieht aus wie unsere Null." },
+  { id: "w-sitta", lektion: 10, de: "sechs", wort: "sitta", audio: "sitta.mp3", ar: "سِتَّة", hoch: "sitta" },
+  { id: "w-sabaa", lektion: 10, de: "sieben", wort: "sabʿa", audio: "sabaa.mp3", ar: "سَبْعَة", hoch: "sabʿa" },
+  { id: "w-tamanya", lektion: 10, de: "acht", wort: "tamanya", audio: "tamanya.mp3", ar: "ثَمَانِيَة", hoch: "thamāniya" },
+  { id: "w-tisaa", lektion: 10, de: "neun", wort: "tisʿa", audio: "tisaa.mp3", ar: "تِسْعَة", hoch: "tisʿa" },
+  { id: "w-aashara", lektion: 10, de: "zehn", wort: "ʿaschara", audio: "aashara.mp3", ar: "عَشَرَة", hoch: "ʿaschara" },
+  { id: "w-ishriin", lektion: 10, de: "zwanzig", wort: "ʿaschrīn", audio: "ishriin.mp3", ar: "عِشْرُون", hoch: "ʿischrūn" },
+  { id: "w-khamsiin", lektion: 10, de: "fünfzig", wort: "chamsīn", audio: "khamsiin.mp3", ar: "خَمْسُون", hoch: "chamsūn" },
+  { id: "w-mia", lektion: 10, de: "hundert", wort: "mia", audio: "mia.mp3", ar: "مِئَة", hoch: "miʾa", hinweis: "Wie in mia mia, hundert Prozent." },
+  { id: "w-miteen", extra: true, lektion: 10, de: "zweihundert", wort: "mitēn", audio: "miteen.mp3", ar: "مِئَتَان", hoch: "miʾatān" },
+  { id: "w-alf", lektion: 10, de: "tausend", wort: "alf", audio: "alf.mp3", ar: "أَلْف", hoch: "alf" },
+  { id: "w-bikaam", lektion: 10, de: "Wie viel kostet das?", wort: "bi-kām?", audio: "bikaam.mp3", ar: "بِكَمْ", hoch: "bikam" },
+  { id: "w-waahid-gineeh", lektion: 10, de: "ein Pfund", wort: "wāhid ginēh", audio: "waahid-gineeh.mp3", ar: "جُنَيْه وَاحِد", hoch: "dschunaih wāḥid", hinweis: "Gineh kommt von der britischen Goldmünze Guinea." },
+  { id: "w-irsh", extra: true, lektion: 10, de: "Piaster, ein Hundertstel Pfund", wort: "ʾirsch", audio: "irsh.mp3", ar: "قِرْش", hoch: "qirsch", variante: "Geschrieben qirsch, das Q wird verschluckt." },
+  { id: "w-filuus", extra: true, lektion: 10, de: "Geld", wort: "filūs", audio: "filuus.mp3", ar: "نُقُود", hoch: "nuqūd" },
+  { id: "w-ghaali", lektion: 10, de: "teuer", wort: "ghāli", audio: "ghaali.mp3", ar: "غَالِي", hoch: "ghālī" },
+  { id: "w-rikhiis", extra: true, lektion: 10, de: "billig", wort: "richīs", audio: "rikhiis.mp3", ar: "رَخِيص", hoch: "rachīṣ" },
+  { id: "w-subirmarkit", lektion: 10, de: "Supermarkt", wort: "subirmarkit", audio: "subirmarkit.mp3", ar: "سُوبَرْمَارْكِت", hoch: "sūbermarket" },
+  { id: "w-hina", lektion: 10, de: "hier", wort: "hina", audio: "hina.mp3", ar: "هُنَا", hoch: "hunā" },
+  { id: "w-baqshiish", lektion: 10, de: "Trinkgeld", wort: "baʾschīsch", audio: "baqshiish.mp3", ar: "بَقْشِيش", hoch: "baqschīsch" },
+  { id: "w-tultumiyya", extra: true, lektion: 10, de: "dreihundert", wort: "tultumiyya", audio: "tultumiyya.mp3", ar: "ثَلَاثُمِئَة", hoch: "thalāthumiʾa" },
+  { id: "w-khamsumiyya", extra: true, lektion: 10, de: "fünfhundert", wort: "chumsumiyya", audio: "khamsumiyya.mp3", ar: "خَمْسُمِئَة", hoch: "chamsumiʾa" },
+  { id: "w-istanna", lektion: 10, de: "warte", wort: "istanna", audio: "istanna.mp3", ar: "اِنْتَظِرْ", hoch: "intaẓir", hinweis: "Am Supermarkt: istanna hina, warte hier." },
+  { id: "w-thawaani", extra: true, lektion: 10, de: "einen Moment", wort: "thawāni", audio: "thawaani.mp3", ar: "لَحْظَة", hoch: "laḥẓa", hinweis: "Wörtlich „Sekunden“." },
 ];
