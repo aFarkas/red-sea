@@ -66,6 +66,14 @@
   Frei. Use for: Aufblasen mit Wasser, fünffacher Sauerstoffverbrauch, 5,6 h Erholung.
 - [Noguchi & Arakawa (2008): Tetrodotoxin – Distribution and Accumulation in Aquatic Organisms, Marine Drugs](https://pmc.ncbi.nlm.nih.gov/articles/PMC2525488/)
   Übersichtsarbeit. Use for: Gift aus Bakterien über die Nahrungskette, Zuchtfische ungiftig, Leber und Eierstöcke.
+- [Cook (1777): A Voyage Towards the South Pole and Round the World, Band 2 (Project Gutenberg)](https://www.gutenberg.org/cache/epub/15869/pg15869-images.html)
+  Primärquelle, Tagebuch. Use for: Kugelfisch-Leber und Rogen in Neukaledonien, September 1774, Feder und Wasserkrug, totes Schwein.
+- [Doherty (2005): Captain Cook on poison fish, Neurology 65:1788–1791](https://hab.whoi.edu/wp-content/uploads/2020/03/doherty2005_captaincook.pdf)
+  Use for: Forster warnt Cook, Cook hatte den Fisch schon gegessen; Pantomime der Einheimischen (Forster). Bildunterschrift Fig. 2: Zeichnung im NHM London als „Tetraodon lagocephalus scleratus, Silverstripe blaasop“ verzeichnet, nicht Forsters eigene Beschriftung.
+- [Sabrah, El-Ganainy & Zaky (2006): Biology and toxicity of the pufferfish Lagocephalus sceleratus from the Gulf of Suez, Egyptian Journal of Aquatic Research](https://niof-eg.com/wp-content/uploads/2022/07/BIOLOGY-AND-TOXICITY-OF-THE-PUFFERFISH.pdf)
+  Use for: Anlanden im Roten Meer verboten (Stand 2006), trotzdem gegessen; in Suez als Delikatesse, angeblich gut für Potenz und gegen Rückenschmerzen; häufig im Golf von Suez; Gonaden am giftigsten zur Laichzeit (April–Juni).
+- [CIESM Atlas of Exotic Fishes: Lagocephalus sceleratus](https://ciesm.org/atlas/fishes_2nd_edition/Lagocephalus_sceleratus.pdf)
+  Use for: Aussehen, Größe, Lebensraum über Sand am Riff, Rotes Meer bis 250 m, über den Suezkanal ins Mittelmeer, tödliche Vergiftungen.
 - [Van Wassenbergh et al. (2015): Boxfish swimming paradox resolved, J R Soc Interface](https://pmc.ncbi.nlm.nih.gov/articles/PMC4305415)
   Use for: Kofferfischform macht wendig statt stabil, Bionic Car, Schwimmen mit den Flossen.
 - [Albins & Lyons (2012): Invasive red lionfish blow directed jets of water at prey fish, MEPS 448:1–5](https://int-res.com/abstracts/meps/v448/p1-5)
@@ -125,6 +133,25 @@
   Reiseveranstalter, nur als Richtwert. Use for: Trinkgeld-Beträge für Transfer, Taxi, Hotel; kleine Scheine. Andere Ratgeber nennen andere Beträge.
 - [Ad-Dostor (2024): Tarifvertrag Hotel und Tourismusgewerkschaft](https://www.dostor.org/4790050)
   Use for: Servicezuschlag in Hotels gilt als Lohn; Ministerialerlass 125/2003 gab 20 % an das Haus „für Bruch, Verlust und Beschädigung“, das Verfassungsgericht hat diese Klausel gekippt. Kandidat für eine Lektion zu Alltag oder Restaurant.
+- [Anna Kipervaser: Voices and Faces of the Adhan: Cairo](https://www.oralliterature.org/collections/akipervaser001.html)
+  Aufnahmen 2009–2010 im World Oral Literature Project, Universität Cambridge, CC BY-NC-ND 3.0. Die MP3 lässt sich nicht direkt einbinden, nur verlinken. Use for: wie Kairo vor dem einheitlichen Ruf klang, einzelne Muezzine mit Namen, „über 30.000 Muezzine“. Die 4000 bei The National und Egypt Independent sind die Moscheen der ersten Projektstufe, nicht alle.
+- [Chammah (2012): Decibels and Debate, The Revealer](https://therevealer.org/decibels-and-debate-unifying-egypts-call-to-prayer/) und [Bradley (2010): Cairo set to centralise the city’s call to prayer, The National](https://thenationalnews.com/world/africa/cairo-set-to-centralise-the-city-s-call-to-prayer-1.502268)
+  Use for: einheitlicher Gebetsruf in Kairo, 4000 Moscheen, 20 Stimmen, Empfänger ab August 2010, abgezogene Stecker („We all do it“). Die Zahl von 200.000 Muezzinen bei Chammah ist unplausibel und nicht verwendet.
+- [Egypt Independent (2021): Unified adhan](https://www.egyptindependent.com/egypt-authorities-includes-more-mosques-in-the-unified-adhan-project/)
+  Use for: 3538 Moscheen in Groß-Kairo, Lautstärke fest eingestellt, Ortszeit je Provinz, Ausdehnung auf andere Provinzen geplant.
+- [PrayTimes.org: Calculation Methods](https://praytimes.org/docs/methods) und [Calculation](https://praytimes.org/docs/calculation); Zeiten über die [Aladhan-API](https://aladhan.com/prayer-times-api) (Methode 5 = ägyptisch)
+  Use for: Gebetszeiten nach Sonnenstand, ägyptische Methode 19,5°/17,5°, Zeiten für Safaga und Luxor, Gebetsrichtung.
+- Hadith-Übersetzungen: [Abu Dawud 498](https://ihadis.com/en/abu-dawud/hadith/498) (Fahne, Horn, Glocke), [Ibn Majah 716](https://islamtics.com/hadith/ibn-majah/716/) (Beten ist besser als Schlafen, Bewertung umstritten), [Muslim 379](https://ihadis.com/en/muslim/hadith/379) (Wortlaut), [Bukhari 510](https://ihadis.com/en/bukhari/hadith/510) (vor Betenden vorbeigehen). sunnah.com blockt den Abruf.
+- [Hoberman (1983): The First Muezzin, Aramco World](https://archive.aramcoworld.com/issue/198304/the.first.muezzin.htm)
+  Use for: Bilal, Herkunft, Stimme, Ruf von der Kaaba 630. Achtung: Die Aussage, der Gebetsruf komme im Koran nur einmal vor (beim Freitag), stimmt nicht, Sure 5:58 nennt ihn auch.
+- [Hadith Answers: Bilals s und sch](https://hadithanswers.com/?p=1080)
+  Use for: Die Geschichte, Bilal habe s statt sch gesagt, gilt bei Ibn Kathir, al-Mizzi und al-Qari als ohne Grundlage; Bilal galt als sprachgewandt.
+- [ARCE: Abu’l-Hajjaj Mosque at Luxor Temple](https://arce.org/?p=2812) und [University of Memphis: Court of Ramesses II](https://www.memphis.edu/egypt/resources/colortour/luxor4.php)
+  Use for: Moschee im Tempel von Luxor, fast 9 m hoch, Heiliger starb 1244, Minarette; Säulenhof, Ramses II. 1279–1213 v. Chr.
+- [Egyptian Streets (2020): The Mosque Located Inside Luxor’s Iconic Temple](https://egyptianstreets.com/2020/01/27/islam-meets-ancient-egypt-the-mosque-located-inside-luxors-iconic-temple/)
+  Use for: Besuch der Moschee (Treppe von der Straße, Kopftuch), Maspero. Sagt „aus Damaskus“, ARCE „aus Bagdad“; Lektion folgt ARCE.
+- [Nile Scribes (2018): Abu el-Haggag Festival](https://nilescribes.org/2018/05/12/abu-el-haggag-festival/)
+  Blog, Augenzeuge 2013. Use for: Mulid mit Booten zwei Wochen vor Ramadan; Vergleich mit dem Opet-Fest nur als Frage, nicht belegt. Kandidat für die Luxor-Tempel-Lektion.
 
 ## Wisdom (Communities)
 
@@ -139,6 +166,8 @@
 
 - Ägyptische Aussprache stützt sich auf Lisaan Masry und, über Wikipedia, auf Watson (2002). Eine frei lesbare Primärquelle zur Dialektologie Oberägyptens (Behnstedt & Woidich 1985) ist nicht gelesen.
 - Ob die Aufnahmen bei Lisaan Masry von Muttersprachlern gesprochen sind, sagt die Seite nicht ausdrücklich.
+- Einheitlicher Gebetsruf: Stand nach 2021 und ob er Safaga oder Luxor erreicht hat, belegt keine gelesene Quelle. Ob man den Ruf in Soma Bay hört, ebenfalls nicht.
+- Höhe der „Tür in der Luft“ an der Abu-el-Haggag-Moschee: Angaben von 8 bis 15 m, keine Grabungsquelle gelesen.
 - Trinkgeld in Ägypten: Keine amtliche oder ägyptische journalistische Quelle zu üblichen Beträgen gefunden, nur Reiseveranstalter, die sich widersprechen.
 - Ob Preisschilder in ägyptischen Supermärkten arabische oder westliche Ziffern tragen, belegt keine Quelle. Das Gesetz verlangt nur Arabisch.
 

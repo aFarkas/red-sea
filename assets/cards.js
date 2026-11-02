@@ -487,6 +487,55 @@ window.CARDS = [
     antwort: `<p>Ziel, Halt und Preis vor der Fahrt, am besten über das Hotel, so rät es das Auswärtige Amt. Bezahlt wird nach dem Aussteigen durch das Fenster.</p>
       <p>Dazu <em data-wort="w-baqshiish">baʾschīsch</em>, Trinkgeld. Ein Reiseveranstalter nennt für einen privaten Flughafentransfer 100 bis 150 Pfund. Wer auf euch wartet, bekommt eher das Obere. Dafür braucht ihr kleine Scheine.</p>`,
   },
+  {
+    id: "morgenruf-schlaf",
+    lektion: 11,
+    frage: "Welche Zeile hörst du nur im Morgenruf, und woher kommt sie der Überlieferung nach?",
+    antwort: `<p><em>As-salātu chairun min an-naum</em>, Beten ist besser als Schlafen. Bilal, der Gebetsrufer des Propheten, wollte Mohammed zum Morgengebet wecken. Man sagte ihm, der Prophet schlafe, und Bilal rief zweimal diesen Satz. Er kam in den Morgenruf und blieb dort.</p>
+      <p>Ob es genau so war, darüber streiten die Gelehrten. Die Zeile hört man trotzdem jeden Morgen.</p>`,
+  },
+  {
+    id: "glocke-horn",
+    lektion: 11,
+    frage: "Warum ruft im Islam eine Stimme zum Gebet und keine Glocke und kein Horn?",
+    antwort: `<p>In Medina wurde beraten. Eine Fahne gefiel dem Propheten nicht, das Horn war der Brauch der Juden, die Glocke der Brauch der Christen. Dann träumte Abdullah ibn Zaid die Worte des Rufs.</p>
+      <p>Rufen sollte sie Bilal, ein befreiter Sklave aus Äthiopien, weil er die durchdringendere Stimme hatte. Er gilt als erster Muezzin.</p>`,
+  },
+  {
+    id: "gebetszeiten-sonne",
+    lektion: 11,
+    frage: "Wonach richten sich die fünf Gebetszeiten, und warum ruft es in Ägypten so früh am Morgen?",
+    antwort: `<p>Nach der Sonne: Morgendämmerung, Mittag, Nachmittag, Sonnenuntergang, Nacht. Der Nachmittagsruf kommt, wenn ein Schatten um eine ganze Körperlänge länger ist als am Mittag.</p>
+      <p>Die ägyptische Rechenmethode ruft am Morgen, wenn die Sonne noch 19,5 Grad unter dem Horizont steht. In Safaga ist das Anfang November um 4:32 Uhr, fast eineinhalb Stunden vor Sonnenaufgang. Von zehn gängigen Methoden weckt nur die aus Singapur früher.</p>`,
+  },
+  {
+    id: "kairo-stecker",
+    lektion: 11,
+    frage: "Kairo wollte zuerst 4000 Moscheen aus einem einzigen Studio beschallen. Was machten viele Muezzine?",
+    antwort: `<p>Sie zogen den Stecker. Ab August 2010 bekamen die Moscheen kleine schwarze Empfänger, fünf Monate später begann die Revolution, und niemand kontrollierte mehr. Sheikh Said aus der Altstadt schnitt die Stimme aus dem Kasten mitten im Satz ab und rief selbst: „Das machen wir alle.“ Der Muezzin gegenüber: „Sein Kasten ist kaputt, genau wie meiner.“</p>
+      <p>Das Ministerium blieb dran, 2021 waren über 3500 Moscheen in Groß-Kairo angeschlossen.</p>`,
+  },
+  {
+    id: "moschee-im-tempel",
+    lektion: 11,
+    frage: "Im Tempel von Luxor steht eine Moschee fast neun Meter über dem Boden. Warum so hoch?",
+    antwort: `<p>Als sie gebaut wurde, lag der Tempel schon halb unter Schutt. Ihr Heiliger, Abu’l-Haggag, starb 1244 und wurde auf dem Dach einer alten Kirche bestattet, sein Sohn errichtete dort den ersten Bau.</p>
+      <p>Ab den 1880er Jahren grub man den Tempel aus und riss die alte Stadt darauf ab, nur die Moschee blieb. Nach dem Brand 2007 fand man unter ihrem Putz und Boden Hieroglyphen. Heute sitzt die Moschee in der Nordostecke des Hofs Ramses’ II., auf Hof und Mauer des Pharaos.</p>`,
+  },
+  {
+    id: "vor-dem-betenden",
+    lektion: 11,
+    frage: "Jemand betet am Straßenrand. Was solltest du nicht tun, und was hat die Zahl vierzig damit zu tun?",
+    antwort: `<p>Nicht direkt vor ihm vorbeigehen. Wer wüsste, wie schwer das wiegt, würde lieber vierzig warten, sagt ein Hadith. Schon der Überlieferer wusste nicht mehr, ob vierzig Tage, Monate oder Jahre.</p>
+      <p>Gebetet wird Richtung Mekka, von Safaga aus nach Südosten, übers Rote Meer.</p>`,
+  },
+  {
+    id: "azan-gamia",
+    lektion: 11,
+    frage: "Gebetsruf, Gebet, Moschee, Freitag: Wie heißt das auf Ägyptisch?",
+    antwort: `<p><em data-wort="w-azaan">Azān</em>, <em data-wort="w-sala">salāt</em>, <em data-wort="w-gaamia">gāmiʿ</em>, <em data-wort="w-yoom-il-gumaa">yōm il-gumʿa</em>.</p>
+      <p>Hocharabisch heißt der Ruf <em>adhān</em>, mit einem th wie im englischen „this“. Ägypten macht ein weiches s daraus. Und in <em data-wort="w-gaamia">gāmiʿ</em> und <em data-wort="w-yoom-il-gumaa">yōm il-gumʿa</em> steckt das harte G wie in <em data-wort="w-gamal">gamal</em>.</p>`,
+  },
 ];
 
 // Umrechenkarten in beide Richtungen, gebaut von assets/umrechnen.js. Für jede Karte wird bei jedem Zeigen
@@ -572,4 +621,13 @@ window.WORDS = [
   { id: "w-khamsumiyya", extra: true, lektion: 10, de: "fünfhundert", wort: "chumsumiyya", audio: "khamsumiyya.mp3", ar: "خَمْسُمِئَة", hoch: "chamsumiʾa" },
   { id: "w-istanna", lektion: 10, de: "warte", wort: "istanna", audio: "istanna.mp3", ar: "اِنْتَظِرْ", hoch: "intaẓir", hinweis: "Am Supermarkt: istanna hina, warte hier." },
   { id: "w-thawaani", extra: true, lektion: 10, de: "einen Moment", wort: "thawāni", audio: "thawaani.mp3", ar: "لَحْظَة", hoch: "laḥẓa", hinweis: "Wörtlich „Sekunden“." },
+  { id: "w-azaan", lektion: 11, de: "Gebetsruf", wort: "azān", audio: "azaan.mp3", ar: "أَذَان", hoch: "adhān", variante: "Hocharabisch adhān mit th wie im englischen „this“, in Ägypten ein weiches s." },
+  { id: "w-sala", lektion: 11, de: "Gebet", wort: "salāt", audio: "sala.mp3", ar: "صَلَاة", hoch: "ṣalāh" },
+  { id: "w-gaamia", lektion: 11, de: "Moschee", wort: "gāmiʿ", audio: "gaamia.mp3", ar: "جَامِع", hoch: "dschāmiʿ" },
+  { id: "w-yoom-il-gumaa", lektion: 11, de: "Freitag", wort: "yōm il-gumʿa", audio: "yoom-il-gumaa.mp3", ar: "يَوْم الْجُمُعَة", hoch: "yaum al-dschumuʿa" },
+  { id: "w-salaat-il-fagr", extra: true, lektion: 11, de: "Morgengebet", wort: "salāt il-fagr", audio: "salaat-il-fagr.mp3", ar: "صَلَاة الْفَجْر", hoch: "ṣalāt al-fadschr" },
+  { id: "w-salaat-iz-zuhr", extra: true, lektion: 11, de: "Mittagsgebet", wort: "salāt iz-zuhr", audio: "salaat-iz-zuhr.mp3", ar: "صَلَاة الظُّهْر", hoch: "ṣalāt aẓ-ẓuhr" },
+  { id: "w-salaat-il-asr", extra: true, lektion: 11, de: "Nachmittagsgebet", wort: "salāt il-ʿasr", audio: "salaat-il-asr.mp3", ar: "صَلَاة الْعَصْر", hoch: "ṣalāt al-ʿaṣr" },
+  { id: "w-salaat-il-maghrib", extra: true, lektion: 11, de: "Abendgebet", wort: "salāt il-maghrib", audio: "salaat-il-maghrib.mp3", ar: "صَلَاة الْمَغْرِب", hoch: "ṣalāt al-maghrib" },
+  { id: "w-salaat-il-isha", extra: true, lektion: 11, de: "Nachtgebet", wort: "salāt il-ʿischa", audio: "salaat-il-isha.mp3", ar: "صَلَاة الْعِشَاء", hoch: "ṣalāt al-ʿischāʾ" },
 ];
