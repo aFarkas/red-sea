@@ -78,5 +78,5 @@ Alles vor der Lektion an Quellen prüfen. Der Haken nach dem Doppelpunkt ist der
 - Memnonkolosse: In der Antike „sangen“ sie bei Sonnenaufgang, bis ein Kaiser sie reparieren ließ. Prüfen.
 - Karnak und Luxor-Tempel: Sphinx-Allee, Moschee Abu el-Haggag oben auf dem Luxor-Tempel. Prüfen.
 - Sprache und Alltag: Gebetsruf fünfmal am Tag, Freitag als Wochenende, Handeln als Gespräch, Bakschisch, Tee und Begrüßungsrituale, Gesten (Fingerspitzen zusammen = „Moment“). Prüfen.
-- Essen: Koschari, Ful, Fisch in El Quseir. Was man probieren sollte und wie man es bestellt. Sie kochen viel selbst (Lernnotiz 10): Wörter für Obst, Gemüse, Fisch und Mengen auf dem Markt.
+- Essen: Koschari, Ful, Taʿmiyya stehen in Lektion 12. Offen: was man in El Quseir und Luxor ohne Fleisch und Fisch probieren sollte. Sie kochen viel selbst (Lernnotiz 10): Wörter für Obst, Gemüse und Mengen auf dem Markt.
 - Restaurant und Hotelrechnung: Der Servicezuschlag gilt in Ägypten als Lohn. Bis 2024 durfte ein Hotel per Erlass 20 % davon „für Bruch, Verlust und Beschädigung“ behalten, dann kippte das Verfassungsgericht die Klausel (Ad-Dostor, 2024). Prüfen, ob und wie viel Zuschlag auf Restaurantrechnungen steht.

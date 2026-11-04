@@ -536,6 +536,75 @@ window.CARDS = [
     antwort: `<p><em data-wort="w-azaan">Azān</em>, <em data-wort="w-sala">salāt</em>, <em data-wort="w-gaamia">gāmiʿ</em>, <em data-wort="w-yoom-il-gumaa">yōm il-gumʿa</em>.</p>
       <p>Hocharabisch heißt der Ruf <em>adhān</em>, mit einem th wie im englischen „this“. Ägypten macht ein weiches s daraus. Und in <em data-wort="w-gaamia">gāmiʿ</em> und <em data-wort="w-yoom-il-gumaa">yōm il-gumʿa</em> steckt das harte G wie in <em data-wort="w-gamal">gamal</em>.</p>`,
   },
+  {
+    id: "attar-apotheker",
+    lektion: 12,
+    frage: "Was macht ein ʿattār, außer Gewürze zu verkaufen?",
+    antwort: `<p>Oft ist er auch Apotheker. Als 2017 in Ägypten Medikamente knapp wurden, standen in Kairo die Leute vor den Kräuterläden Schlange. Die Kunden beschreiben ihre Beschwerden, er mischt Kräuter und Gewürze und sagt, wie man sie nimmt. So erzählte es Samy al-Attar der Agentur Reuters.</p>
+      <p>Ein guter <em data-wort="w-attaar">ʿattār</em> finde für fast alle nicht lebensbedrohlichen Krankheiten einen Ersatz, sagte er. Sein Nachname ist der Beruf.</p>`,
+  },
+  {
+    id: "karkade-kelch",
+    lektion: 12,
+    frage: "Was ist karkadē genau, und wie trinkt man ihn in Ägypten?",
+    antwort: `<p><em data-wort="w-karkadeeh">Karkadē</em> ist Hibiskus, genauer der fleischige rote Kelch um die Samenkapsel, nicht die Blüte. Die großen Felder liegen in Oberägypten und im Fayum.</p>
+      <p>Kairos Hotels boten ihn eisgekühlt im Sommer und heiß im Winter an. Viele Familien brechen im Ramadan das Fasten mit ihm.</p>`,
+  },
+  {
+    id: "tamiya-saubohne",
+    lektion: 12,
+    frage: "Was unterscheidet die ägyptische Taʿmiyya vom Falafel, das du kennst?",
+    antwort: `<p>Sie ist aus Saubohnen, <em data-wort="w-fuul">fūl</em>, nicht aus Kichererbsen, und deshalb leichter und saftiger. Falafel sagt in Ägypten nur Alexandria.</p>
+      <p>Ein Sandwich kostete im Juni 2026 an einer Bude 8 bis 20 Pfund, etwa 13 bis 33 Cent: in Mansoura ab 8, im Kairoer Viertel Rehab 15. 2015 waren es 1 bis 1,5 Pfund.</p>`,
+  },
+  {
+    id: "kopten-siyami",
+    lektion: 12,
+    frage: "Warum findest du in Ägypten leicht veganes Essen, und welches Wort hilft dir dabei?",
+    antwort: `<p>Koptische Christen fasten fast 210 Tage im Jahr, je nach Fastenzeit vegan oder vegan mit Fisch. Gefastet wird jeden Mittwoch und Freitag, vor Weihnachten 43 Tage lang mit Fisch, nur mittwochs und freitags ohne.</p>
+      <p>Imbisse schreiben dann <em>siyāmi</em> an, Fastenessen, von <em data-wort="w-siyaam">siyām</em>, Fasten: kein Fleisch, keine Milch, kein Ei, aber vielleicht Fisch. Vegetarisch heißt <em data-wort="w-nabaati">nabāti</em>.</p>`,
+  },
+  {
+    id: "koschari-indien",
+    lektion: 12,
+    frage: "Woraus ist Koschari, und woher kam es wohl nach Ägypten?",
+    antwort: `<p>Reis, Linsen, kleine Nudeln, Kichererbsen, Tomatensoße mit Essig, Kreuzkümmel, obendrauf frittierte Zwiebeln. Vegetarisch, aber nicht immer vegan, denn manchmal kommt etwas Butter dazu. Und Ägyptens Nationalgericht.</p>
+      <p>Wahrscheinlich kam es aus Indien. Dort heißt Reis mit Linsen <em>khichri</em>, und Inder, die mit britischen Soldaten nach Ägypten kamen, brachten ihn Anfang des 20. Jahrhunderts mit. Die Ägypter gaben Zwiebeln, Kichererbsen und Essig dazu.</p>
+      <p>Wer nicht genug hat, aber keinen zweiten Teller will, bittet um eine <em>kemala</em>, ein paar Löffel extra.</p>`,
+  },
+  {
+    id: "mons-claudianus-pantheon",
+    lektion: 12,
+    frage: "Was hat ein Steinbruch in den Bergen hinter Safaga mit dem Pantheon in Rom zu tun?",
+    antwort: `<p>In Mons Claudianus, 45 Kilometer westlich von Safaga, schlugen die Römer vom späten 1. bis ins 3. Jahrhundert grauen Granit, so gut, dass ganze Säulen aus einem Stück kamen. Einige tragen die Vorhalle des Pantheons.</p>
+      <p>Im Steinbruch liegen noch zerbrochene Säulen, die größte 18 Meter lang und etwa 200 Tonnen schwer.</p>`,
+    bild: {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/26964-_the_column_that_wasn%27t.jpg/960px-26964-_the_column_that_wasn%27t.jpg",
+      alt: "Eine riesige, halb behauene Steinsäule liegt längs auf einem Felshang",
+      credit: "Foto: Panegyrics of Granovetter, Mons Claudianus. Wikimedia Commons, CC BY-SA 2.0",
+    },
+  },
+  {
+    id: "steinbrecher-salat",
+    lektion: 12,
+    frage: "Strafarbeit in der Wüste? Wie lebten die Steinbrecher von Mons Claudianus wirklich?",
+    antwort: `<p>Gut. Marijke van der Veen fand Reste von 55 Pflanzen und 20 Sorten tierischem Eiweiß: Linsen, Zwiebeln, Datteln, Wein, Eselfleisch, Fisch aus dem Roten Meer, als Luxus Artischocken, Austern und Pfeffer aus Indien. Die Fachleute verdienten doppelt so viel wie im Niltal.</p>
+      <p>Samen von Salat, Kresse, Minze und Basilikum zeigen: Sie zogen ihr Grünzeug selbst, frisch, mitten in der Wüste. Eine Tonscherbe bestellt wohl Eimer voll Dung.</p>`,
+  },
+  {
+    id: "markt-gewuerze",
+    lektion: 12,
+    frage: "Markt, Gewürzhändler, Kreuzkümmel, Hibiskus: Wie heißt das auf Ägyptisch?",
+    antwort: `<p><em data-wort="w-suu">Sūʾ</em>, <em data-wort="w-attaar">ʿattār</em>, <em data-wort="w-kammuun">kammūn</em>, <em data-wort="w-karkadeeh">karkadē</em>.</p>
+      <p>In <em data-wort="w-suu">sūʾ</em> steckt wieder das verschluckte Q, geschrieben wird es <em>sūq</em>, wie der Souk.</p>`,
+  },
+  {
+    id: "ohne-fleisch",
+    lektion: 12,
+    frage: "Du isst weder Fleisch noch Fisch. Was sagst du? Und wie heißt vegetarisch?",
+    antwort: `<p><em data-wort="w-min-gheer">Min ghēr</em> <em data-wort="w-lahma">lahma</em>, ohne Fleisch, und <em data-wort="w-min-gheer">min ghēr</em> <em data-wort="w-samak">samak</em>, ohne Fisch. Vegetarisch heißt <em data-wort="w-nabaati">nabāti</em>.</p>
+      <p>Für vegan fragst du nach <em>siyāmi</em>, Fastenessen der Kopten, und sagst dazu <em data-wort="w-min-gheer">min ghēr</em> <em data-wort="w-samak">samak</em>, ohne Fisch. Denn <em>siyāmi</em> kann Fisch enthalten.</p>`,
+  },
 ];
 
 // Umrechenkarten in beide Richtungen, gebaut von assets/umrechnen.js. Für jede Karte wird bei jedem Zeigen
@@ -553,6 +622,7 @@ window.UMRECHNEN = {
     { id: "umrechnen-mittel", von: 330, bis: 1500, schritt: 30 },
     { id: "umrechnen-gross", von: 1500, bis: 6000, schritt: 60 },
     { id: "umrechnen-schild", von: 30, bis: 900, schritt: 30, ziffern: "arabisch" },
+    { id: "umrechnen-imbiss", von: 6, bis: 36, schritt: 3 },
     { id: "umrechnen-euro-klein", richtung: "euro", von: 0.5, bis: 10, schritt: 0.5 },
     { id: "umrechnen-euro-gross", richtung: "euro", von: 10, bis: 100, schritt: 5 },
   ],
@@ -630,4 +700,17 @@ window.WORDS = [
   { id: "w-salaat-il-asr", extra: true, lektion: 11, de: "Nachmittagsgebet", wort: "salāt il-ʿasr", audio: "salaat-il-asr.mp3", ar: "صَلَاة الْعَصْر", hoch: "ṣalāt al-ʿaṣr" },
   { id: "w-salaat-il-maghrib", extra: true, lektion: 11, de: "Abendgebet", wort: "salāt il-maghrib", audio: "salaat-il-maghrib.mp3", ar: "صَلَاة الْمَغْرِب", hoch: "ṣalāt al-maghrib" },
   { id: "w-salaat-il-isha", extra: true, lektion: 11, de: "Nachtgebet", wort: "salāt il-ʿischa", audio: "salaat-il-isha.mp3", ar: "صَلَاة الْعِشَاء", hoch: "ṣalāt al-ʿischāʾ" },
+  { id: "w-suu", lektion: 12, de: "Markt", wort: "sūʾ", audio: "suu.mp3", ar: "سُوق", hoch: "sūq", variante: "Geschrieben sūq, das Q wird verschluckt." },
+  { id: "w-attaar", lektion: 12, de: "Gewürz- und Kräuterhändler", wort: "ʿattār", audio: "attaar.mp3", ar: "عَطَّار", hoch: "ʿaṭṭār" },
+  { id: "w-kammuun", lektion: 12, de: "Kreuzkümmel", wort: "kammūn", audio: "kammuun.mp3", ar: "كَمُّون", hoch: "kammūn" },
+  { id: "w-karkadeeh", lektion: 12, de: "Hibiskus, Hibiskustee", wort: "karkadē", audio: "karkadeeh.mp3", ar: "كَرْكَدِيه", hoch: "karkadīh" },
+  { id: "w-fuul", lektion: 12, de: "Saubohnen, Bohnenbrei", wort: "fūl", audio: "fuul.mp3", ar: "فُول", hoch: "fūl" },
+  { id: "w-nabaati", lektion: 12, de: "vegetarisch, Vegetarier", wort: "nabāti", audio: "nabaati.mp3", ar: "نَبَاتِيّ", hoch: "nabātī" },
+  { id: "w-min-gheer", lektion: 12, de: "ohne", wort: "min ghēr", audio: "min-gheer.mp3", ar: "بِدُون", hoch: "bidūn", hinweis: "Min ghēr lahma, ohne Fleisch. Min ghēr samak, ohne Fisch." },
+  { id: "w-lahma", lektion: 12, de: "Fleisch", wort: "lahma", audio: "lahma.mp3", ar: "لَحْم", hoch: "laḥm" },
+  { id: "w-samak", lektion: 12, de: "Fisch", wort: "samak", audio: "samak.mp3", ar: "سَمَك", hoch: "samak" },
+  { id: "w-irfa", extra: true, lektion: 12, de: "Zimt", wort: "ʾirfa", audio: "irfa.mp3", ar: "قِرْفَة", hoch: "qirfa", variante: "Geschrieben qirfa, das Q wird verschluckt." },
+  { id: "w-filfil-iswid", extra: true, lektion: 12, de: "schwarzer Pfeffer", wort: "filfil iswid", audio: "filfil-iswid.mp3", ar: "فُلْفُل أَسْوَد", hoch: "fulful aswad" },
+  { id: "w-hudum", extra: true, lektion: 12, de: "Kleidung", wort: "hudūm", audio: "hudum.mp3", ar: "مَلَابِس", hoch: "malābis" },
+  { id: "w-siyaam", extra: true, lektion: 12, de: "Fasten", wort: "siyām", audio: "siyaam.mp3", ar: "صِيَام", hoch: "ṣiyām", hinweis: "Davon siyāmi, Fastenessen der Kopten: ohne Fleisch, Milch und Ei, manchmal mit Fisch." },
 ];

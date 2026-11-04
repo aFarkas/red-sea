@@ -152,6 +152,26 @@
   Use for: Besuch der Moschee (Treppe von der Straße, Kopftuch), Maspero. Sagt „aus Damaskus“, ARCE „aus Bagdad“; Lektion folgt ARCE.
 - [Nile Scribes (2018): Abu el-Haggag Festival](https://nilescribes.org/2018/05/12/abu-el-haggag-festival/)
   Blog, Augenzeuge 2013. Use for: Mulid mit Booten zwei Wochen vor Ramadan; Vergleich mit dem Opet-Fest nur als Frage, nicht belegt. Kandidat für die Luxor-Tempel-Lektion.
+- [Van der Veen (1997): High living in Rome’s distant quarries, British Archaeology 28](https://web.archive.org/web/2005/http://www.britarch.ac.uk/ba/ba28/ba28feat.html)
+  Die Archäobotanikerin der Grabung selbst, frei lesbar. Use for: Mons Claudianus, grauer Granit fürs Pantheon, etwa 1000 Bewohner, 47 Drachmen, 55 Nahrungspflanzen, Pfeffer aus Indien, selbst gezogener Salat, Dung-Bestellung, größte Säule 60 Fuß und 200 t. Der Volltext von van der Veen & Hamilton-Dyer (1998, JRA 11) war nicht abrufbar.
+- [Pleiades: Mons Claudianus](https://pleiades.stoa.org/places/766348)
+  Use for: Koordinaten (26,809° N, 33,487° O), daraus 45 km Luftlinie bis Safaga.
+- [OpenStreetMap](https://www.openstreetmap.org) über die Overpass-API und [OSRM](https://router.project-osrm.org)
+  Use for: Läden und Imbisse im Zentrum von Safaga (Nasser- und ʿUrūba-Straße), Fahrstrecke Soma Bay–Safaga 26 km. Die Einträge in Safaga sind etwa von 2016, also unsicher.
+- [Masrawy (2026): Ful-und-Taʿmiyya-Index](https://www.masrawy.com/news/news_economy/details/2026/6/23/3007165/)
+  Use for: Sandwichpreise Juni 2026 (9–20 Pfund, 2015: 1–1,5), Varianten mit Ei, Käse, Basturma.
+- [Egyptian Streets: Koptisches Fasten (2023)](https://egyptianstreets.com/2023/02/16/how-many-days-do-coptic-orthodox-christians-fast/), [Taʿmiyya (2019)](https://egyptianstreets.com/2019/06/12/falafel-or-taameya-celebrating-the-popular-dishs-many-disguises-on-international-falafel-day/), [Koschari (2021)](https://egyptianstreets.com/2021/09/21/the-history-of-koshari-is-as-rich-as-its-flavor/), [Karkadē (2022)](https://egyptianstreets.com/2022/08/15/ruby-red-how-karkade-became-a-signature-egyptian-tea/)
+  Use for: fast 210 Fastentage, vegan, Mittwoch und Freitag, Advent 43 Tage mit Fisch; Taʿmiyya aus Saubohnen, Alexandria sagt Falafel, koptische Herkunft nur Theorie; Koschari-Zutaten und indische Herkunft (umstritten); Karkadē meist kalt.
+- [Arab News (2022): Egyptian Copts set to begin Christmas fast](https://arabnews.com/node/2204841)
+  Use for: Weihnachtsfasten 43 Tage ab 25. November mit Fisch, außer Mittwoch und Freitag.
+- [El-Watan (2019): „Siyāmi“ in Schubra](https://www.elwatannews.com/news/details/4075728)
+  Use for: Imbisse schreiben *siyāmi* (Fastenessen ohne tierische Produkte) an, Zitat des Wirts Madhat Khaled.
+- [Feeney (2001): The Red Tea of Egypt, Aramco World](https://archive.aramcoworld.com/issue/200105/the.red.tea.of.egypt.htm)
+  Use for: Karkadē ist der Kelch, Anbau in Oberägypten und im Fayum, kalt im Sommer, heiß im Winter, Ärzte gegen Bluthochdruck.
+- [Reuters in Egypt Independent (2017): Egyptians turn to herbal remedies](https://www.egyptindependent.com/drug-supplies-run-short-egyptians-turn-herbal-remedies/)
+  Use for: der *ʿattār* als Apotheker, Samy al-Attar.
+- [The Maritime Executive (2024): AD Ports in Safaga](https://maritime-executive.com/article/egypt-agrees-with-ad-ports-to-develop-cruise-and-cargo-at-red-sea-ports) und [Masrawy (2018): Umra-Fähre ab Safaga](https://www.masrawy.com/news/news_regions/details/2018/4/3/1307167/)
+  Use for: Hafen wegen der Phosphatminen, Weizen und Aluminiumerz; Fähre „Mahabba“ mit 741 Pilgern nach Yanbu.
 
 ## Wisdom (Communities)
 
@@ -169,6 +189,8 @@
 - Einheitlicher Gebetsruf: Stand nach 2021 und ob er Safaga oder Luxor erreicht hat, belegt keine gelesene Quelle. Ob man den Ruf in Soma Bay hört, ebenfalls nicht.
 - Höhe der „Tür in der Luft“ an der Abu-el-Haggag-Moschee: Angaben von 8 bis 15 m, keine Grabungsquelle gelesen.
 - Trinkgeld in Ägypten: Keine amtliche oder ägyptische journalistische Quelle zu üblichen Beträgen gefunden, nur Reiseveranstalter, die sich widersprechen.
+- Safaga: Keine aktuelle Quelle zu einem Wochenmarkt in der Stadt, keine belastbare Quelle zu einzelnen Restaurants. Die Wirkung des schwarzen Sands bei Schuppenflechte stützt sich nur auf Presseaussagen, keine Studie gefunden.
+- Mons Claudianus: Öffnungszeiten und Eintritt nennt keine amtliche Quelle, nur Veranstalter.
 - Ob Preisschilder in ägyptischen Supermärkten arabische oder westliche Ziffern tragen, belegt keine Quelle. Das Gesetz verlangt nur Arabisch.
 
 - Ein guter Bestimmungsführer für das Rote Meer (deutsch), noch nicht geprüft.

@@ -31,6 +31,7 @@ Leute, Sprache, Luxor, etwa ein Drittel). Diese Datei gilt für beide. Für eine
 - Forscher beim Namen nennen und erzählen, was genau sie gesehen oder ausprobiert haben. Dann ist man bei der Entdeckung dabei. Der Nutzer hat das an Lektion 8 und schon oft davor gelobt. Gilt über Wasser genauso: Ausgräber, Übersetzer, der Wörterbuchautor, der den Pförtner fragt.
 - Sprachen und Zahlen fallen dem Nutzer schwer. Solches Wissen öfter und ausführlicher wiederholen als Geschichten, mit Aufdeckkarten und Ton. Details in `notes/ueber-wasser.md`.
 - Mitlesende: die Freundin des Nutzers, mit der er taucht und reist. Sie ist Tauchanfängerin, Lektionenwünsche können von ihr kommen.
+- Essen: Der Nutzer ist Vegetarier, seine Freundin Veganerin. Sie essen bevorzugt vegan, für eine Spezialität auch mal vegetarisch, aber nie Fleisch oder Fisch. Eine Lektion empfiehlt deshalb kein Fleisch- oder Fischgericht und kein Fischlokal. Bei jedem Gericht steht, ob es vegan oder nur vegetarisch ist, und wie man ohne Fleisch und Fisch bestellt. Was andere essen, darf Teil der Geschichte sein, etwa das Eselfleisch der römischen Steinbrecher.
 - Nach dem Tauchgang oder Ausflug nach Beobachtungen fragen. Das ist die echte Feedbackschleife.
 - Echte Fotos gehören in jede Lektion, wo sie sinnvoll sind. Quelle: Wikimedia Commons (freie Lizenz, stabile URL), Fotograf und Lizenz in der Bildunterschrift. Jedes Foto vorher ansehen, ob es zeigt, was der Text sagt.
 
