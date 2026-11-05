@@ -331,3 +331,12 @@ ol.toc li::before {
 }
 .toc a { font-size: 1.15rem; font-weight: 600; margin-right: 0.5rem; }
 .toc p { margin: 0.3rem 0 0.6rem; color: var(--muted); }
+
+/* Offline-Kasten auf der Übersicht (assets/offline.js) */
+.offline { margin-top: 2.5rem; padding: 0.2rem 1.1rem 0.6rem; border: 1px solid var(--rule); border-radius: 10px; background: var(--sea-soft); }
+.offline h2 { margin-top: 0.9rem; }
+.offline[data-state="fertig"] [data-offline-text] { color: var(--good); font-weight: 600; }
+.offline[data-state="teilweise"] [data-offline-text] { color: var(--bad); }
+.offline button:disabled { opacity: 0.5; cursor: default; }
+.offline .offline-hint { font-size: 0.9rem; color: var(--muted); }
+@media print { .offline { display: none; } }

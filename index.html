@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Unser Ägypten</title>
 <link rel="stylesheet" href="assets/course.css">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="theme-color" content="#0d6e8a">
+<meta name="apple-mobile-web-app-title" content="Ägypten">
+<script src="assets/offline.js"></script>
 </head>
 <body>
 <main>
@@ -113,6 +118,12 @@
     <p>Orte mit Karte, Pharaonen und Begriffe für die Tage in Luxor.</p>
   </li>
 </ul>
+<section id="offline" class="offline" hidden>
+  <h2>Offline lesen</h2>
+  <p data-offline-text></p>
+  <p><button type="button" class="action">Jetzt alles laden</button></p>
+  <p class="offline-hint">Alle Lektionen, Nachschlageseiten, Fotos und Aufnahmen werden auf dem Gerät gespeichert, auch für Flugzeug und Boot. Auf dem iPad am besten über Teilen → „Zum Home-Bildschirm“ als App ablegen, die App einmal mit Netz öffnen und warten, bis hier „Alles da“ steht. Die Videos und die Links zu Quellen und Karten brauchen weiter Netz.</p>
+</section>
 </main>
 </body>
 </html>
