@@ -124,8 +124,26 @@ Er liefert eine Liste von Befunden, jeder mit Zitat aus der Lektion, Beleg und S
 - Hat der Fix die Geschichte umgebaut, läuft [#review] erneut.
 
 Fertig, wenn jeder Befund behoben oder begründet verworfen ist und alles auf `gh-pages` liegt
-(siehe [#publish]). Dann öffne die Lektion für den Nutzer
-und sag in wenigen Zeilen, was das Review gefunden hat und was sich geändert hat.
+(siehe [#publish]). Dann öffne die Lektion für den Nutzer und fass sie im Chat zusammen (siehe
+[#report]).
+
+## Im Chat berichten  [#report]
+
+Der Nutzer liest meist in der Claude-Code-App auf dem iPad, nicht im Code. Was eine Aufgabe gebracht
+hat, muss er deshalb im Chat sehen, ohne erst das Gepushte zu öffnen. Am Ende jeder Aufgabe steht im
+Chat:
+
+- **Bei einer neuen Lektion:** Titel und Strang, dann in einigen Stichpunkten die Geschichte und ihre
+  Pointen, die wichtigsten Fakten, die Beobachtungsaufträge für den Urlaub und, bei Über Wasser, die
+  neuen Wörter und Sätze. Dazu, was das Review gefunden und was sich dadurch geändert hat, und welche
+  Aussagen nur auf Trainingswissen stehen.
+- **Bei einer geänderten Lektion oder Seite:** was sich geändert hat, Absatz für Absatz, mit dem neuen
+  Wortlaut, wo er kurz ist.
+- **Bei geänderten Regeln:** die neue Regel in eigenen Worten.
+- Immer: ob alles auf `gh-pages` gepusht ist.
+
+Kurz und übersichtlich, mit Überschriften und Stichpunkten, aber vollständig genug, dass der Nutzer
+weiß, was drinsteht.
 
 ## Veröffentlichen  [#publish]
 
