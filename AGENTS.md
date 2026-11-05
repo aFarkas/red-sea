@@ -25,8 +25,9 @@ von heute.
 Ein Detail wird so erzählt, wie es ist: das Witzige witzig, das Nerdige nerdig, das Spannende
 spannend, und mit genug Platz, um zu wirken. Gekürzt wird an der Erklärung, nicht an der Pointe.
 
-Eine Lektion ist ein Happen von 5–10 Minuten Lesezeit, ein Thema. Die Lektionen 1–7 haben 1100–1800
-Wörter, Kästen und Quellen mitgezählt. Das gilt für beide Stränge.
+Eine Lektion ist ein Happen von 5–10 Minuten Lesezeit, ein Thema. Sie hat 1100–1800 Wörter, Kästen
+mitgezählt, die Quellenliste am Ende nicht: Die liest nur, wer einer Geschichte nachgehen will. Das
+gilt für beide Stränge.
 
 ## Ablauf  [#workflow]
 
