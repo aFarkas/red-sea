@@ -11,7 +11,9 @@ Wasser oder Über Wasser).
 Eine Lektion ist eine gute Geschichte aus echter Biologie, echter Geschichte oder dem echten Ägypten
 von heute.
 
-- **Faktentreu**, immer: Jede Aussage steht in einer Quelle, die in diesem Durchgang gelesen wurde.
+- **Faktentreu**, immer: Jede Aussage ist in diesem Durchgang gegen das Netz geprüft. Sie steht in einer
+  gelesenen Quelle, oder sie stammt aus sicherem Trainingswissen, dem keine gefundene Quelle
+  widerspricht (siehe [#research]).
 - Jedes Detail ist außerdem **praxisnah** oder **nerdy**. Eins von beiden reicht.
   - Praxisnah: Man kann es im Urlaub selbst sehen, hören, erkennen oder benutzen. Unter Wasser heißt
     das beim Tauchen oder Schnorcheln bei Soma Bay/Safaga, über Wasser im Hotel, auf dem Markt, im
@@ -35,8 +37,14 @@ Jede Lektion durchläuft alle vier Schritte in dieser Reihenfolge, auch eine kle
 - Lies zuerst `MISSION.md`, `NOTES.md`, die Notes des Strangs, `learning-records/`, `RESOURCES.md`, die
   letzte Lektion und `assets/`. Nennt der Nutzer kein Thema, wähl eins aus den Ideen und dem Plan in den
   Notes, das in seiner Zone der nächsten Entwicklung liegt.
-- Recherchier frisch mit WebSearch und WebFetch, auch wenn `RESOURCES.md` schon Quellen nennt. Was du
-  zu wissen glaubst, ist eine Hypothese, die eine Quelle bestätigen muss.
+- Recherchier frisch mit WebSearch und WebFetch, auch wenn `RESOURCES.md` schon Quellen nennt. Such
+  für jede Aussage nach einer Bestätigung, auch für das, was du aus dem Training zu wissen glaubst.
+  - Findest du eine Quelle, stütz die Aussage auf sie.
+  - Findest du keine Bestätigung, aber auch keinen Widerspruch, und bist du dir aus dem Training sicher,
+    darfst du das Trainingswissen nehmen.
+  - Findest du widersprüchliche Angaben, gilt das, was im Netz steht und plausibel ist, nicht das
+    Trainingswissen.
+  - Bist du dir nicht sicher und findest keine Quelle, kommt die Aussage nicht in die Lektion.
 - Rangfolge der Quellen: Studie (frei lesbar bevorzugt), Review, Forschungsinstitut oder Museum.
   Über Wasser zählen dazu Grabungsprojekte, Universitäten, Übersetzungen der Originaltexte und für
   Reise- und Sicherheitsfragen amtliche Stellen. Wikipedia dient nur als Wegweiser zu Belegen. Prüf bei
@@ -50,7 +58,8 @@ Jede Lektion durchläuft alle vier Schritte in dieser Reihenfolge, auch eine kle
   mit eigenen Augen erkennt.
 - Trag neue Quellen in `RESOURCES.md` ein.
 
-Fertig, wenn jede geplante Aussage und jede Zahl in einer gelesenen Quelle steht, jedes geplante
+Fertig, wenn jede geplante Aussage und jede Zahl gegen das Netz geprüft ist und in einer gelesenen
+Quelle steht oder sicheres Trainingswissen ist, dem keine Quelle widerspricht, jedes geplante
 Detail praxisnah oder nerdy ist, die Details, die beides sind, gesammelt sind, jeder
 Beobachtungsauftrag etwas nennt, das man im Tauchgebiet oder am Reiseort erlebt, und eine Primärquelle
 als Leseempfehlung feststeht.
@@ -61,7 +70,7 @@ als Leseempfehlung feststeht.
   Pointe löst auf. Ton einer Erzählung, nicht eines Lehrbuchs.
 - Nimm nur das Wissen auf, das die Geschichte trägt. Jeder Fachbegriff wird beim ersten Auftreten
   erklärt, so dass eine Tauchanfängerin ohne Vorwissen folgen kann.
-- Setz den Beleg als Link direkt an die Aussage.
+- Setz den Beleg als Link direkt an die Aussage, wo es eine Quelle gibt.
 - Bau aus `assets/` (zuerst `course.css`) und halte dich an die Glossare, die die Notes des Strangs nennen.
 - Verlink frühere Lektionen und Nachschlageseiten, wo die Geschichte an sie anknüpft.
 - Empfiehl die Primärquelle aus Schritt 1 und erinnere daran, dass man dem Agenten Fragen stellen kann.
@@ -77,7 +86,8 @@ absolute Pfade zur Lektion, zu dieser Datei, zu `MISSION.md`, `NOTES.md` und den
 aber keine Recherchenotizen, damit er die Quellen selbst öffnet. Er prüft:
 
 - **Fakten:** Jede Aussage und jede Zahl gegen die verlinkte Quelle. Steht dort wirklich, was die
-  Lektion sagt? Stimmen Artnamen und Vorkommen im Roten Meer,
+  Lektion sagt? Aussagen ohne Link sucht er im Netz gegen: Befund ist ein Widerspruch, nicht das
+  fehlende Zitat. Stimmen Artnamen und Vorkommen im Roten Meer,
   Namen, Orte und Daten? Zeigt jedes Foto und jede Karte, was der Text sagt?
 - **Geschichte:** Ist sie rund? Zieht der Einstieg, hält der rote Faden, löst das Ende auf? Versteht
   eine Tauchanfängerin jeden Satz?
@@ -97,8 +107,17 @@ Er liefert eine Liste von Befunden, jeder mit Zitat aus der Lektion, Beleg und S
 ### 4. Fixen  [#fix]
 
 - Prüf jeden Befund. Ist er berechtigt, behebe ihn. Ist er es nicht, verwirf ihn mit Begründung.
-- Einen Faktenbefund behebst du mit einer gelesenen Quelle.
+- Einen Faktenbefund behebst du mit einer gelesenen Quelle. Widerspricht das Netz dem Trainingswissen,
+  gilt das Netz.
 - Hat der Fix die Geschichte umgebaut, läuft [#review] erneut.
 
-Fertig, wenn jeder Befund behoben oder begründet verworfen ist. Dann öffne die Lektion für den Nutzer
+Fertig, wenn jeder Befund behoben oder begründet verworfen ist und alles auf `gh-pages` liegt
+(siehe [#publish]). Dann öffne die Lektion für den Nutzer
 und sag in wenigen Zeilen, was das Review gefunden hat und was sich geändert hat.
+
+## Veröffentlichen  [#publish]
+
+Gearbeitet wird auf `gh-pages`, dem einzigen Branch, den das Repo braucht; von dort liest GitHub Pages.
+Ist eine Aufgabe fertig, egal ob Lektion, Korrektur oder Änderung an den Regeln, wird sie committet und
+auf `gh-pages` gepusht, damit jede Änderung sofort online ist. Gibt die Sitzung einen anderen
+Arbeits-Branch vor, wird die Arbeit am Ende zusätzlich in `gh-pages` gemergt und gepusht.
