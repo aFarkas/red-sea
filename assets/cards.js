@@ -609,8 +609,8 @@ window.CARDS = [
     id: "memnon-singt",
     lektion: 13,
     frage: "Warum standen Touristen in der Antike im Morgengrauen vor einer Statue am Westufer von Luxor?",
-    antwort: `<p>Sie wollten sie singen hören. Ein Koloss des Pharaos Amenophis III., fast 16 Meter hoch, war um 27 v. Chr. bei einem Erdbeben zerbrochen. Seitdem kam aus dem Rest jeden Morgen bei Sonnenaufgang ein Laut. Die Griechen hielten ihn für Memnon, der seine Mutter, die Morgenröte, grüßt.</p>
-      <p>Im November 130 kam Kaiser Hadrian mit Kaiserin Sabina. Den Kaiser grüßte Memnon gleich dreimal, bei Sabina schwieg er. Die Hofdame Julia Balbilla mahnte den Stein in Versen, er solle Sabina begrüßen, sonst werde der Kaiser böse, und beim nächsten Mal sprach er. Ihre Gedichte stehen bis heute am linken Fuß eines der Kolosse. Heute nimmt man an, dass der gesprungene Stein in der Morgensonne knackte. Nach einer Restaurierung unter Septimius Severus verstummte er.</p>`,
+    antwort: `<p>Sie wollten sie singen hören. Ein Koloss des Pharaos Amenophis III., fast 16 Meter hoch, war um 27 v. Chr. bei einem Erdbeben zerbrochen. Seitdem kam aus dem Rest bei Sonnenaufgang ein Laut. Die Griechen hielten ihn für Memnon, der seine Mutter, die Morgenröte, grüßt.</p>
+      <p>Im November 130 kam Kaiser Hadrian mit Kaiserin Sabina. Am ersten Morgen schwieg der Stein. Die Hofdame Julia Balbilla mahnte ihn in Versen, er solle Sabina begrüßen, sonst werde der Kaiser böse. Am nächsten Morgen sprach er für Sabina, danach grüßte er den Kaiser gleich dreimal. Ihre Gedichte stehen bis heute am linken Fuß eines der Kolosse. Heute nimmt man an, dass der gesprungene Stein in der Morgensonne knackte. Nach einer Restaurierung unter Septimius Severus verstummte er.</p>`,
   },
   {
     id: "strabon-skeptiker",
@@ -638,13 +638,13 @@ window.CARDS = [
     lektion: 13,
     frage: "Vor dem Tempel von Luxor steht nur ein Obelisk. Wo ist der zweite?",
     antwort: `<p>In Paris, auf der Place de la Concorde. Ramses II. ließ das Paar im 13. Jahrhundert v. Chr. aufstellen. Auf Anregung Champollions schenkte Ägypten beide Frankreich. Der erste ist 23 Meter hoch und fast 230 Tonnen schwer.</p>
-      <p>Auf dem Nil musste man den Rumpf des Schiffs ständig nass halten, damit das Holz in der Hitze nicht platzte. Am 25. Oktober 1836 stand er in Paris. Den zweiten holten die Franzosen nicht mehr, zu mühsam.</p>`,
+      <p>Auf dem Nil musste man Rumpf und Masten des Schiffs regelmäßig nass halten, damit das Holz in der Hitze nicht platzte. Am 25. Oktober 1836 stand er in Paris. Den zweiten holten die Franzosen nicht mehr, zu mühsam.</p>`,
   },
   {
     id: "kv9-graffiti",
     lektion: 13,
     frage: "Was haben antike Touristen ins Grab Ramses’ VI. im Tal der Könige geschrieben?",
-    antwort: `<p>Über tausend Inschriften, meist auf Griechisch, gezählt vom Warschauer Archäologen Adam Łukaszewicz. Die Griechen hielten das Grab für das des Memnon, weil einer seiner Königsnamen auch auf dem singenden Koloss stand. Manche schrieben Bewertungen: „Ich war hier und mochte nichts außer dem Sarkophag!“</p>
+    antwort: `<p>Über tausend Inschriften, meist auf Griechisch, gezählt vom Warschauer Archäologen Adam Łukaszewicz. Die Griechen hielten das Grab für das des Memnon, weil einer seiner Königsnamen auch auf den Kolossen Amenophis’ III. stand. Manche schrieben Bewertungen: „Ich war hier und mochte nichts außer dem Sarkophag!“</p>
       <p>An einer Stelle ein Gespräch: „Ich kann diese Schrift nicht lesen!“ Darunter: „Was kümmert es dich, dass du die Hieroglyphen nicht lesen kannst?“ Die ersten Besucher mussten wohl durch Sand kriechen, deshalb stehen ihre Namen knapp unter der Decke.</p>`,
   },
   {
