@@ -173,6 +173,31 @@
 - [The Maritime Executive (2024): AD Ports in Safaga](https://maritime-executive.com/article/egypt-agrees-with-ad-ports-to-develop-cruise-and-cargo-at-red-sea-ports) und [Masrawy (2018): Umra-Fähre ab Safaga](https://www.masrawy.com/news/news_regions/details/2018/4/3/1307167/)
   Use for: Hafen wegen der Phosphatminen, Weizen und Aluminiumerz; Fähre „Mahabba“ mit 741 Pilgern nach Yanbu.
 
+- [Ministerium für Tourismus und Altertümer: Preisliste (Stand 5.11.2024)](https://mota.gov.eg/media/5a2ja2iu/ticket-english-5-11-2024-1.pdf), [Buchungsseite egymonuments.com](https://egymonuments.com/details/KarnakTemple) und [egymonuments.gov.eg](https://egymonuments.gov.eg/en/archaeological-sites/valley-of-the-kings)
+  Amtlich. Use for: Eintritte in Luxor (Karnak 600, Luxor-Tempel 500 bis 20 Uhr, Tal der Könige 750, Tutanchamun 700, KV9 220, Sethos I. 2000, Hatschepsut 440, Medinet Habu 220, Deir el-Medina 220, Memnonkolosse frei), Sphinx-Allee nur mit beiden Tempeltickets. Die Seiten auf egymonuments.gov.eg erzählen auch kurz die Orte (Westufer der Toten, natürliche Pyramide, Ineni-Zitat; Ramses III., Seevölker; Hatschepsut, Punt). Die Seite Deir al-Bahari nennt 360 statt 440, die Buchungsseite 440. Slugs über `/en/sitemap.aspx`.
+- [Egypt Independent (2024): Ticket-Automaten im Tal der Könige](https://www.egyptindependent.com/egypt-rolls-out-its-first-self-service-ticket-machines-in-luxor/)
+  Use for: Seit Mai 2023 nur Kartenzahlung an Altertümerstätten.
+- [Strabon 17.1.46 auf LacusCurtius](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A3*.html) und [Pausanias 1.42.3 auf Theoi](https://www.theoi.com/Text/Pausanias1C.html)
+  Primärquellen. Use for: hundert Tore (Homer), singender Koloss „wie ein leichter Schlag“, Strabons Zweifel, etwa vierzig Königsgräber; Pausanias: wie eine reißende Lyrasaite, die Thebaner sagen „Phamenoph“.
+- [Pettorino (1999): Memnon, the vocal statue, ICPhS](https://www.internationalphoneticassociation.org/icphs-proceedings/ICPhS1999/papers/p14_1321.pdf)
+  Use for: Maße (fast 16 m), Erdbeben um 27 v. Chr., 108 Inschriften. Achtung: Die Hauptthese (Vorrichtung Herons, Mord an Antinoos) ist Spekulation und nicht übernommen. Seine Tag-für-Tag-Abfolge des Kaiserbesuchs widerspricht Balbillas Gedichten (Hadrian hört Memnon, Sabina zuerst nicht) und ist verworfen. Andere nennen 107 Inschriften und eine Restaurierung um 199.
+- [Women’s Legacy Project: Julia Balbilla](https://literatura.womenslegacyproject.eu/catalog/35735433_en?locale=en) und [BMCR 2012.11.16 zu Cirio](https://bmcr.brynmawr.edu/?p=38900)
+  Use for: Balbillas vier Gedichte am linken Fuß eines der Kolosse, griechisch mit spanischer Übersetzung: Memnon grüßt Hadrian dreimal, schweigt bei Sabina, Balbilla mahnt ihn, „Amenoth, wie die Priester sagen“, „Famenoth“. BMCR: Ton verstummte offenbar nach der Restaurierung unter Septimius Severus. Erklärung des Tons (Tau, Temperatur) auch hier und bei Science in Poland.
+- [egymonuments.com: FAQ](https://egymonuments.com/fAQ)
+  Use for: Visa und Mastercard an Kassen, Automaten und online; Tickets nicht erstattbar.
+- [Science in Poland (2017): Łukaszewicz über die Graffiti in KV9](https://scienceinpoland.pl/en/news/news,414643,in-a-pharaoh-tomb-archaeologist-examines-the-inscriptions--of-ancient-tourists.html)
+  Use for: über 1000 Inschriften, „mochte nichts außer dem Sarkophag“, Dialog über die Hieroglyphen, Namen unter der Decke, Amr ibn al-As mit 25 cm hohen Buchstaben, Grab galt als Memnons. Der Grabungsbericht (PAM 22) war wegen einer Captcha-Seite nicht abrufbar.
+- [Karnak Great Hypostyle Hall Project, University of Memphis](https://www.memphis.edu/hypostyle/tour_hall/great_columns.php)
+  Use for: 134 Säulen, zwölf über 20 m, Kapitelle 5,4 m für hundert Männer, Grat wie am Papyrusstängel, Ramses’ Namen überall, Notre-Dame passt hinein.
+- [Ministerium: Wiedereröffnung der Sphinx-Allee 2021](https://egymonuments.gov.eg/en/events/avenue-of-sphinxes-reopening-ceremony-on-25-november-2021/)
+  Use for: 2,7 km, Opet-Fest mit Amun und Mut, symbolische Hochzeit, 25. November 2021.
+- [Herodote.net: Érection de l’obélisque de la Concorde](https://www.herodote.net/25_octobre_1836-evenement-18361025.php)
+  Geschichtsmagazin. Use for: Obelisk Ramses’ II., 22,84 m, fast 230 t, Champollions Anregung, nasser Rumpf, 25.10.1836, 200 000 Zuschauer, zweiter Obelisk nicht geholt. Die Seite des französischen Kulturministeriums ließ sich nicht automatisch abrufen.
+- [Museo Egizio: Turiner Streikpapyrus](https://collezionepapiri.museoegizio.it/en-GB/section/Papyrus-Collection/History-and-content/Highlights-Turin-Strike-Papyrus/)
+  Use for: erster dokumentierter Streik, Jahr 29 Ramses’ III., „Wir haben Hunger!“, Schreiber Amunnacht, Forderungen an Pharao und Wesir. Kandidat für die Deir-el-Medina-Lektion.
+- [Hawass et al. (2012), BMJ: Ramesses III](https://doi.org/10.1136/bmj.e8268)
+  Nur das Abstract gelesen. Use for: Schnitt durch die Kehle im CT, Horusauge-Amulett in der Wunde, „unknown man E“ als möglicher Sohn Pentawer. Kandidat für die Medinet-Habu-Lektion.
+
 ## Wisdom (Communities)
 
 - Die Tauchbasis und Guides vor Ort in Hurghada/Safaga
@@ -184,6 +209,9 @@
 
 ## Gaps
 
+- Tal der Könige: Wie viele Gräber das Grundticket umfasst (Reiseführer sagen drei) und welche gerade offen sind, belegt keine amtliche Quelle.
+- Fische im Punt-Relief der Hatschepsut: Lord & Maurakis (2005) und Farid et al. (2024) waren nicht abrufbar (Captcha, Verbindungsabbruch), Danelius & Steinitz (1967, JEA 53) nicht frei. Für eine Lektion nach dem Tauchen nachholen.
+- Wikimedia Commons hat die Sitzung am 5.11.2026 wegen zu vieler Anfragen gesperrt.
 - Ägyptische Aussprache stützt sich auf Lisaan Masry und, über Wikipedia, auf Watson (2002). Eine frei lesbare Primärquelle zur Dialektologie Oberägyptens (Behnstedt & Woidich 1985) ist nicht gelesen.
 - Ob die Aufnahmen bei Lisaan Masry von Muttersprachlern gesprochen sind, sagt die Seite nicht ausdrücklich.
 - Einheitlicher Gebetsruf: Stand nach 2021 und ob er Safaga oder Luxor erreicht hat, belegt keine gelesene Quelle. Ob man den Ruf in Soma Bay hört, ebenfalls nicht.

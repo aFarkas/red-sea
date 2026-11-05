@@ -1,5 +1,6 @@
 // Umrechenkarten Pfund ↔ Euro aus window.UMRECHNEN (assets/cards.js). Die Beträge werden für jede Runde
-// neu gezogen; die id bleibt je Bereich gleich. Die Wiederholungsseite übt damit in eigenen Runden.
+// neu gezogen; die id bleibt je Bereich gleich. Eine Karte mit posten zieht stattdessen einen echten Preis
+// aus der Liste, etwa einen Eintritt in Luxor, mit personen: 2 für euch beide zusammen. Die Wiederholungsseite übt damit in eigenen Runden.
 // Eine Lektion setzt mit <div data-umrechnen></div> eine Karte in ihren „Weißt du noch?“-Kasten; mit
 // einer id als Wert, etwa data-umrechnen="umrechnen-schild", genau diese.
 (function () {
@@ -14,7 +15,9 @@
   }
 
   function inEuro(def) {
-    const pfund = draw(def);
+    const posten = def.posten && def.posten[Math.floor(Math.random() * def.posten.length)];
+    const personen = def.personen || 1;
+    const pfund = posten ? posten.pfund * personen : draw(def);
     const betrag = zahl(pfund);
     const ungefaehr = zahl(pfund / P.faustregel);
     const genau = zahl(Math.round((pfund / P.kurs) * 100) / 100);
@@ -22,10 +25,15 @@
     const schild = def.ziffern === "arabisch";
     return {
       titel: `${betrag} Pfund ≈ ${ungefaehr} Euro`,
-      frage: schild
-        ? `Auf dem Preisschild steht <span lang="ar" class="price">${arabisch}</span>. Wie viel Euro ist das ungefähr?`
-        : `Wie viel Euro sind ${betrag} Pfund ungefähr?`,
+      frage: posten
+        ? (personen > 1
+          ? `${posten.was} kostet ${zahl(posten.pfund)} Pfund pro Person. Wie viel Euro zahlt ihr zu zweit ungefähr?`
+          : `${posten.was} kostet ${betrag} Pfund. Wie viel Euro ist das ungefähr?`)
+        : schild
+          ? `Auf dem Preisschild steht <span lang="ar" class="price">${arabisch}</span>. Wie viel Euro ist das ungefähr?`
+          : `Wie viel Euro sind ${betrag} Pfund ungefähr?`,
       antwort: (schild ? `<p><span lang="ar">${arabisch}</span> heißt ${betrag}.</p>` : "")
+        + (posten && personen > 1 ? `<p>${personen} × ${zahl(posten.pfund)} = ${betrag} Pfund.</p>` : "")
         + `<p class="word">${betrag} Pfund ≈ ${ungefaehr} Euro</p>`
         + `<p>${betrag} ÷ 6 = ${zahl(pfund / 6)}, dann das Komma eine Stelle nach links: ${ungefaehr}.</p>`
         + `<p class="aside">${kurs()} sind es ${genau} Euro. Die Faustregel rechnet also ein bisschen teurer, als es ist.</p>`,
@@ -46,7 +54,7 @@
   }
 
   function card(def) {
-    return { id: def.id, lektion: P.lektion, art: "Umrechnen", ...(def.richtung === "euro" ? inPfund(def) : inEuro(def)) };
+    return { id: def.id, lektion: def.lektion || P.lektion, art: "Umrechnen", ...(def.richtung === "euro" ? inPfund(def) : inEuro(def)) };
   }
 
   function queue(n) {

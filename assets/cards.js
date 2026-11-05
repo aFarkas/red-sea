@@ -605,13 +605,89 @@ window.CARDS = [
     antwort: `<p><em data-wort="w-min-gheer">Min ghēr</em> <em data-wort="w-lahma">lahma</em>, ohne Fleisch, und <em data-wort="w-min-gheer">min ghēr</em> <em data-wort="w-samak">samak</em>, ohne Fisch. Vegetarisch heißt <em data-wort="w-nabaati">nabāti</em>.</p>
       <p>Für vegan fragst du nach <em>siyāmi</em>, Fastenessen der Kopten, und sagst dazu <em data-wort="w-min-gheer">min ghēr</em> <em data-wort="w-samak">samak</em>, ohne Fisch. Denn <em>siyāmi</em> kann Fisch enthalten.</p>`,
   },
+  {
+    id: "memnon-singt",
+    lektion: 13,
+    frage: "Warum standen Touristen in der Antike im Morgengrauen vor einer Statue am Westufer von Luxor?",
+    antwort: `<p>Sie wollten sie singen hören. Ein Koloss des Pharaos Amenophis III., fast 16 Meter hoch, war um 27 v. Chr. bei einem Erdbeben zerbrochen. Seitdem kam aus dem Rest jeden Morgen bei Sonnenaufgang ein Laut. Die Griechen hielten ihn für Memnon, der seine Mutter, die Morgenröte, grüßt.</p>
+      <p>Im November 130 kam Kaiser Hadrian mit Kaiserin Sabina. Den Kaiser grüßte Memnon gleich dreimal, bei Sabina schwieg er. Die Hofdame Julia Balbilla mahnte den Stein in Versen, er solle Sabina begrüßen, sonst werde der Kaiser böse, und beim nächsten Mal sprach er. Ihre Gedichte stehen bis heute am linken Fuß eines der Kolosse. Heute nimmt man an, dass der gesprungene Stein in der Morgensonne knackte. Nach einer Restaurierung unter Septimius Severus verstummte er.</p>`,
+  },
+  {
+    id: "strabon-skeptiker",
+    lektion: 13,
+    frage: "Strabon und Pausanias haben den singenden Koloss selbst gehört. Was sagten sie dazu?",
+    antwort: `<p>Strabon hörte „ein Geräusch wie ein leichter Schlag“, konnte aber nicht sagen, ob es von der Statue kam oder von einem der Männer drumherum. Er glaube eher alles andere, als dass Steine tönen. Ein Skeptiker auf Bildungsreise.</p>
+      <p>Pausanias verglich den Ton mit einer Lyra, deren Saite reißt. Und er schrieb auf, was die Thebaner sagten: Das sei gar nicht Memnon, sondern einer von ihnen, „Phamenoph“. Auch Balbilla nennt ihn „Amenoth, ägyptischer König, wie die Priester sagen“. Gemeint ist Amenophis: Die Einheimischen wussten, dass da ein Pharao sitzt.</p>`,
+  },
+  {
+    id: "westufer-tote",
+    lektion: 13,
+    frage: "Warum liegen in Luxor die Tempel am Ostufer und die Gräber am Westufer?",
+    antwort: `<p>Wegen der Sonne. Für die alten Ägypter starb der Sonnengott jeden Abend im Westen und wurde im Osten wiedergeboren. Ihre Friedhöfe legten sie deshalb meist ans Westufer des Nils.</p>
+      <p>Über dem Tal der Könige ragt dazu ein Gipfel wie eine Pyramide auf, ein Zeichen der Wiedergeburt. Und das Tal war abgelegen, gegen Grabräuber. „Niemand sah es, niemand hörte es“, schrieb Ineni, der das Grab Thutmosis’ I. graben ließ.</p>`,
+  },
+  {
+    id: "karnak-saeulen",
+    lektion: 13,
+    frage: "Wie groß ist die Säulenhalle von Karnak, und was kannst du an jeder Säule mit eigenen Augen entdecken?",
+    antwort: `<p>134 Säulen in Form von Papyrusstängeln, die zwölf in der Mitte über 20 Meter hoch. Auf einem ihrer Kapitelle hätten hundert Männer Platz, und Notre-Dame passte in die Halle.</p>
+      <p>Echte Papyrusstängel sind dreikantig. Deshalb läuft an den runden Säulen ein feiner Grat hinauf, wie die Kante am Stängel.</p>`,
+  },
+  {
+    id: "obelisk-paris",
+    lektion: 13,
+    frage: "Vor dem Tempel von Luxor steht nur ein Obelisk. Wo ist der zweite?",
+    antwort: `<p>In Paris, auf der Place de la Concorde. Ramses II. ließ das Paar im 13. Jahrhundert v. Chr. aufstellen. Auf Anregung Champollions schenkte Ägypten beide Frankreich. Der erste ist 23 Meter hoch und fast 230 Tonnen schwer.</p>
+      <p>Auf dem Nil musste man den Rumpf des Schiffs ständig nass halten, damit das Holz in der Hitze nicht platzte. Am 25. Oktober 1836 stand er in Paris. Den zweiten holten die Franzosen nicht mehr, zu mühsam.</p>`,
+  },
+  {
+    id: "kv9-graffiti",
+    lektion: 13,
+    frage: "Was haben antike Touristen ins Grab Ramses’ VI. im Tal der Könige geschrieben?",
+    antwort: `<p>Über tausend Inschriften, meist auf Griechisch, gezählt vom Warschauer Archäologen Adam Łukaszewicz. Die Griechen hielten das Grab für das des Memnon, weil einer seiner Königsnamen auch auf dem singenden Koloss stand. Manche schrieben Bewertungen: „Ich war hier und mochte nichts außer dem Sarkophag!“</p>
+      <p>An einer Stelle ein Gespräch: „Ich kann diese Schrift nicht lesen!“ Darunter: „Was kümmert es dich, dass du die Hieroglyphen nicht lesen kannst?“ Die ersten Besucher mussten wohl durch Sand kriechen, deshalb stehen ihre Namen knapp unter der Decke.</p>`,
+  },
+  {
+    id: "streik-hunger",
+    lektion: 13,
+    frage: "Was riefen die Handwerker von Deir el-Medina, als ihr Lohn ausblieb?",
+    antwort: `<p>„Wir haben Hunger!“ Sie bauten und bemalten die Königsgräber und wurden in Getreide bezahlt. Als unter Ramses III. der Lohn ausblieb, zogen sie an den Wachposten vorbei und setzten sich hinter einen Totentempel.</p>
+      <p>Der Schreiber Amunnacht hielt es auf Papyrus fest. Es ist der erste dokumentierte Streik der Geschichte, heute im Ägyptischen Museum in Turin.</p>`,
+  },
+  {
+    id: "ramses-iii-kehle",
+    lektion: 13,
+    frage: "Wie starb Ramses III., dessen Totentempel Medinet Habu ist?",
+    antwort: `<p>Bei einer Verschwörung im Harem. 2012 fanden Forscher im Computertomographen einen tiefen Schnitt durch seine Kehle. In die Wunde hatten die Einbalsamierer ein Horusauge gesteckt, ein Amulett zum Heilen.</p>
+      <p>Auf den Wänden von Medinet Habu kämpft derselbe Pharao siegreich gegen Libyer und die „Seevölker“.</p>`,
+  },
+  {
+    id: "luxor-eintritt",
+    lektion: 13,
+    frage: "Was kosten Tal der Könige, Karnak und der Tempel von Luxor pro Person, und wie bezahlt ihr?",
+    antwort: `<p>Tal der Könige 750 Pfund, Karnak 600, Tempel von Luxor 500. Nach der Faustregel, durch 6 und Komma nach links: etwa 12,50, 10 und gut 8 Euro. Tutanchamun kostet extra, 700 Pfund.</p>
+      <p>Bezahlt wird nur mit Karte, Bargeld nehmen die Kassen seit 2023 nicht mehr.</p>`,
+  },
 ];
 
 // Umrechenkarten in beide Richtungen, gebaut von assets/umrechnen.js. Für jede Karte wird bei jedem Zeigen
 // ein neuer Betrag zwischen von und bis gezogen, in Schritten von schritt. Die Schritte sind so gewählt,
 // dass die Faustregel aus Lektion 10 glatt aufgeht: 30 Pfund sind ein halber Euro, ein halber Euro sind
 // 30 Pfund. kurs und stand stehen dort in Quelle s11. richtung "euro": Euro in Pfund, sonst Pfund in Euro.
-// ziffern: "arabisch" zeigt den Betrag wie auf dem Preisschild.
+// ziffern: "arabisch" zeigt den Betrag wie auf dem Preisschild. posten: echte Preise statt Zufallsbeträgen,
+// je einer wird gezogen; personen: 2 fragt nach dem Preis für beide. Die Eintritte in Luxor stehen in
+// Lektion 13, Quelle s9 und s10 (Preisliste des Ministeriums, Buchungsseite egymonuments.com).
+const LUXOR_EINTRITT = [
+  { was: "Der Eintritt in den Tempel von Karnak", pfund: 600 },
+  { was: "Der Eintritt in den Tempel von Luxor", pfund: 500 },
+  { was: "Der Eintritt ins Tal der Könige", pfund: 750 },
+  { was: "Das Grab des Tutanchamun", pfund: 700 },
+  { was: "Das Grab Ramses’ VI. mit den Graffiti", pfund: 220 },
+  { was: "Das Grab Sethos’ I.", pfund: 2000 },
+  { was: "Der Eintritt in den Tempel der Hatschepsut", pfund: 440 },
+  { was: "Der Eintritt nach Medinet Habu", pfund: 220 },
+  { was: "Der Eintritt nach Deir el-Medina", pfund: 220 },
+];
 window.UMRECHNEN = {
   lektion: 10,
   faustregel: 60,
@@ -625,6 +701,8 @@ window.UMRECHNEN = {
     { id: "umrechnen-imbiss", von: 6, bis: 36, schritt: 3 },
     { id: "umrechnen-euro-klein", richtung: "euro", von: 0.5, bis: 10, schritt: 0.5 },
     { id: "umrechnen-euro-gross", richtung: "euro", von: 10, bis: 100, schritt: 5 },
+    { id: "umrechnen-luxor-eintritt", lektion: 13, posten: LUXOR_EINTRITT },
+    { id: "umrechnen-luxor-zu-zweit", lektion: 13, personen: 2, posten: LUXOR_EINTRITT },
   ],
 };
 
