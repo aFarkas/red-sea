@@ -68,7 +68,7 @@ ausgeblendet, der Link bleibt.
 
 Alles vor der Lektion an Quellen prüfen. Der Haken nach dem Doppelpunkt ist der Kandidat für die Pointe.
 
-- Luxor im Überblick: Ostufer mit den Tempeln der Lebenden, Westufer mit den Gräbern und Totentempeln, weil dort die Sonne untergeht.
+- Luxor im Überblick steht in Lektion 13 „Ich kann die Hieroglyphen nicht lesen!“ (Ost- und Westufer, Memnonkolosse mit Balbilla, KV9-Graffiti, Drei-Tage-Plan mit Eintritten). Die Ortslektionen greifen das auf, statt es neu zu erklären. Angekündigt sind dort eigene Lektionen zu Deir el-Medina (Streik), Medinet Habu (Haremsverschwörung, CT 2012) und Hatschepsut (Punt, Meerestiere nach dem Tauchen).
 - Deir el-Medina: das Dorf der Handwerker, die die Königsgräber gebaut haben. Tausende beschriebene Scherben (Ostraka) mit Alltag: Krankmeldungen, Streit, Einkaufslisten. Unter Ramses III. der älteste belegte Streik, Proteste auch an den Totentempeln. Prüfen, wie genau das belegt ist.
 - Medinet Habu: Totentempel Ramses’ III., die Seevölker-Schlacht auf der Außenwand, gezählte abgeschlagene Hände der Feinde, Farben an Decken und Säulen noch gut erhalten. Daneben ein kleiner Amun-Tempel, der älter ist. Prüfen.
 - Tal der Könige: Gräber wie Tunnel in den Fels, Grabräuber-Prozesse auf Papyrus (Papyrus Abbott, Leopold-Amherst), Tutanchamun liegt noch in seinem Grab, KV5 für die Söhne Ramses’ II. Prüfen, welche Gräber das Ticket enthält und welche extra kosten.
