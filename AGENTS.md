@@ -141,6 +141,10 @@ Chat:
   Wortlaut, wo er kurz ist.
 - **Bei geänderten Regeln:** die neue Regel in eigenen Worten.
 - Immer: ob alles auf `gh-pages` gepusht ist.
+- Immer, wenn eine Lektion oder Seite neu ist oder sich geändert hat: der fertige Link auf GitHub Pages,
+  z. B. `https://afarkas.github.io/red-sea/lessons/0001-die-putzerstation.html`, für die Übersicht
+  `https://afarkas.github.io/red-sea/`. Nach dem Push braucht Pages oft ein bis zwei Minuten, bis die
+  neue Fassung dort steht.
 
 Kurz und übersichtlich, mit Überschriften und Stichpunkten, aber vollständig genug, dass der Nutzer
 weiß, was drinsteht.
