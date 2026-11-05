@@ -11,6 +11,18 @@ Im Kursordner starten und dann <http://localhost:8765> öffnen:
 python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
+## Offline als App
+
+Der Kurs ist eine Progressive Web App. `sw.js` (Service Worker) speichert beim ersten Besuch mit Netz
+alle Seiten, die von `index.html` aus verlinkt sind, mit Stylesheet, Skripten, Aufnahmen, Fotos von
+Wikimedia und Schriften. Danach geht alles ohne Netz, außer eingebetteten Videos und Links nach draußen.
+Mit Netz holt er höchstens einmal pro Stunde nach, was sich geändert hat. Den Stand zeigt der Kasten
+„Offline lesen“ unten auf der Übersicht. `manifest.webmanifest` und `assets/icons/` machen daraus eine
+App für den Home-Bildschirm, `assets/offline.js` meldet den Service Worker an.
+
+Service Worker laufen nur über `https` oder `localhost`, also auf GitHub Pages und mit dem Webserver
+unten, nicht als lokale Datei.
+
 ## Steuerdateien
 
 Drei Dateien sagen dem Agenten, der den Kurs schreibt, was er tun soll.
@@ -40,5 +52,6 @@ recherchiert werden muss.
 - `lessons/`: die Lektionen, über beide Stränge fortlaufend nummeriert.
 - `notes/`: Arbeitsregeln und Ideen je Strang.
 - `reference/`: Nachschlageseiten wie Glossar, Beobachtungs-Logbuch und Wiederholung.
-- `assets/`: Styles, Skripte, Wiederholungskarten und deren Stand.
+- `assets/`: Styles, Skripte, Wiederholungskarten und deren Stand, Icons der App.
+- `sw.js`, `manifest.webmanifest`: die Offline-App.
 - `learning-records/`: Lernnotizen über den Lernenden.
