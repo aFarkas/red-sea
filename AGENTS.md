@@ -11,9 +11,9 @@ Wasser oder Über Wasser).
 Eine Lektion ist eine gute Geschichte aus echter Biologie, echter Geschichte oder dem echten Ägypten
 von heute.
 
-- **Faktentreu**, immer: Jede Aussage ist in diesem Durchgang gegen das Netz geprüft. Sie steht in einer
-  gelesenen Quelle, oder sie stammt aus sicherem Trainingswissen, dem keine gefundene Quelle
-  widerspricht (siehe [#research]).
+- **Faktentreu**, immer: Jede Aussage steht in einer gelesenen Quelle oder stammt aus Trainingswissen,
+  bei dem du dir nach kritischer Prüfung sicher bist und dem keine gefundene Quelle widerspricht
+  (siehe [#research]).
 - Jedes Detail ist außerdem **praxisnah** oder **nerdy**. Eins von beiden reicht.
   - Praxisnah: Man kann es im Urlaub selbst sehen, hören, erkennen oder benutzen. Unter Wasser heißt
     das beim Tauchen oder Schnorcheln bei Soma Bay/Safaga, über Wasser im Hotel, auf dem Markt, im
@@ -37,14 +37,25 @@ Jede Lektion durchläuft alle vier Schritte in dieser Reihenfolge, auch eine kle
 - Lies zuerst `MISSION.md`, `NOTES.md`, die Notes des Strangs, `learning-records/`, `RESOURCES.md`, die
   letzte Lektion und `assets/`. Nennt der Nutzer kein Thema, wähl eins aus den Ideen und dem Plan in den
   Notes, das in seiner Zone der nächsten Entwicklung liegt.
-- Recherchier frisch mit WebSearch und WebFetch, auch wenn `RESOURCES.md` schon Quellen nennt. Such
-  für jede Aussage nach einer Bestätigung, auch für das, was du aus dem Training zu wissen glaubst.
+- Recherchier frisch mit WebSearch und WebFetch, soweit sie verfügbar sind, auch wenn `RESOURCES.md`
+  schon Quellen nennt. Such für jede Aussage nach einer Bestätigung, auch für das, was du aus dem
+  Training zu wissen glaubst.
   - Findest du eine Quelle, stütz die Aussage auf sie.
   - Findest du keine Bestätigung, aber auch keinen Widerspruch, und bist du dir aus dem Training sicher,
     darfst du das Trainingswissen nehmen.
   - Findest du widersprüchliche Angaben, gilt das, was im Netz steht und plausibel ist, nicht das
     Trainingswissen.
   - Bist du dir nicht sicher und findest keine Quelle, kommt die Aussage nicht in die Lektion.
+- Im Urlaub kann der Netzzugang knapp sein, so dass WebSearch oder WebFetch ausfallen oder vieles
+  blockiert ist. Dann darf eine Lektion auch ganz oder teilweise auf Trainingswissen stehen. Sei dabei
+  kritisch mit dir selbst:
+  - Nimm nur, was du sicher weißt: gut etabliertes Lehrbuchwissen, bekannte Arten, Geschichte und
+    Bräuche. Wo du zögerst, lass es weg oder formulier vorsichtig („etwa“, „nach älteren Angaben“).
+  - Sei besonders misstrauisch bei genauen Zahlen, Rekorden, Studiendetails, Namen von Forschern,
+    Zitaten und allem, was sich ändert: Öffnungszeiten, Preise, Tickets, Regeln, Sicherheitslage.
+  - Erfinde nie einen Link. Ohne gelesene Quelle steht an der Aussage kein Beleg.
+  - Halte in `RESOURCES.md` unter den offenen Punkten fest, welche Aussagen nur auf Trainingswissen
+    stehen, damit sie später geprüft werden können, sobald das Netz wieder reicht.
 - Rangfolge der Quellen: Studie (frei lesbar bevorzugt), Review, Forschungsinstitut oder Museum.
   Über Wasser zählen dazu Grabungsprojekte, Universitäten, Übersetzungen der Originaltexte und für
   Reise- und Sicherheitsfragen amtliche Stellen. Wikipedia dient nur als Wegweiser zu Belegen. Prüf bei
@@ -58,8 +69,8 @@ Jede Lektion durchläuft alle vier Schritte in dieser Reihenfolge, auch eine kle
   mit eigenen Augen erkennt.
 - Trag neue Quellen in `RESOURCES.md` ein.
 
-Fertig, wenn jede geplante Aussage und jede Zahl gegen das Netz geprüft ist und in einer gelesenen
-Quelle steht oder sicheres Trainingswissen ist, dem keine Quelle widerspricht, jedes geplante
+Fertig, wenn jede geplante Aussage und jede Zahl in einer gelesenen Quelle steht oder sicheres,
+kritisch geprüftes Trainingswissen ist, dem keine gefundene Quelle widerspricht, jedes geplante
 Detail praxisnah oder nerdy ist, die Details, die beides sind, gesammelt sind, jeder
 Beobachtungsauftrag etwas nennt, das man im Tauchgebiet oder am Reiseort erlebt, und eine Primärquelle
 als Leseempfehlung feststeht.
@@ -86,7 +97,8 @@ absolute Pfade zur Lektion, zu dieser Datei, zu `MISSION.md`, `NOTES.md` und den
 aber keine Recherchenotizen, damit er die Quellen selbst öffnet. Er prüft:
 
 - **Fakten:** Jede Aussage und jede Zahl gegen die verlinkte Quelle. Steht dort wirklich, was die
-  Lektion sagt? Aussagen ohne Link sucht er im Netz gegen: Befund ist ein Widerspruch, nicht das
+  Lektion sagt? Aussagen ohne Link sucht er im Netz gegen, soweit es verfügbar ist, und
+  prüft sie sonst kritisch auf Plausibilität: Befund ist ein Widerspruch oder ein Zweifel, nicht das
   fehlende Zitat. Stimmen Artnamen und Vorkommen im Roten Meer,
   Namen, Orte und Daten? Zeigt jedes Foto und jede Karte, was der Text sagt?
 - **Geschichte:** Ist sie rund? Zieht der Einstieg, hält der rote Faden, löst das Ende auf? Versteht
@@ -108,7 +120,7 @@ Er liefert eine Liste von Befunden, jeder mit Zitat aus der Lektion, Beleg und S
 
 - Prüf jeden Befund. Ist er berechtigt, behebe ihn. Ist er es nicht, verwirf ihn mit Begründung.
 - Einen Faktenbefund behebst du mit einer gelesenen Quelle. Widerspricht das Netz dem Trainingswissen,
-  gilt das Netz.
+  gilt das Netz. Ist kein Netz verfügbar, streich oder entschärf die zweifelhafte Aussage.
 - Hat der Fix die Geschichte umgebaut, läuft [#review] erneut.
 
 Fertig, wenn jeder Befund behoben oder begründet verworfen ist und alles auf `gh-pages` liegt
