@@ -25,8 +25,7 @@
   .chipknopf[aria-pressed="true"] { background: var(--farbe, var(--sea)); border-color: var(--farbe, var(--sea)); color: #fff; font-weight: 600; }
   .chipknopf[aria-pressed="true"] .zahl { background: rgba(255,255,255,.25); }
   .chipknopf[data-aus] { opacity: 0.45; }
-  .chipknopf[data-alle], .chipknopf[data-zeigen] { --farbe: var(--sea); }
-  .zeilen-titel { font-size: 0.75rem; color: var(--muted); flex: none; }
+  .chipknopf[data-alle] { --farbe: var(--sea); }
   /* Restaurants und ihre Mahlzeiten als eine Gruppe */
   .gruppe { display: inline-flex; flex: none; align-items: stretch; border: 2px solid var(--farbe); border-radius: 999px; overflow: hidden; background: var(--bg); }
   .gruppe .chipknopf { border: 0; border-radius: 0; border-left: 1px solid color-mix(in srgb, var(--farbe) 35%, transparent); min-height: 40px; }
@@ -125,7 +124,6 @@
 <div class="kartenbereich">
   <div class="filter" id="karte-was" role="group" aria-label="Was zeigen?"></div>
   <div class="filter" id="karte-essen"></div>
-  <div class="filter" id="karte-wann" role="group" aria-label="Wann?"></div>
   <p id="karte-anzahl"></p>
   <button type="button" class="knopf haupt" id="karte-ich" aria-pressed="false">◎ Wo bin ich?</button>
   <div id="karte" role="region" aria-label="Karte von Luxor mit den Orten aus dem Reiseplan"></div>
@@ -144,9 +142,9 @@
     <li><strong>⛶ Vollbild</strong> oben links: Die Karte füllt den ganzen Bildschirm, die Filter liegen oben darüber, ✕ führt zurück zu dieser Seite. In der App vom Home-Bildschirm und auf dem Handy öffnet die Karte gleich im Vollbild; das Gerät merkt sich, wie ihr sie zuletzt hattet.</li>
     <li><strong>Filter:</strong> Ist alles an, zeigt ein Tipp nur diese Sorte, etwa nur Museen. Jeder weitere Tipp nimmt eine Sorte dazu oder wieder weg. <strong>Alle</strong> zeigt wieder alles. Die Zahl im Knopf sagt, wie viele Orte dahinter stecken.</li>
     <li><strong>Restaurants</strong> und ihre Mahlzeiten sind eine Gruppe: Tippt auf „🌙 Abend“, und ihr seht nur die Lokale für den Abend, die Restaurants schalten sich dabei von selbst ein. „🥗 Mittag“ dazu zeigt beides. In den Pillen verblassen die Mahlzeiten, die ihr gerade nicht sucht.</li>
-    <li><strong>Wann:</strong> „Unser Plan“ zeigt nur Eingeplantes, „So 15.11.“ nur den Sonntag. Liegt ein Treffer außerhalb des Ausschnitts, holt die Karte alle ins Bild; das geht auch jederzeit mit <strong>⤢</strong> oben links.</li>
+    <li>Nach jedem Filterwechsel holt die Karte alle Treffer ins Bild; das geht auch jederzeit mit <strong>⤢</strong> oben links.</li>
     <li><strong>Namen</strong> stehen an den Pins, sobald ihr nah genug herangezoomt seid.</li>
-    <li><strong>◎ Wo bin ich?</strong> unten rechts auf der Karte zeigt euch als blauen Punkt, der mitwandert. Einmal tippen startet, noch einmal tippen holt den Punkt in die Mitte. Habt ihr es einmal erlaubt, erscheint der Punkt beim nächsten Öffnen von selbst. Der Standort bleibt auf dem Gerät.</li>
+    <li><strong>◎ Wo bin ich?</strong> unten rechts auf der Karte zeigt euch als blauen Punkt, der mitwandert. Einmal tippen startet, noch einmal tippen holt den Punkt in die Mitte. Habt ihr es einmal erlaubt, erscheint der Punkt beim nächsten Öffnen von selbst, und seid ihr in Luxor, springt die Karte gleich dorthin. Der Standort bleibt auf dem Gerät.</li>
     <li><strong>📍 In Google Maps</strong> und <strong>🧭 Route</strong> im Pin öffnen den Ort in Google Maps, zum Navigieren zu Fuß oder mit dem Taxi.</li>
     <li><strong>Für Google My Maps:</strong> <button type="button" class="action" id="karte-kml">Pins als KML laden</button> lädt die gerade sichtbaren Pins als Datei. In <a href="https://www.google.com/maps/d/" target="_blank" rel="noopener">Google My Maps</a> „Neue Karte“ → „Importieren“ wählen, dann habt ihr sie in der Google-Maps-App. Das ist eine Momentaufnahme: Ändert sich der Plan, neu laden.</li>
     <li><strong>Frühstück:</strong> gibt es in eurer Unterkunft. Unter den Lokalen im Plan öffnet nur Wannas Art Café so früh, gegen 9 Uhr.</li>

@@ -42,13 +42,15 @@
   const gmRoute = (geo) => `https://www.google.com/maps/dir/?api=1&destination=${geo[0]},${geo[1]}`;
 
   let state = Z.load();
+  let vonLink = false; // Seite über einen Link zu einem Ort geöffnet (#ort=…)
   const T = (s) => Z.T(s, state.los);
 
   // ---------- Filter (pro Gerät gemerkt) ----------
-  let filter = { typ: Object.keys(TYPEN), mahl: Object.keys(MAHL), zeigen: "alles" };
+  let filter = { typ: Object.keys(TYPEN), mahl: Object.keys(MAHL) };
   try {
     const alt = JSON.parse(localStorage.getItem(FILTERKEY) || "{}");
     Object.assign(filter, alt);
+    delete filter.zeigen; // früherer Wann-Filter, gibt es nicht mehr
     // Sorten, die es beim letzten Besuch noch nicht gab, sind an.
     const bekannt = alt.bekannt || ["staette", "museum", "sonst", "lokal"];
     filter.typ = filter.typ.concat(Object.keys(TYPEN).filter((k) => !bekannt.includes(k) && !filter.typ.includes(k)));
@@ -70,18 +72,11 @@
     return (BAUSTEINE_AM_ORT[ortId] || []).map((b) => Object.assign({ b }, status(b.id))).filter((x) => x.an)
       .sort((a, c) => reihe.indexOf(a.slot) - reihe.indexOf(c.slot));
   }
-  // Passt der Ort zum Wann-Filter (alle Orte, unser Plan, ein Tag)?
-  function tagPasst(ortId) {
-    if (filter.zeigen === "alles") return true;
-    const plan = eingeplant(ortId);
-    if (filter.zeigen === "plan") return plan.length > 0;
-    return plan.some((x) => x.s.tag.id === filter.zeigen);
-  }
   function sichtbar(ortId) {
     const o = ORTE[ortId];
     if (!filter.typ.includes(o.typ)) return false;
     if (o.typ === "lokal" && !(o.mahl || []).some((m) => filter.mahl.includes(m))) return false;
-    return tagPasst(ortId);
+    return true;
   }
 
   // ---------- Karte ----------
@@ -240,11 +235,10 @@
     if (!filter.typ.length) zuruecksetzen();
     nachFilter();
   }
-  function tippWann(v) { filter.zeigen = v; nachFilter(); }
   function nachFilter() { merken(); zeichnen(); allesZeigen(); }
 
-  // Wie viele Orte brächte ein Knopf? (unter dem gewählten Tag)
-  const zahl = (pruef) => Object.keys(PINS).filter((id) => tagPasst(id) && pruef(ORTE[id])).length;
+  // Wie viele Orte brächte ein Knopf?
+  const zahl = (pruef) => Object.keys(PINS).filter((id) => pruef(ORTE[id])).length;
 
   // kurz: Beschriftung für schmale Bildschirme, damit eine Zeile reicht.
   const chip = (attrs, icon, text, zahlId, kurz) => el("button", Object.assign({ type: "button", class: "chipknopf", title: text }, attrs),
@@ -261,11 +255,6 @@
       chip({ "data-typ": "lokal", class: "chipknopf kopf", onclick: () => tippTyp("lokal") }, TYPEN.lokal.icon, TYPEN.lokal.name, "lokal", KURZ.lokal),
       Object.entries(MAHL).map(([k, m]) => chip({ "data-mahl": k, onclick: () => tippMahl(k) }, m.icon, m.name, "m-" + k, KURZ[k])));
     document.getElementById("karte-essen").append(essen);
-    const wann = document.getElementById("karte-wann");
-    wann.append(el("span", { class: "zeilen-titel" }, "Wann:"),
-      chip({ "data-zeigen": "alles", onclick: () => tippWann("alles") }, null, "Alle Tage", null, "Alle"),
-      chip({ "data-zeigen": "plan", onclick: () => tippWann("plan") }, "✓", "Unser Plan", null, "Plan"),
-      ...Z.TAGE.map((t) => chip({ "data-zeigen": t.id, onclick: () => tippWann(t.id) }, null, t.kurz, null, t.kurz.slice(0, 2))));
   }
   function filterKnoepfe() {
     const alle = allesAn();
@@ -275,7 +264,6 @@
     // „aus“: Die Sorte ist gerade ausgeblendet, weil etwas anderes gewählt ist.
     document.querySelectorAll("[data-typ]").forEach((b) => b.toggleAttribute("data-aus", !alle && !filter.typ.includes(b.dataset.typ)));
     document.querySelectorAll("[data-mahl]").forEach((b) => b.toggleAttribute("data-aus", !alle && (!lokalAn() || !filter.mahl.includes(b.dataset.mahl))));
-    document.querySelectorAll("[data-zeigen]").forEach((b) => b.setAttribute("aria-pressed", String(filter.zeigen === b.dataset.zeigen)));
     // Bei „Alle“ sind die Sortenknöpfe nicht gedrückt, aber auch nicht aus: Sie sind Angebote.
     document.getElementById("karte-was").closest(".kartenbereich").classList.toggle("alles-an", alle);
     const setz = (id, n) => document.querySelectorAll(`[data-zahl="${id}"]`).forEach((z) => (z.textContent = n));
@@ -285,12 +273,12 @@
     const n = Object.keys(PINS).filter(sichtbar).length;
     const zeile = document.getElementById("karte-anzahl");
     zeile.textContent = `${n} ${n === 1 ? "Ort" : "Orte"} auf der Karte`;
-    if (!alle || filter.zeigen !== "alles") zeile.append(" · ", el("button", { type: "button", class: "zuruecksetzen",
-      onclick: () => { zuruecksetzen(); filter.zeigen = "alles"; nachFilter(); } }, "Filter zurücksetzen"));
+    if (!alle) zeile.append(" · ", el("button", { type: "button", class: "zuruecksetzen",
+      onclick: () => { zuruecksetzen(); nachFilter(); } }, "Filter zurücksetzen"));
   }
-  function allesZeigen() {
+  function allesZeigen(animiert = true) {
     const sicht = Object.entries(PINS).filter(([id]) => sichtbar(id)).map(([, m]) => m.getLatLng());
-    if (sicht.length) map.fitBounds(L.latLngBounds(sicht), { padding: [36, 36], maxZoom: 16 });
+    if (sicht.length) map.fitBounds(L.latLngBounds(sicht), { padding: [36, 36], maxZoom: 16, animate: animiert });
   }
 
   // ---------- Bausteine ohne Pin ----------
@@ -328,7 +316,8 @@
       if (ersterFix) {
         ersterFix = false;
         const km = map.distance(ll, LUXOR) / 1000;
-        if (auto === true) return; // beim Öffnen der Seite nur den Punkt setzen, die Ansicht bleibt
+        // Beim Öffnen in Luxor gleich dorthin, wo ihr seid; nicht, wenn ein Link einen bestimmten Ort zeigt.
+        if (auto === true && (vonLink || km >= 40)) return;
         if (km < 40) { map.setView(ll, Math.max(map.getZoom(), 15)); meldung("Der blaue Punkt seid ihr. Er wandert mit."); }
         else meldung(`Euer Standort ist ${Math.round(km).toLocaleString("de-DE")} km von Luxor entfernt. Der blaue Punkt erscheint, sobald ihr in die Gegend schaut.`);
       }
@@ -412,14 +401,14 @@
     const o = ORTE[id];
     if (!filter.typ.includes(o.typ)) filter.typ.push(o.typ);
     if (o.mahl && !o.mahl.some((m) => filter.mahl.includes(m))) filter.mahl = filter.mahl.concat(o.mahl);
-    if (!sichtbar(id)) filter.zeigen = "alles";
     zeichnen();
     map.setView(o.geo, 16);
     PINS[id].openPopup();
     history.replaceState(null, "", location.pathname);
     return true;
   }
-  if (!zuOrt()) allesZeigen();
+  vonLink = zuOrt();
+  if (!vonLink) allesZeigen(false); // ohne Animation, sonst überschreibt sie den Sprung zum Standort
   window.addEventListener("hashchange", zuOrt);
   const Alle = L.Control.extend({ options: { position: "topleft" }, onAdd: () => {
     const d = L.DomUtil.create("div", "leaflet-bar");
