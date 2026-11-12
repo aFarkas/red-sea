@@ -198,6 +198,35 @@
 - [Hawass et al. (2012), BMJ: Ramesses III](https://doi.org/10.1136/bmj.e8268)
   Nur das Abstract gelesen. Use for: Schnitt durch die Kehle im CT, Horusauge-Amulett in der Wunde, „unknown man E“ als möglicher Sohn Pentawer. Kandidat für die Medinet-Habu-Lektion.
 
+- [OpenStreetMap: öffentliche Fähre Luxor–Westufer](https://www.openstreetmap.org/way/25844084)
+  Anleger West 25.70491, 32.63566, Anleger Ost 25.70845, 32.64388 (beim Karnak International Hospital). Notizen von Mappern: „Locals 4EGP, tourists 25EGP, 8min“, kleine Boote „starting at 100EGP 1/2026“. Overpass über overpass.kumi.systems/private.coffee, Nominatim für Koordinaten, OSRM (router.project-osrm.org) für Straßenentfernungen vom Westanleger: zum Tempel von Luxor rund 14 km über die Nordbrücke, Memnon gut 3, Medinet Habu knapp 5, Hatschepsut knapp 7, Tal der Könige gut 8 km. Use for: Wege in Luxor, Lektion 14.
+- [Youm7 (5.7.2025): Neue Fähren „Luxor 1“ und „Luxor 2“](https://www.youm7.com/story/2025/7/5/%D8%A7%D9%84%D9%85%D8%B9%D8%AF%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D8%A8%D8%A7%D9%84%D8%A3%D9%82%D8%B5%D8%B1-%D9%81%D8%AE%D8%B1-%D8%A7%D9%84%D8%B5%D9%86%D8%A7%D8%B9%D8%A9-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A%D8%A9-%D9%88%D8%AE%D8%AF%D9%85%D8%A9-%D9%85%D8%AA%D9%85%D9%8A%D8%B2%D8%A9-%D9%84%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD/7043320)
+  Arabisch. Use for: 250 Fahrgäste, Werft der Suezkanal-Behörde, rund um die Uhr, unter 5 Minuten, 3 Pfund, Anleger gegenüber dem Karnak International Hospital, Gouverneur Abdel Motalleb Emara.
+- [Masrawy (27.10.2026): Fähre für 5 Pfund](https://www.masrawy.com/news/news_regions/details/2026/10/27/3069687/)
+  Arabisch, Mohamed Mahrous. Use for: 5 Pfund, Pendler Ahmed Mostafa, Schüler Ibrahim Sayed, Touristen fahren mit.
+- [Masrawy (24.7.2018)](https://www.masrawy.com/news/news_regions/details/2018/7/24/1399256/) und [Masrawy (9.11.2018)](https://www.masrawy.com/news/news_regions/details/2018/11/9/1459625/): „Uber Hantour“
+  Use for: Pläne für Kutschen-App, QR-Codes für ~340 lizenzierte Kutschen, Windeln für Pferde, Uniformen, 12 Kutschenstände; im November 2018 nicht umgesetzt; ~1000 Kutschen.
+- [Cairo 24 (17.10.2025): Fahrpreise in Luxor +13 %](https://www.cairo24.com/2301195)
+  Use for: amtliche Tarife für Taxis und Microbusse, Aufkleber in den Wagen, Karnak 5 Pfund, Hurghada 145.
+- [Youm7 (1.6.2024): Samir-Farag-Korridor eröffnet](https://www.youm7.com/6594604)
+  Use for: Nordbrücke über den Nil, eröffnet 25. Mai 2024.
+- [The Star (7.6.2026): Luxor’s traditional river fleet](https://www.thestar.com.my/lifestyle/travel/2026/06/07/luxor039s-traditional-river-fleet-on-the-nile-is-a-big-tourist-pull)
+  Use for: 320 Feluken, ~400 Motorboote, ~3000 Seeleute, Gewerkschaftschef Hajjaj Mahmoud, Feluke 150–300 Pfund pro Boot und Stunde, nur zwei Brücken, Pendler 50 Pfund am Tag.
+- [Wikivoyage: Luxor/West Bank](https://en.wikivoyage.org/wiki/Luxor/West_Bank)
+  Nur Wegweiser, aber mit datierten Preisen. Use for: Fähre 25 Pfund für Ausländer, Motorboot 80–100 (Okt. 2025), Taxi für den Tag 500–1000, Fahrräder 30–40 am Anleger, Microbusse nach Gurna, Hauptkasse am Westufer.
+- [Explore Luxor: Scams](https://exploreluxor.org/tourist-scams-guide/) und [Calèche](https://exploreluxor.org/horse-drawn-carriage-in-luxor/)
+  Reiseportal. Use for: Maschen bei Kutsche, Taxi, Feluke; Kutsche 150–300 Pfund die Stunde.
+- [inDrive: Luxor](https://indrive.com/en-eg/cities/luxor) und [Egyptian Streets (2.11.2026): Ride-Hailing-Apps](https://egyptianstreets.com/2026/11/02/best-ride-hailing-apps-in-egypt-in-2026-comparing-prices-driver-choice-and-safety/)
+  Use for: inDrive in Luxor, bar, Preis selbst vorschlagen, Ampel für den empfohlenen Preis. Uber nicht in Luxor (mehrere Reiseportale).
+- [Wikivoyage: Luxor](https://en.wikivoyage.org/wiki/Luxor)
+  Nur Wegweiser. Use for: Ostufer mit Bahnhof und den meisten Hotels und Restaurants, alter Souk nahe dem Tempel von Luxor, Flughafen 6 km östlich.
+- [Uber: Städte in Ägypten](https://www.uber.com/global/en/r/egypt/cities/)
+  Luxor nicht gelistet (laut Review, November 2026).
+- [Budge (1898): The Book of the Dead, englische Übersetzung](https://archive.org/details/bookdeadanengli01budggoog)
+  Kapitel XCIX (Papyrus des Nu), S. 158–160: das Boot verhört den Toten, Segel „Nut“, Ruder „Finger des Horus“, Matrose „Reisender“, Fluss, Ufer, Boden; Rubrik: Brot, Wein, Weizen und Gerste im Binsengefilde. Alte Übersetzung.
+- [Katherine Slinger, The Past: Beautiful Festival of the Western Valley](https://the-past.com/ancient-egypt/157/feature/the-beautiful-festival-of-the-western-valley/)
+  Use for: Amuns Barke von Karnak über den Nil, Flotte kleiner Boote, Übernachtung in Deir el-Bahari.
+
 ## Wisdom (Communities)
 
 - Die Tauchbasis und Guides vor Ort in Hurghada/Safaga
@@ -219,6 +248,10 @@
 - Trinkgeld in Ägypten: Keine amtliche oder ägyptische journalistische Quelle zu üblichen Beträgen gefunden, nur Reiseveranstalter, die sich widersprechen.
 - Safaga: Keine aktuelle Quelle zu einem Wochenmarkt in der Stadt, keine belastbare Quelle zu einzelnen Restaurants. Die Wirkung des schwarzen Sands bei Schuppenflechte stützt sich nur auf Presseaussagen, keine Studie gefunden.
 - Mons Claudianus: Öffnungszeiten und Eintritt nennt keine amtliche Quelle, nur Veranstalter.
+- Fähre in Luxor: Ob Ausländer wirklich 25 Pfund statt 5 zahlen, belegen nur Reisende (Wikivoyage, OSM-Notiz, Hotelbewertung), keine ägyptische Quelle. Ob „Luxor 1/2“ nachts wirklich durchfahren, nur laut Youm7 2025.
+- Ob die Pferde der Kutschen heute Windeln tragen und ob es eine amtliche Kutschentaxe gibt: keine aktuelle Quelle.
+- Hauptkasse am Westufer: Welche Karten es dort und welche an den Stätten gibt, steht nur in Wikivoyage.
+- Trainingswissen in Lektion 14: Fährmann Mahaf („der hinter sich schaut“) und Aqen in Spruch 99 nach neueren Übersetzungen (Faulkner, Allen; bei Budge in der OCR unlesbar), maʿaddiya von ʿadda (übersetzen), kubri aus türk. köprü, hocharabisch schamāl = Norden, schimāl = links, November in Luxor mild genug zum Radfahren.
 - Ob Preisschilder in ägyptischen Supermärkten arabische oder westliche Ziffern tragen, belegt keine Quelle. Das Gesetz verlangt nur Arabisch.
 
 - Ein guter Bestimmungsführer für das Rote Meer (deutsch), noch nicht geprüft.
