@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reiseplan Luxor</title>
+<link rel="stylesheet" href="../assets/course.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+<meta name="theme-color" content="#0d6e8a">
+<script src="../assets/offline.js"></script>
+<style>
+  main.breit { max-width: 84rem; }
+  main.breit > :not(#planer):not(.bedienung) { max-width: var(--measure); }
+  .sans, .bedienung, .karte, .bilanz, .tagkarte header, .slot h4, .pool { font-family: Inter, system-ui, sans-serif; }
+
+  .bedienung { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin: 1.2rem 0 0.4rem; }
+  .bedienung button { font: inherit; font-size: 0.85rem; padding: 0.5rem 0.9rem; border-radius: 6px; border: 1px solid var(--rule); background: var(--bg); color: var(--ink); cursor: pointer; min-height: 44px; }
+  .bedienung button.haupt { background: var(--sea); color: var(--bg); border-color: var(--sea); }
+  #planer-stand, #planer-meldung { font-size: 0.8rem; color: var(--muted); margin: 0.2rem 0; }
+  #planer-meldung { color: var(--good); min-height: 1.2em; }
+
+  .bilanz { font-size: 0.85rem; background: var(--sand); padding: 0.6rem 0.9rem; border-radius: 6px; margin: 0.6rem 0 1rem; }
+  .planer-layout { display: grid; gap: 1.2rem; }
+  .tage { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(18rem, 100%), 1fr)); align-items: start; min-width: 0; }
+  .planer-layout > *, .tagkarte, .pool, .liste, .karte { min-width: 0; }
+  .karte { overflow-wrap: anywhere; }
+  @media (min-width: 1100px) {
+    .planer-layout { grid-template-columns: minmax(0, 1fr) 21rem; align-items: start; }
+    .pool { position: sticky; top: 0.8rem; max-height: calc(100vh - 1.6rem); overflow-y: auto; }
+  }
+
+  .tagkarte, .pool { border: 1px solid var(--rule); border-radius: 10px; padding: 0.7rem 0.7rem 0.4rem; background: var(--bg); }
+  .tagkarte header h3 { margin: 0; font-size: 1rem; }
+  .tagkarte .motto { margin: 0.1rem 0 0; color: var(--sea); font-size: 0.85rem; font-weight: 600; }
+  .meta { margin: 0.2rem 0 0.4rem; font-size: 0.75rem; color: var(--muted); }
+  .pool { background: var(--sea-soft); }
+  .pool h3 { margin: 0; font-size: 1rem; }
+
+  .slot h4 { margin: 0.8rem 0 0.3rem; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .liste { list-style: none; margin: 0; padding: 0; min-height: 2.6rem; border-radius: 8px; }
+  .liste:empty { border: 1px dashed var(--rule); }
+  .liste:empty::after { content: "hierher ziehen"; display: block; text-align: center; font-size: 0.75rem; color: var(--muted); padding: 0.7rem; }
+  .pool .liste:empty:not(.leer-ziel) { display: none; }
+  .pool .leer-ziel { margin-top: 0.8rem; }
+  .pool .leer-ziel:empty::after { content: "hierher ziehen = zurück in den Pool"; }
+
+  .karte { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--sea); border-radius: 8px; padding: 0.35rem 0.5rem 0.4rem 0.2rem; margin-bottom: 0.45rem; font-size: 0.85rem; line-height: 1.4; }
+  .karte[data-art="ost"] { border-left-color: var(--coral); }
+  .karte[data-art="nil"] { border-left-color: #3b8fb0; }
+  .karte[data-art="essen"] { border-left-color: var(--good); }
+  .karte[data-art="trinken"] { border-left-color: #c9962b; }
+  .karte[data-art="orga"] { border-left-color: var(--muted); }
+  .karte .kopf { display: flex; align-items: center; gap: 0.3rem; }
+  .karte .titel { flex: 1; min-width: 0; font-weight: 600; }
+  .karte .art { width: 1.3rem; text-align: center; }
+  .griff { touch-action: none; cursor: grab; border: 0; background: none; color: var(--muted); font-size: 1.2rem; width: 2.2rem; min-height: 2.4rem; padding: 0; border-radius: 6px; -webkit-user-select: none; user-select: none; }
+  .griff:hover { background: var(--sea-soft); color: var(--sea); }
+  .haken { flex: none; border: 1px solid var(--rule); background: var(--bg); color: var(--good); border-radius: 6px; min-width: 2.4rem; min-height: 2.4rem; cursor: pointer; font: inherit; font-weight: 600; }
+  .haken:hover { border-color: var(--good); }
+  .karte .chips { display: flex; flex-wrap: wrap; gap: 0.25rem; margin: 0.25rem 0 0 2.5rem; }
+  .chip { font-size: 0.7rem; background: var(--sand); border-radius: 999px; padding: 0.1rem 0.5rem; color: var(--ink); }
+  .chip.preis { background: var(--coral-soft); }
+  .chip.guide { background: var(--sea-soft); color: var(--sea); }
+  .chip.allein { background: var(--sea-soft); }
+  .karte .txt { margin: 0.35rem 0 0.1rem 2.5rem; }
+  .karte .mehr { margin: 0.1rem 0 0 2.5rem; }
+  .karte .mehr summary { cursor: pointer; color: var(--sea); font-size: 0.78rem; padding: 0.2rem 0; }
+  .karte .mehr p { margin: 0.35rem 0; }
+  .karte .mehr:not([open]) > :not(summary) { display: none; }
+  .karte select.ziel { font: inherit; font-size: 0.8rem; padding: 0.35rem; border-radius: 6px; border: 1px solid var(--rule); background: var(--bg); color: var(--ink); max-width: 100%; min-height: 2.4rem; }
+  .karte.off { opacity: 0.6; border-left-style: dashed; }
+  .karte.off .titel { text-decoration: line-through; font-weight: 400; }
+  .karte.off .haken { color: var(--sea); font-weight: 400; font-size: 0.75rem; padding: 0 0.5rem; }
+  .karte.off .griff { visibility: hidden; }
+  .weg-toggle { font: inherit; font-size: 0.72rem; color: var(--muted); background: none; border: 0; padding: 0.3rem 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; min-height: 2rem; }
+  .liste.weg { margin-bottom: 0.4rem; }
+  #planer.kompakt .karte .txt, #planer.kompakt .karte .mehr, #planer.kompakt .chip:not(.preis) { display: none; }
+  #planer.kompakt .karte .chips:not(:has(.preis)) { display: none; }
+
+  .karte.zieht { position: fixed; z-index: 50; pointer-events: none; box-shadow: 0 10px 28px rgba(0,0,0,.25); transform: rotate(1.5deg); }
+  .platzhalter { border: 2px dashed var(--sea); border-radius: 8px; margin-bottom: 0.45rem; background: var(--sea-soft); }
+  .am-ziehen, .am-ziehen * { -webkit-user-select: none; user-select: none; cursor: grabbing; }
+  .karte.neu { animation: neu 0.9s ease; }
+  @keyframes neu { from { box-shadow: 0 0 0 3px var(--sea); } to { box-shadow: 0 0 0 0 transparent; } }
+
+  ul.todo { list-style: none; padding-left: 0; }
+  ul.todo li { display: flex; gap: 0.6rem; align-items: flex-start; padding: 0.4rem 0; border-top: 1px solid var(--rule); }
+  ul.todo li:first-child { border-top: 0; }
+  ul.todo input { width: 1.3rem; height: 1.3rem; margin-top: 0.2rem; flex: none; accent-color: var(--sea); }
+  ul.todo li.erledigt { color: var(--muted); text-decoration: line-through; }
+
+  @media print {
+    main.breit { max-width: none; }
+    .bedienung, .pool, .griff, .haken, .mehr, .weg-toggle, .liste.weg, #planer-meldung { display: none !important; }
+    .planer-layout { display: block; }
+    .tage { grid-template-columns: 1fr 1fr; }
+    .tagkarte { break-inside: avoid; }
+    .liste:empty { display: none; }
+  }
+</style>
+</head>
+<body>
+<main class="breit">
+<p class="kicker">Referenz · Über Wasser · Luxor</p>
+<h1>Reiseplan Luxor</h1>
+<p class="lede">Samstag, 14. November, bis Dienstag, 17. November: zwei volle Tage dazwischen. Der Vorschlag steht schon drin. Schiebt, hakt weg und holt zurück, bis es euer Plan ist.</p>
+
+<div class="box define">
+  <div class="box-title">So geht’s</div>
+  <ul>
+    <li><strong>Verschieben:</strong> am Griff <strong>⠿</strong> fassen und ziehen, auf dem iPad mit dem Finger, auf dem MacBook mit der Maus. Oder unter „Mehr“ → „Verschieben nach …“ wählen.</li>
+    <li><strong>Weghaken:</strong> <strong>✓</strong> antippen. Die Karte verschwindet, darunter steht „1 weggehakt · zeigen“. Dort holt ihr sie mit „↺ wieder rein“ zurück. So liegen Alternativen bereit, ohne zu stören.</li>
+    <li><strong>Kompakt:</strong> zeigt nur Titel und Eintritt, gut für den Überblick auf dem MacBook.</li>
+    <li><strong>Ideenpool:</strong> Alles, was noch keinen Tag hat, nach Westufer, Ostufer, Nil, Essen und Trinken sortiert.</li>
+    <li><strong>iPad und MacBook:</strong> Der Plan bleibt im Browser des Geräts. „Plan teilen“ macht daraus einen Link. Öffnet ihn auf dem anderen Gerät, und der Plan ist dort.</li>
+  </ul>
+</div>
+
+<div class="bedienung">
+  <button type="button" class="haupt" data-planer="teilen">Plan teilen</button>
+  <button type="button" data-planer="kompakt">Kompakt</button>
+  <button type="button" data-planer="alle-zeigen">Weggehakte zeigen/verbergen</button>
+  <button type="button" data-planer="vorschlag">Vorschlag wiederherstellen</button>
+  <button type="button" data-planer="drucken">Drucken</button>
+</div>
+<p id="planer-stand"></p>
+<p id="planer-meldung" role="status"></p>
+
+<div id="planer"></div>
+
+<h2>Warum dieser Vorschlag</h2>
+<p>Er folgt dem Rat eures Freundes, mit einer Ergänzung.</p>
+<ul>
+  <li><strong>Westufer mit Guide.</strong> In Gräbern und Totentempeln sieht man ohne Erklärung vor allem bunte Wände. Ein Ägyptologe mit Fahrer bringt euch ab etwa 7 Uhr von Stätte zu Stätte, bevor es voll und warm wird. Alle Stätten am Westufer lassen im Winter bis 16 Uhr ein.</li>
+  <li><strong>Ostufer selbst.</strong> Karnak am Morgen, höchstens mit einem Guide für zwei Stunden, dann Souk, Essen, Corniche in eurem Tempo. Den Tempel von Luxor schafft ihr allein, er lässt bis 19 Uhr ein.</li>
+  <li><strong>Nicht beide Ufer an einem Tag.</strong> Solche Touren gibt es, sie packen Tal der Könige, Hatschepsut, Memnon, Karnak und Luxor-Tempel in rund acht Stunden. Ihr habt zwei Tage.</li>
+  <li><strong>Essen, wo ihr gerade seid.</strong> Westufer-Abende am Samstag und Sonntag, der Abend am Ostufer am Montag, wenn ihr ohnehin drüben seid.</li>
+  <li><strong>Neu dazu: Deir el-Medina.</strong> Das Dorf der Grabbauer steht in eurer Mission, fehlt aber in vielen Touren. Es liegt zwischen Hatschepsut und Medinet Habu, kostet also kaum Umweg. Sagt es dem Guide ausdrücklich.</li>
+  <li><strong>Selbst entdecken statt Guide?</strong> Im Pool liegen „Taxi für den Tag“ und „Fahrrad“. Zieht sie auf Sonntag früh und hakt die Tour weg.</li>
+</ul>
+
+<div class="box lookout">
+  <div class="box-title">Sonnenuntergang: auf welcher Seite?</div>
+  <p>Die Sonne geht Mitte November gegen 17 Uhr unter, hinter den Bergen eures Ufers. Für die alten Ägypter starb sie dort jeden Abend, deshalb liegen die Gräber im Westen (<a href="../lessons/0013-ich-kann-die-hieroglyphen-nicht-lesen.html">Lektion 13</a>). Wer auf einer Dachterrasse am Westufer sitzt, schaut also nach Osten: Der Tempel von Luxor glüht im letzten Licht, dann gehen drüben die Lichter an. Die Sonne selbst versinkt hinter euch. Wer sie über den Bergen untergehen sehen will, sitzt in einer Feluke auf dem Fluss oder auf einer Terrasse am Ostufer, etwa im Winter Palace oder bei Al-Sahaby Lane.</p>
+  <p>Alkohol schenken nach den Restaurantführern vor allem Hotels und einige Dachterrassen aus. Die meisten ägyptischen Familienlokale sind trocken. Im Plan steht es bei jedem Ort, soweit bekannt.</p>
+</div>
+
+<h2>Vorab erledigen</h2>
+<p class="sans" style="font-size:.8rem;color:var(--muted)">Die Häkchen bleiben auf diesem Gerät gespeichert und wandern mit dem Teilen-Link.</p>
+<ul class="todo">
+  <li data-todo="tickets">Eintrittskarten für Tal der Könige (mit Ramses V./VI.), Hatschepsut, Medinet Habu, Deir el-Medina, Karnak und Tempel von Luxor kaufen. Offiziell auf <a href="https://egymonuments.com/">egymonuments.com</a>, der Buchungsseite des Ministeriums, oder an der Kasse vor Ort, dort nur mit Visa oder Mastercard.</li>
+  <li data-todo="guide">Private Westufer-Tour für Sonntag anfragen: beim Gastgeber eurer Unterkunft und auf GetYourGuide oder Viator. Gesamtpreis für zwei schriftlich, mit Deir el-Medina und Medinet Habu, ohne Einkaufsstopps. Den Text zum Kopieren gibt es auf der Karte „Private Westufer-Tour“ unter „Mehr“.</li>
+  <li data-todo="karnak-guide">Wenn gewünscht: Guide für zwei Stunden Karnak am Montagmorgen.</li>
+  <li data-todo="ballon">Wenn ihr Ballon fahren wollt: online buchen, mit Abholung, Rückfahrt und voller Erstattung bei Absage wegen Wetter.</li>
+  <li data-todo="sahaby">Al-Sahaby Lane für Montagabend reservieren, die Tische zum Sonnenuntergang sind Tage vorher weg.</li>
+  <li data-todo="sofra">Sofra reservieren, falls ihr dort essen wollt, und Bargeld mitnehmen: Sofra nimmt keine Karte.</li>
+  <li data-todo="rueckfahrt">Fahrer für Dienstag nach Hurghada buchen. Abfahrt rund sieben Stunden vor dem Abflug.</li>
+  <li data-todo="bargeld">Kleine Scheine für Fähre, Boote, Trinkgeld und Saft. Die Kassen der Stätten nehmen dagegen nur Karte.</li>
+</ul>
+
+<div class="box phrases">
+  <div class="box-title">Bestellen ohne Fleisch und Fisch</div>
+  <ul class="phrase-list">
+    <li class="std"><span data-wort="w-min-gheer" class="say-word">min ghēr</span> <span data-wort="w-lahma" class="say-word">lahma</span> – ohne Fleisch</li>
+    <li class="std"><span data-wort="w-min-gheer" class="say-word">min ghēr</span> <span data-wort="w-samak" class="say-word">samak</span> – ohne Fisch</li>
+    <li class="std"><span data-wort="w-nabaati" class="say-word">nabāti</span> – vegetarisch</li>
+    <li class="std"><span data-wort="w-bikaam" class="say-word">bi-kām?</span> – Was kostet das?</li>
+  </ul>
+  <p class="aside legend">★ Standard: das lernst und übst du.</p>
+  <p class="aside">Vegan und überall zu haben: Koschari, Ful und Taʿmiyya, siehe <a href="../lessons/0012-pfeffer-in-der-wueste.html">Lektion 12</a>.</p>
+</div>
+
+<div class="box ask">
+  <div class="box-title">Frag nach</div>
+  <p>Wenn ihr euch entschieden habt, teilt mir den Link oder schreibt, was ihr umgestellt habt. Daraus werden dann eine oder zwei Lektionen: der Westufer-Tag mit Uhrzeiten und was ihr wo sucht, und der Ostufer-Tag mit Souk, Essen und Sonnenuntergang. Und vor Ort: Fragt mich, wenn ein Plan platzt.</p>
+</div>
+
+<h2>Quellen</h2>
+<ol class="sources">
+  <li>Ministerium für Tourismus und Altertümer, offizielle Buchungsseite: Öffnungszeiten und Preise für <a href="https://egymonuments.com/details/ValleyOfKings">Tal der Könige</a>, <a href="https://egymonuments.com/details/HatshepsutTemple">Hatschepsut</a>, <a href="https://egymonuments.com/details/MedinetHabu">Medinet Habu</a>, <a href="https://egymonuments.com/details/Ramesseum">Ramesseum</a>, <a href="https://egymonuments.com/details/ValleyoftheQueens">Tal der Königinnen</a>, <a href="https://egymonuments.com/details/KarnakTemple">Karnak</a>, <a href="https://egymonuments.com/details/LuxorTemple">Tempel von Luxor</a>, <a href="https://egymonuments.com/details/LuxorMuseum">Luxor-Museum</a>, abgerufen am 12. November 2026.</li>
+  <li>Ministerium für Tourismus: <a href="https://mota.gov.eg/media/5a2ja2iu/ticket-english-5-11-2024-1.pdf">Ticket prices</a>, Stand 5. November 2024, Abschnitt Luxor: Zusatzgräber, Deir el-Medina, Carter-Haus, Mumifizierungsmuseum.</li>
+  <li><em>The Luxor Guide</em> (30. August 2026): <a href="https://www.theluxorguide.com/city/luxor/articles/where-to-eat-in-luxor-after-a-day-at-the-temples">Where to Eat in Luxor After the Temples</a>.</li>
+  <li><em>Explore Luxor</em> (aktualisiert 11. September 2026): <a href="https://exploreluxor.org/where-to-eat-in-luxor/">Where to Eat in Luxor</a>.</li>
+  <li>Wikivoyage: <a href="https://en.wikivoyage.org/wiki/Luxor/West_Bank">Luxor/West Bank</a>, <a href="https://en.wikivoyage.org/wiki/Luxor/East_Bank">Luxor/East Bank</a>, <a href="https://en.wikivoyage.org/wiki/Luxor">Luxor</a>, Preise meist älter.</li>
+  <li>HappyCow: <a href="https://www.happycow.net/reviews/sofra-luxor-146635">Sofra</a>, <a href="https://www.happycow.net/reviews/wannas-art-cafe-luxor-191576">Wannas Art Café</a>, <a href="https://www.happycow.net/reviews/thebes-bar-and-grill-luxor-327206">Thebes Bar &amp; Grill</a>, <a href="https://www.happycow.net/widget/africa/egypt/luxor/">Übersicht Luxor</a>; spinach.guide: <a href="https://spinach.guide/venues/nubian-house-14452/">Nubian House</a>, <a href="https://spinach.guide/venues/cafe-restaurant-maratonga-14455/">Maratonga</a>.</li>
+  <li><em>The Star</em> (7. Juni 2026): <a href="https://www.thestar.com.my/lifestyle/travel/2026/06/07/luxor039s-traditional-river-fleet-on-the-nile-is-a-big-tourist-pull">Luxor’s traditional river fleet on the Nile</a>, Preise für Feluken.</li>
+  <li>Sonnenauf- und -untergang für Luxor (25,7° N, 32,6° O) mit der Formel der NOAA berechnet, auf etwa fünf Minuten genau.</li>
+  <li>Fahrzeit Luxor–Hurghada: Angaben von Transferanbietern, etwa <a href="https://www.mytransfers.com/de/destination/agypten/flughafen-luxor-lxr/hurghada/">mytransfers</a>.</li>
+  <li>Vorschlag und Restaurant-Tipps: ein Freund, der Luxor kennt, November 2026.</li>
+</ol>
+
+<nav class="course">
+  <a href="../index.html">Übersicht</a>
+  <a href="../lessons/0013-ich-kann-die-hieroglyphen-nicht-lesen.html">Lektion 13: Ich kann die Hieroglyphen nicht lesen!</a>
+  <a href="../lessons/0014-fuenf-pfund-fuer-den-faehrmann.html">Lektion 14: Fünf Pfund für den Fährmann</a>
+  <a href="luxor.html">Luxor</a>
+  <a href="sprachfuehrer.html">Sprachführer</a>
+  <a href="glossar.html">Glossar</a>
+  <a href="logbuch-beobachtungen.html">Beobachtungsliste</a>
+  <a href="wiederholung.html">Weißt du noch? Wiederholung</a>
+</nav>
+</main>
+<script src="../assets/reiseplan-daten.js"></script>
+<script src="../assets/reiseplan.js"></script>
+<script src="../assets/cards.js"></script>
+<script src="../assets/say.js"></script>
+</body>
+</html>

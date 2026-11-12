@@ -1,0 +1,5 @@
+# Reiseplan Luxor: erst die Basis, dann die Lektionen
+
+Für die Tage in Luxor (Sa 14.11. ab etwa 15 Uhr bis Di 17.11., abends Flug ab Hurghada) wünscht sich der Nutzer eine vollständige Reiseplanung mit Optionen, die man an- und abhaken und mit Drag and Drop zwischen den Tagen verschieben kann, auf iPad und MacBook. Ob daraus eine oder zwei Lektionen werden, war offen; er schlug selbst vor, zuerst die Basis zu legen und danach zu entscheiden. Beide mögen es, selbst zu entdecken, sehen aber, dass ein Guide in Luxor oft mehr bringt. Ein Freund mit Ortskenntnis hat einen Plan geschickt (So Westufer mit Guide, Mo Ostufer selbst, Restaurants auf der Seite, auf der man gerade ist). Die Freundin möchte in den Souk (im diktierten Text stand „Zug“). Gewünscht sind auch Orte zum Trinken und für den Sonnenuntergang.
+
+**Implications:** Die Basis ist `reference/reiseplan.html`. Nach Luxor fragen, welche Optionen sie gewählt haben, und daraus die Lektionen schneiden. Interaktive Bauteile müssen mit Finger und Maus gehen und den Stand zwischen Geräten per Link übertragen.

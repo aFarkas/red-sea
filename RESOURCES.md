@@ -227,6 +227,19 @@
 - [Katherine Slinger, The Past: Beautiful Festival of the Western Valley](https://the-past.com/ancient-egypt/157/feature/the-beautiful-festival-of-the-western-valley/)
   Use for: Amuns Barke von Karnak über den Nil, Flotte kleiner Boote, Übernachtung in Deir el-Bahari.
 
+### Reiseplan Luxor
+
+- [Offizielle Buchungsseite des Ministeriums, egymonuments.com](https://egymonuments.com/)
+  Seiten je Stätte (`/details/ValleyOfKings`, `HatshepsutTemple`, `MedinetHabu`, `Ramesseum`, `ValleyoftheQueens`, `KarnakTemple`, `LuxorTemple`, `LuxorMuseum`), abgerufen 12.11.2026. Preise lädt die Seite per Skript, curl sieht sie nicht, WebFetch schon. Use for: Winterzeiten (Westufer und Karnak 6–16 Uhr letzter Einlass, Luxor-Tempel bis 19 Uhr, Luxor-Museum 9–13 und 17–20 Uhr) und Eintritte.
+- [The Luxor Guide (30.8.2026): Where to Eat in Luxor After the Temples](https://www.theluxorguide.com/city/luxor/articles/where-to-eat-in-luxor-after-a-day-at-the-temples)
+  Use for: Al-Sahaby Lane (seit 1930ern, Dach, Sonnenuntergang reservieren), Sofra (bar, reservieren), Thebes Bar & Grill (vegan, Bier), Nile Valley (Dach am Anleger, Bier), Marsam; Alkohol meist nur in Hotels und einigen Dachlokalen.
+- [Explore Luxor (aktualisiert 11.9.2026): Where to Eat in Luxor](https://exploreluxor.org/where-to-eat-in-luxor/)
+  Use for: Snobs mit veganer Karte, Wannas Art Café, Sofra ohne Alkohol.
+- [Wikivoyage Luxor/East Bank](https://en.wikivoyage.org/wiki/Luxor/East_Bank)
+  Use for: Sofra-Zeiten, Zuckerrohrsaft, Licht und Ton (250 Pfund, undatiert). Westufer-Seite: Tutankhamun (Karte mit Preisen verlangen), Sunflower (Alkohol, 11–23 Uhr).
+- [HappyCow Luxor](https://www.happycow.net/widget/africa/egypt/luxor/) und [spinach.guide](https://spinach.guide/venues/cafe-restaurant-maratonga-14455/)
+  Use for: vegane Optionen (Sofra, Wannas, Maratonga, Nubian House eher schwach).
+
 ## Wisdom (Communities)
 
 - Die Tauchbasis und Guides vor Ort in Hurghada/Safaga
@@ -252,6 +265,7 @@
 - Ob die Pferde der Kutschen heute Windeln tragen und ob es eine amtliche Kutschentaxe gibt: keine aktuelle Quelle.
 - Hauptkasse am Westufer: Welche Karten es dort und welche an den Stätten gibt, steht nur in Wikivoyage.
 - Trainingswissen in Lektion 14: Fährmann Mahaf („der hinter sich schaut“) und Aqen in Spruch 99 nach neueren Übersetzungen (Faulkner, Allen; bei Budge in der OCR unlesbar), maʿaddiya von ʿadda (übersetzen), kubri aus türk. köprü, hocharabisch schamāl = Norden, schimāl = links, November in Luxor mild genug zum Radfahren.
+- Reiseplan Luxor: West Bank Nile Palace, El Sayeda Zainab und Blue Sky (Tipps des Freundes) ohne verlässliche Quelle. Lage von Thebes Bar & Grill widersprüchlich (Luxor Guide: Ost, HappyCow: West). Preise für Guide, Ballon und Transfer nach Hurghada nur aus Buchungsportalen. Ob Feluken auch am Westufer-Anleger ablegen, nicht geprüft. Terrasse des Winter Palace für Nicht-Gäste nur nach einem Reisebericht von 2020.
 - Ob Preisschilder in ägyptischen Supermärkten arabische oder westliche Ziffern tragen, belegt keine Quelle. Das Gesetz verlangt nur Arabisch.
 
 - Ein guter Bestimmungsführer für das Rote Meer (deutsch), noch nicht geprüft.
