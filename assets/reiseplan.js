@@ -214,10 +214,12 @@
       off ? null : el("div", { class: "chips" }, chips),
       off ? null : el("p", { class: "txt" }, T(b.txt)),
       off || !b.anders ? null : el("p", { class: "anders-text" }, el("strong", {}, !b.freund ? "Ergänzung: " : e ? "Hinweis: " : "Anders als euer Freund: "), T(b.anders)),
+      off ? null : el("p", { class: "links" },
+        b.map ? el("a", { href: b.map, target: "_blank", rel: "noopener" }, "📍 Google Maps") : null,
+        (b.links || []).map(([label, url]) => el("a", Object.assign({ href: url }, url.startsWith("http") ? { target: "_blank", rel: "noopener" } : {}), label))),
       off ? null : el("details", { class: "mehr" },
         el("summary", {}, "Mehr"),
         b.more ? el("p", { html: T(b.more) }) : null,
-        b.map ? el("p", {}, el("a", { href: b.map, target: "_blank", rel: "noopener" }, "📍 In Google Maps öffnen")) : null,
         el("p", {}, ziel)));
   }
 

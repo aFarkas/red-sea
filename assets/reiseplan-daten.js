@@ -215,6 +215,88 @@
       more: `<a href="https://en.wikivoyage.org/wiki/Luxor/East_Bank">Wikivoyage Luxor/East Bank</a>.` },
   ];
 
+  // ---------- Links zu jeder Karte: Karte, offizielle Seite, Buchen, Quellen eures Freundes ----------
+  // Suchlinks statt geratener Adressen, wo es keine geprüfte offizielle Seite gibt.
+  const q = encodeURIComponent;
+  const TA = (x) => ["⭐ Tripadvisor", "https://www.tripadvisor.com/Search?q=" + q(x + " Luxor")];
+  const WEB = (x) => ["🔎 Website suchen", "https://www.google.com/search?q=" + q(x + " Luxor")];
+  const FREUND = (site, x) => [`💬 Quelle eures Freundes: ${site}`, "https://www.google.com/search?q=" + q(`site:${site} ${x} Luxor`)];
+  const GYG = (x) => ["🎟 GetYourGuide", "https://www.getyourguide.com/s/?q=" + q(x)];
+  const VIA = (x) => ["🎟 Viator", "https://www.viator.com/searchResults/all?text=" + q(x)];
+  const OFF = (slug, label = "🏛 Offizielle Seite") => [label, EGY + slug];
+  const TICKETS = ["🎟 Tickets (offiziell)", "https://egymonuments.com/"];
+  const PREISE = ["📄 Preisliste Ministerium", "https://mota.gov.eg/media/5a2ja2iu/ticket-english-5-11-2024-1.pdf"];
+  const MEMPHIS = ["🎓 Uni Memphis: Westufer", "https://www.memphis.edu/egypt/resources/colortour/westbank.php"];
+  const L14 = ["📖 Lektion 14", "../lessons/0014-fuenf-pfund-fuer-den-faehrmann.html"];
+  const L13 = ["📖 Lektion 13", "../lessons/0013-ich-kann-die-hieroglyphen-nicht-lesen.html"];
+  const GUIDES = ["👤 Private Guides in Luxor (GoWithGuide)", "https://gowithguide.com/egypt/luxor/guides"];
+  const ANLEGER_W = "https://www.google.com/maps/search/?api=1&query=25.70491,32.63566";
+  const ANLEGER_O = "https://www.google.com/maps/search/?api=1&query=25.70845,32.64388";
+
+  const LINKS = {
+    tdk: [OFF("ValleyOfKings"), TICKETS, L13],
+    kv9: [PREISE, L13], tut: [PREISE], sethos: [PREISE],
+    hatschepsut: [OFF("HatshepsutTemple"), TICKETS],
+    deir: [MEMPHIS, PREISE, TICKETS],
+    medinet: [OFF("MedinetHabu"), TICKETS],
+    memnon: [L13, MEMPHIS],
+    ramesseum: [OFF("Ramesseum"), TICKETS],
+    koeniginnen: [OFF("ValleyoftheQueens"), TICKETS],
+    carter: [OFF("CarterHouse"), PREISE],
+    karnak: [OFF("KarnakTemple"), TICKETS],
+    "karnak-guide": [GUIDES, GYG("Karnak private guide"), VIA("Karnak Temple private guide")],
+    luxortempel: [OFF("LuxorTemple"), TICKETS],
+    souk: [["📘 Wikivoyage Luxor", "https://en.wikivoyage.org/wiki/Luxor"]],
+    museum: [OFF("LuxorMuseum"), TICKETS],
+    mumien: [OFF("MummificationMuseum"), PREISE],
+    soundlight: [WEB("Karnak sound and light show"), ["📘 Wikivoyage", "https://en.wikivoyage.org/wiki/Luxor/East_Bank"]],
+    faehre: [["📍 Anleger Westufer", ANLEGER_W], ["📍 Anleger Ostufer", ANLEGER_O], L14],
+    zurueck: [["📍 Anleger Ostufer", ANLEGER_O], ["📍 Anleger Westufer", ANLEGER_W], L14],
+    motorboot: [["📍 Anleger Westufer", ANLEGER_W], L14],
+    feluke: [GYG("Luxor felucca sunset private"), VIA("Luxor private felucca sunset"), L14],
+    ballon: [GYG("Luxor hot air balloon"), VIA("Luxor hot air balloon")],
+    rad: [["📍 Anleger Westufer", ANLEGER_W], L14],
+    "guide-west": [GUIDES, ["👤 Beispiel: private Westufer-Tagestour", "https://gowithguide.com/egypt/tour/luxor-private-luxor-highlights-full-day-tour-west-bank-24354"], GYG("Luxor West Bank private tour Egyptologist"), VIA("Luxor West Bank private tour")],
+    "taxi-west": [["🚕 inDrive Luxor", "https://indrive.com/en-eg/cities/luxor"], L14],
+    abfahrt: [["🚐 mytransfers", "https://www.mytransfers.com/de/destination/agypten/flughafen-luxor-lxr/hurghada/"], GYG("Luxor Hurghada airport private transfer")],
+    luxorpass: [WEB("Luxor Pass egymonuments price"), ["📰 CairoScene 2025", "https://cairoscene.com/buzz/cairo-luxor-passes-expensive"]],
+    ostwest: [GYG("Luxor East and West Bank one day private tour")],
+    kaffee: [], pause: [], ankommen: [["📍 Anleger Westufer", ANLEGER_W]], fr15: [], fr16: [], fruehstueck: [],
+    // Essen und Trinken
+    nubian: [TA("Nubian House restaurant"), FREUND("mapquest.com", "Nubian House")],
+    tutanchamun: [TA("Tutankhamun Restaurant West Bank"), ["📘 Wikivoyage Westufer", "https://en.wikivoyage.org/wiki/Luxor/West_Bank"], FREUND("tripadvisor.com", "Tutankhamon Restaurant")],
+    sunflower: [TA("Sunflower Restaurant West Bank"), FREUND("wanderboat.ai", "Sunflower")],
+    maratonga: [TA("Maratonga Cafe Medinet Habu"), ["📘 Lonely Planet", "https://www.lonelyplanet.com/pois/437446"]],
+    marsam: [TA("Marsam Hotel"), WEB("Marsam Hotel")],
+    wannas: [["🌱 HappyCow", "https://www.happycow.net/reviews/wannas-art-cafe-luxor-191576"], TA("Wannas Art Cafe")],
+    sahaby: [["🌐 Offizielle Seite mit Speisekarte", "https://www.nefertitihotel.com/al-sahaby-lane-restaurant"], TA("Al-Sahaby Lane")],
+    sofra: [["🌱 HappyCow", "https://www.happycow.net/reviews/sofra-luxor-146635"], TA("Sofra Restaurant")],
+    thebes: [["🌱 HappyCow", "https://www.happycow.net/reviews/thebes-bar-and-grill-luxor-327206"], TA("Thebes Bar and Grill")],
+    snobs: [TA("Snobs Restaurant"), ["📘 Explore Luxor", "https://exploreluxor.org/where-to-eat-in-luxor/"]],
+    koschari: [["📖 Lektion 12", "../lessons/0012-pfeffer-in-der-wueste.html"]],
+    nilepalace: [TA("West Bank Nile Palace Restaurant"), FREUND("tripadvisor.com", "West Bank Nile Palace"), FREUND("wanderboat.ai", "West Bank Nile Palace")],
+    sayeda: [["💬 Quelle eures Freundes: cybo.com", "https://www.cybo.com/search/?q=" + q("El Sayeda Zainab Restaurant Luxor")], TA("El Sayeda Zainab Restaurant")],
+    bluesky: [FREUND("trip.com", "Blue Sky Restaurant"), TA("Blue Sky Restaurant West Bank")],
+    "mittag-west": [],
+    nilevalley: [TA("Nile Valley Hotel restaurant"), WEB("Nile Valley Hotel West Bank")],
+    gezira: [["⭐ Tripadvisor", "https://www.tripadvisor.com/Restaurant_Review-g294205-d25263926-Reviews-El_Gezira_Restaurant-Luxor_Nile_River_Valley.html"]],
+    winterpalace: [WEB("Sofitel Legend Old Winter Palace official"), TA("Old Winter Palace")],
+    saft: [],
+  };
+  // Karten, die bisher keine Google-Maps-Adresse hatten
+  const KARTE = {
+    kv9: gm("Tomb of Ramesses VI, Valley of the Kings"), tut: gm("Tomb of Tutankhamun, Valley of the Kings"), sethos: gm("Tomb of Seti I, Valley of the Kings"),
+    "karnak-guide": gm("Karnak Temple, Luxor"), kaffee: gm("Corniche El Nile, Luxor"), koschari: gm("koshary, Luxor"),
+    saft: gm("juice shop, Luxor"), soundlight: gm("Karnak Temple, Luxor"), feluke: ANLEGER_W, ballon: gm("Hot air balloon launch site, West Bank, Luxor"),
+    "guide-west": gm("Valley of the Kings, Luxor"), "taxi-west": gm("Valley of the Kings, Luxor"), "mittag-west": gm("Medinet Habu, Luxor"),
+    fr15: null, fr16: null, fruehstueck: null, pause: null, ankommen: null, faehre: null, zurueck: null, motorboot: null, rad: null,
+    abfahrt: gm("Hurghada International Airport"), luxorpass: null, ostwest: null,
+  };
+  window.PLAN_BAUSTEINE.forEach((b) => {
+    b.links = LINKS[b.id] || [];
+    if (!b.map && KARTE[b.id]) b.map = KARTE[b.id];
+  });
+
   // Zwei Vorschläge. Ids mit "-" davor sind weggehakte Alternativen. Was fehlt, liegt im Ideenpool.
   window.PLAN_VORSCHLAEGE = {
     mein: {
