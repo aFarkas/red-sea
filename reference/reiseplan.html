@@ -83,6 +83,10 @@
   .karte .links a { text-decoration: none; }
   .karte .links a:hover { text-decoration: underline; }
   #planer.kompakt .karte .links { display: none; }
+  .karte .kbild { margin: 0.35rem 0 0.2rem 2.5rem; }
+  .karte .kbild img { width: 100%; height: 8.5rem; object-fit: cover; display: block; border-radius: 6px; background: var(--sand); }
+  .karte .kbild figcaption { font-size: 0.65rem; margin-top: 0.15rem; }
+  #planer.ohne-bilder .kbild, #planer.kompakt .kbild { display: none; }
   .karte .mehr summary { cursor: pointer; color: var(--sea); font-size: 0.78rem; padding: 0.2rem 0; }
   .karte .mehr p { margin: 0.35rem 0; }
   .karte .mehr:not([open]) > :not(summary) { display: none; }
@@ -110,7 +114,7 @@
 
   @media print {
     main.breit { max-width: none; }
-    .bedienung, .pool, .griff, .haken, .mehr, .weg-toggle, .liste.weg, #planer-meldung { display: none !important; }
+    .kbild, .bedienung, .pool, .griff, .haken, .mehr, .weg-toggle, .liste.weg, #planer-meldung { display: none !important; }
     .planer-layout { display: block; }
     .tage { grid-template-columns: 1fr 1fr; }
     .tagkarte { break-inside: avoid; }
@@ -130,6 +134,7 @@
     <li><strong>Verschieben:</strong> am Griff <strong>⠿</strong> fassen und ziehen, auf dem iPad mit dem Finger, auf dem MacBook mit der Maus. Oder unter „Mehr“ → „Verschieben nach …“ wählen.</li>
     <li><strong>Weghaken:</strong> <strong>✓</strong> antippen. Die Karte verschwindet, darunter steht „1 weggehakt · zeigen“. Dort holt ihr sie mit „↺ wieder rein“ zurück. So liegen Alternativen bereit, ohne zu stören.</li>
     <li><strong>Zwei Vorschläge:</strong> „Plan des Freundes laden“ zeigt genau seinen Plan, „Mein Vorschlag laden“ meinen. Grün hinterlegt mit <strong>✓ Freund und ich einig</strong>: Das empfehlen wir beide für denselben Tag (oder raten beide ab). <strong>💬 Tipp des Freundes</strong>: seine Idee, die ich anders einplane oder nur als Alternative führe. Ein roter Kasten auf der Karte sagt, wo und warum ich abweiche.</li>
+    <li><strong>Bilder:</strong> Das Häkchen „Bilder“ blendet die Fotos auf den Karten ein und aus. Antippen öffnet das Foto groß bei Wikimedia Commons.</li>
     <li><strong>Kompakt:</strong> zeigt nur Titel und Eintritt, gut für den Überblick auf dem MacBook.</li>
     <li><strong>Ideenpool:</strong> Alles, was noch keinen Tag hat, nach Westufer, Ostufer, Nil, Essen und Trinken sortiert.</li>
     <li><strong>An mich schicken:</strong> Unter „Plan an Claude schicken“ entsteht ein Text für den Chat. Daraus mache ich euren festen Plan, für beide Geräte und für die Lektionen.</li>
@@ -145,6 +150,7 @@
 <div class="bedienung">
   <label class="sans" style="font-size:.85rem">🕑 <select id="planer-los" aria-label="Wann wollt ihr morgens los?" style="font:inherit;padding:.45rem;border-radius:6px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);min-height:44px"></select></label>
   <button type="button" class="haupt" data-planer="teilen">Plan teilen</button>
+  <label class="sans" style="font-size:.85rem;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 .4rem"><input type="checkbox" id="planer-bilder" style="width:1.2rem;height:1.2rem;accent-color:var(--sea)"> Bilder</label>
   <button type="button" data-planer="kompakt">Kompakt</button>
   <button type="button" data-planer="alle-zeigen">Weggehakte zeigen/verbergen</button>
   <button type="button" data-planer="mein">Mein Vorschlag laden</button>

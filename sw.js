@@ -342,6 +342,8 @@ function discover(base, type, text, add) {
   if (isJs) {
     // Aufnahmen, die nur als Dateiname in einem Skript stehen (cards.js), liegen in assets/audio/.
     for (const m of text.matchAll(/["']([\w.-]+\.mp3)["']/g)) own(new URL("audio/" + m[1], base).href);
+    // Fotos, die nur in einem Skript stehen (reiseplan-daten.js).
+    for (const m of text.matchAll(/https:\/\/upload\.wikimedia\.org\/[^"'`\s]+/g)) add(m[0], "image");
     return;
   }
   // HTML

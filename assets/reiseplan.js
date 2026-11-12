@@ -55,7 +55,7 @@
     }
     slots.pool = slots.pool || [];
     for (const id of Object.keys(BY_ID)) if (!seen.has(id)) slots.pool.push(id);
-    return { slots, off: st.off || {}, todo: st.todo || {}, zeigen: st.zeigen || {}, kompakt: !!st.kompakt, notiz: st.notiz || "", los: LOS.includes(+st.los) ? +st.los : 7, geaendert: st.geaendert || null };
+    return { slots, off: st.off || {}, todo: st.todo || {}, zeigen: st.zeigen || {}, kompakt: !!st.kompakt, bilder: st.bilder !== false, notiz: st.notiz || "", los: LOS.includes(+st.los) ? +st.los : 7, geaendert: st.geaendert || null };
   }
   function load() {
     try {
@@ -211,6 +211,9 @@
         el("span", { class: "art", title: art.name, "aria-hidden": "true" }, art.icon),
         el("span", { class: "titel" }, T(b.t)),
         haken),
+      off || !b.bild ? null : el("figure", { class: "kbild" },
+        el("a", { href: b.bild.seite, target: "_blank", rel: "noopener" }, el("img", { src: b.bild.src, alt: b.bild.alt, loading: "lazy" })),
+        el("figcaption", {}, b.bild.credit)),
       off ? null : el("div", { class: "chips" }, chips),
       off ? null : el("p", { class: "txt" }, T(b.txt)),
       off || !b.anders ? null : el("p", { class: "anders-text" }, el("strong", {}, !b.freund ? "Ergänzung: " : e ? "Hinweis: " : "Anders als euer Freund: "), T(b.anders)),
@@ -282,6 +285,12 @@
       ` · zu zweit ${pfund(gesamt * 2)} £E ≈ ${euro(gesamt * 2)} €. Euro nach der Faustregel (60 Pfund ≈ 1 €), bezahlt wird an den Kassen nur mit Karte.`);
 
     root.classList.toggle("kompakt", !!state.kompakt);
+    root.classList.toggle("ohne-bilder", !state.bilder);
+    const bc = document.getElementById("planer-bilder");
+    if (bc) {
+      bc.checked = state.bilder;
+      if (!bc.dataset.an) { bc.dataset.an = 1; bc.addEventListener("change", () => { state.bilder = bc.checked; save(); render(); }); }
+    }
     const kb = document.querySelector('[data-planer="kompakt"]');
     if (kb) kb.textContent = state.kompakt ? "Ausführlich" : "Kompakt";
     root.append(bilanz, el("div", { class: "planer-layout" }, tage, poolEl));
@@ -483,9 +492,9 @@
     if (was === "teilen") teilen();
     if (was === "drucken") window.print();
     if ((was === "mein" || was === "freund" || was === "fest") && confirm(`„${VORSCHLAEGE[was].name}“ laden? Eure Änderungen gehen verloren (die Häkchen bei „Vorab erledigen“ bleiben).`)) {
-      const todo = state.todo, kompakt = state.kompakt;
+      const todo = state.todo, kompakt = state.kompakt, bilder = state.bilder;
       const notiz = state.notiz, los = state.los;
-      state = vorschlag(was); state.todo = todo; state.kompakt = kompakt; state.notiz = notiz; state.los = los;
+      state = vorschlag(was); state.todo = todo; state.kompakt = kompakt; state.bilder = bilder; state.notiz = notiz; state.los = los;
       if (was === "fest") { (FEST.todo || []).forEach((id) => (state.todo[id] = 1)); if (!notiz) state.notiz = FEST.notiz || ""; if (FEST.los) state.los = FEST.los; }
       save(); render();
       meldung(`„${VORSCHLAEGE[was].name}“ geladen.`);
