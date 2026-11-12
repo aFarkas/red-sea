@@ -350,21 +350,29 @@
 
   // ---------- Zweitkarten: weggehakte Lokale, die auch an einem anderen Ort des Plans in der Nähe liegen ----------
   // Jeder Baustein steht nur einmal im Plan. Liegt ein Lokal auch nahe einer anderen Station, bekommt es dort
-  // eine zweite Karte (id "<original>@<tag>"), weggehakt, damit es auch dort zur Wahl steht.
+  // eine weitere Karte (id "<original>@<slot>"), auch an mehreren Orten, weggehakt, damit es auch dort zur Wahl steht.
   const SPINACH_WANNAS = `<a href="https://spinach.guide/venues/wannas-art-cafe-14451/">spinach.guide</a>`;
   const ZWEIT = [
-    ["bluesky", "d14-nachmittag", "Auch am Ankunftstag eine Option: Blue Sky liegt laut Bewertungen in Ramla am Westufer, am Nil nahe dem Anleger und damit nahe eurer Unterkunft. Eine Alternative zum Nile Valley für den ersten Drink.", {}],
-    ["nilepalace", "d14-abend", "Liegt laut eurem Freund nahe eurer Unterkunft, passt also auch zum ersten Abend.", {}],
-    ["gezira", "d14-abend", "Liegt nahe dem Anleger am Westufer, also auch am Ankunftsabend nur ein paar Schritte von der Unterkunft.", {}],
+    ["sunflower", "d14-nachmittag", "Auch für den ersten Drink: Dachterrasse direkt am Anleger, schenkt Alkohol aus. Eine Alternative zum Nile Valley nebenan.", {}],
+    ["sunflower", "d15-nachmittag", "Nach der Feluke legt ihr am Anleger an, und Sunflower liegt direkt dort: Dachterrasse mit Bier, eine Alternative zu Blue Sky.", {}],
     ["sunflower", "d15-abend", "Auch nach dem Westufer-Tag eine Wahl: Sunflower liegt direkt am Anleger, keine 200 m vom Tutankhamun. Euer Freund nennt es für diesen Abend als Alternative.", {}],
+    ["wannas", "d14-nachmittag", "Zum Ankommen: Ein Café mit frischen Säften in Ramla, hinter dem Hotel Al Masala, ein Stück die Straße hoch vom Sunflower, also nahe dem Anleger und eurer Unterkunft.", { zeit: "ca. 9–22 Uhr", more: `Lage und Zeiten laut ${SPINACH_WANNAS} und <a href="https://www.happycow.net/reviews/wannas-art-cafe-luxor-191576">HappyCow</a>.` }],
     ["wannas", "d15-abend", "Liegt in Ramla hinter dem Hotel Al Masala, ein Stück die Straße hoch vom Sunflower, also nahe dem Anleger und eurer Unterkunft. Offen etwa bis 22 Uhr.", { zeit: "ca. 9–22 Uhr", more: `Lage und Zeiten laut ${SPINACH_WANNAS} und <a href="https://www.happycow.net/reviews/wannas-art-cafe-luxor-191576">HappyCow</a>.` }],
-    ["sayeda", "d15-abend", "Auch für den Sonntagabend: Laut eurem Freund an der Hauptstraße am Westufer. Wie weit von eurer Unterkunft, vorher auf der Karte prüfen.", {}],
+    ["sayeda", "d15-abend", "Auch für den Sonntagabend: laut eurem Freund an der Hauptstraße am Westufer. Wie weit es von eurer Unterkunft liegt, vorher auf der Karte prüfen.", {}],
+    ["bluesky", "d14-nachmittag", "Auch am Ankunftstag eine Option: Blue Sky liegt laut Bewertungen in Ramla am Westufer, am Nil nahe dem Anleger und damit nahe eurer Unterkunft. Eine Alternative zum Nile Valley für den ersten Drink.", {}],
+    ["bluesky", "d14-abend", "Auch zum Essen am ersten Abend, nahe dem Anleger. Gelobt werden vor allem Gegrilltes, laut Bewertungen auch Pizza: nach Gerichten ohne Fleisch und Fisch fragen.", {}],
+    ["bluesky", "d15-abend", "Auch zum Essen nach dem Westufer-Tag, nahe dem Anleger. Gelobt werden vor allem Gegrilltes, laut Bewertungen auch Pizza: nach Gerichten ohne Fleisch und Fisch fragen.", {}],
+    ["nilepalace", "d14-abend", "Liegt laut eurem Freund nahe eurer Unterkunft, passt also auch zum ersten Abend.", {}],
+    ["gezira", "d14-nachmittag", "Dach nahe dem Anleger, auch am Ankunftstag für ein Bier zum Sonnenuntergang nur ein paar Schritte von der Unterkunft.", {}],
+    ["gezira", "d14-abend", "Liegt nahe dem Anleger am Westufer, also auch am Ankunftsabend nur ein paar Schritte von der Unterkunft.", {}],
+    ["gezira", "d15-nachmittag", "Nach der Feluke seid ihr wieder am Anleger, und El Gezira liegt in der Nähe: ein ruhiges Bier am Ende des Tages.", {}],
     ["winterpalace", "d16-nachmittag", "Das Hotel steht an der Corniche gleich neben dem Tempel von Luxor. Wer den Sonnenuntergang sehen will, trinkt hier gegen 17 Uhr etwas und geht danach in den Tempel: Einlass bis 19 Uhr.", {}],
   ];
+
   const ORIG = Object.fromEntries(window.PLAN_BAUSTEINE.map((b) => [b.id, b]));
   ZWEIT.forEach(([orig, slot, warum, extra]) => {
     const b = ORIG[orig];
-    const id = `${orig}@${slot.split("-")[0]}`;
+    const id = `${orig}@${slot}`;
     window.PLAN_BAUSTEINE.push(Object.assign({}, b, { id, zweit: orig, txt: warum + " " + b.txt }, extra));
     const liste = window.PLAN_VORSCHLAEGE.mein[slot];
     if (liste && !liste.includes("-" + id)) liste.push("-" + id);
