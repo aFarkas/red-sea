@@ -673,26 +673,26 @@ window.CARDS = [
     lektion: 14,
     frage: "Was musste ein Toter im alten Ägypten tun, bevor ihn das Boot ins Jenseits brachte?",
     antwort: `<p>Jedes Teil des Boots beim Namen nennen. In Spruch 99 des Totenbuchs verhört ihn das Boot: „Sag mir meinen Namen“, verlangt das Segel, und die Antwort ist „Nut“, die Himmelsgöttin. Die Ruder sind die „Finger des Horus“, der Matrose heißt „Reisender“. Zuletzt fragen sogar der Fluss, die Ufer und der Boden.</p>
-      <p>Wer alles wusste, kam ins Binsengefilde, zu Brot, Wein, Weizen und Gerste. Ihr braucht für die Fähre in Luxor nur ein Wort, <em data-wort="w-maaddiyya">maʿaddiya</em>, und fünf Pfund.</p>`,
+      <p>Wer alles wusste, kam ins Binsengefilde, zu Brot, Wein, Weizen und Gerste. Ihr braucht für die Fähre in Luxor nur ein Wort, <em data-wort="w-maaddiyya">maʿaddiya</em>, und ein paar Pfund.</p>`,
   },
   {
     id: "ein-km-vierzehn-km",
     lektion: 14,
-    frage: "Vom Hotel El Nakhil zum Tempel von Luxor: Warum ist das ein Kilometer und zugleich vierzehn?",
+    frage: "Von eurem Hotel am Westufer zum Tempel von Luxor: Warum ist das ein Kilometer und zugleich vierzehn?",
     antwort: `<p>Luftlinie ist es ein Kilometer, quer über den Nil. Aber Luxor hat nur zwei Brücken, eine weit im Süden und eine im Norden, offen seit Mai 2024. Das Taxi fährt einen Bogen von rund 14 Kilometern.</p>
-      <p>Die Fähre legt 400 Meter vom Hotel ab, braucht keine fünf Minuten und landet beim Luxor-Museum. Von dort sind es eine Viertelstunde zu Fuß zum Tempel.</p>`,
+      <p>Die Fähre legt ein paar Gehminuten vom Hotel ab, braucht gut fünf Minuten und landet beim Luxor-Museum. Von dort sind es eine Viertelstunde zu Fuß zum Tempel.</p>`,
   },
   {
     id: "faehre-luxor",
     lektion: 14,
     frage: "Was kostet die öffentliche Fähre in Luxor, und wann fährt sie?",
-    antwort: `<p>Einheimische zahlen 5 Pfund, im Oktober 2026 laut der Zeitung <em>Masrawy</em>. Ausländer zahlen nach Berichten von Reisenden 25 Pfund, etwa 40 Cent. Darum lohnt kein Streit.</p>
-      <p>Seit Juli 2025 fahren die neuen Fähren „Luxor 1“ und „Luxor 2“ für je 250 Fahrgäste, gebaut von einer Werft der Suezkanal-Behörde, laut <em>Youm7</em> rund um die Uhr.</p>`,
+    antwort: `<p>Die Zeitung <em>Masrawy</em> schreibt im Oktober 2026: 5 Pfund, auch für Touristen. Reisende berichten, dass Ausländer 25 zahlen, etwa 40 Cent. Wer recht hat, findet ihr heraus. Streit lohnt nicht.</p>
+      <p>Seit Sommer 2025 fahren die neuen Fähren „Luxor 1“ und „Luxor 2“ für je 250 Fahrgäste, gebaut von einer Werft der Suezkanal-Behörde, laut <em>Youm7</em> rund um die Uhr.</p>`,
   },
   {
     id: "motorboot-pro-boot",
     lektion: 14,
-    frage: "Spätabends nach dem Essen zurück ans Westufer: Was nehmt ihr, und worauf achtet ihr beim Preis?",
+    frage: "Ihr wollt ohne Warten und ohne Fußweg direkt zum Tempel von Luxor übersetzen. Was nehmt ihr, und worauf achtet ihr beim Preis?",
     antwort: `<p>Ein Motorboot, <em data-wort="w-markib">markib</em>. Es kostet pro Boot, nicht pro Person: etwa 80 bis 100 Pfund, Anfang 2026 ab 100. Zu zweit knapp ein Euro für jeden.</p>
       <p>Eine Stunde auf der Feluke, dem Segelboot, kostet 150 bis 300 Pfund pro Boot, also 2,50 bis 5 Euro.</p>`,
   },
@@ -714,7 +714,7 @@ window.CARDS = [
     id: "westufer-wege",
     lektion: 14,
     frage: "Wie kommt ihr vom Hotel zu den Stätten am Westufer?",
-    antwort: `<p>Zu Memnon, Medinet Habu und Deir el-Medina mit dem Fahrrad, <em data-wort="w-agala">ʿagala</em>: 3 bis 5 Kilometer. Ins Tal der Könige sind es 8, das letzte Stück bergauf, dafür lohnt ein Taxi für den Tag, 500 bis 1000 Pfund, etwa 8 bis 17 Euro.</p>
+    antwort: `<p>Zur südlichen Gruppe, Memnon, Medinet Habu und Deir el-Medina, mit dem Fahrrad, <em data-wort="w-agala">ʿagala</em>: 3 bis 5 Kilometer. Ins Tal der Könige sind es 8, das letzte Stück bergauf, dafür lohnt ein Taxi für den Tag, 500 bis 1000 Pfund, etwa 8 bis 17 Euro.</p>
       <p>Die Karten für die kleineren Stätten gab es zuletzt an der Hauptkasse an der Straße vom Anleger.</p>`,
   },
   {
@@ -722,14 +722,14 @@ window.CARDS = [
     lektion: 14,
     frage: "Welcher Gott fuhr einmal im Jahr über den Nil, und wo übernachtete er?",
     antwort: `<p>Amun. Zum „Schönen Fest vom Wüstental“ trugen Priester seine Statue aus Karnak zum Nil, ein Schiff zog sie hinüber, begleitet von einer Flotte kleiner Boote.</p>
-      <p>Übernachtet hat er in Deir el-Bahari, im Tempel der Hatschepsut. Ihr fahrt also seinen Weg.</p>`,
+      <p>Zur Zeit der Hatschepsut übernachtete er in ihrem Tempel in Deir el-Bahari. Ihr fahrt also seinen Weg.</p>`,
   },
   {
     id: "schimal-links-norden",
     lektion: 14,
     frage: "Links, rechts, geradeaus: Wie sagst du das dem Fahrer? Und was ist an „links“ besonders?",
     antwort: `<p><em data-wort="w-shimaal">Schimāl</em>, <em data-wort="w-yimiin">yimīn</em>, <em data-wort="w-ala-tuul">ʿala tūl</em>. Und zum Anhalten <em data-wort="w-hina">hina</em>, hier.</p>
-      <p>Im Hocharabischen heißt <em>schimāl</em> Norden, links heißt dort <em>yasār</em>. Im Ägyptischen bleibt es links.</p>`,
+      <p>Dasselbe Wort, hocharabisch <em>schamāl</em> gesprochen, heißt Norden. Für links sagt man im Hocharabischen meist <em>yasār</em>.</p>`,
   },
 ];
 
@@ -871,7 +871,7 @@ window.WORDS = [
   { id: "w-agala", lektion: 14, de: "Fahrrad", wort: "ʿagala", audio: "agala.mp3", ar: "دَرَّاجَة", hoch: "darrādscha", hinweis: "Wörtlich Rad, wie im Deutschen." },
   { id: "w-ala-tuul", lektion: 14, de: "geradeaus", wort: "ʿala tūl", audio: "ala-tuul.mp3", ar: "إِلَى الْأَمَام", hoch: "ilā l-amām", hinweis: "Heißt auch sofort, gleich." },
   { id: "w-yimiin", lektion: 14, de: "rechts", wort: "yimīn", audio: "yimiin.mp3", ar: "يَمِين", hoch: "yamīn" },
-  { id: "w-shimaal", lektion: 14, de: "links", wort: "schimāl", audio: "shimaal.mp3", ar: "يَسَار", hoch: "yasār", hinweis: "Im Hocharabischen heißt schimāl Norden." },
+  { id: "w-shimaal", lektion: 14, de: "links", wort: "schimāl", audio: "shimaal.mp3", ar: "يَسَار", hoch: "yasār", hinweis: "Hocharabisch schamāl gesprochen heißt dasselbe Wort Norden." },
   { id: "w-mafuul", lektion: 14, de: "geschlossen", wort: "maʾfūl", audio: "mafuul.mp3", ar: "مُغْلَق", hoch: "mughlaq", variante: "Geschrieben maqfūl, das Q wird verschluckt." },
   { id: "w-kubri", extra: true, lektion: 14, de: "Brücke", wort: "kubri", audio: "kubri.mp3", ar: "جِسْر", hoch: "dschisr", hinweis: "Aus dem Türkischen köprü." },
   { id: "w-gharbi", extra: true, lektion: 14, de: "westlich", wort: "gharbi", audio: "gharbi.mp3", ar: "غَرْبِيّ", hoch: "gharbī", hinweis: "il-barr il-gharbi, das Westufer." },
