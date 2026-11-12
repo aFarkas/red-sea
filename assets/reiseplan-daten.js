@@ -288,7 +288,9 @@
   // immer dieselben Orte: Ein neuer Baustein mit Ort erscheint von selbst als Pin, mehrere Bausteine am
   // selben Ort (Zusatzgräber, Zweitkarten der Lokale) teilen sich einen Pin.
   // geo: [Breite, Länge] aus OpenStreetMap (Nominatim), abgerufen am 12. November 2026.
-  // q: Suchbegriff für Google Maps. typ: staette | museum | sonst | lokal.
+  // q: Suchbegriff für Google Maps. typ: staette | museum | sonst | wege | lokal. icon: eigenes Symbol statt dem des Typs.
+  // txt, lesen: für Orte, die keine Karte im Plan haben (aus Lektionen und „Luxor zum Nachschlagen“); lesen auch sonst.
+  // linie: Verlauf als Linie, etwa die Sphinx-Allee (OpenStreetMap, Weg 90384477).
   // mahl (nur Lokale): fruehstueck | mittag | abend | drinks, nach Öffnungszeiten und Angaben auf den Karten.
   // ungefaehr: Lage nur aus einer Beschreibung abgeleitet. Die Unterkunft steht absichtlich nicht hier (öffentliches Repo).
   window.PLAN_ORTE = {
@@ -309,8 +311,17 @@
     // Übrige Sehenswürdigkeiten und Wege
     souk: { name: "Souk", geo: [25.69804, 32.64655], q: "Luxor Souq, Luxor", typ: "sonst" },
     corniche: { name: "Corniche", geo: [25.70550, 32.64190], q: "Corniche El Nile, Luxor", typ: "sonst" },
-    "anleger-west": { name: "Fähranleger Westufer", geo: [25.70494, 32.63562], q: "25.70491,32.63566", typ: "sonst" },
-    "anleger-ost": { name: "Fähranleger Ostufer", geo: [25.70845, 32.64388], q: "25.70845,32.64388", typ: "sonst" },
+    haggag: { name: "Moschee des Abu el-Haggag", geo: [25.69999, 32.63965], q: "Abu Haggag Mosque, Luxor", typ: "sonst", icon: "🕌",
+      txt: "Fast neun Meter über dem Boden auf Hof und Mauer Ramses’ II. gebaut, oben auf dem Tempel von Luxor. Zugang über eine Treppe von der Straße, nicht vom Tempel aus." },
+    sphinx: { name: "Sphinx-Allee", geo: [25.70713, 32.64724], q: "Avenue of Sphinxes, Luxor", typ: "sonst", linie: [[25.70075, 32.64022], [25.71355, 32.65422]],
+      txt: "2,7 Kilometer von Karnak bis zum Tempel von Luxor, die Strecke der Götterstatuen zum Opet-Fest. Seit 2021 wieder offen, Zugang mit den Tickets beider Tempel." },
+    // Wege und Praktisches
+    "anleger-west": { name: "Fähranleger Westufer", geo: [25.70494, 32.63562], q: "25.70491,32.63566", typ: "wege", icon: "⛴️" },
+    "anleger-ost": { name: "Fähranleger Ostufer", geo: [25.70845, 32.64388], q: "25.70845,32.64388", typ: "wege", icon: "⛴️" },
+    krankenhaus: { name: "El Karnak International Hospital", geo: [25.70872, 32.64552], q: "El Karnak International Hospital, Luxor", typ: "wege", icon: "🏥",
+      txt: "Gegenüber legt die Fähre am Ostufer an, kurz vor dem Luxor-Museum. Eine gute Wegmarke, und gut zu wissen, wo es ist." },
+    bahnhof: { name: "Bahnhof Luxor", geo: [25.69654, 32.64497], q: "Luxor Railway Station", typ: "wege", icon: "🚉",
+      txt: "Am Ostufer hinter der Altstadt und dem Souk. Eine Wegmarke, falls ihr euch in den Gassen verlauft." },
     // Lokale
     nubian: { name: "Nubian House", geo: [25.69843, 32.63077], q: "Nubian House restaurant, West Bank, Luxor", typ: "lokal", mahl: ["abend"] },
     tutanchamun: { name: "Tutankhamun Restaurant", geo: [25.70325, 32.63415], q: "Tutankhamun Restaurant, West Bank, Luxor", typ: "lokal", mahl: ["abend"],
@@ -328,6 +339,17 @@
     gezira: { name: "El Gezira", geo: [25.70508, 32.63283], q: "El Gezira Hotel, Luxor", typ: "lokal", mahl: ["drinks", "abend"] },
     winterpalace: { name: "Winter Palace", geo: [25.69624, 32.63801], q: "Sofitel Winter Palace, Luxor", typ: "lokal", mahl: ["drinks"] },
   };
+  // Weiterlesen zu jedem Ort: Lektionen und „Luxor zum Nachschlagen“ (reference/luxor.html#ort-…).
+  const LEKTION = { 11: "../lessons/0011-beten-ist-besser-als-schlafen.html", 12: "../lessons/0012-pfeffer-in-der-wueste.html",
+    13: "../lessons/0013-ich-kann-die-hieroglyphen-nicht-lesen.html", 14: "../lessons/0014-fuenf-pfund-fuer-den-faehrmann.html" };
+  const LESEN = {
+    luxortempel: [11, 13, "luxortempel"], haggag: [11, "haggag"], karnak: [13, "karnak"], sphinx: [13, "sphinx"],
+    memnon: [13, "memnon"], tdk: [13, "tdk"], deir: [13, "deir"], medinet: [13, "medinet"], hatschepsut: [13, "hatschepsut"],
+    "anleger-west": [14, "faehre"], "anleger-ost": [14, "faehre"], krankenhaus: [14, "faehre"], bahnhof: [14], souk: [12], corniche: [14],
+  };
+  for (const [ort, was] of Object.entries(LESEN)) {
+    window.PLAN_ORTE[ort].lesen = was.map((x) => typeof x === "number" ? [`📖 Lektion ${x}`, LEKTION[x]] : ["📘 Luxor zum Nachschlagen", `luxor.html#ort-${x}`]);
+  }
   // Welcher Baustein liegt wo? Bausteine ohne Eintrag (Touren, Pausen, Koschari irgendwo, Thebes Bar & Grill
   // mit unklarem Ufer, Snobs ohne gefundene Lage) bekommen keinen Pin; die Karte listet sie unter „Ohne Pin“.
   const ORT = {

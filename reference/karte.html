@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Karte Luxor</title>
 <link rel="stylesheet" href="../assets/course.css">
 <link rel="stylesheet" href="../assets/leaflet/leaflet.css">
@@ -68,6 +68,26 @@
   .pop-links { display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; border-top: 1px solid var(--rule); padding-top: 0.45rem; margin-top: 0.5rem !important; }
   .pop-links a { text-decoration: none; font-weight: 600; }
 
+  /* Größere Knöpfe auf der Karte, für Finger */
+  .leaflet-touch .leaflet-bar a { width: 40px; height: 40px; line-height: 40px; font-size: 20px; }
+  .leaflet-bar a.voll-knopf { width: 44px; height: 44px; line-height: 44px; font-size: 20px; font-family: Inter, system-ui, sans-serif; text-decoration: none; }
+
+  .popup-offen .leaflet-top .leaflet-control { visibility: hidden; }
+  /* Vollbild: die Karte füllt den Bildschirm, die Filter liegen oben, Meldungen schweben über der Karte. */
+  html.vollbild, html.vollbild body { overflow: hidden; height: 100%; }
+  html.vollbild .kartenbereich { position: fixed; inset: 0; z-index: 2000; display: flex; flex-direction: column; background: var(--bg);
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left); }
+  html.vollbild .kartenbereich .filter { margin: 0; padding: 0.35rem 0.5rem 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; flex: none; }
+  html.vollbild .kartenbereich .filter::-webkit-scrollbar { display: none; }
+  html.vollbild .chipknopf, html.vollbild .filter select, html.vollbild .filter .knopf { flex: none; min-height: 38px; font-size: 0.8rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+  html.vollbild #karte-mahl::before { content: "Lokale:"; flex: none; }
+  html.vollbild #karte-anzahl { display: none; }
+  html.vollbild #karte { flex: 1; height: auto; min-height: 0; border: 0; border-radius: 0; margin-top: 0.35rem; }
+  html.vollbild .leaflet-bottom { padding-bottom: env(safe-area-inset-bottom); }
+  html.vollbild #karte-meldung { position: fixed; left: 50%; bottom: calc(5.5rem + env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 2001; margin: 0;
+    background: var(--ink); color: var(--bg); padding: 0.5rem 0.8rem; border-radius: 8px; width: max-content; max-width: min(88vw, 28rem); box-shadow: 0 4px 14px rgba(0,0,0,.3); }
+  html.vollbild #karte-meldung:empty { display: none; }
+
   ul.legende { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; font-size: 0.85rem; }
 </style>
 </head>
@@ -94,11 +114,13 @@
 <div class="box define">
   <div class="box-title">So lest ihr die Karte</div>
   <ul class="legende">
-    <li>⚱️ Tempel &amp; Gräber</li><li>🏛️ Museen</li><li>📍 Übriges: Souk, Corniche, Fähranleger</li><li>🍽 Restaurants</li><li>🍸 nur Drinks</li>
+    <li>⚱️ Tempel &amp; Gräber</li><li>🏛️ Museen</li><li>📍 Übriges: Souk, Corniche, Moschee, Sphinx-Allee</li><li>🧭 Wege &amp; Praktisches: Fähranleger, Krankenhaus, Bahnhof</li><li>🍽 Restaurants</li><li>🍸 nur Drinks</li>
   </ul>
   <ul>
     <li><strong>Gefüllter Pin mit Tag darunter</strong> (zum Beispiel „So“): Das steht in eurem Plan, an diesem Tag. <strong>Blasser, gestrichelter Pin:</strong> weggehakt oder im Ideenpool, eine Alternative.</li>
     <li><strong>Pin antippen:</strong> Was dort liegt, wann es im Plan steht, und Knöpfe zum Weghaken, Zurückholen und Einplanen. Mehrere Karten am selben Ort teilen sich einen Pin: im Tal der Könige die Zusatzgräber, an den Lokalen die Abende, an denen sie als Alternative bereitliegen.</li>
+    <li><strong>Weißer Pin ohne Tag:</strong> ein Ort aus den Lektionen oder aus <a href="luxor.html">Luxor zum Nachschlagen</a>, der keine Karte im Plan hat, etwa die Moschee des Abu el-Haggag oben auf dem Tempel von Luxor oder die Sphinx-Allee, die als gepunktete Linie von Tempel zu Tempel läuft. Unter „📖“ und „📘“ im Pin geht es zum Nachlesen.</li>
+    <li><strong>⛶ Vollbild</strong> oben links: Die Karte füllt den ganzen Bildschirm, die Filter liegen oben darüber, ✕ führt zurück zu dieser Seite. In der App vom Home-Bildschirm und auf dem Handy öffnet die Karte gleich im Vollbild; das Gerät merkt sich, wie ihr sie zuletzt hattet.</li>
     <li><strong>Filter:</strong> Antippen blendet eine Sorte aus und wieder ein. Bei den Restaurants gibt es eine zweite Reihe: Frühstück, Mittag, Abend, Drinks. Darunter wählt ihr einen Tag oder „Nur unser Plan“.</li>
     <li><strong>◎ Wo bin ich?</strong> unten rechts auf der Karte zeigt euch als blauen Punkt, der mitwandert. Einmal tippen startet, noch einmal tippen holt den Punkt in die Mitte. Habt ihr es einmal erlaubt, erscheint der Punkt beim nächsten Öffnen von selbst. Der Standort bleibt auf dem Gerät.</li>
     <li><strong>📍 In Google Maps</strong> und <strong>🧭 Route</strong> im Pin öffnen den Ort in Google Maps, zum Navigieren zu Fuß oder mit dem Taxi.</li>
@@ -119,7 +141,7 @@
 
 <h2>Quellen</h2>
 <ol class="sources">
-  <li>Lage der Orte: <a href="https://www.openstreetmap.org/">OpenStreetMap</a> über die Suche Nominatim, abgerufen am 12. November 2026. Das Tutankhamun Restaurant fehlt dort; sein Pin folgt der Beschreibung bei <a href="https://en.wikivoyage.org/wiki/Luxor/West_Bank">Wikivoyage Luxor/West Bank</a> („200 m südlich des Anlegers“).</li>
+  <li>Lage der Orte und Verlauf der Sphinx-Allee: <a href="https://www.openstreetmap.org/">OpenStreetMap</a> über die Suche Nominatim, abgerufen am 12. November 2026. Texte der Orte ohne Plankarte aus <a href="luxor.html">Luxor zum Nachschlagen</a> und <a href="../lessons/0014-fuenf-pfund-fuer-den-faehrmann.html">Lektion 14</a>, dort mit Quellen. Das Tutankhamun Restaurant fehlt dort; sein Pin folgt der Beschreibung bei <a href="https://en.wikivoyage.org/wiki/Luxor/West_Bank">Wikivoyage Luxor/West Bank</a> („200 m südlich des Anlegers“).</li>
   <li>Kartenbild: © OpenStreetMap-Mitwirkende; Luftbild © Esri. Karte gebaut mit <a href="https://leafletjs.com/">Leaflet</a>.</li>
   <li>Öffnungszeiten und Mahlzeiten der Lokale: wie auf den Karten im <a href="reiseplan.html">Reiseplan</a>, dort mit Quellen.</li>
 </ol>

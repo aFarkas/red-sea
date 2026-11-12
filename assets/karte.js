@@ -11,6 +11,7 @@
     staette: { name: "Tempel & Gräber", icon: "⚱️", farbe: "#c8553d" },
     museum: { name: "Museen", icon: "🏛️", farbe: "#7b5ea7" },
     sonst: { name: "Übriges", icon: "📍", farbe: "#2f7fa3" },
+    wege: { name: "Wege & Praktisches", icon: "🧭", farbe: "#5c6b75" },
     lokal: { name: "Restaurants", icon: "🍽", farbe: "#2e7d4f" },
   };
   const MAHL = {
@@ -45,8 +46,14 @@
 
   // ---------- Filter (pro Gerät gemerkt) ----------
   let filter = { typ: Object.keys(TYPEN), mahl: Object.keys(MAHL), zeigen: "alles" };
-  try { Object.assign(filter, JSON.parse(localStorage.getItem(FILTERKEY) || "{}")); } catch (e) {}
-  const merken = () => { try { localStorage.setItem(FILTERKEY, JSON.stringify(filter)); } catch (e) {} };
+  try {
+    const alt = JSON.parse(localStorage.getItem(FILTERKEY) || "{}");
+    Object.assign(filter, alt);
+    // Sorten, die es beim letzten Besuch noch nicht gab, sind an.
+    const bekannt = alt.bekannt || ["staette", "museum", "sonst", "lokal"];
+    filter.typ = filter.typ.concat(Object.keys(TYPEN).filter((k) => !bekannt.includes(k) && !filter.typ.includes(k)));
+  } catch (e) {}
+  const merken = () => { try { localStorage.setItem(FILTERKEY, JSON.stringify(Object.assign({}, filter, { bekannt: Object.keys(TYPEN) }))); } catch (e) {} };
 
   // ---------- Was liegt wo, was ist eingeplant? ----------
   const BAUSTEINE_AM_ORT = {};
@@ -89,18 +96,27 @@
     const plan = eingeplant(ortId);
     const nurDrinks = o.typ === "lokal" && (o.mahl || []).every((m) => m === "drinks");
     const tage = [...new Set(plan.map((x) => x.s.tag.kurz.slice(0, 2)))];
-    const html = `<span class="pin-kreis" style="--farbe:${t.farbe}">${nurDrinks ? "🍸" : t.icon}</span>` +
+    const html = `<span class="pin-kreis" style="--farbe:${t.farbe}">${o.icon || (nurDrinks ? "🍸" : t.icon)}</span>` +
       (tage.length ? `<span class="pin-tag">${tage.join(" · ")}</span>` : "");
-    return L.divIcon({ className: "pin" + (plan.length ? " im-plan" : " aus"), html, iconSize: [34, 34], iconAnchor: [17, 17], popupAnchor: [0, -16] });
+    // im-plan: steht im Plan · aus: hat Karten, aber weggehakt oder im Pool · info: Ort aus Lektionen, ohne Karte im Plan
+    const art = plan.length ? " im-plan" : BAUSTEINE_AM_ORT[ortId] ? " aus" : " info";
+    return L.divIcon({ className: "pin" + art, html, iconSize: [34, 34], iconAnchor: [17, 17], popupAnchor: [0, -16] });
   }
 
-  const PINS = {};
+  const PINS = {}, LINIEN = {};
+  const popupHoehe = () => Math.max(200, map.getSize().y - 90);
   for (const [id, o] of Object.entries(ORTE)) {
-    if (!BAUSTEINE_AM_ORT[id]) continue; // Ort ohne Baustein: (noch) nichts zu zeigen
     const m = L.marker(o.geo, { title: o.name, keyboard: true, riseOnHover: true });
-    m.bindPopup(() => popup(id), { maxWidth: 320, minWidth: 240, maxHeight: Math.max(220, map.getSize().y - 90), autoPanPadding: [16, 16] });
+    m.bindPopup(() => popup(id), { maxWidth: 320, minWidth: 240, maxHeight: popupHoehe(), autoPanPadding: [16, 16] });
     PINS[id] = m;
+    if (o.linie) LINIEN[id] = L.polyline(o.linie, { color: TYPEN[o.typ].farbe, weight: 6, opacity: 0.7, dashArray: "2 10", lineCap: "round" })
+      .on("click", () => m.openPopup());
   }
+  // Ein offenes Popup verdecken die Knöpfe oben nicht: Sie machen solange Platz.
+  map.on("popupopen", () => map.getContainer().classList.add("popup-offen"));
+  map.on("popupclose", () => map.getContainer().classList.remove("popup-offen"));
+  // Popups nie höher als die Karte, auch nach Drehen des Geräts oder im Vollbild.
+  map.on("resize", () => Object.values(PINS).forEach((m) => { m.getPopup().options.maxHeight = popupHoehe(); }));
 
   function zeichnen() {
     for (const [id, m] of Object.entries(PINS)) {
@@ -108,6 +124,8 @@
       const soll = sichtbar(id);
       if (soll && !map.hasLayer(m)) m.addTo(map);
       if (!soll && map.hasLayer(m)) m.remove();
+      const linie = LINIEN[id];
+      if (linie && soll !== map.hasLayer(linie)) soll ? linie.addTo(map) : linie.remove();
       m.setZIndexOffset(eingeplant(id).length ? 500 : 0);
       if (m.isPopupOpen()) m.setPopupContent(popup(id));
     }
@@ -125,7 +143,8 @@
     const box = el("div", { class: "pop" },
       el("p", { class: "pop-art" }, `${t.icon} ${t.name}` + (o.mahl ? " · " + o.mahl.map((m) => MAHL[m].icon + " " + MAHL[m].name).join(", ") : "")),
       el("h3", {}, o.name),
-      o.ungefaehr ? el("p", { class: "pop-hinweis" }, "⚠ Lage ungefähr. " + o.ungefaehr) : null);
+      o.ungefaehr ? el("p", { class: "pop-hinweis" }, "⚠ Lage ungefähr. " + o.ungefaehr) : null,
+      o.txt ? el("p", { class: "pop-txt" }, o.txt) : null);
 
     for (const b of originale) {
       const varianten = [b].concat(alle.filter((x) => x.zweit === b.id));
@@ -140,7 +159,8 @@
     box.append(el("p", { class: "pop-links" },
       el("a", { href: gmSuche(o.q), target: "_blank", rel: "noopener" }, "📍 In Google Maps"),
       el("a", { href: gmRoute(o.geo), target: "_blank", rel: "noopener" }, "🧭 Route"),
-      el("a", { href: "reiseplan.html#karte=" + encodeURIComponent(originale[0].id) }, "🗂 Im Reiseplan")));
+      originale.length ? el("a", { href: "reiseplan.html#karte=" + encodeURIComponent(originale[0].id) }, "🗂 Im Reiseplan") : null,
+      (o.lesen || []).map(([label, url]) => el("a", { href: url }, label))));
     return box;
   }
 
@@ -266,8 +286,8 @@
       return `<Folder><name>${x(t.name)}</name>` + orte.map((id) => {
         const o = ORTE[id];
         const plan = eingeplant(id).map((p) => `${slotName(p.s)}: ${T(p.b.t)}`);
-        const b = BAUSTEINE_AM_ORT[id][0];
-        const text = [plan.length ? "Im Plan: " + plan.join("; ") : "Nicht im Plan", T(b.txt), o.ungefaehr ? "Lage ungefähr." : ""].filter(Boolean).join("\n");
+        const b = (BAUSTEINE_AM_ORT[id] || [])[0];
+        const text = [b ? (plan.length ? "Im Plan: " + plan.join("; ") : "Nicht im Plan") : "", o.txt || "", b ? T(b.txt) : "", o.ungefaehr ? "Lage ungefähr." : ""].filter(Boolean).join("\n");
         return `<Placemark><name>${x(o.name)}</name><description>${x(text)}</description><Point><coordinates>${o.geo[1]},${o.geo[0]},0</coordinates></Point></Placemark>`;
       }).join("") + "</Folder>";
     }).join("");
@@ -277,6 +297,39 @@
     meldung("KML-Datei gespeichert. In Google My Maps: Neue Karte → Importieren → Datei wählen.");
   }
   document.getElementById("karte-kml").addEventListener("click", kml);
+
+  // ---------- Vollbild ----------
+  // Die Karte füllt den ganzen Bildschirm, Filter liegen oben darüber. Standard in der App vom
+  // Home-Bildschirm und auf kleinen Touch-Geräten; die letzte Wahl merkt sich das Gerät.
+  const VOLLKEY = "karte-luxor-vollbild";
+  const html = document.documentElement;
+  const vollKnopf = el("a", { href: "#", role: "button", class: "voll-knopf", title: "Vollbild", "aria-label": "Vollbild" });
+  function vollbild(an, merkenAuch) {
+    html.classList.toggle("vollbild", an);
+    vollKnopf.textContent = an ? "✕" : "⛶";
+    vollKnopf.title = an ? "Vollbild verlassen" : "Vollbild";
+    vollKnopf.setAttribute("aria-label", vollKnopf.title);
+    if (merkenAuch) try { localStorage.setItem(VOLLKEY, an ? "1" : "0"); } catch (e) {}
+    // Wo der Browser es kann (MacBook, iPad), auch seine Leisten ausblenden; nicht in der App, die ist schon randlos.
+    const app = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+    if (merkenAuch && !app) {
+      const fs = document.fullscreenElement || document.webkitFullscreenElement;
+      try {
+        if (an && !fs) (html.requestFullscreen || html.webkitRequestFullscreen || (() => {})).call(html);
+        if (!an && fs) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+      } catch (e) {}
+    }
+    setTimeout(() => map.invalidateSize(), 60);
+  }
+  vollKnopf.addEventListener("click", (e) => { e.preventDefault(); vollbild(!html.classList.contains("vollbild"), true); });
+  const Voll = L.Control.extend({ options: { position: "topleft" }, onAdd: () => { const d = L.DomUtil.create("div", "leaflet-bar"); d.append(vollKnopf); L.DomEvent.disableClickPropagation(d); return d; } });
+  new Voll().addTo(map);
+  window.addEventListener("resize", () => map.invalidateSize());
+  let vollStart = null;
+  try { vollStart = localStorage.getItem(VOLLKEY); } catch (e) {}
+  const klein = matchMedia("(pointer: coarse)").matches && Math.min(screen.width, screen.height) < 700;
+  const app = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+  vollbild(vollStart != null ? vollStart === "1" : (app || klein), false);
 
   // ---------- Start ----------
   filterAufbauen();
