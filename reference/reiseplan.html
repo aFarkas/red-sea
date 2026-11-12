@@ -64,6 +64,9 @@
   .chip.guide { background: var(--sea-soft); color: var(--sea); }
   .chip.allein { background: var(--sea-soft); }
   .chip.freund { background: var(--sand); border: 1px solid var(--rule); }
+  .chip.einig { background: var(--good); color: var(--bg); font-weight: 600; }
+  .karte.einig { background: color-mix(in srgb, var(--good) 9%, var(--bg)); }
+  #planer.kompakt .chip.einig { display: inline; }
   .chip.anders { background: var(--coral-soft); color: var(--coral); }
   .karte .anders-text { margin: 0.35rem 0 0.1rem 2.5rem; padding: 0.35rem 0.5rem; background: var(--coral-soft); border-radius: 6px; font-size: 0.8rem; }
   #planer.kompakt .karte .anders-text { display: none; }
@@ -80,8 +83,8 @@
   .karte.off .griff { visibility: hidden; }
   .weg-toggle { font: inherit; font-size: 0.72rem; color: var(--muted); background: none; border: 0; padding: 0.3rem 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; min-height: 2rem; }
   .liste.weg { margin-bottom: 0.4rem; }
-  #planer.kompakt .karte .txt, #planer.kompakt .karte .mehr, #planer.kompakt .chip:not(.preis):not(.anders) { display: none; }
-  #planer.kompakt .karte .chips:not(:has(.preis, .anders)) { display: none; }
+  #planer.kompakt .karte .txt, #planer.kompakt .karte .mehr, #planer.kompakt .chip:not(.preis):not(.anders):not(.einig) { display: none; }
+  #planer.kompakt .karte .chips:not(:has(.preis, .anders, .einig)) { display: none; }
 
   .karte.zieht { position: fixed; z-index: 50; pointer-events: none; box-shadow: 0 10px 28px rgba(0,0,0,.25); transform: rotate(1.5deg); }
   .platzhalter { border: 2px dashed var(--sea); border-radius: 8px; margin-bottom: 0.45rem; background: var(--sea-soft); }
@@ -116,7 +119,7 @@
   <ul>
     <li><strong>Verschieben:</strong> am Griff <strong>⠿</strong> fassen und ziehen, auf dem iPad mit dem Finger, auf dem MacBook mit der Maus. Oder unter „Mehr“ → „Verschieben nach …“ wählen.</li>
     <li><strong>Weghaken:</strong> <strong>✓</strong> antippen. Die Karte verschwindet, darunter steht „1 weggehakt · zeigen“. Dort holt ihr sie mit „↺ wieder rein“ zurück. So liegen Alternativen bereit, ohne zu stören.</li>
-    <li><strong>Zwei Vorschläge:</strong> „Plan des Freundes laden“ zeigt genau seinen Plan, „Mein Vorschlag laden“ meinen. Alle seine Ideen tragen das Etikett <strong>💬 Tipp des Freundes</strong>, auch die weggehakten und die im Pool. Wo ich abweiche, steht auf der Karte ein roter Hinweis mit Begründung.</li>
+    <li><strong>Zwei Vorschläge:</strong> „Plan des Freundes laden“ zeigt genau seinen Plan, „Mein Vorschlag laden“ meinen. Grün hinterlegt mit <strong>✓ Freund und ich einig</strong>: Das empfehlen wir beide für denselben Tag (oder raten beide ab). <strong>💬 Tipp des Freundes</strong>: seine Idee, die ich anders einplane oder nur als Alternative führe. Ein roter Kasten auf der Karte sagt, wo und warum ich abweiche.</li>
     <li><strong>Kompakt:</strong> zeigt nur Titel und Eintritt, gut für den Überblick auf dem MacBook.</li>
     <li><strong>Ideenpool:</strong> Alles, was noch keinen Tag hat, nach Westufer, Ostufer, Nil, Essen und Trinken sortiert.</li>
     <li><strong>iPad und MacBook:</strong> Der Plan bleibt im Browser des Geräts. „Plan teilen“ macht daraus einen Link. Öffnet ihn auf dem anderen Gerät, und der Plan ist dort.</li>
@@ -137,7 +140,11 @@
 <div id="planer"></div>
 
 <h2>Der Plan eures Freundes und wo ich abweiche</h2>
-<p>Sein Grundgerüst übernehme ich ganz: Sonntag Westufer mit Ägyptologe und Fahrer, früh los, ohne Einkaufsstopps; Montag Ostufer selbst, Karnak am Morgen mit oder ohne zwei Stunden Guide, dann Kaffee, Souk, Corniche, spätes Mittagessen, Tempel von Luxor ins Dunkle hinein, Al-Sahaby Lane, mit der Fähre heim. Abends esst ihr auf der Seite, auf der ihr gerade seid. Tickets offiziell kaufen, kein Luxor Pass, keine Tour „beide Ufer an einem Tag“. Da bin ich mit ihm einig, und die Quellen geben ihm recht: Die offiziellen Zeiten und Preise, die er nennt, stimmen mit der Seite des Ministeriums überein.</p>
+<div class="box" style="background:color-mix(in srgb, var(--good) 10%, var(--bg));border-left:3px solid var(--good)">
+  <div class="box-title" style="color:var(--good)">Hier sind wir uns einig</div>
+  <p style="margin:0">Sein Grundgerüst übernehme ich ganz: Sonntag Westufer mit Ägyptologe und Fahrer, früh los, ohne Einkaufsstopps; Montag Ostufer selbst, Karnak am Morgen mit oder ohne zwei Stunden Guide, dann Kaffee, Souk, Corniche, spätes Mittagessen, Tempel von Luxor ins Dunkle hinein, Al-Sahaby Lane, mit der Fähre heim. Abends esst ihr auf der Seite, auf der ihr gerade seid. Tickets offiziell kaufen, kein Luxor Pass, keine Tour „beide Ufer an einem Tag“. Da bin ich mit ihm einig, und die Quellen geben ihm recht: Die offiziellen Zeiten und Preise, die er nennt, stimmen mit der Seite des Ministeriums überein.</p>
+</div>
+<p>Die Unterschiede, jeder auch als roter Kasten auf seiner Karte:</p>
 <div class="wide">
 <table>
   <tr><th>Punkt</th><th>Euer Freund</th><th>Ich</th><th>Warum</th></tr>
@@ -150,10 +157,16 @@
   <tr><td>El Sayeda Zainab</td><td>lokal und günstig</td><td>Alternative am Samstag, ungeprüft</td><td>Seine Quelle war für mich nicht abrufbar, eine zweite habe ich nicht gefunden.</td></tr>
   <tr><td>Montag Mittag</td><td>„spätes Mittagessen“, Sofra früher genannt</td><td>Sofra</td><td>Viele vegane Gerichte. Nur bar, abends Tage vorher reservieren.</td></tr>
   <tr><td>Al-Sahaby Lane</td><td>nach dem Tempel von Luxor</td><td>genauso</td><td>Nur ein Hinweis: Den Sonnenuntergang vom Dach verpasst ihr dann, ihr seid um 17 Uhr im Tempel. Wer ihn will, zieht den Tempel vor.</td></tr>
-  <tr><td>Ballon</td><td>optional am Sonntag vor der Tour</td><td>genauso, im Vorschlag weggehakt</td><td>Optional. Eingeplant verschiebt er den Tourstart.</td></tr>
+  <tr><td>Tourstart Sonntag</td><td>6:30 oder 7:00</td><td>Abholung 7:00</td><td>Nach eurem Frühstück von 6 bis 7. Gegen 7:20 im Tal, vor den Bussen, die ab etwa 8 Uhr kommen.</td></tr>
+  <tr><td>Ballon</td><td>optional am Sonntag vor der Tour</td><td>weggehakt</td><td>Abholung vor Sonnenaufgang, das Frühstück fällt aus, und die Tour kommt erst ins Tal, wenn die Busse schon da sind.</td></tr>
 </table>
 </div>
 <p>Selbst entdecken statt Guide? Im Pool liegen „Taxi für den Tag“ und „Fahrrad“. Zieht sie auf Sonntag früh und hakt die Tour weg.</p>
+
+<div class="box lookout">
+  <div class="box-title">Euer Rhythmus: 6 Uhr auf, 7 Uhr los</div>
+  <p>Ihr steht um 6 auf und frühstückt eine Stunde. Das passt gut: Alle Stätten öffnen um 6 Uhr. Am Sonntag holt euch der Fahrer um 7 ab, gegen 7:20 seid ihr im Tal der Könige. Ausflugsbusse kommen dort nach Reiseberichten ab etwa 8 Uhr, gegen 10 sind die Gräber voll (<a href="https://www.responsibletravel.com/holidays/egypt/travel-guide/how-to-avoid-the-crowds">Responsible Travel</a>, <a href="https://www.findingouradventure.com/travel-diaries/valleyofthekings">Reisebericht</a>). Deshalb kommt das Tal zuerst, die anderen Stätten danach. Am Montag seid ihr gegen 7:30 in Karnak. Zahlen zum Andrang in Karnak habe ich nicht gefunden, Reiseführer empfehlen dort früh am Morgen oder nach 16 Uhr. Mittags ist Pause, der Tempel von Luxor kommt am späten Nachmittag.</p>
+</div>
 
 <div class="box lookout">
   <div class="box-title">Sonnenuntergang: auf welcher Seite?</div>

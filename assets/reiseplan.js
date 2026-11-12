@@ -9,6 +9,22 @@
   const FAUST = 60; // Faustregel aus Lektion 10: 60 Pfund ≈ 1 Euro
 
   const root = document.getElementById("planer");
+
+  // Wo sind sich der Freund und mein Vorschlag einig? Beide planen den Baustein am selben Tag ein,
+  // oder beide raten ab (einig: "abraten" in den Daten).
+  function lage(preset, id) {
+    for (const [slot, ids] of Object.entries(preset)) {
+      if (slot === "name") continue;
+      for (const x of ids) if (x.replace(/^-/, "") === id) return { tag: slot.split("-")[0], an: !x.startsWith("-") };
+    }
+    return null;
+  }
+  function einig(b) {
+    if (b.einig) return b.einig;
+    if (!b.freund) return null;
+    const f = lage(VORSCHLAEGE.freund, b.id), m = lage(VORSCHLAEGE.mein, b.id);
+    return f && m && f.an && m.an && f.tag === m.tag ? "dabei" : null;
+  }
   const SLOTS = [];
   TAGE.forEach((t) => t.slots.forEach(([s, label]) => SLOTS.push({ id: `${t.id}-${s}`, tag: t, label })));
   const SLOT_IDS = new Set(SLOTS.map((s) => s.id).concat(["pool"]));
@@ -129,7 +145,9 @@
     if (b.zeit) chips.push(el("span", { class: "chip" }, "🕑 " + b.zeit));
     if (b.dauer) chips.push(el("span", { class: "chip" }, "⏳ " + b.dauer));
     if (b.preis != null) chips.push(el("span", { class: "chip preis" }, b.preis === 0 ? "frei" : `${pfund(b.preis)} £E p. P. ≈ ${euro(b.preis)} €`));
-    if (b.freund) chips.push(el("span", { class: "chip freund" }, "💬 Tipp des Freundes"));
+    const e = einig(b);
+    if (e) chips.push(el("span", { class: "chip einig" }, e === "abraten" ? "✓ einig: beide raten ab" : "✓ Freund und ich einig"));
+    else if (b.freund) chips.push(el("span", { class: "chip freund" }, "💬 Tipp des Freundes"));
     if (b.anders) chips.push(el("span", { class: "chip anders" }, "⚠ Hinweis"));
     if (b.guide === "Guide lohnt" || b.guide === "Guide") chips.push(el("span", { class: "chip guide" }, "👤 mit Guide besser"));
     if (b.guide === "gut allein" || b.guide === "selbst") chips.push(el("span", { class: "chip allein" }, "🧭 gut selbst"));
@@ -148,7 +166,7 @@
       onclick: () => { if (off) delete state.off[id]; else state.off[id] = 1; save(); render(); } },
       off ? "↺ wieder rein" : "✓");
 
-    return el("li", { class: "karte" + (off ? " off" : ""), "data-id": id, "data-art": b.art },
+    return el("li", { class: "karte" + (off ? " off" : "") + (e ? " einig" : ""), "data-id": id, "data-art": b.art },
       el("div", { class: "kopf" },
         el("button", { type: "button", class: "griff", "aria-label": `${b.t} ziehen`, title: "Ziehen zum Verschieben" }, "⠿"),
         el("span", { class: "art", title: art.name, "aria-hidden": "true" }, art.icon),
@@ -156,7 +174,7 @@
         haken),
       off ? null : el("div", { class: "chips" }, chips),
       off ? null : el("p", { class: "txt" }, b.txt),
-      off || !b.anders ? null : el("p", { class: "anders-text" }, el("strong", {}, b.freund ? "Anders als euer Freund / Hinweis: " : "Ergänzung: "), b.anders),
+      off || !b.anders ? null : el("p", { class: "anders-text" }, el("strong", {}, !b.freund ? "Ergänzung: " : e ? "Hinweis: " : "Anders als euer Freund: "), b.anders),
       off ? null : el("details", { class: "mehr" },
         el("summary", {}, "Mehr"),
         b.more ? el("p", { html: b.more }) : null,
