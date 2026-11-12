@@ -12,7 +12,7 @@
 <style>
   main.breit { max-width: 84rem; }
   main.breit > :not(#planer):not(.bedienung) { max-width: var(--measure); }
-  .sans, .bedienung, .karte, .bilanz, .tagkarte header, .slot h4, .pool { font-family: Inter, system-ui, sans-serif; }
+  .sans, .bedienung, .karte, .bilanz, .tagkarte header, .tagintro, .slot h4, .pool { font-family: Inter, system-ui, sans-serif; }
 
   .bedienung { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin: 1.2rem 0 0.4rem; }
   .bedienung button { font: inherit; font-size: 0.85rem; padding: 0.5rem 0.9rem; border-radius: 6px; border: 1px solid var(--rule); background: var(--bg); color: var(--ink); cursor: pointer; min-height: 44px; }
@@ -31,7 +31,12 @@
   }
 
   .tagkarte, .pool { border: 1px solid var(--rule); border-radius: 10px; padding: 0.7rem 0.7rem 0.4rem; background: var(--bg); }
-  .tagkarte header h3 { margin: 0; font-size: 1rem; }
+  .tagkarte header h3 { margin: 0; font-size: 1rem; line-height: 1.3; }
+  /* Beim Scrollen bleiben Tag und Tagesabschnitt oben stehen. */
+  .tagkopf { position: sticky; top: 0; z-index: 3; background: var(--bg); margin: -0.7rem -0.7rem 0; padding: 0.6rem 0.7rem 0.35rem; border-radius: 10px 10px 0 0; border-bottom: 1px solid var(--rule); }
+  .tagkarte .slot h4 { position: sticky; top: 2.15rem; z-index: 2; background: var(--bg); margin: 0.5rem -0.7rem 0.3rem; padding: 0.35rem 0.7rem 0.3rem; color: var(--sea); }
+  .tagintro { padding-top: 0.3rem; }
+  .pool .slot h4 { position: sticky; top: 0; z-index: 2; background: var(--sea-soft); margin: 0.5rem -0.7rem 0.3rem; padding: 0.35rem 0.7rem 0.3rem; }
   .tagkarte .motto { margin: 0.1rem 0 0; color: var(--sea); font-size: 0.85rem; font-weight: 600; }
   .meta { margin: 0.2rem 0 0.4rem; font-size: 0.75rem; color: var(--muted); }
   .pool { background: var(--sea-soft); }

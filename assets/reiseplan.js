@@ -258,8 +258,8 @@
       });
       gesamt += tagSumme;
       return el("article", { class: "tagkarte", id: t.id },
-        el("header", {},
-          el("h3", {}, t.name),
+        el("header", { class: "tagkopf" }, el("h3", {}, t.name)),
+        el("div", { class: "tagintro" },
           el("p", { class: "motto" }, t.motto),
           el("p", { class: "meta" }, [t.sonne ? "☀ " + t.sonne : null, tagSumme ? `Eintritt ${pfund(tagSumme)} £E p. P. ≈ ${euro(tagSumme)} €` : null].filter(Boolean).join(" · "))),
         abschnitte);
