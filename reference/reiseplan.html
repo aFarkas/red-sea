@@ -122,8 +122,14 @@
     <li><strong>Zwei Vorschläge:</strong> „Plan des Freundes laden“ zeigt genau seinen Plan, „Mein Vorschlag laden“ meinen. Grün hinterlegt mit <strong>✓ Freund und ich einig</strong>: Das empfehlen wir beide für denselben Tag (oder raten beide ab). <strong>💬 Tipp des Freundes</strong>: seine Idee, die ich anders einplane oder nur als Alternative führe. Ein roter Kasten auf der Karte sagt, wo und warum ich abweiche.</li>
     <li><strong>Kompakt:</strong> zeigt nur Titel und Eintritt, gut für den Überblick auf dem MacBook.</li>
     <li><strong>Ideenpool:</strong> Alles, was noch keinen Tag hat, nach Westufer, Ostufer, Nil, Essen und Trinken sortiert.</li>
+    <li><strong>An mich schicken:</strong> Unter „Plan an Claude schicken“ entsteht ein Text für den Chat. Daraus mache ich euren festen Plan, für beide Geräte und für die Lektionen.</li>
     <li><strong>iPad und MacBook:</strong> Der Plan bleibt im Browser des Geräts. „Plan teilen“ macht daraus einen Link. Öffnet ihn auf dem anderen Gerät, und der Plan ist dort.</li>
   </ul>
+</div>
+
+<div id="planer-fest" class="box" hidden style="background:color-mix(in srgb, var(--good) 10%, var(--bg));border-left:3px solid var(--good)">
+  <div class="box-title" style="color:var(--good)">Unser fester Plan</div>
+  <p style="margin:0">Den habt ihr mir geschickt, Stand <span data-fest-stand></span>. Er gilt auf jedem Gerät und ist die Grundlage für die Lektionen. <button type="button" class="action" data-planer="fest">Festen Plan laden</button></p>
 </div>
 
 <div class="bedienung">
@@ -138,6 +144,18 @@
 <p id="planer-meldung" role="status"></p>
 
 <div id="planer"></div>
+
+<h2>Plan an Claude schicken</h2>
+<p>Wenn ihr zufrieden seid: Notizen dazuschreiben, auf „Ergebnis für Claude“ tippen, in den Chat einfügen. Ich trage ihn als <strong>festen Plan</strong> ein. Dann steht er oben auf dieser Seite, auf iPad und MacBook gleich, und ich baue die Lektionen für Luxor danach. Schickt ihn ruhig noch einmal, wenn sich etwas ändert, auch unterwegs oder hinterher: was ihr wirklich gemacht habt, was ausgefallen ist, was gut war.</p>
+<label for="planer-notiz" class="sans" style="font-size:.85rem;font-weight:600">Notizen für Claude</label>
+<textarea id="planer-notiz" class="export" rows="4" placeholder="Zum Beispiel: Ballon gebucht für Sonntag 5 Uhr. Guide über den Gastgeber, Ahmed, 7 Uhr. Sofra war ausgebucht. Was uns besonders interessiert …" style="width:100%"></textarea>
+<div class="bedienung"><button type="button" class="haupt" data-planer="claude">Ergebnis für Claude</button></div>
+<div id="planer-export" class="box ask" hidden>
+  <div class="box-title">Ergebnis für Claude</div>
+  <p class="export-meldung sans" style="font-size:.85rem;color:var(--good)"></p>
+  <textarea class="export" readonly rows="8" style="width:100%"></textarea>
+  <button type="button" class="action">Kopieren</button>
+</div>
 
 <h2>Der Plan eures Freundes und wo ich abweiche</h2>
 <div class="box" style="background:color-mix(in srgb, var(--good) 10%, var(--bg));border-left:3px solid var(--good)">
@@ -230,6 +248,7 @@
 </nav>
 </main>
 <script src="../assets/reiseplan-daten.js"></script>
+<script src="../assets/reiseplan-fest.js"></script>
 <script src="../assets/reiseplan.js"></script>
 <script src="../assets/cards.js"></script>
 <script src="../assets/say.js"></script>

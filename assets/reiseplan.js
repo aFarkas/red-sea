@@ -5,6 +5,8 @@
 (function () {
   const KEY = "reiseplan-luxor-v1";
   const ARTEN = window.PLAN_ARTEN, TAGE = window.PLAN_TAGE, VORSCHLAEGE = window.PLAN_VORSCHLAEGE;
+  const FEST = window.PLAN_FEST;
+  if (FEST && FEST.plan) VORSCHLAEGE.fest = Object.assign({ name: "Unser fester Plan" }, FEST.plan);
   const BY_ID = Object.fromEntries(window.PLAN_BAUSTEINE.map((b) => [b.id, b]));
   const FAUST = 60; // Faustregel aus Lektion 10: 60 Pfund ≈ 1 Euro
 
@@ -52,13 +54,19 @@
     }
     slots.pool = slots.pool || [];
     for (const id of Object.keys(BY_ID)) if (!seen.has(id)) slots.pool.push(id);
-    return { slots, off: st.off || {}, todo: st.todo || {}, zeigen: st.zeigen || {}, kompakt: !!st.kompakt, geaendert: st.geaendert || null };
+    return { slots, off: st.off || {}, todo: st.todo || {}, zeigen: st.zeigen || {}, kompakt: !!st.kompakt, notiz: st.notiz || "", geaendert: st.geaendert || null };
   }
   function load() {
     try {
       const raw = localStorage.getItem(KEY);
       if (raw) return normalize(JSON.parse(raw));
     } catch (e) {}
+    if (VORSCHLAEGE.fest) {
+      const st = vorschlag("fest");
+      (FEST.todo || []).forEach((id) => (st.todo[id] = 1));
+      st.notiz = FEST.notiz || "";
+      return st;
+    }
     return vorschlag();
   }
   let state = load();
@@ -69,7 +77,7 @@
 
   // ---------- Link zum Teilen (iPad ↔ MacBook) ----------
   function encode(st) {
-    const compact = { s: st.slots, o: Object.keys(st.off), d: Object.keys(st.todo) };
+    const compact = { s: st.slots, o: Object.keys(st.off), d: Object.keys(st.todo), n: st.notiz || "" };
     const json = JSON.stringify(compact);
     return btoa(String.fromCharCode(...new TextEncoder().encode(json))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
   }
@@ -78,7 +86,7 @@
     const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
     const c = JSON.parse(new TextDecoder().decode(bytes));
     const flag = (arr) => Object.fromEntries((arr || []).map((k) => [k, 1]));
-    return normalize({ slots: c.s, off: flag(c.o), todo: flag(c.d) });
+    return normalize({ slots: c.s, off: flag(c.o), todo: flag(c.d), notiz: c.n || "" });
   }
   function fromHash() {
     const m = location.hash.match(/plan=([A-Za-z0-9_-]+)/);
@@ -269,6 +277,69 @@
     });
   }
 
+  // ---------- Ergebnis für Claude ----------
+  // Lesbar für den Chat, dazu der Plan-Code im Format von assets/reiseplan-fest.js.
+  function exportText() {
+    const L = [];
+    const jetzt = new Date().toLocaleString("de-DE", { weekday: "short", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" });
+    L.push(`Reiseplan Luxor, Ergebnis für Claude (Stand ${jetzt})`);
+    const plan = {};
+    let gesamt = 0;
+    for (const t of TAGE) {
+      L.push("", t.name.toUpperCase());
+      for (const [s, label] of t.slots) {
+        const sid = `${t.id}-${s}`;
+        const ids = state.slots[sid] || [];
+        if (!ids.length) continue;
+        plan[sid] = ids.map((id) => (state.off[id] ? "-" : "") + id);
+        const an = ids.filter((id) => !state.off[id]), weg = ids.filter((id) => state.off[id]);
+        gesamt += summe(ids);
+        L.push(`${label}: ${an.map((id) => BY_ID[id].t).join("; ") || "–"}` + (weg.length ? ` (weggehakt: ${weg.map((id) => BY_ID[id].t).join("; ")})` : ""));
+      }
+    }
+    L.push("", `Eintritt im Plan: ${pfund(gesamt)} Pfund pro Person`);
+    const todos = [...document.querySelectorAll("[data-todo]")];
+    const erledigt = todos.filter((li) => state.todo[li.dataset.todo]).map((li) => li.dataset.todo);
+    const offen = todos.filter((li) => !state.todo[li.dataset.todo]).map((li) => li.dataset.todo);
+    L.push(`Vorab erledigt: ${erledigt.join(", ") || "nichts"} · offen: ${offen.join(", ") || "nichts"}`);
+    if (state.notiz.trim()) L.push("", "Notizen:", state.notiz.trim());
+    L.push("", "Plan-Code: " + JSON.stringify({ todo: erledigt, plan }));
+    return L.join("\n");
+  }
+  function renderExport() {
+    const notiz = document.getElementById("planer-notiz");
+    const btn = document.querySelector('[data-planer="claude"]');
+    const out = document.getElementById("planer-export");
+    if (!notiz || !btn || !out) return;
+    notiz.value = state.notiz;
+    notiz.addEventListener("input", () => { state.notiz = notiz.value; save(); out.hidden = true; });
+    btn.addEventListener("click", async () => {
+      const ta = out.querySelector("textarea");
+      ta.value = exportText();
+      out.hidden = false;
+      ta.select();
+      try { await navigator.clipboard.writeText(ta.value); meldungIn(out, "Kopiert. Jetzt in den Chat einfügen."); }
+      catch (e) { meldungIn(out, "Text markiert: kopieren und in den Chat einfügen."); }
+    });
+    out.querySelector("button").addEventListener("click", async () => {
+      const ta = out.querySelector("textarea");
+      ta.select();
+      try { await navigator.clipboard.writeText(ta.value); } catch (e) { document.execCommand("copy"); }
+      meldungIn(out, "Kopiert.");
+    });
+  }
+  function meldungIn(box, text) { const p = box.querySelector(".export-meldung"); if (p) p.textContent = text; }
+
+  // ---------- Fester Plan, von Claude eingetragen ----------
+  function renderFest() {
+    const box = document.getElementById("planer-fest");
+    if (!box) return;
+    if (!VORSCHLAEGE.fest) { box.hidden = true; return; }
+    const stand = new Date(FEST.stand).toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long" });
+    box.hidden = false;
+    box.querySelector("[data-fest-stand]").textContent = stand;
+  }
+
   // ---------- Ziehen mit Maus und Finger ----------
   let drag = null;
   root.addEventListener("pointerdown", (e) => {
@@ -356,9 +427,12 @@
     const was = b.dataset.planer;
     if (was === "teilen") teilen();
     if (was === "drucken") window.print();
-    if ((was === "mein" || was === "freund") && confirm(`„${VORSCHLAEGE[was].name}“ laden? Eure Änderungen gehen verloren (die Häkchen bei „Vorab erledigen“ bleiben).`)) {
+    if ((was === "mein" || was === "freund" || was === "fest") && confirm(`„${VORSCHLAEGE[was].name}“ laden? Eure Änderungen gehen verloren (die Häkchen bei „Vorab erledigen“ bleiben).`)) {
       const todo = state.todo, kompakt = state.kompakt;
-      state = vorschlag(was); state.todo = todo; state.kompakt = kompakt; save(); render();
+      const notiz = state.notiz;
+      state = vorschlag(was); state.todo = todo; state.kompakt = kompakt; state.notiz = notiz;
+      if (was === "fest") { (FEST.todo || []).forEach((id) => (state.todo[id] = 1)); if (!notiz) state.notiz = FEST.notiz || ""; }
+      save(); render();
       meldung(`„${VORSCHLAEGE[was].name}“ geladen.`);
     }
     if (was === "kompakt") {
@@ -374,4 +448,6 @@
 
   fromHash();
   render();
+  renderFest();
+  renderExport();
 })();
