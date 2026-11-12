@@ -70,14 +70,18 @@
     return (BAUSTEINE_AM_ORT[ortId] || []).map((b) => Object.assign({ b }, status(b.id))).filter((x) => x.an)
       .sort((a, c) => reihe.indexOf(a.slot) - reihe.indexOf(c.slot));
   }
-  function sichtbar(ortId) {
-    const o = ORTE[ortId];
-    if (!filter.typ.includes(o.typ)) return false;
-    if (o.typ === "lokal" && !(o.mahl || []).some((m) => filter.mahl.includes(m))) return false;
+  // Passt der Ort zum Wann-Filter (alle Orte, unser Plan, ein Tag)?
+  function tagPasst(ortId) {
     if (filter.zeigen === "alles") return true;
     const plan = eingeplant(ortId);
     if (filter.zeigen === "plan") return plan.length > 0;
     return plan.some((x) => x.s.tag.id === filter.zeigen);
+  }
+  function sichtbar(ortId) {
+    const o = ORTE[ortId];
+    if (!filter.typ.includes(o.typ)) return false;
+    if (o.typ === "lokal" && !(o.mahl || []).some((m) => filter.mahl.includes(m))) return false;
+    return tagPasst(ortId);
   }
 
   // ---------- Karte ----------
@@ -91,17 +95,30 @@
   L.control.layers({ "Karte": osm, "Luftbild": sat }, null, { position: "topright" }).addTo(map);
   L.control.scale({ imperial: false }).addTo(map);
 
+  const esc = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;");
   function icon(ortId) {
     const o = ORTE[ortId], t = TYPEN[o.typ];
     const plan = eingeplant(ortId);
-    const nurDrinks = o.typ === "lokal" && (o.mahl || []).every((m) => m === "drinks");
     const tage = [...new Set(plan.map((x) => x.s.tag.kurz.slice(0, 2)))];
-    const html = `<span class="pin-kreis" style="--farbe:${t.farbe}">${o.icon || (nurDrinks ? "🍸" : t.icon)}</span>` +
-      (tage.length ? `<span class="pin-tag">${tage.join(" · ")}</span>` : "");
+    const tag = tage.length ? `<span class="pin-tag">${tage.join(" · ")}</span>` : "";
+    const name = `<span class="pin-name">${esc(o.name)}</span>`;
     // im-plan: steht im Plan · aus: hat Karten, aber weggehakt oder im Pool · info: Ort aus Lektionen, ohne Karte im Plan
     const art = plan.length ? " im-plan" : BAUSTEINE_AM_ORT[ortId] ? " aus" : " info";
+    if (o.typ === "lokal") {
+      // Lokale zeigen, wofür sie taugen: ☕ 🥗 🌙 🍺. Ist ein Mahlzeit-Filter an, verblassen die anderen.
+      const teil = filter.mahl.length < Object.keys(MAHL).length;
+      const ms = Object.keys(MAHL).filter((m) => (o.mahl || []).includes(m));
+      const w = 12 + ms.length * 21;
+      const html = `<span class="pin-pille" style="--farbe:${t.farbe}">` +
+        ms.map((m) => `<i class="${teil && !filter.mahl.includes(m) ? "blass" : ""}" title="${MAHL[m].name}">${MAHL[m].icon}</i>`).join("") + `</span>` + tag + name;
+      return L.divIcon({ className: "pin lokal" + art, html, iconSize: [w, 30], iconAnchor: [w / 2, 15], popupAnchor: [0, -14] });
+    }
+    const html = `<span class="pin-kreis" style="--farbe:${t.farbe}">${o.icon || t.icon}</span>` + tag + name;
     return L.divIcon({ className: "pin" + art, html, iconSize: [34, 34], iconAnchor: [17, 17], popupAnchor: [0, -16] });
   }
+  // Namen an den Pins erst, wenn genug Platz ist.
+  const namenZeigen = () => map.getContainer().classList.toggle("mit-namen", map.getZoom() >= 16);
+  map.on("zoomend", namenZeigen);
 
   const PINS = {}, LINIEN = {};
   const popupHoehe = () => Math.max(200, map.getSize().y - 90);
@@ -129,8 +146,6 @@
       m.setZIndexOffset(eingeplant(id).length ? 500 : 0);
       if (m.isPopupOpen()) m.setPopupContent(popup(id));
     }
-    const n = Object.keys(PINS).filter(sichtbar).length;
-    document.getElementById("karte-anzahl").textContent = `${n} ${n === 1 ? "Ort" : "Orte"} auf der Karte`;
     filterKnoepfe();
     ohnePin();
   }
@@ -197,27 +212,82 @@
     meldung.t = setTimeout(() => (m.textContent = ""), 6000);
   }
 
-  // ---------- Filterknöpfe ----------
-  function filterKnoepfe() {
-    document.querySelectorAll("[data-typ]").forEach((b) => b.setAttribute("aria-pressed", String(filter.typ.includes(b.dataset.typ))));
-    document.querySelectorAll("[data-mahl]").forEach((b) => b.setAttribute("aria-pressed", String(filter.mahl.includes(b.dataset.mahl))));
-    document.getElementById("karte-mahl").hidden = !filter.typ.includes("lokal");
-    document.getElementById("karte-zeigen").value = filter.zeigen;
-  }
-  function filterAufbauen() {
-    const typen = document.getElementById("karte-typen");
-    for (const [k, t] of Object.entries(TYPEN)) typen.append(el("button", { type: "button", class: "chipknopf", "data-typ": k, style: `--farbe:${t.farbe}`,
-      onclick: () => { filter.typ = umschalten(filter.typ, k); merken(); zeichnen(); } }, `${t.icon} ${t.name}`));
-    const mahl = document.getElementById("karte-mahl");
-    for (const [k, m] of Object.entries(MAHL)) mahl.append(el("button", { type: "button", class: "chipknopf klein", "data-mahl": k,
-      onclick: () => { filter.mahl = umschalten(filter.mahl, k); merken(); zeichnen(); } }, `${m.icon} ${m.name}`));
-    const sel = document.getElementById("karte-zeigen");
-    sel.append(el("option", { value: "alles" }, "Alle Orte"), el("option", { value: "plan" }, "Nur unser Plan"),
-      ...Z.TAGE.map((t) => el("option", { value: t.id }, "Nur " + t.name)));
-    sel.addEventListener("change", () => { filter.zeigen = sel.value; merken(); zeichnen(); allesZeigen(); });
-  }
+  // ---------- Filter ----------
+  // Regel für alle Knöpfe: Ist alles an, zeigt ein Tipp nur diese Sorte. Danach schaltet jeder Tipp
+  // eine Sorte dazu oder weg. Eine Mahlzeit schaltet die Restaurants mit ein. „Alle“ zeigt wieder alles.
+  const ALLE_TYPEN = Object.keys(TYPEN), ALLE_MAHL = Object.keys(MAHL);
+  const nichtLokal = ALLE_TYPEN.filter((k) => k !== "lokal");
+  const allesAn = () => filter.typ.length === ALLE_TYPEN.length && filter.mahl.length === ALLE_MAHL.length;
+  const lokalAn = () => filter.typ.includes("lokal");
   const umschalten = (liste, k) => (liste.includes(k) ? liste.filter((x) => x !== k) : liste.concat(k));
+  function zuruecksetzen() { filter.typ = ALLE_TYPEN.slice(); filter.mahl = ALLE_MAHL.slice(); }
 
+  function tippTyp(k) {
+    if (allesAn()) filter.typ = [k];
+    else filter.typ = umschalten(filter.typ, k);
+    if (k === "lokal" && lokalAn()) filter.mahl = ALLE_MAHL.slice();
+    if (!filter.typ.length) zuruecksetzen();
+    nachFilter();
+  }
+  function tippMahl(m) {
+    if (allesAn()) { filter.typ = ["lokal"]; filter.mahl = [m]; }
+    else if (!lokalAn()) { filter.typ = filter.typ.concat("lokal"); filter.mahl = [m]; }
+    else if (filter.mahl.length === ALLE_MAHL.length) filter.mahl = [m];
+    else {
+      filter.mahl = umschalten(filter.mahl, m);
+      if (!filter.mahl.length) { filter.typ = filter.typ.filter((x) => x !== "lokal"); filter.mahl = ALLE_MAHL.slice(); }
+    }
+    if (!filter.typ.length) zuruecksetzen();
+    nachFilter();
+  }
+  function tippWann(v) { filter.zeigen = v; nachFilter(); }
+  function nachFilter() { merken(); zeichnen(); allesZeigen(); }
+
+  // Wie viele Orte brächte ein Knopf? (unter dem gewählten Tag)
+  const zahl = (pruef) => Object.keys(PINS).filter((id) => tagPasst(id) && pruef(ORTE[id])).length;
+
+  // kurz: Beschriftung für schmale Bildschirme, damit eine Zeile reicht.
+  const chip = (attrs, icon, text, zahlId, kurz) => el("button", Object.assign({ type: "button", class: "chipknopf", title: text }, attrs),
+    icon ? el("span", { class: "chip-icon", "aria-hidden": "true" }, icon) : null,
+    el("span", { class: kurz ? "lang" : null }, text), kurz ? el("span", { class: "kurz", "aria-hidden": "true" }, kurz) : null,
+    zahlId ? el("span", { class: "zahl", "data-zahl": zahlId }) : null);
+  const KURZ = { staette: "Tempel", wege: "Wege", lokal: "Essen", fruehstueck: "Früh" };
+
+  function filterAufbauen() {
+    const was = document.getElementById("karte-was");
+    was.append(chip({ "data-alle": "", onclick: () => { zuruecksetzen(); nachFilter(); } }, null, "Alle", "alle"));
+    for (const k of nichtLokal) was.append(chip({ "data-typ": k, style: `--farbe:${TYPEN[k].farbe}`, onclick: () => tippTyp(k) }, TYPEN[k].icon, TYPEN[k].name, k, KURZ[k]));
+    const essen = el("div", { class: "gruppe", role: "group", "aria-label": "Restaurants", style: `--farbe:${TYPEN.lokal.farbe}` },
+      chip({ "data-typ": "lokal", class: "chipknopf kopf", onclick: () => tippTyp("lokal") }, TYPEN.lokal.icon, TYPEN.lokal.name, "lokal", KURZ.lokal),
+      Object.entries(MAHL).map(([k, m]) => chip({ "data-mahl": k, onclick: () => tippMahl(k) }, m.icon, m.name, "m-" + k, KURZ[k])));
+    document.getElementById("karte-essen").append(essen);
+    const wann = document.getElementById("karte-wann");
+    wann.append(el("span", { class: "zeilen-titel" }, "Wann:"),
+      chip({ "data-zeigen": "alles", onclick: () => tippWann("alles") }, null, "Alle Tage", null, "Alle"),
+      chip({ "data-zeigen": "plan", onclick: () => tippWann("plan") }, "✓", "Unser Plan", null, "Plan"),
+      ...Z.TAGE.map((t) => chip({ "data-zeigen": t.id, onclick: () => tippWann(t.id) }, null, t.kurz, null, t.kurz.slice(0, 2))));
+  }
+  function filterKnoepfe() {
+    const alle = allesAn();
+    document.querySelectorAll("[data-alle]").forEach((b) => b.setAttribute("aria-pressed", String(alle)));
+    document.querySelectorAll("[data-typ]").forEach((b) => b.setAttribute("aria-pressed", String(!alle && filter.typ.includes(b.dataset.typ))));
+    document.querySelectorAll("[data-mahl]").forEach((b) => b.setAttribute("aria-pressed", String(!alle && lokalAn() && filter.mahl.length < ALLE_MAHL.length && filter.mahl.includes(b.dataset.mahl))));
+    // „aus“: Die Sorte ist gerade ausgeblendet, weil etwas anderes gewählt ist.
+    document.querySelectorAll("[data-typ]").forEach((b) => b.toggleAttribute("data-aus", !alle && !filter.typ.includes(b.dataset.typ)));
+    document.querySelectorAll("[data-mahl]").forEach((b) => b.toggleAttribute("data-aus", !alle && (!lokalAn() || !filter.mahl.includes(b.dataset.mahl))));
+    document.querySelectorAll("[data-zeigen]").forEach((b) => b.setAttribute("aria-pressed", String(filter.zeigen === b.dataset.zeigen)));
+    // Bei „Alle“ sind die Sortenknöpfe nicht gedrückt, aber auch nicht aus: Sie sind Angebote.
+    document.getElementById("karte-was").closest(".kartenbereich").classList.toggle("alles-an", alle);
+    const setz = (id, n) => document.querySelectorAll(`[data-zahl="${id}"]`).forEach((z) => (z.textContent = n));
+    setz("alle", zahl(() => true));
+    for (const k of ALLE_TYPEN) setz(k, zahl((o) => o.typ === k));
+    for (const m of ALLE_MAHL) setz("m-" + m, zahl((o) => o.typ === "lokal" && (o.mahl || []).includes(m)));
+    const n = Object.keys(PINS).filter(sichtbar).length;
+    const zeile = document.getElementById("karte-anzahl");
+    zeile.textContent = `${n} ${n === 1 ? "Ort" : "Orte"} auf der Karte`;
+    if (!alle || filter.zeigen !== "alles") zeile.append(" · ", el("button", { type: "button", class: "zuruecksetzen",
+      onclick: () => { zuruecksetzen(); filter.zeigen = "alles"; nachFilter(); } }, "Filter zurücksetzen"));
+  }
   function allesZeigen() {
     const sicht = Object.entries(PINS).filter(([id]) => sichtbar(id)).map(([, m]) => m.getLatLng());
     if (sicht.length) map.fitBounds(L.latLngBounds(sicht), { padding: [36, 36], maxZoom: 16 });
@@ -351,7 +421,14 @@
   }
   if (!zuOrt()) allesZeigen();
   window.addEventListener("hashchange", zuOrt);
-  document.getElementById("karte-alle").addEventListener("click", allesZeigen);
+  const Alle = L.Control.extend({ options: { position: "topleft" }, onAdd: () => {
+    const d = L.DomUtil.create("div", "leaflet-bar");
+    const a = el("a", { href: "#", role: "button", class: "voll-knopf", title: "Alle Pins zeigen", "aria-label": "Alle Pins zeigen",
+      onclick: (e) => { e.preventDefault(); allesZeigen(); } }, "⤢");
+    d.append(a); L.DomEvent.disableClickPropagation(d); return d;
+  } });
+  new Alle().addTo(map);
+  namenZeigen();
 
   Z.beobachten((st) => { state = st; zeichnen(); });
 })();
