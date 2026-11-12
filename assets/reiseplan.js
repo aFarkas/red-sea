@@ -142,11 +142,78 @@
       off ? null : el("p", { class: "links" },
         b.ort ? el("a", { href: "karte.html#ort=" + encodeURIComponent(b.ort[0]) }, "🗺 Auf unserer Karte") : null,
         b.map ? el("a", { href: b.map, target: "_blank", rel: "noopener" }, "📍 Google Maps") : null,
+        slot !== "pool" ? el("a", { href: kalenderLink(b, slot), target: "_blank", rel: "noopener", title: "Als Termin in Google Kalender übernehmen, Zeit dort anpassen" }, "📅 In Google Kalender") : null,
         (b.links || []).map(([label, url]) => el("a", Object.assign({ href: url }, url.startsWith("http") ? { target: "_blank", rel: "noopener" } : {}), label))),
       off ? null : el("details", { class: "mehr" },
         el("summary", {}, "Mehr"),
         b.more ? el("p", { html: T(b.more) }) : null,
         el("p", {}, ziel)));
+  }
+
+  // ---------- Export in Google Kalender ----------
+  // Ein Termin pro Karte: Titel, Ort (Suchbegriff für Google Maps), Beschreibung und der Tag.
+  // Die Uhrzeit ist nur der Bereich des Abschnitts (Früh, Vormittag, …), im Kalender genau einstellen.
+  // Zeitzone Luxor (Africa/Cairo), damit der Termin auch auf einem Gerät mit deutscher Zeit stimmt.
+  function slotZeit(tag, s) {
+    const los = state.los, hm = (h) => [Math.floor(h), Math.round((h % 1) * 60)];
+    const hatVormittag = tag.slots.some(([x]) => x === "vormittag");
+    const B = {
+      frueh: hatVormittag ? [los - 1, los] : [los, 12], // mit Vormittag: nur Aufstehen und Abholung
+      vormittag: [los, 13],
+      mittag: [13, 14.5],
+      nachmittag: tag.id === "d14" ? [15, 17] : [14.5, 17],
+      abend: [17.5, 21],
+      morgen: [9, 12],
+      abreise: [12, 14],
+    }[s] || [9, 17];
+    return B.map(hm);
+  }
+  // Nennt die Karte selbst eine Uhrzeit („Abholung 7:00“, „6:00–7:00“, „ca. 15:00“), gilt die.
+  // Das Ende kommt dann aus der Spanne oder der Dauer (die längere Angabe), sonst eine Stunde.
+  function kartenZeit(b) {
+    const m = (T(b.zeit) || "").match(/^(?:Abholung |ab ca\. |ca\. )?(\d{1,2}):(\d{2})(?:–(\d{1,2}):(\d{2}))?$/);
+    if (!m) return null;
+    const start = +m[1] * 60 + +m[2];
+    let ende = m[3] ? +m[3] * 60 + +m[4] : null;
+    if (ende == null) {
+      const d = (b.dauer || "").match(/([\d,]+)\s*(h|min)\b/);
+      ende = start + (d ? Math.round(parseFloat(d[1].replace(",", ".")) * (d[2] === "h" ? 60 : 1)) : 60);
+    }
+    return [start, ende].map((x) => [Math.floor(x / 60), x % 60]);
+  }
+  function alsText(html) {
+    const d = document.createElement("div");
+    d.innerHTML = html;
+    d.querySelectorAll("a[href]").forEach((a) => a.replaceWith(`${a.textContent} (${new URL(a.getAttribute("href"), location.href).href})`));
+    return d.textContent.replace(/\s+/g, " ").trim();
+  }
+  function kalenderOrt(b) {
+    const o = b.ort && window.PLAN_ORTE[b.ort[0]];
+    if (o) return /[a-z]/i.test(o.q) ? o.q : `${o.name}, Luxor (${o.q})`;
+    const q = b.map && new URL(b.map).searchParams.get("query");
+    return q || "";
+  }
+  function kalenderLink(b, slot) {
+    const [tagId, s] = slot.split("-");
+    const tag = TAGE.find((t) => t.id === tagId);
+    const [[h1, m1], [h2, m2]] = kartenZeit(b) || slotZeit(tag, s);
+    const d = tag.datum.replace(/-/g, "");
+    const zeit = (h, m) => `${d}T${String(h).padStart(2, "0")}${String(m).padStart(2, "0")}00`;
+    const label = tag.slots.find(([x]) => x === s)[1];
+    const info = [b.zeit ? "Zeit: " + T(b.zeit) : null, b.dauer ? "Dauer: " + b.dauer : null,
+      b.preis ? `Eintritt: ${pfund(b.preis)} £E p. P. (≈ ${euro(b.preis)} €)` : null].filter(Boolean).join(" · ");
+    const details = [
+      T(b.txt),
+      info,
+      b.anders ? "Hinweis: " + T(b.anders) : null,
+      b.more ? alsText(T(b.more)) : null,
+      b.map ? "Google Maps: " + b.map : null,
+      `Im Reiseplan (${tag.kurz} · ${label}, Uhrzeit nur ungefähr): ${location.origin + location.pathname}#karte=${encodeURIComponent(b.id)}`,
+    ].filter(Boolean).join("\n\n");
+    const p = new URLSearchParams({ action: "TEMPLATE", text: T(b.t), dates: `${zeit(h1, m1)}/${zeit(h2, m2)}`, ctz: "Africa/Cairo", details });
+    const ort = kalenderOrt(b);
+    if (ort) p.set("location", ort);
+    return "https://calendar.google.com/calendar/render?" + p.toString();
   }
 
   // ---------- Ein Abschnitt (Slot) mit Weggehakten dahinter ----------

@@ -16,13 +16,13 @@
   };
 
   window.PLAN_TAGE = [
-    { id: "d14", name: "Samstag, 14. November", kurz: "Sa 14.11.", motto: "Ankommen am Westufer", sonne: "Untergang ca. 17:00",
+    { id: "d14", datum: "2026-11-14", name: "Samstag, 14. November", kurz: "Sa 14.11.", motto: "Ankommen am Westufer", sonne: "Untergang ca. 17:00",
       slots: [["nachmittag", "Ab 15 Uhr"], ["abend", "Abend"]] },
-    { id: "d15", name: "Sonntag, 15. November", kurz: "So 15.11.", motto: "Westufer: Gräber und Totentempel", sonne: "Aufgang ca. 6:05 · Untergang ca. 17:00",
+    { id: "d15", datum: "2026-11-15", name: "Sonntag, 15. November", kurz: "So 15.11.", motto: "Westufer: Gräber und Totentempel", sonne: "Aufgang ca. 6:05 · Untergang ca. 17:00",
       slots: [["frueh", "Früh"], ["vormittag", "Vormittag"], ["mittag", "Mittag"], ["nachmittag", "Nachmittag"], ["abend", "Abend"]] },
-    { id: "d16", name: "Montag, 16. November", kurz: "Mo 16.11.", motto: "Ostufer: Tempel und Stadt", sonne: "Aufgang ca. 6:05 · Untergang ca. 17:00",
+    { id: "d16", datum: "2026-11-16", name: "Montag, 16. November", kurz: "Mo 16.11.", motto: "Ostufer: Tempel und Stadt", sonne: "Aufgang ca. 6:05 · Untergang ca. 17:00",
       slots: [["frueh", "Früh"], ["mittag", "Mittag"], ["nachmittag", "Nachmittag"], ["abend", "Abend"]] },
-    { id: "d17", name: "Dienstag, 17. November", kurz: "Di 17.11.", motto: "Gemütlich los nach Hurghada",
+    { id: "d17", datum: "2026-11-17", name: "Dienstag, 17. November", kurz: "Di 17.11.", motto: "Gemütlich los nach Hurghada",
       slots: [["morgen", "Morgen"], ["abreise", "Abreise"]] },
   ];
 
