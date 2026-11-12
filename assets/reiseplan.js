@@ -4,7 +4,7 @@
 // Gespeichert wird im Browser (localStorage). Zwischen Geräten wandert der Plan als Link.
 (function () {
   const KEY = "reiseplan-luxor-v1";
-  const ARTEN = window.PLAN_ARTEN, TAGE = window.PLAN_TAGE, VORSCHLAG = window.PLAN_VORSCHLAG;
+  const ARTEN = window.PLAN_ARTEN, TAGE = window.PLAN_TAGE, VORSCHLAEGE = window.PLAN_VORSCHLAEGE;
   const BY_ID = Object.fromEntries(window.PLAN_BAUSTEINE.map((b) => [b.id, b]));
   const FAUST = 60; // Faustregel aus Lektion 10: 60 Pfund ≈ 1 Euro
 
@@ -14,9 +14,10 @@
   const SLOT_IDS = new Set(SLOTS.map((s) => s.id).concat(["pool"]));
 
   // ---------- Zustand ----------
-  function vorschlag() {
+  function vorschlag(welcher = "mein") {
     const st = { slots: {}, off: {}, todo: {}, zeigen: {}, geaendert: null };
-    for (const [slot, ids] of Object.entries(VORSCHLAG)) {
+    for (const [slot, ids] of Object.entries(VORSCHLAEGE[welcher])) {
+      if (slot === "name") continue;
       st.slots[slot] = ids.map((x) => {
         const id = x.replace(/^-/, "");
         if (x.startsWith("-")) st.off[id] = 1;
@@ -128,6 +129,8 @@
     if (b.zeit) chips.push(el("span", { class: "chip" }, "🕑 " + b.zeit));
     if (b.dauer) chips.push(el("span", { class: "chip" }, "⏳ " + b.dauer));
     if (b.preis != null) chips.push(el("span", { class: "chip preis" }, b.preis === 0 ? "frei" : `${pfund(b.preis)} £E p. P. ≈ ${euro(b.preis)} €`));
+    if (b.freund) chips.push(el("span", { class: "chip freund" }, "💬 Tipp des Freundes"));
+    if (b.anders) chips.push(el("span", { class: "chip anders" }, "⚠ Hinweis"));
     if (b.guide === "Guide lohnt" || b.guide === "Guide") chips.push(el("span", { class: "chip guide" }, "👤 mit Guide besser"));
     if (b.guide === "gut allein" || b.guide === "selbst") chips.push(el("span", { class: "chip allein" }, "🧭 gut selbst"));
 
@@ -153,6 +156,7 @@
         haken),
       off ? null : el("div", { class: "chips" }, chips),
       off ? null : el("p", { class: "txt" }, b.txt),
+      off || !b.anders ? null : el("p", { class: "anders-text" }, el("strong", {}, b.freund ? "Anders als euer Freund / Hinweis: " : "Ergänzung: "), b.anders),
       off ? null : el("details", { class: "mehr" },
         el("summary", {}, "Mehr"),
         b.more ? el("p", { html: b.more }) : null,
@@ -334,8 +338,10 @@
     const was = b.dataset.planer;
     if (was === "teilen") teilen();
     if (was === "drucken") window.print();
-    if (was === "vorschlag" && confirm("Den Vorschlag wiederherstellen? Eure Änderungen gehen verloren (die Häkchen bei „Vorab erledigen“ bleiben).")) {
-      const todo = state.todo; state = vorschlag(); state.todo = todo; save(); render(); meldung("Vorschlag wiederhergestellt.");
+    if ((was === "mein" || was === "freund") && confirm(`„${VORSCHLAEGE[was].name}“ laden? Eure Änderungen gehen verloren (die Häkchen bei „Vorab erledigen“ bleiben).`)) {
+      const todo = state.todo, kompakt = state.kompakt;
+      state = vorschlag(was); state.todo = todo; state.kompakt = kompakt; save(); render();
+      meldung(`„${VORSCHLAEGE[was].name}“ geladen.`);
     }
     if (was === "kompakt") {
       state.kompakt = !state.kompakt; save(); render();

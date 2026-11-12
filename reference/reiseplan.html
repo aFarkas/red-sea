@@ -63,6 +63,11 @@
   .chip.preis { background: var(--coral-soft); }
   .chip.guide { background: var(--sea-soft); color: var(--sea); }
   .chip.allein { background: var(--sea-soft); }
+  .chip.freund { background: var(--sand); border: 1px solid var(--rule); }
+  .chip.anders { background: var(--coral-soft); color: var(--coral); }
+  .karte .anders-text { margin: 0.35rem 0 0.1rem 2.5rem; padding: 0.35rem 0.5rem; background: var(--coral-soft); border-radius: 6px; font-size: 0.8rem; }
+  #planer.kompakt .karte .anders-text { display: none; }
+  #planer.kompakt .chip.anders { display: inline; }
   .karte .txt { margin: 0.35rem 0 0.1rem 2.5rem; }
   .karte .mehr { margin: 0.1rem 0 0 2.5rem; }
   .karte .mehr summary { cursor: pointer; color: var(--sea); font-size: 0.78rem; padding: 0.2rem 0; }
@@ -75,8 +80,8 @@
   .karte.off .griff { visibility: hidden; }
   .weg-toggle { font: inherit; font-size: 0.72rem; color: var(--muted); background: none; border: 0; padding: 0.3rem 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; min-height: 2rem; }
   .liste.weg { margin-bottom: 0.4rem; }
-  #planer.kompakt .karte .txt, #planer.kompakt .karte .mehr, #planer.kompakt .chip:not(.preis) { display: none; }
-  #planer.kompakt .karte .chips:not(:has(.preis)) { display: none; }
+  #planer.kompakt .karte .txt, #planer.kompakt .karte .mehr, #planer.kompakt .chip:not(.preis):not(.anders) { display: none; }
+  #planer.kompakt .karte .chips:not(:has(.preis, .anders)) { display: none; }
 
   .karte.zieht { position: fixed; z-index: 50; pointer-events: none; box-shadow: 0 10px 28px rgba(0,0,0,.25); transform: rotate(1.5deg); }
   .platzhalter { border: 2px dashed var(--sea); border-radius: 8px; margin-bottom: 0.45rem; background: var(--sea-soft); }
@@ -104,13 +109,14 @@
 <main class="breit">
 <p class="kicker">Referenz · Über Wasser · Luxor</p>
 <h1>Reiseplan Luxor</h1>
-<p class="lede">Samstag, 14. November, bis Dienstag, 17. November: zwei volle Tage dazwischen. Der Vorschlag steht schon drin. Schiebt, hakt weg und holt zurück, bis es euer Plan ist.</p>
+<p class="lede">Samstag, 14. November, bis Dienstag, 17. November: zwei volle Tage dazwischen. Mein Vorschlag steht schon drin, der Plan eures Freundes ist einen Knopfdruck entfernt. Schiebt, hakt weg und holt zurück, bis es euer Plan ist.</p>
 
 <div class="box define">
   <div class="box-title">So geht’s</div>
   <ul>
     <li><strong>Verschieben:</strong> am Griff <strong>⠿</strong> fassen und ziehen, auf dem iPad mit dem Finger, auf dem MacBook mit der Maus. Oder unter „Mehr“ → „Verschieben nach …“ wählen.</li>
     <li><strong>Weghaken:</strong> <strong>✓</strong> antippen. Die Karte verschwindet, darunter steht „1 weggehakt · zeigen“. Dort holt ihr sie mit „↺ wieder rein“ zurück. So liegen Alternativen bereit, ohne zu stören.</li>
+    <li><strong>Zwei Vorschläge:</strong> „Plan des Freundes laden“ zeigt genau seinen Plan, „Mein Vorschlag laden“ meinen. Alle seine Ideen tragen das Etikett <strong>💬 Tipp des Freundes</strong>, auch die weggehakten und die im Pool. Wo ich abweiche, steht auf der Karte ein roter Hinweis mit Begründung.</li>
     <li><strong>Kompakt:</strong> zeigt nur Titel und Eintritt, gut für den Überblick auf dem MacBook.</li>
     <li><strong>Ideenpool:</strong> Alles, was noch keinen Tag hat, nach Westufer, Ostufer, Nil, Essen und Trinken sortiert.</li>
     <li><strong>iPad und MacBook:</strong> Der Plan bleibt im Browser des Geräts. „Plan teilen“ macht daraus einen Link. Öffnet ihn auf dem anderen Gerät, und der Plan ist dort.</li>
@@ -121,7 +127,8 @@
   <button type="button" class="haupt" data-planer="teilen">Plan teilen</button>
   <button type="button" data-planer="kompakt">Kompakt</button>
   <button type="button" data-planer="alle-zeigen">Weggehakte zeigen/verbergen</button>
-  <button type="button" data-planer="vorschlag">Vorschlag wiederherstellen</button>
+  <button type="button" data-planer="mein">Mein Vorschlag laden</button>
+  <button type="button" data-planer="freund">Plan des Freundes laden</button>
   <button type="button" data-planer="drucken">Drucken</button>
 </div>
 <p id="planer-stand"></p>
@@ -129,16 +136,24 @@
 
 <div id="planer"></div>
 
-<h2>Warum dieser Vorschlag</h2>
-<p>Er folgt dem Rat eures Freundes, mit einer Ergänzung.</p>
-<ul>
-  <li><strong>Westufer mit Guide.</strong> In Gräbern und Totentempeln sieht man ohne Erklärung vor allem bunte Wände. Ein Ägyptologe mit Fahrer bringt euch ab etwa 7 Uhr von Stätte zu Stätte, bevor es voll und warm wird. Alle Stätten am Westufer lassen im Winter bis 16 Uhr ein.</li>
-  <li><strong>Ostufer selbst.</strong> Karnak am Morgen, höchstens mit einem Guide für zwei Stunden, dann Souk, Essen, Corniche in eurem Tempo. Den Tempel von Luxor schafft ihr allein, er lässt bis 19 Uhr ein.</li>
-  <li><strong>Nicht beide Ufer an einem Tag.</strong> Solche Touren gibt es, sie packen Tal der Könige, Hatschepsut, Memnon, Karnak und Luxor-Tempel in rund acht Stunden. Ihr habt zwei Tage.</li>
-  <li><strong>Essen, wo ihr gerade seid.</strong> Westufer-Abende am Samstag und Sonntag, der Abend am Ostufer am Montag, wenn ihr ohnehin drüben seid.</li>
-  <li><strong>Neu dazu: Deir el-Medina.</strong> Das Dorf der Grabbauer steht in eurer Mission, fehlt aber in vielen Touren. Es liegt zwischen Hatschepsut und Medinet Habu, kostet also kaum Umweg. Sagt es dem Guide ausdrücklich.</li>
-  <li><strong>Selbst entdecken statt Guide?</strong> Im Pool liegen „Taxi für den Tag“ und „Fahrrad“. Zieht sie auf Sonntag früh und hakt die Tour weg.</li>
-</ul>
+<h2>Der Plan eures Freundes und wo ich abweiche</h2>
+<p>Sein Grundgerüst übernehme ich ganz: Sonntag Westufer mit Ägyptologe und Fahrer, früh los, ohne Einkaufsstopps; Montag Ostufer selbst, Karnak am Morgen mit oder ohne zwei Stunden Guide, dann Kaffee, Souk, Corniche, spätes Mittagessen, Tempel von Luxor ins Dunkle hinein, Al-Sahaby Lane, mit der Fähre heim. Abends esst ihr auf der Seite, auf der ihr gerade seid. Tickets offiziell kaufen, kein Luxor Pass, keine Tour „beide Ufer an einem Tag“. Da bin ich mit ihm einig, und die Quellen geben ihm recht: Die offiziellen Zeiten und Preise, die er nennt, stimmen mit der Seite des Ministeriums überein.</p>
+<div class="wide">
+<table>
+  <tr><th>Punkt</th><th>Euer Freund</th><th>Ich</th><th>Warum</th></tr>
+  <tr><td>Deir el-Medina</td><td>nicht im Plan</td><td>am Sonntag dazu</td><td>Steht in eurer Mission, liegt zwischen Hatschepsut und Medinet Habu. +220 Pfund p. P., deshalb 2.950 statt seiner rund 2.730 Pfund Eintritt.</td></tr>
+  <tr><td>Memnonkolosse</td><td>vor dem Mittagessen</td><td>am Ende des Rundgangs</td><td>Liegen an der Hauptstraße Richtung Fähre, also auf dem Heimweg. Kleine Sache, beides geht.</td></tr>
+  <tr><td>Mittagessen Sonntag</td><td>offen</td><td>Café Maratonga</td><td>Gegenüber von Medinet Habu, wohin ihr danach geht, mit veganen Salaten.</td></tr>
+  <tr><td>Samstag Sundowner</td><td>—</td><td>Nile Valley, Dachterrasse</td><td>Ergänzung: Bier mit Blick auf den Tempel von Luxor, ohne über den Fluss zu müssen.</td></tr>
+  <tr><td>Abendessen Sonntag</td><td>Tutankhamun oder West Bank Nile Palace</td><td>Tutankhamun, Nile Palace als Alternative</td><td>Für Nile Palace habe ich keine Quelle gefunden. Bei Tutankhamun warnt Wikivoyage vor Karten ohne Preise: vorher Karte mit Preisen verlangen.</td></tr>
+  <tr><td>Blue Sky</td><td>Sonnenuntergang und Essen nach der Feluke</td><td>nur als Drink, weggehakt</td><td>Gelobt wird vor allem gegrillter Fisch. Und vom Westufer seht ihr die Sonne nicht untergehen, sie sinkt hinter euch.</td></tr>
+  <tr><td>El Sayeda Zainab</td><td>lokal und günstig</td><td>Alternative am Samstag, ungeprüft</td><td>Seine Quelle war für mich nicht abrufbar, eine zweite habe ich nicht gefunden.</td></tr>
+  <tr><td>Montag Mittag</td><td>„spätes Mittagessen“, Sofra früher genannt</td><td>Sofra</td><td>Viele vegane Gerichte. Nur bar, abends Tage vorher reservieren.</td></tr>
+  <tr><td>Al-Sahaby Lane</td><td>nach dem Tempel von Luxor</td><td>genauso</td><td>Nur ein Hinweis: Den Sonnenuntergang vom Dach verpasst ihr dann, ihr seid um 17 Uhr im Tempel. Wer ihn will, zieht den Tempel vor.</td></tr>
+  <tr><td>Ballon</td><td>optional am Sonntag vor der Tour</td><td>genauso, im Vorschlag weggehakt</td><td>Optional. Eingeplant verschiebt er den Tourstart.</td></tr>
+</table>
+</div>
+<p>Selbst entdecken statt Guide? Im Pool liegen „Taxi für den Tag“ und „Fahrrad“. Zieht sie auf Sonntag früh und hakt die Tour weg.</p>
 
 <div class="box lookout">
   <div class="box-title">Sonnenuntergang: auf welcher Seite?</div>

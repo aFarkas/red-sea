@@ -265,7 +265,7 @@
 - Ob die Pferde der Kutschen heute Windeln tragen und ob es eine amtliche Kutschentaxe gibt: keine aktuelle Quelle.
 - Hauptkasse am Westufer: Welche Karten es dort und welche an den Stätten gibt, steht nur in Wikivoyage.
 - Trainingswissen in Lektion 14: Fährmann Mahaf („der hinter sich schaut“) und Aqen in Spruch 99 nach neueren Übersetzungen (Faulkner, Allen; bei Budge in der OCR unlesbar), maʿaddiya von ʿadda (übersetzen), kubri aus türk. köprü, hocharabisch schamāl = Norden, schimāl = links, November in Luxor mild genug zum Radfahren.
-- Reiseplan Luxor: West Bank Nile Palace, El Sayeda Zainab und Blue Sky (Tipps des Freundes) ohne verlässliche Quelle. Lage von Thebes Bar & Grill widersprüchlich (Luxor Guide: Ost, HappyCow: West). Preise für Guide, Ballon und Transfer nach Hurghada nur aus Buchungsportalen. Ob Feluken auch am Westufer-Anleger ablegen, nicht geprüft. Terrasse des Winter Palace für Nicht-Gäste nur nach einem Reisebericht von 2020.
+- Reiseplan Luxor: West Bank Nile Palace, El Sayeda Zainab und Blue Sky (Tipps des Freundes) ohne verlässliche Quelle (cybo.com antwortet mit 403). Luxor Pass 2026 (Standard etwa 130 USD, Premium 250 USD) nur aus Reiseführern, die amtliche PDF ist von 2024. Lage von Thebes Bar & Grill widersprüchlich (Luxor Guide: Ost, HappyCow: West). Preise für Guide, Ballon und Transfer nach Hurghada nur aus Buchungsportalen. Ob Feluken auch am Westufer-Anleger ablegen, nicht geprüft. Terrasse des Winter Palace für Nicht-Gäste nur nach einem Reisebericht von 2020.
 - Ob Preisschilder in ägyptischen Supermärkten arabische oder westliche Ziffern tragen, belegt keine Quelle. Das Gesetz verlangt nur Arabisch.
 
 - Ein guter Bestimmungsführer für das Rote Meer (deutsch), noch nicht geprüft.
