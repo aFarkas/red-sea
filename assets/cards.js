@@ -680,13 +680,13 @@ window.CARDS = [
     lektion: 14,
     frage: "Von eurem Hotel am Westufer zum Tempel von Luxor: Warum ist das ein Kilometer und zugleich vierzehn?",
     antwort: `<p>Luftlinie ist es ein Kilometer, quer über den Nil. Aber Luxor hat nur zwei Brücken, eine weit im Süden und eine im Norden, offen seit Mai 2024. Das Taxi fährt einen Bogen von rund 14 Kilometern.</p>
-      <p>Die Fähre legt ein paar Gehminuten vom Hotel ab, braucht gut fünf Minuten und landet beim Luxor-Museum. Von dort sind es eine Viertelstunde zu Fuß zum Tempel.</p>`,
+      <p>Die Fähre legt ein paar Gehminuten vom Hotel ab, braucht etwa fünf Minuten und landet beim Luxor-Museum. Von dort sind es eine Viertelstunde zu Fuß zum Tempel.</p>`,
   },
   {
     id: "faehre-luxor",
     lektion: 14,
     frage: "Was kostet die öffentliche Fähre in Luxor, und wann fährt sie?",
-    antwort: `<p>Die Zeitung <em>Masrawy</em> schreibt im Oktober 2026: 5 Pfund, auch für Touristen. Reisende berichten, dass Ausländer 25 zahlen, etwa 40 Cent. Wer recht hat, findet ihr heraus. Streit lohnt nicht.</p>
+    antwort: `<p>Die Zeitung <em>Masrawy</em> nennt im Oktober 2026 5 Pfund, ohne eigenen Preis für Touristen. Reisende berichten, dass Ausländer 25 zahlen, etwa 40 Cent. Wer recht hat, findet ihr heraus. Streit lohnt nicht.</p>
       <p>Seit Sommer 2025 fahren die neuen Fähren „Luxor 1“ und „Luxor 2“ für je 250 Fahrgäste, gebaut von einer Werft der Suezkanal-Behörde, laut <em>Youm7</em> rund um die Uhr.</p>`,
   },
   {
