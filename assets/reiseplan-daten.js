@@ -347,4 +347,26 @@
       "d17-abreise": ["abfahrt"],
     },
   };
+
+  // ---------- Zweitkarten: weggehakte Lokale, die auch an einem anderen Ort des Plans in der Nähe liegen ----------
+  // Jeder Baustein steht nur einmal im Plan. Liegt ein Lokal auch nahe einer anderen Station, bekommt es dort
+  // eine zweite Karte (id "<original>@<tag>"), weggehakt, damit es auch dort zur Wahl steht.
+  const SPINACH_WANNAS = `<a href="https://spinach.guide/venues/wannas-art-cafe-14451/">spinach.guide</a>`;
+  const ZWEIT = [
+    ["bluesky", "d14-nachmittag", "Auch am Ankunftstag eine Option: Blue Sky liegt laut Bewertungen in Ramla am Westufer, am Nil nahe dem Anleger und damit nahe eurer Unterkunft. Eine Alternative zum Nile Valley für den ersten Drink.", {}],
+    ["nilepalace", "d14-abend", "Liegt laut eurem Freund nahe eurer Unterkunft, passt also auch zum ersten Abend.", {}],
+    ["gezira", "d14-abend", "Liegt nahe dem Anleger am Westufer, also auch am Ankunftsabend nur ein paar Schritte von der Unterkunft.", {}],
+    ["sunflower", "d15-abend", "Auch nach dem Westufer-Tag eine Wahl: Sunflower liegt direkt am Anleger, keine 200 m vom Tutankhamun. Euer Freund nennt es für diesen Abend als Alternative.", {}],
+    ["wannas", "d15-abend", "Liegt in Ramla hinter dem Hotel Al Masala, ein Stück die Straße hoch vom Sunflower, also nahe dem Anleger und eurer Unterkunft. Offen etwa bis 22 Uhr.", { zeit: "ca. 9–22 Uhr", more: `Lage und Zeiten laut ${SPINACH_WANNAS} und <a href="https://www.happycow.net/reviews/wannas-art-cafe-luxor-191576">HappyCow</a>.` }],
+    ["sayeda", "d15-abend", "Auch für den Sonntagabend: Laut eurem Freund an der Hauptstraße am Westufer. Wie weit von eurer Unterkunft, vorher auf der Karte prüfen.", {}],
+    ["winterpalace", "d16-nachmittag", "Das Hotel steht an der Corniche gleich neben dem Tempel von Luxor. Wer den Sonnenuntergang sehen will, trinkt hier gegen 17 Uhr etwas und geht danach in den Tempel: Einlass bis 19 Uhr.", {}],
+  ];
+  const ORIG = Object.fromEntries(window.PLAN_BAUSTEINE.map((b) => [b.id, b]));
+  ZWEIT.forEach(([orig, slot, warum, extra]) => {
+    const b = ORIG[orig];
+    const id = `${orig}@${slot.split("-")[0]}`;
+    window.PLAN_BAUSTEINE.push(Object.assign({}, b, { id, zweit: orig, txt: warum + " " + b.txt }, extra));
+    const liste = window.PLAN_VORSCHLAEGE.mein[slot];
+    if (liste && !liste.includes("-" + id)) liste.push("-" + id);
+  });
 })();

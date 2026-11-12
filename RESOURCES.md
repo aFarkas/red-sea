@@ -243,6 +243,8 @@
   Offizielle Seite mit Speisekarte. sofraeg.com ist NICHT Sofra Luxor, sondern ein Haushaltswarenladen.
 - [HappyCow Luxor](https://www.happycow.net/widget/africa/egypt/luxor/) und [spinach.guide](https://spinach.guide/venues/cafe-restaurant-maratonga-14455/)
   Use for: vegane Optionen (Sofra, Wannas, Maratonga, Nubian House eher schwach).
+- [spinach.guide: Wannas Art Cafe](https://spinach.guide/venues/wannas-art-cafe-14451/)
+  Use for: Lage in Ramla hinter dem Hotel Al Masala, nahe Sunflower und Westufer-Anleger; Zeiten etwa 9–22 Uhr. Blue Sky laut Bewertungen auf Trip.com ebenfalls in Ramla/Al Bairat am Nil. Grundlage der Zweitkarten im Reiseplan.
 
 ## Wisdom (Communities)
 

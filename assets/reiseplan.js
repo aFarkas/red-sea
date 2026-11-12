@@ -54,8 +54,15 @@
       slots[slot] = (ids || []).filter((id) => BY_ID[id] && !seen.has(id) && seen.add(id));
     }
     slots.pool = slots.pool || [];
-    for (const id of Object.keys(BY_ID)) if (!seen.has(id)) slots.pool.push(id);
-    return { slots, off: st.off || {}, todo: st.todo || {}, zeigen: st.zeigen || {}, kompakt: !!st.kompakt, bilder: st.bilder !== false, notiz: st.notiz || "", los: LOS.includes(+st.los) ? +st.los : 7, geaendert: st.geaendert || null };
+    const off = st.off || {};
+    for (const id of Object.keys(BY_ID)) {
+      if (seen.has(id)) continue;
+      // Zweitkarten, die ein gespeicherter Plan noch nicht kennt, kommen weggehakt an ihren Ort aus meinem Vorschlag.
+      const ziel = BY_ID[id].zweit && Object.keys(VORSCHLAEGE.mein).find((s) => s !== "name" && VORSCHLAEGE.mein[s].includes("-" + id));
+      if (ziel && SLOT_IDS.has(ziel)) { (slots[ziel] = slots[ziel] || []).push(id); off[id] = 1; }
+      else slots.pool.push(id);
+    }
+    return { slots, off, todo: st.todo || {}, zeigen: st.zeigen || {}, kompakt: !!st.kompakt, bilder: st.bilder !== false, notiz: st.notiz || "", los: LOS.includes(+st.los) ? +st.los : 7, geaendert: st.geaendert || null };
   }
   function load() {
     try {
