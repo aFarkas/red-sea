@@ -9,6 +9,7 @@
   if (FEST && FEST.plan) VORSCHLAEGE.fest = Object.assign({ name: "Unser fester Plan" }, FEST.plan);
   const BY_ID = Object.fromEntries(window.PLAN_BAUSTEINE.map((b) => [b.id, b]));
   const FAUST = 60; // Faustregel aus Lektion 10: 60 Pfund ≈ 1 Euro
+  const LOS = [6, 7, 8, 9]; // Abfahrt morgens; aufstehen eine Stunde vorher, nie vor 6 an der Stätte
 
   const root = document.getElementById("planer");
 
@@ -54,7 +55,7 @@
     }
     slots.pool = slots.pool || [];
     for (const id of Object.keys(BY_ID)) if (!seen.has(id)) slots.pool.push(id);
-    return { slots, off: st.off || {}, todo: st.todo || {}, zeigen: st.zeigen || {}, kompakt: !!st.kompakt, notiz: st.notiz || "", geaendert: st.geaendert || null };
+    return { slots, off: st.off || {}, todo: st.todo || {}, zeigen: st.zeigen || {}, kompakt: !!st.kompakt, notiz: st.notiz || "", los: LOS.includes(+st.los) ? +st.los : 7, geaendert: st.geaendert || null };
   }
   function load() {
     try {
@@ -65,6 +66,7 @@
       const st = vorschlag("fest");
       (FEST.todo || []).forEach((id) => (st.todo[id] = 1));
       st.notiz = FEST.notiz || "";
+      if (FEST.los) st.los = FEST.los;
       return st;
     }
     return vorschlag();
@@ -77,7 +79,7 @@
 
   // ---------- Link zum Teilen (iPad ↔ MacBook) ----------
   function encode(st) {
-    const compact = { s: st.slots, o: Object.keys(st.off), d: Object.keys(st.todo), n: st.notiz || "" };
+    const compact = { s: st.slots, o: Object.keys(st.off), d: Object.keys(st.todo), n: st.notiz || "", l: st.los };
     const json = JSON.stringify(compact);
     return btoa(String.fromCharCode(...new TextEncoder().encode(json))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
   }
@@ -86,7 +88,7 @@
     const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
     const c = JSON.parse(new TextDecoder().decode(bytes));
     const flag = (arr) => Object.fromEntries((arr || []).map((k) => [k, 1]));
-    return normalize({ slots: c.s, off: flag(c.o), todo: flag(c.d), notiz: c.n || "" });
+    return normalize({ slots: c.s, off: flag(c.o), todo: flag(c.d), notiz: c.n || "", los: c.l });
   }
   function fromHash() {
     const m = location.hash.match(/plan=([A-Za-z0-9_-]+)/);
@@ -106,6 +108,35 @@
     }
     try { await navigator.clipboard.writeText(url); meldung("Link kopiert. Auf dem anderen Gerät öffnen, dann ist der Plan dort."); }
     catch (e) { prompt("Diesen Link auf dem anderen Gerät öffnen:", url); }
+  }
+
+  // ---------- Rhythmus: Abfahrt 6, 7, 8 oder 9 Uhr, aufstehen eine Stunde vorher ----------
+  const uhr = (min) => `${Math.floor(min / 60)}:${String(min % 60).padStart(2, "0")}`;
+  function T(str) {
+    if (!str || str.indexOf("{") < 0) return str;
+    const los = (state.los || 7) * 60;
+    const en = state.los < 12 ? `${state.los}:00 am` : `${state.los - 12}:00 pm`;
+    return str.replace(/\{auf\}/g, uhr(los - 60)).replace(/\{los\}/g, uhr(los)).replace(/\{losEn\}/g, en)
+      .replace(/\{talPlan\}/g, state.los <= 7 ? `seid ihr gegen ${uhr(los + 20)} im Tal der Könige` : "fahrt zuerst nach Medinet Habu, ins Tal der Könige erst ab etwa 14 Uhr")
+      .replace(/\{talAnkunft\}/g, state.los <= 7 ? `Ihr seid gegen ${uhr(los + 20)} da` : "Bei eurer späteren Abfahrt kommt ihr erst ab etwa 14 Uhr her, wenn die Busse wieder abfahren").replace(/\{tal\}/g, uhr(los + 20)).replace(/\{karnak\}/g, uhr(los + 30));
+  }
+  const RHYTHMUS = {
+    6: "Früher geht es nicht: Die Stätten öffnen um 6, ihr seid gegen 6:20 im Tal der Könige, so leer wie den ganzen Tag nicht. Den Sonnenaufgang gegen 6:05 seht ihr unterwegs. Aufstehen um 5. Mittags habt ihr dann viel Zeit für eine lange Pause.",
+    7: "Euer gewohnter Rhythmus: gegen 7:20 im Tal der Könige, vor den Ausflugsbussen, die nach Reiseberichten ab etwa 8 Uhr kommen. Das Tal zuerst, dann der Rest.",
+    8: "Ihr kommt gegen 8:20 mit den ersten Bussen. Besser die Reihenfolge am Westufer umdrehen: erst Medinet Habu, Deir el-Medina und Hatschepsut, das Tal der Könige ab etwa 14 Uhr, wenn die Busse laut Reiseberichten wieder abfahren. Letzter Einlass ist 16 Uhr. Zieht die Karten entsprechend um.",
+    9: "Um 10 sind die Gräber nach Reiseberichten voll. Dreht die Reihenfolge am Westufer um: erst Medinet Habu, Deir el-Medina und Hatschepsut, das Tal der Könige ab etwa 14 Uhr, letzter Einlass 16 Uhr. Am Ostufer ist es weniger heikel, Karnak lässt bis 16 Uhr ein.",
+  };
+  function renderRhythmus() {
+    const sel = document.getElementById("planer-los");
+    const hint = document.getElementById("rhythmus-hinweis");
+    if (sel) {
+      if (!sel.options.length) {
+        LOS.forEach((h) => sel.append(el("option", { value: h }, `Los um ${h}:00 · aufstehen ${h - 1}:00`)));
+        sel.addEventListener("change", () => { state.los = +sel.value; save(); render(); meldung(`Rhythmus: aufstehen ${state.los - 1}:00, los ${state.los}:00.`); });
+      }
+      sel.value = String(state.los);
+    }
+    if (hint) hint.textContent = RHYTHMUS[state.los];
   }
 
   // ---------- Hilfen ----------
@@ -150,7 +181,7 @@
     const art = ARTEN[b.art];
     const chips = [];
     if (b.ufer) chips.push(el("span", { class: "chip" }, b.ufer === "West" ? "Westufer" : b.ufer === "Ost" ? "Ostufer" : b.ufer === "Ost?" ? "Ufer prüfen" : b.ufer));
-    if (b.zeit) chips.push(el("span", { class: "chip" }, "🕑 " + b.zeit));
+    if (b.zeit) chips.push(el("span", { class: "chip" }, "🕑 " + T(b.zeit)));
     if (b.dauer) chips.push(el("span", { class: "chip" }, "⏳ " + b.dauer));
     if (b.preis != null) chips.push(el("span", { class: "chip preis" }, b.preis === 0 ? "frei" : `${pfund(b.preis)} £E p. P. ≈ ${euro(b.preis)} €`));
     const e = einig(b);
@@ -178,14 +209,14 @@
       el("div", { class: "kopf" },
         el("button", { type: "button", class: "griff", "aria-label": `${b.t} ziehen`, title: "Ziehen zum Verschieben" }, "⠿"),
         el("span", { class: "art", title: art.name, "aria-hidden": "true" }, art.icon),
-        el("span", { class: "titel" }, b.t),
+        el("span", { class: "titel" }, T(b.t)),
         haken),
       off ? null : el("div", { class: "chips" }, chips),
-      off ? null : el("p", { class: "txt" }, b.txt),
-      off || !b.anders ? null : el("p", { class: "anders-text" }, el("strong", {}, !b.freund ? "Ergänzung: " : e ? "Hinweis: " : "Anders als euer Freund: "), b.anders),
+      off ? null : el("p", { class: "txt" }, T(b.txt)),
+      off || !b.anders ? null : el("p", { class: "anders-text" }, el("strong", {}, !b.freund ? "Ergänzung: " : e ? "Hinweis: " : "Anders als euer Freund: "), T(b.anders)),
       off ? null : el("details", { class: "mehr" },
         el("summary", {}, "Mehr"),
-        b.more ? el("p", { html: b.more }) : null,
+        b.more ? el("p", { html: T(b.more) }) : null,
         b.map ? el("p", {}, el("a", { href: b.map, target: "_blank", rel: "noopener" }, "📍 In Google Maps öffnen")) : null,
         el("p", {}, ziel)));
   }
@@ -260,6 +291,7 @@
       : "Noch unverändert: das ist der Vorschlag.";
 
     renderTodo();
+    renderRhythmus();
   }
 
   // ---------- Vorab erledigen ----------
@@ -283,6 +315,7 @@
     const L = [];
     const jetzt = new Date().toLocaleString("de-DE", { weekday: "short", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" });
     L.push(`Reiseplan Luxor, Ergebnis für Claude (Stand ${jetzt})`);
+    L.push(`Rhythmus: aufstehen ${state.los - 1}:00, los ${state.los}:00`);
     const plan = {};
     let gesamt = 0;
     for (const t of TAGE) {
@@ -294,7 +327,7 @@
         plan[sid] = ids.map((id) => (state.off[id] ? "-" : "") + id);
         const an = ids.filter((id) => !state.off[id]), weg = ids.filter((id) => state.off[id]);
         gesamt += summe(ids);
-        L.push(`${label}: ${an.map((id) => BY_ID[id].t).join("; ") || "–"}` + (weg.length ? ` (weggehakt: ${weg.map((id) => BY_ID[id].t).join("; ")})` : ""));
+        L.push(`${label}: ${an.map((id) => T(BY_ID[id].t)).join("; ") || "–"}` + (weg.length ? ` (weggehakt: ${weg.map((id) => T(BY_ID[id].t)).join("; ")})` : ""));
       }
     }
     L.push("", `Eintritt im Plan: ${pfund(gesamt)} Pfund pro Person`);
@@ -303,7 +336,7 @@
     const offen = todos.filter((li) => !state.todo[li.dataset.todo]).map((li) => li.dataset.todo);
     L.push(`Vorab erledigt: ${erledigt.join(", ") || "nichts"} · offen: ${offen.join(", ") || "nichts"}`);
     if (state.notiz.trim()) L.push("", "Notizen:", state.notiz.trim());
-    L.push("", "Plan-Code: " + JSON.stringify({ todo: erledigt, plan }));
+    L.push("", "Plan-Code: " + JSON.stringify({ los: state.los, todo: erledigt, plan }));
     return L.join("\n");
   }
   function renderExport() {
@@ -326,6 +359,26 @@
       ta.select();
       try { await navigator.clipboard.writeText(ta.value); } catch (e) { document.execCommand("copy"); }
       meldungIn(out, "Kopiert.");
+    });
+  }
+  // E-Mail an euch selbst, als Ablage. Die Adresse bleibt nur auf diesem Gerät (das Repo ist öffentlich).
+  const MAILKEY = "reiseplan-luxor-mail";
+  function renderMail() {
+    const out = document.getElementById("planer-export");
+    const feld = document.getElementById("planer-mail");
+    if (!out || !feld) return;
+    try { feld.value = localStorage.getItem(MAILKEY) || ""; } catch (e) {}
+    feld.addEventListener("change", () => { try { localStorage.setItem(MAILKEY, feld.value.trim()); } catch (e) {} });
+    out.querySelector('[data-export="mail"]').addEventListener("click", () => {
+      const text = out.querySelector("textarea").value;
+      const an = feld.value.trim();
+      try { localStorage.setItem(MAILKEY, an); } catch (e) {}
+      location.href = "mailto:" + encodeURIComponent(an).replace(/%40/g, "@") + "?subject=" + encodeURIComponent("Reiseplan Luxor für Claude") + "&body=" + encodeURIComponent(text);
+    });
+    const teilen = out.querySelector('[data-export="teilen"]');
+    if (!navigator.share) teilen.hidden = true;
+    teilen.addEventListener("click", async () => {
+      try { await navigator.share({ title: "Reiseplan Luxor für Claude", text: out.querySelector("textarea").value }); } catch (e) {}
     });
   }
   function meldungIn(box, text) { const p = box.querySelector(".export-meldung"); if (p) p.textContent = text; }
@@ -429,9 +482,9 @@
     if (was === "drucken") window.print();
     if ((was === "mein" || was === "freund" || was === "fest") && confirm(`„${VORSCHLAEGE[was].name}“ laden? Eure Änderungen gehen verloren (die Häkchen bei „Vorab erledigen“ bleiben).`)) {
       const todo = state.todo, kompakt = state.kompakt;
-      const notiz = state.notiz;
-      state = vorschlag(was); state.todo = todo; state.kompakt = kompakt; state.notiz = notiz;
-      if (was === "fest") { (FEST.todo || []).forEach((id) => (state.todo[id] = 1)); if (!notiz) state.notiz = FEST.notiz || ""; }
+      const notiz = state.notiz, los = state.los;
+      state = vorschlag(was); state.todo = todo; state.kompakt = kompakt; state.notiz = notiz; state.los = los;
+      if (was === "fest") { (FEST.todo || []).forEach((id) => (state.todo[id] = 1)); if (!notiz) state.notiz = FEST.notiz || ""; if (FEST.los) state.los = FEST.los; }
       save(); render();
       meldung(`„${VORSCHLAEGE[was].name}“ geladen.`);
     }
@@ -450,4 +503,5 @@
   render();
   renderFest();
   renderExport();
+  renderMail();
 })();
