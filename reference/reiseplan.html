@@ -135,6 +135,7 @@
     <li><strong>Weghaken:</strong> <strong>✓</strong> antippen. Die Karte verschwindet, darunter steht „1 weggehakt · zeigen“. Dort holt ihr sie mit „↺ wieder rein“ zurück. So liegen Alternativen bereit, ohne zu stören.</li>
     <li><strong>Zwei Vorschläge:</strong> „Plan des Freundes laden“ zeigt genau seinen Plan, „Mein Vorschlag laden“ meinen. Grün hinterlegt mit <strong>✓ Freund und ich einig</strong>: Das empfehlen wir beide für denselben Tag (oder raten beide ab). <strong>💬 Tipp des Freundes</strong>: seine Idee, die ich anders einplane oder nur als Alternative führe. Ein roter Kasten auf der Karte sagt, wo und warum ich abweiche.</li>
     <li><strong>Lokale an mehreren Orten:</strong> Liegt ein weggehaktes Lokal auch nahe anderer Stationen, steht es an jeder davon noch einmal unter „weggehakt“, mit dem Grund, warum es dort passt. Zum Beispiel Sunflower am Samstagnachmittag, nach der Feluke und am Sonntagabend, alle am Anleger; Winter Palace auch neben dem Tempel von Luxor.</li>
+    <li><strong>Karte:</strong> „🗺 Karte“ zeigt alle Orte des Plans auf einem Stadtplan, mit Filtern und eurem Standort. Dort Eingeplantes oder Weggehaktes steht sofort auch hier. An jeder Karte führt „🗺 Auf unserer Karte“ zum Pin.</li>
     <li><strong>Bilder:</strong> Das Häkchen „Bilder“ blendet die Fotos auf den Karten ein und aus. Antippen öffnet das Foto groß bei Wikimedia Commons.</li>
     <li><strong>Kompakt:</strong> zeigt nur Titel und Eintritt, gut für den Überblick auf dem MacBook.</li>
     <li><strong>Ideenpool:</strong> Alles, was noch keinen Tag hat, nach Westufer, Ostufer, Nil, Essen und Trinken sortiert.</li>
@@ -151,6 +152,7 @@
 <div class="bedienung">
   <label class="sans" style="font-size:.85rem">🕑 <select id="planer-los" aria-label="Wann wollt ihr morgens los?" style="font:inherit;padding:.45rem;border-radius:6px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);min-height:44px"></select></label>
   <button type="button" class="haupt" data-planer="teilen">Plan teilen</button>
+  <a href="karte.html" class="sans" style="font-size:.85rem;display:inline-flex;align-items:center;min-height:44px;padding:0 .9rem;border:1px solid var(--sea);border-radius:6px;text-decoration:none;font-weight:600">🗺 Karte</a>
   <label class="sans" style="font-size:.85rem;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 .4rem"><input type="checkbox" id="planer-bilder" style="width:1.2rem;height:1.2rem;accent-color:var(--sea)"> Bilder</label>
   <button type="button" data-planer="kompakt">Kompakt</button>
   <button type="button" data-planer="alle-zeigen">Weggehakte zeigen/verbergen</button>
@@ -283,6 +285,7 @@
 </main>
 <script src="../assets/reiseplan-daten.js"></script>
 <script src="../assets/reiseplan-fest.js"></script>
+<script src="../assets/reiseplan-zustand.js"></script>
 <script src="../assets/reiseplan.js"></script>
 <script src="../assets/cards.js"></script>
 <script src="../assets/say.js"></script>

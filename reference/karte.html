@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Karte Luxor</title>
+<link rel="stylesheet" href="../assets/course.css">
+<link rel="stylesheet" href="../assets/leaflet/leaflet.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+<meta name="theme-color" content="#0d6e8a">
+<script src="../assets/offline.js"></script>
+<style>
+  main.breit { max-width: 84rem; }
+  main.breit > :not(.kartenbereich) { max-width: var(--measure); }
+  .kartenbereich, .filter, .pop, #karte-meldung, #karte-anzahl { font-family: Inter, system-ui, sans-serif; }
+
+  .filter { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin: 0.5rem 0; }
+  .chipknopf { font: inherit; font-size: 0.85rem; min-height: 44px; padding: 0.4rem 0.85rem; border-radius: 999px; cursor: pointer;
+    border: 2px solid var(--farbe, var(--sea)); background: var(--bg); color: var(--ink); opacity: 0.55; }
+  .chipknopf[aria-pressed="true"] { background: color-mix(in srgb, var(--farbe, var(--sea)) 16%, var(--bg)); opacity: 1; font-weight: 600; }
+  .chipknopf.klein { --farbe: #2e7d4f; font-size: 0.8rem; min-height: 40px; padding: 0.3rem 0.75rem; }
+  #karte-mahl { padding-left: 0.6rem; border-left: 3px solid #2e7d4f; }
+  #karte-mahl::before { content: "Restaurants für:"; font-size: 0.75rem; color: var(--muted); margin-right: 0.2rem; }
+  .filter select, .filter .knopf { font: inherit; font-size: 0.85rem; min-height: 44px; padding: 0.4rem 0.7rem; border-radius: 6px;
+    border: 1px solid var(--rule); background: var(--bg); color: var(--ink); cursor: pointer; }
+  #karte-ich { font: 600 0.9rem Inter, system-ui, sans-serif; min-height: 48px; padding: 0.5rem 1rem; border-radius: 999px; border: 0; cursor: pointer;
+    background: #1a73e8; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.35); }
+  #karte-ich[aria-pressed="true"] { background: #fff; color: #1a73e8; }
+  .leaflet-bar.ich-steuer { border: 0; box-shadow: none; margin-bottom: 1.6rem; }
+  @media (max-width: 640px) {
+    .filter { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+    .filter::-webkit-scrollbar { display: none; }
+    .chipknopf, .filter select, .filter .knopf { flex: none; }
+    #karte-mahl::before { content: "Lokale:"; flex: none; }
+    .lede { font-size: 1rem; }
+  }
+  #karte-anzahl, #karte-meldung { font-size: 0.8rem; color: var(--muted); margin: 0.2rem 0; min-height: 1.2em; }
+  #karte-meldung { color: var(--good); }
+
+  #karte { height: max(22rem, calc(100dvh - 15rem)); border-radius: 10px; border: 1px solid var(--rule); background: var(--sand); }
+
+  .pin { background: none; border: 0; }
+  .pin-kreis { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; font-size: 17px; line-height: 1;
+    background: #fff; border: 3px solid var(--farbe); box-shadow: 0 2px 6px rgba(0,0,0,.35); }
+  .pin.aus .pin-kreis { opacity: 0.7; border-style: dashed; box-shadow: 0 1px 3px rgba(0,0,0,.25); }
+  .pin.im-plan .pin-kreis { background: color-mix(in srgb, var(--farbe) 22%, #fff); }
+  .pin-tag { position: absolute; left: 50%; top: 33px; transform: translateX(-50%); white-space: nowrap; font: 700 10px/1 Inter, system-ui, sans-serif;
+    background: #1d2730; color: #fff; padding: 2px 5px; border-radius: 999px; }
+
+  .leaflet-popup-content { margin: 0.7rem 0.8rem; }
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--bg); color: var(--ink); }
+  .leaflet-container a.leaflet-popup-close-button { width: 32px; height: 32px; font-size: 22px; }
+  .pop { font-size: 0.82rem; line-height: 1.4; }
+  .pop h3 { margin: 0.1rem 1.6rem 0.3rem 0; font-size: 1.05rem; }
+  .pop p { margin: 0.25rem 0; }
+  .pop-art { color: var(--muted); font-size: 0.72rem; }
+  .pop-hinweis { background: var(--coral-soft); border-radius: 6px; padding: 0.3rem 0.45rem; }
+  .pop-baustein { border-top: 1px solid var(--rule); padding-top: 0.4rem; margin-top: 0.4rem; }
+  .pop-titel { font-weight: 600; }
+  .pop-meta { color: var(--muted); font-size: 0.75rem; }
+  .pop-plan { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; justify-content: space-between; margin: 0.3rem 0;
+    padding: 0.3rem 0.4rem; border-radius: 6px; background: var(--sand); font-size: 0.78rem; }
+  .pop-plan.an { background: color-mix(in srgb, var(--good) 14%, var(--bg)); font-weight: 600; }
+  .pop-aktion { display: flex; gap: 0.3rem; flex-wrap: wrap; }
+  .pop-knopf, .pop-ziel { font: inherit; font-size: 0.75rem; min-height: 36px; padding: 0.2rem 0.45rem; border-radius: 6px;
+    border: 1px solid var(--rule); background: var(--bg); color: var(--ink); cursor: pointer; max-width: 11rem; }
+  .pop-links { display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; border-top: 1px solid var(--rule); padding-top: 0.45rem; margin-top: 0.5rem !important; }
+  .pop-links a { text-decoration: none; font-weight: 600; }
+
+  ul.legende { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<main class="breit">
+<p class="kicker">Referenz · Über Wasser · Luxor</p>
+<h1>Karte Luxor</h1>
+<p class="lede">Alle Orte aus dem <a href="reiseplan.html">Reiseplan</a> auf einer Karte, mit eurem Standort. Was ihr hier einplant oder weghakt, steht danach auch im Reiseplan, und umgekehrt.</p>
+
+<div class="kartenbereich">
+  <div class="filter" id="karte-typen" role="group" aria-label="Was zeigen?"></div>
+  <div class="filter" id="karte-mahl" role="group" aria-label="Restaurants für"></div>
+  <div class="filter">
+    <select id="karte-zeigen" aria-label="Welche Tage?"></select>
+    <button type="button" class="knopf" id="karte-alle">Alle Pins zeigen</button>
+    <button type="button" class="knopf" id="karte-kml">Für Google My Maps (KML)</button>
+  </div>
+  <p id="karte-anzahl"></p>
+  <button type="button" class="knopf haupt" id="karte-ich" aria-pressed="false">◎ Wo bin ich?</button>
+  <div id="karte" role="region" aria-label="Karte von Luxor mit den Orten aus dem Reiseplan"></div>
+  <p id="karte-meldung" role="status"></p>
+</div>
+
+<div class="box define">
+  <div class="box-title">So lest ihr die Karte</div>
+  <ul class="legende">
+    <li>⚱️ Tempel &amp; Gräber</li><li>🏛️ Museen</li><li>📍 Übriges: Souk, Corniche, Fähranleger</li><li>🍽 Restaurants</li><li>🍸 nur Drinks</li>
+  </ul>
+  <ul>
+    <li><strong>Gefüllter Pin mit Tag darunter</strong> (zum Beispiel „So“): Das steht in eurem Plan, an diesem Tag. <strong>Blasser, gestrichelter Pin:</strong> weggehakt oder im Ideenpool, eine Alternative.</li>
+    <li><strong>Pin antippen:</strong> Was dort liegt, wann es im Plan steht, und Knöpfe zum Weghaken, Zurückholen und Einplanen. Mehrere Karten am selben Ort teilen sich einen Pin: im Tal der Könige die Zusatzgräber, an den Lokalen die Abende, an denen sie als Alternative bereitliegen.</li>
+    <li><strong>Filter:</strong> Antippen blendet eine Sorte aus und wieder ein. Bei den Restaurants gibt es eine zweite Reihe: Frühstück, Mittag, Abend, Drinks. Darunter wählt ihr einen Tag oder „Nur unser Plan“.</li>
+    <li><strong>◎ Wo bin ich?</strong> unten rechts auf der Karte zeigt euch als blauen Punkt, der mitwandert. Einmal tippen startet, noch einmal tippen holt den Punkt in die Mitte. Habt ihr es einmal erlaubt, erscheint der Punkt beim nächsten Öffnen von selbst. Der Standort bleibt auf dem Gerät.</li>
+    <li><strong>📍 In Google Maps</strong> und <strong>🧭 Route</strong> im Pin öffnen den Ort in Google Maps, zum Navigieren zu Fuß oder mit dem Taxi.</li>
+    <li><strong>Für Google My Maps:</strong> lädt die gerade sichtbaren Pins als Datei. In <a href="https://www.google.com/maps/d/" target="_blank" rel="noopener">Google My Maps</a> „Neue Karte“ → „Importieren“ wählen, dann habt ihr sie in der Google-Maps-App. Das ist eine Momentaufnahme: Ändert sich der Plan, neu laden.</li>
+    <li><strong>Frühstück:</strong> gibt es in eurer Unterkunft. Unter den Lokalen im Plan öffnet nur Wannas Art Café so früh, gegen 9 Uhr.</li>
+  </ul>
+</div>
+
+<h2>Ohne Pin</h2>
+<p>Diese Lokale aus dem Plan haben keinen Pin, weil ihre Lage nicht sicher ist oder es sie überall gibt:</p>
+<ul id="ohne-pin"></ul>
+<p>Touren, Pausen und Fahrten (Westufer-Tour, Taxi für den Tag, Ballon, Rückfahrt nach Hurghada) haben ebenfalls keinen Pin. Eure Unterkunft steht absichtlich nicht auf der Karte, denn die Seite ist öffentlich.</p>
+
+<div class="box lookout">
+  <div class="box-title">Ohne Netz</div>
+  <p>Die Seite selbst ist offline gespeichert, die Kartenkacheln aber nicht: Was ihr mit Netz einmal angeschaut habt, zeigt der Browser oft noch eine Weile. Für unterwegs ohne Daten ladet euch vorher in Google Maps das Gebiet Luxor offline herunter.</p>
+</div>
+
+<h2>Quellen</h2>
+<ol class="sources">
+  <li>Lage der Orte: <a href="https://www.openstreetmap.org/">OpenStreetMap</a> über die Suche Nominatim, abgerufen am 12. November 2026. Das Tutankhamun Restaurant fehlt dort; sein Pin folgt der Beschreibung bei <a href="https://en.wikivoyage.org/wiki/Luxor/West_Bank">Wikivoyage Luxor/West Bank</a> („200 m südlich des Anlegers“).</li>
+  <li>Kartenbild: © OpenStreetMap-Mitwirkende; Luftbild © Esri. Karte gebaut mit <a href="https://leafletjs.com/">Leaflet</a>.</li>
+  <li>Öffnungszeiten und Mahlzeiten der Lokale: wie auf den Karten im <a href="reiseplan.html">Reiseplan</a>, dort mit Quellen.</li>
+</ol>
+
+<nav class="course">
+  <a href="../index.html">Übersicht</a>
+  <a href="reiseplan.html">Reiseplan Luxor</a>
+  <a href="luxor.html">Luxor</a>
+  <a href="../lessons/0014-fuenf-pfund-fuer-den-faehrmann.html">Lektion 14: Fünf Pfund für den Fährmann</a>
+  <a href="sprachfuehrer.html">Sprachführer</a>
+</nav>
+</main>
+<script src="../assets/leaflet/leaflet.js"></script>
+<script src="../assets/reiseplan-daten.js"></script>
+<script src="../assets/reiseplan-fest.js"></script>
+<script src="../assets/reiseplan-zustand.js"></script>
+<script src="../assets/karte.js"></script>
+</body>
+</html>

@@ -3,86 +3,20 @@
 // dazu gibt es an jeder Karte das Menü „Verschieben nach …“.
 // Gespeichert wird im Browser (localStorage). Zwischen Geräten wandert der Plan als Link.
 (function () {
-  const KEY = "reiseplan-luxor-v1";
-  const ARTEN = window.PLAN_ARTEN, TAGE = window.PLAN_TAGE, VORSCHLAEGE = window.PLAN_VORSCHLAEGE;
-  const FEST = window.PLAN_FEST;
-  if (FEST && FEST.plan) VORSCHLAEGE.fest = Object.assign({ name: "Unser fester Plan" }, FEST.plan);
-  const BY_ID = Object.fromEntries(window.PLAN_BAUSTEINE.map((b) => [b.id, b]));
+  const Z = window.PLAN_ZUSTAND; // gemeinsamer Zustand mit der Karte, assets/reiseplan-zustand.js
+  const ARTEN = window.PLAN_ARTEN, TAGE = Z.TAGE, VORSCHLAEGE = Z.VORSCHLAEGE;
+  const FEST = Z.FEST;
+  const BY_ID = Z.BY_ID;
   const FAUST = 60; // Faustregel aus Lektion 10: 60 Pfund ≈ 1 Euro
-  const LOS = [6, 7, 8, 9]; // Abfahrt morgens; aufstehen eine Stunde vorher, nie vor 6 an der Stätte
+  const LOS = Z.LOS;
 
   const root = document.getElementById("planer");
-
-  // Wo sind sich der Freund und mein Vorschlag einig? Beide planen den Baustein am selben Tag ein,
-  // oder beide raten ab (einig: "abraten" in den Daten).
-  function lage(preset, id) {
-    for (const [slot, ids] of Object.entries(preset)) {
-      if (slot === "name") continue;
-      for (const x of ids) if (x.replace(/^-/, "") === id) return { tag: slot.split("-")[0], an: !x.startsWith("-") };
-    }
-    return null;
-  }
-  function einig(b) {
-    if (b.einig) return b.einig;
-    if (!b.freund) return null;
-    const f = lage(VORSCHLAEGE.freund, b.id), m = lage(VORSCHLAEGE.mein, b.id);
-    return f && m && f.an && m.an && f.tag === m.tag ? "dabei" : null;
-  }
-  const SLOTS = [];
-  TAGE.forEach((t) => t.slots.forEach(([s, label]) => SLOTS.push({ id: `${t.id}-${s}`, tag: t, label })));
-  const SLOT_IDS = new Set(SLOTS.map((s) => s.id).concat(["pool"]));
+  const einig = Z.einig, SLOTS = Z.SLOTS, vorschlag = Z.vorschlag, normalize = Z.normalize;
 
   // ---------- Zustand ----------
-  function vorschlag(welcher = "mein") {
-    const st = { slots: {}, off: {}, todo: {}, zeigen: {}, geaendert: null };
-    for (const [slot, ids] of Object.entries(VORSCHLAEGE[welcher])) {
-      if (slot === "name") continue;
-      st.slots[slot] = ids.map((x) => {
-        const id = x.replace(/^-/, "");
-        if (x.startsWith("-")) st.off[id] = 1;
-        return id;
-      });
-    }
-    return normalize(st);
-  }
-  // Jeder Baustein steht genau einmal irgendwo; Unbekanntes fliegt raus, Neues kommt in den Pool.
-  function normalize(st) {
-    const seen = new Set();
-    const slots = {};
-    for (const [slot, ids] of Object.entries(st.slots || {})) {
-      if (!SLOT_IDS.has(slot)) continue;
-      slots[slot] = (ids || []).filter((id) => BY_ID[id] && !seen.has(id) && seen.add(id));
-    }
-    slots.pool = slots.pool || [];
-    const off = st.off || {};
-    for (const id of Object.keys(BY_ID)) {
-      if (seen.has(id)) continue;
-      // Zweitkarten, die ein gespeicherter Plan noch nicht kennt, kommen weggehakt an ihren Ort aus meinem Vorschlag.
-      const ziel = BY_ID[id].zweit && Object.keys(VORSCHLAEGE.mein).find((s) => s !== "name" && VORSCHLAEGE.mein[s].includes("-" + id));
-      if (ziel && SLOT_IDS.has(ziel)) { (slots[ziel] = slots[ziel] || []).push(id); off[id] = 1; }
-      else slots.pool.push(id);
-    }
-    return { slots, off, todo: st.todo || {}, zeigen: st.zeigen || {}, kompakt: !!st.kompakt, bilder: st.bilder !== false, notiz: st.notiz || "", los: LOS.includes(+st.los) ? +st.los : 7, geaendert: st.geaendert || null };
-  }
-  function load() {
-    try {
-      const raw = localStorage.getItem(KEY);
-      if (raw) return normalize(JSON.parse(raw));
-    } catch (e) {}
-    if (VORSCHLAEGE.fest) {
-      const st = vorschlag("fest");
-      (FEST.todo || []).forEach((id) => (st.todo[id] = 1));
-      st.notiz = FEST.notiz || "";
-      if (FEST.los) st.los = FEST.los;
-      return st;
-    }
-    return vorschlag();
-  }
-  let state = load();
-  function save() {
-    state.geaendert = new Date().toISOString();
-    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
-  }
+  let state = Z.load();
+  function save() { Z.save(state); }
+  Z.beobachten((st) => { state = st; render(); });
 
   // ---------- Link zum Teilen (iPad ↔ MacBook) ----------
   function encode(st) {
@@ -118,15 +52,7 @@
   }
 
   // ---------- Rhythmus: Abfahrt 6, 7, 8 oder 9 Uhr, aufstehen eine Stunde vorher ----------
-  const uhr = (min) => `${Math.floor(min / 60)}:${String(min % 60).padStart(2, "0")}`;
-  function T(str) {
-    if (!str || str.indexOf("{") < 0) return str;
-    const los = (state.los || 7) * 60;
-    const en = state.los < 12 ? `${state.los}:00 am` : `${state.los - 12}:00 pm`;
-    return str.replace(/\{auf\}/g, uhr(los - 60)).replace(/\{los\}/g, uhr(los)).replace(/\{losEn\}/g, en)
-      .replace(/\{talPlan\}/g, state.los <= 7 ? `seid ihr gegen ${uhr(los + 20)} im Tal der Könige` : "fahrt zuerst nach Medinet Habu, ins Tal der Könige erst ab etwa 14 Uhr")
-      .replace(/\{talAnkunft\}/g, state.los <= 7 ? `Ihr seid gegen ${uhr(los + 20)} da` : "Bei eurer späteren Abfahrt kommt ihr erst ab etwa 14 Uhr her, wenn die Busse wieder abfahren").replace(/\{tal\}/g, uhr(los + 20)).replace(/\{karnak\}/g, uhr(los + 30));
-  }
+  const T = (str) => Z.T(str, state.los);
   const RHYTHMUS = {
     6: "Früher geht es nicht: Die Stätten öffnen um 6, ihr seid gegen 6:20 im Tal der Könige, so leer wie den ganzen Tag nicht. Den Sonnenaufgang gegen 6:05 seht ihr unterwegs. Aufstehen um 5. Mittags habt ihr dann viel Zeit für eine lange Pause.",
     7: "Euer gewohnter Rhythmus: gegen 7:20 im Tal der Könige, vor den Ausflugsbussen, die nach Reiseberichten ab etwa 8 Uhr kommen. Das Tal zuerst, dann der Rest.",
@@ -167,19 +93,8 @@
     clearTimeout(meldung.t);
     meldung.t = setTimeout(() => (m.textContent = ""), 5000);
   }
-  function slotOf(id) {
-    for (const [s, ids] of Object.entries(state.slots)) if (ids.includes(id)) return s;
-    return "pool";
-  }
-  function move(id, toSlot, index) {
-    const from = slotOf(id);
-    state.slots[from] = state.slots[from].filter((x) => x !== id);
-    const list = (state.slots[toSlot] = state.slots[toSlot] || []);
-    if (index == null || index > list.length) index = list.length;
-    list.splice(index, 0, id);
-    delete state.off[id]; // was man verschiebt, will man dabeihaben
-    save(); render();
-  }
+  const slotOf = (id) => Z.slotOf(state, id);
+  function move(id, toSlot, index) { Z.move(state, id, toSlot, index); save(); render(); }
 
   // ---------- Karte eines Bausteins ----------
   function karte(id, slot) {
@@ -225,6 +140,7 @@
       off ? null : el("p", { class: "txt" }, T(b.txt)),
       off || !b.anders ? null : el("p", { class: "anders-text" }, el("strong", {}, !b.freund ? "Ergänzung: " : e ? "Hinweis: " : "Anders als euer Freund: "), T(b.anders)),
       off ? null : el("p", { class: "links" },
+        b.ort ? el("a", { href: "karte.html#ort=" + encodeURIComponent(b.ort[0]) }, "🗺 Auf unserer Karte") : null,
         b.map ? el("a", { href: b.map, target: "_blank", rel: "noopener" }, "📍 Google Maps") : null,
         (b.links || []).map(([label, url]) => el("a", Object.assign({ href: url }, url.startsWith("http") ? { target: "_blank", rel: "noopener" } : {}), label))),
       off ? null : el("details", { class: "mehr" },
@@ -517,8 +433,23 @@
     }
   }));
 
+  // Von der Karte kommend (#karte=<id>): Karte zeigen, auch wenn sie weggehakt ist, und kurz hervorheben.
+  function zuKarte() {
+    const m = location.hash.match(/karte=([^&]+)/);
+    if (!m) return;
+    const id = decodeURIComponent(m[1]);
+    history.replaceState(null, "", location.pathname);
+    if (!BY_ID[id]) return;
+    if (state.off[id]) { state.zeigen[slotOf(id)] = 1; save(); render(); }
+    const k = root.querySelector(`[data-id="${CSS.escape(id)}"]`);
+    if (!k) return;
+    k.scrollIntoView({ block: "center" });
+    k.classList.add("neu"); setTimeout(() => k.classList.remove("neu"), 1800);
+  }
+
   fromHash();
   render();
+  zuKarte();
   renderFest();
   renderExport();
   renderMail();
