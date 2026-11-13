@@ -106,6 +106,7 @@
     if (b.zeit) chips.push(el("span", { class: "chip" }, "🕑 " + T(b.zeit)));
     if (b.dauer) chips.push(el("span", { class: "chip" }, "⏳ " + b.dauer));
     if (b.preis != null) chips.push(el("span", { class: "chip preis" }, b.preis === 0 ? "frei" : `${pfund(b.preis)} £E p. P. ≈ ${euro(b.preis)} €`));
+    if (b.gebucht) chips.unshift(el("span", { class: "chip gebucht" }, "📌 Euer Guide, angefragt"));
     const e = einig(b);
     if (e) chips.push(el("span", { class: "chip einig" }, e === "abraten" ? "✓ einig: beide raten ab" : "✓ Freund und ich einig"));
     else if (b.freund) chips.push(el("span", { class: "chip freund" }, "💬 Tipp des Freundes"));
@@ -392,6 +393,8 @@
     const stand = new Date(FEST.stand).toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long" });
     box.hidden = false;
     box.querySelector("[data-fest-stand]").textContent = stand;
+    const info = box.querySelector("[data-fest-info]");
+    if (info) info.textContent = FEST.info || "";
   }
 
   // ---------- Ziehen mit Maus und Finger ----------

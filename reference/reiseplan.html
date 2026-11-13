@@ -72,6 +72,7 @@
   .chip.einig { background: var(--good); color: var(--bg); font-weight: 600; }
   .karte.einig { background: color-mix(in srgb, var(--good) 9%, var(--bg)); }
   #planer.kompakt .chip.einig { display: inline; }
+  .chip.gebucht { background: var(--good); color: var(--bg); font-weight: 600; }
   .chip.anders { background: var(--coral-soft); color: var(--coral); }
   .karte .anders-text { margin: 0.35rem 0 0.1rem 2.5rem; padding: 0.35rem 0.5rem; background: var(--coral-soft); border-radius: 6px; font-size: 0.8rem; }
   #planer.kompakt .karte .anders-text { display: none; }
@@ -146,7 +147,7 @@
 
 <div id="planer-fest" class="box" hidden style="background:color-mix(in srgb, var(--good) 10%, var(--bg));border-left:3px solid var(--good)">
   <div class="box-title" style="color:var(--good)">Unser fester Plan</div>
-  <p style="margin:0">Den habt ihr mir geschickt, Stand <span data-fest-stand></span>. Er gilt auf jedem Gerät und ist die Grundlage für die Lektionen. <button type="button" class="action" data-planer="fest">Festen Plan laden</button></p>
+  <p style="margin:0">Eingetragen nach dem, was ihr mir geschickt habt, Stand <span data-fest-stand></span>. <span data-fest-info></span> Er gilt auf jedem Gerät und ist die Grundlage für die Lektionen. Habt ihr vorher schon etwas geändert, holt ihn euch mit <button type="button" class="action" data-planer="fest">Festen Plan laden</button></p>
 </div>
 
 <div class="bedienung">
@@ -209,6 +210,7 @@
 <div class="box lookout">
   <div class="box-title">Euer Rhythmus: einstellbar, nie vor 6 Uhr an der Stätte</div>
   <p><strong>Gerade eingestellt:</strong> <span id="rhythmus-hinweis"></span></p>
+  <p><strong>Seit eure Guides feststehen:</strong> Am Sonntag und Montag beginnt ihr um 7 Uhr an der Stätte, die Karten dazu haben feste Uhrzeiten. Die Einstellung unten ändert nur noch die übrigen Karten, etwa im Plan eures Freundes.</p>
   <p>Oben neben „Plan teilen“ wählt ihr, wann ihr loswollt: 6, 7, 8 oder 9 Uhr, aufstehen und frühstücken jeweils eine Stunde vorher. Alle Uhrzeiten auf den Karten rechnen sich mit. Früher als 6 Uhr gibt es nicht, da öffnen die Stätten. Zum Standard, 6 Uhr auf und 7 Uhr los: Am Sonntag holt euch der Fahrer um 7 ab, gegen 7:20 seid ihr im Tal der Könige. Ausflugsbusse kommen dort nach Reiseberichten ab etwa 8 Uhr, gegen 10 sind die Gräber voll (<a href="https://www.responsibletravel.com/holidays/egypt/travel-guide/how-to-avoid-the-crowds">Responsible Travel</a>, <a href="https://www.findingouradventure.com/travel-diaries/valleyofthekings">Reisebericht</a>). Deshalb kommt das Tal zuerst, die anderen Stätten danach. Am Montag seid ihr gegen 7:30 in Karnak. Zahlen zum Andrang in Karnak habe ich nicht gefunden, Reiseführer empfehlen dort früh am Morgen oder nach 16 Uhr. Mittags ist Pause, der Tempel von Luxor kommt am späten Nachmittag.</p>
 </div>
 
@@ -231,9 +233,10 @@
 <h2>Vorab erledigen</h2>
 <p class="sans" style="font-size:.8rem;color:var(--muted)">Die Häkchen bleiben auf diesem Gerät gespeichert und wandern mit dem Teilen-Link.</p>
 <ul class="todo">
-  <li data-todo="tickets">Eintrittskarten für Tal der Könige (mit Ramses V./VI.), Hatschepsut, Medinet Habu, Deir el-Medina, Karnak und Tempel von Luxor kaufen. Offiziell auf <a href="https://egymonuments.com/">egymonuments.com</a>, der Buchungsseite des Ministeriums, oder an der Kasse vor Ort, dort nur mit Visa oder Mastercard.</li>
-  <li data-todo="guide">Private Westufer-Tour für Sonntag anfragen: beim Gastgeber eurer Unterkunft und auf GetYourGuide oder Viator. Gesamtpreis für zwei schriftlich, mit Deir el-Medina und Medinet Habu, ohne Einkaufsstopps. Den Text zum Kopieren gibt es auf der Karte „Private Westufer-Tour“ unter „Mehr“.</li>
-  <li data-todo="karnak-guide">Wenn gewünscht: Guide für zwei Stunden Karnak am Montagmorgen.</li>
+  <li data-todo="tickets">Eintrittskarten für Tal der Könige (mit Ramses V./VI.), Hatschepsut, Medinet Habu, Karnak, Luxor-Museum und Tempel von Luxor kaufen, Deir el-Medina nur, wenn ihr es am Sonntagnachmittag dazunehmt. Vorher beim Guide fragen, ob Eintritte im Preis sind. Offiziell auf <a href="https://egymonuments.com/">egymonuments.com</a>, der Buchungsseite des Ministeriums, oder an der Kasse vor Ort, dort nur mit Visa oder Mastercard.</li>
+  <li data-todo="guide">Guide für Sonntag angefragt: 7 bis 11 Uhr, Tal der Könige mit Ramses V./VI. und Ramses II. oder III., danach Hatschepsut.</li>
+  <li data-todo="karnak-guide">Guide für Montag angefragt: ab 7 Uhr Karnak, etwa zwei Stunden.</li>
+  <li data-todo="guide-klaeren">Beim Guide klären: Abholzeit am Sonntag (gegen 6:40), ob der Fahrer euch um 11 am Café Maratonga gegenüber Medinet Habu absetzt, dass Ramses II. nicht offen ist und Ramses III. auf dem Grundticket liegt, und dass „Karnak und der Amun-Tempel“ am Montag ein und derselbe Ort ist.</li>
   <li data-todo="ballon">Wenn ihr Ballon fahren wollt: online buchen, mit Abholung, Rückfahrt und voller Erstattung bei Absage wegen Wetter.</li>
   <li data-todo="sahaby">Al-Sahaby Lane für Montagabend reservieren, die Tische zum Sonnenuntergang sind Tage vorher weg.</li>
   <li data-todo="sofra">Sofra reservieren, falls ihr dort essen wollt, und Bargeld mitnehmen: Sofra nimmt keine Karte.</li>
