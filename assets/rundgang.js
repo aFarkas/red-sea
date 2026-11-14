@@ -8,7 +8,7 @@
   const R = window.RUNDGANG;
   if (!R || !window.L) return;
   const karten = [];
-  let ich = null, watch = null, gestartet = false;
+  let ich = null, watch = null, gestartet = false, wartend = null;
 
   function nummer(n, aktiv) {
     return L.divIcon({
@@ -26,7 +26,7 @@
     box.className = "rg-map";
     const map = L.map(box, {
       zoomControl: true, scrollWheelZoom: false, tap: false,
-      dragging: !L.Browser.mobile, // auf dem iPad scrollt der Finger die Seite, nicht die Karte
+      dragging: !L.Browser.touch, // auf iPad und Handy scrollt der Finger die Seite, nicht die Karte; zoomen geht mit + und −
       attributionControl: true,
     });
     // Erst die Ansicht setzen, dann Linien und Punkte; sonst zeichnet Leaflet sie bei fitBounds nicht.
@@ -77,12 +77,13 @@
 
   function starte(vonHand, map) {
     if (!("geolocation" in navigator)) { if (vonHand) alert("Dieses Gerät gibt keinen Standort heraus."); return; }
-    if (vonHand && ich && map) map.setView([ich.latitude, ich.longitude], Math.max(map.getZoom(), 17));
+    if (vonHand && map) { if (ich) map.setView([ich.latitude, ich.longitude], Math.max(map.getZoom(), 17)); else wartend = map; }
     if (gestartet) return;
     gestartet = true;
     watch = navigator.geolocation.watchPosition((pos) => {
       ich = pos.coords;
       karten.forEach(zeichne);
+      if (wartend) { wartend.setView([ich.latitude, ich.longitude], Math.max(wartend.getZoom(), 17)); wartend = null; }
     }, (err) => {
       navigator.geolocation.clearWatch(watch); watch = null; gestartet = false;
       if (vonHand) alert(err.code === 1 ? "Standort nicht erlaubt. Auf dem iPad: Einstellungen → Datenschutz → Ortungsdienste → Safari-Websites → „Beim Verwenden“." : "Standort gerade nicht verfügbar.");
