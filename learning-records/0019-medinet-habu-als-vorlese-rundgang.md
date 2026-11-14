@@ -1,0 +1,5 @@
+# Medinet Habu als Rundgang zum Vorlesen, mit Sonnenuntergang
+
+Am 14.11.2026 wünscht sich der Nutzer Lektion 15 umgebaut: Er und seine Freundin wollen die Stationen ablaufen und sich die Texte abwechselnd vorlesen. Jede Station soll ein wiedererkennbares Bild haben, wo nötig eine Karte mit dem eigenen Standort als blauem Punkt, am Anfang eine Übersicht mit dem ganzen Weg. Es soll nicht zu viel sein, weil sie vor allem die Stimmung bei Sonnenuntergang aufnehmen wollen, besonders am Schluss, und sie wollen eine ideale Startzeit, um nicht zu früh da zu sein.
+
+**Implications:** Ortslektionen für einen Rundgang als nummerierte Stationen schreiben, je Station ein Foto genau der Stelle, eine Luftbildkarte (`assets/rundgang.js`, Daten in `window.RUNDGANG`) und eine Zeile „🔎 Sucht …“ statt einer langen Liste am Ende. Vorleser mit `span.leser` (A/B) markieren, längere Schlussteile absatzweise im Wechsel. Den Zeitplan rückwärts vom Sonnenuntergang rechnen und den Schluss dorthin legen, wo man sitzen und schauen kann. Nach dem Besuch fragen: Hat die Startzeit gepasst? Wie war der Sonnenuntergang, und hat der blaue Punkt geholfen?

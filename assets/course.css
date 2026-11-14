@@ -203,6 +203,25 @@ figure.video iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; display: blo
 /* Eingebettete Google-Maps-Karte, Link nach Google Maps steht in der Bildunterschrift */
 figure.map iframe { width: 100%; aspect-ratio: 4 / 3; border: 0; display: block; border-radius: 4px; background: var(--sand); }
 @media print { figure.map iframe { display: none; } }
+/* Rundgang: Luftbildkarte mit Stationen und eurem Standort (assets/rundgang.js) */
+.rundgang-karte { margin: 1.2rem 0; }
+.rundgang-karte svg { width: auto; height: auto; } /* nicht die Regel für figure svg übernehmen */
+.rg-map { width: 100%; aspect-ratio: 4 / 3; border-radius: 4px; background: var(--sand); }
+.rundgang-karte[data-zeige="alle"] .rg-map { aspect-ratio: 1 / 1; max-height: 34rem; }
+.rg-pin span { display: flex; width: 100%; height: 100%; box-sizing: border-box; align-items: center; justify-content: center;
+  border-radius: 50%; background: #fff; color: #0d6e8a; border: 2px solid #0d6e8a; font: 600 13px/1 Inter, system-ui, sans-serif;
+  box-shadow: 0 1px 4px rgba(0,0,0,.4); }
+.rg-pin.aktiv span { background: #c8553d; color: #fff; border: 3px solid #fff; font-size: 17px; }
+.rg-ich { width: 44px; height: 44px; font-size: 20px; line-height: 44px; padding: 0; border: 0; background: #fff; cursor: pointer; display: block; }
+.rg-info { font-family: Inter, system-ui, sans-serif; font-size: 0.85rem; color: var(--muted); margin: 0.4rem 0 0; }
+@media print { .rundgang-karte { display: none; } }
+/* Rundgang: wer vorliest, und was man an der Station sucht */
+.leser { display: inline-block; vertical-align: middle; margin-left: 0.4rem; padding: 0.1rem 0.55rem; border-radius: 999px;
+  font-family: Inter, system-ui, sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.03em; color: #fff; background: var(--sea); }
+.leser.b { background: var(--coral); }
+p .leser { margin: 0 0.35rem 0 0; }
+.such { background: var(--sea-soft); border-radius: 4px; padding: 0.6rem 0.8rem; font-size: 0.95rem; }
+.such::before { content: "🔎 "; }
 .credit { display: block; font-size: 0.72rem; margin-top: 0.2rem; }
 .credit a { color: inherit; }
 .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
