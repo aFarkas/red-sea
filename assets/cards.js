@@ -743,7 +743,7 @@ window.CARDS = [
     lektion: 15,
     frage: "Wie zählten die Ägypter unter Ramses III. die gefallenen Feinde, und wo hat sich jemand verzählt?",
     antwort: `<p>Nach abgeschlagenen Händen und Penissen. Die Soldaten bekamen für jedes Stück Gold, später Land. Schreiber zählten die Haufen vor dem König.</p>
-      <p>An der Nordwand von Medinet Habu ergeben die Zahlen über 38.000 Hände, aber nur 25.000 Penisse. Im zweiten Hof steht dieselbe Abrechnung ordentlich gerundet: vier Haufen zu je 3000.</p>`,
+      <p>An der Nordwand von Medinet Habu ergeben alle Haufen zusammen über 38.000 Hände, aber nur 25.000 Penisse. Die Auflösung steht im zweiten Hof: vier Haufen zu je 3000, dazu 1000 Gefangene, zusammen gut 12.000. Draußen stand also wohl in jedem Haufen die ganze Summe noch einmal.</p>`,
   },
   {
     id: "habu-seeschlacht",
@@ -777,8 +777,8 @@ window.CARDS = [
     id: "habu-mumie",
     lektion: 15,
     frage: "Was verraten die Mumien über den Tod Ramses’ III. und über seinen Sohn Pentawer?",
-    antwort: `<p>2012 zeigte der Computertomograph einen tiefen Schnitt durch die Kehle des Königs, darin ein Horusauge als Heilamulett. 2016 fand die Radiologin Sahar Saleem, dass ein Stück des großen Zehs abgehackt war: wohl mehrere Angreifer.</p>
-      <p>Eine zweite Mumie, ein junger Mann in einem unreinen Ziegenfell, ist mit Ramses III. in väterlicher Linie verwandt. Ein guter Kandidat für Pentawer, den Sohn der Königin Teje, der sich nach dem Urteil das Leben nahm.</p>`,
+    antwort: `<p>2012 zeigte der Computertomograph von Zahi Hawass, Albert Zink und Sahar Saleem einen tiefen Schnitt durch die Kehle des Königs, darin ein Horusauge als Heilamulett. 2016 fand die Radiologin Sahar Saleem, dass ein Stück des großen Zehs abgehackt war: wohl mehrere Angreifer.</p>
+      <p>Eine zweite Mumie, ein junger Mann in einem unreinen Ziegenfell, ist mit Ramses III. in väterlicher Linie verwandt. Er starb wohl gewaltsam. Ein guter Kandidat für Pentawer, den Sohn der Königin Teje, der sich laut Gerichtspapyrus nach dem Urteil das Leben nahm.</p>`,
   },
   {
     id: "habu-hatschepsut",
