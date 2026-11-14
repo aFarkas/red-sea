@@ -163,9 +163,9 @@
     { id: "sofra", anders: "Euer Freund hatte Sofra zuerst vorgeschlagen und dann für den Abend durch Al-Sahaby Lane ersetzt. Ich setze Sofra auf das „späte Mittagessen“ am Ostufer, weil es viele vegane Gerichte hat. Achtung: nur bar.", art: "essen", t: "Sofra", ufer: "Ost", zeit: "11–24 Uhr", dauer: "", preis: null, guide: "—",
       txt: "Ägyptische Küche in einer alten Villa, mit vielen veganen Gerichten und frischen Säften. Kein Alkohol, nur bar, abends Tage vorher reservieren.",
       more: `Vegan laut <a href="https://www.happycow.net/reviews/sofra-luxor-146635">HappyCow</a>, bar und reservieren laut <a href="https://www.theluxorguide.com/city/luxor/articles/where-to-eat-in-luxor-after-a-day-at-the-temples">The Luxor Guide</a>, Zeiten laut <a href="https://en.wikivoyage.org/wiki/Luxor/East_Bank">Wikivoyage</a>.` },
-    { id: "thebes", art: "essen", t: "Thebes Bar & Grill", ufer: "Ost?", zeit: "abends", dauer: "", preis: null, guide: "—",
-      txt: "Dachterrasse, Menü vom Bauernhof, laut The Luxor Guide die stärkste vegane und vegetarische Küche der Stadt. Bier und Wein. 250–500 Pfund.",
-      more: `<a href="https://www.theluxorguide.com/city/luxor/articles/where-to-eat-in-luxor-after-a-day-at-the-temples">The Luxor Guide</a> sagt Ostufer, ein <a href="https://www.happycow.net/reviews/thebes-bar-and-grill-luxor-327206">HappyCow-Eintrag</a> Westufer. Vorher auf der Karte nachsehen.`, map: gm("Thebes Bar and Grill, Luxor") },
+    { id: "thebes", anders: "Nicht von eurem Freund, aber euch in Luxor wärmstens empfohlen. Ich setze es als Alternative an beide Westufer-Abende und für den Ostufer-Abend nach der Fähre: Es liegt rund 300 m südlich des Anlegers, und es hat von allen Lokalen im Plan die beste vegane Auswahl.", art: "essen", t: "Thebes (Tebaa) Bar & Grill", ufer: "West", zeit: "ca. 7:30–22:30", dauer: "", preis: null, guide: "—",
+      txt: "Dachterrasse mit Nilblick am Westufer, nahe dem Anleger. Eigene vegane Karte mit etwa fünf bis zehn Gerichten: Linsen-Kofta, Falafel, vegane Moussaka, Curry, Tajine, Mezze, Hummus, Baba Ghanoush, Linsensuppe, dazu vegane Würstchen und Tagesgerichte. Auch Frühstück. Bier und Wein. 250–500 Pfund pro Kopf. Vorsicht beim veganen Burger: Ein Gast fand Mayonnaise mit Ei darin; nachfragen.",
+      more: `Vegane Karte, „sehr vegan-freundlich“ und Lage laut <a href="https://spinach.guide/venues/thebes-bar-and-grill-14456/">spinach.guide</a> (Stand 13.11.2026); Gerichte, Ei-Mayo und Öffnungszeiten laut <a href="https://www.happycow.net/reviews/thebes-bar-and-grill-luxor-327206">HappyCow</a> (dort freitags erst ab 13 Uhr), Google nennt täglich 7:30–23 Uhr. „Die stärkste vegane und vegetarische Küche, die ich in Luxor gefunden habe“, Bier, Wein und Preis laut <a href="https://www.theluxorguide.com/city/luxor/articles/where-to-eat-in-luxor-after-a-day-at-the-temples">The Luxor Guide</a>; der schreibt Ostufer, euer Google-Link und beide Vegan-Führer zeigen aber dasselbe Haus am Westufer (Plus-Code PJ2M+Q54). Reservieren per Telefon.` },
     { id: "snobs", art: "essen", t: "Snobs", ufer: "Ost", zeit: "abends", dauer: "", preis: null, guide: "—",
       txt: "Eigentlich ein Steakhaus, aber mit eigener vegetarischer und veganer Karte, nicht nur Beilagen.",
       more: `<a href="https://exploreluxor.org/where-to-eat-in-luxor/">Explore Luxor, September 2026</a>.`, map: gm("Snobs Restaurant, Luxor") },
@@ -267,7 +267,7 @@
     wannas: [["🌱 HappyCow", "https://www.happycow.net/reviews/wannas-art-cafe-luxor-191576"], TA("Wannas Art Cafe")],
     sahaby: [["🌐 Offizielle Seite mit Speisekarte", "https://www.nefertitihotel.com/al-sahaby-lane-restaurant"], TA("Al-Sahaby Lane")],
     sofra: [["🌱 HappyCow", "https://www.happycow.net/reviews/sofra-luxor-146635"], TA("Sofra Restaurant")],
-    thebes: [["🌱 HappyCow", "https://www.happycow.net/reviews/thebes-bar-and-grill-luxor-327206"], TA("Thebes Bar and Grill")],
+    thebes: [["🌱 spinach.guide", "https://spinach.guide/venues/thebes-bar-and-grill-14456/"], ["🌱 HappyCow", "https://www.happycow.net/reviews/thebes-bar-and-grill-luxor-327206"], TA("Thebes Bar and Grill")],
     snobs: [TA("Snobs Restaurant"), ["📘 Explore Luxor", "https://exploreluxor.org/where-to-eat-in-luxor/"]],
     koschari: [["📖 Lektion 12", "../lessons/0012-pfeffer-in-der-wueste.html"]],
     nilepalace: [TA("West Bank Nile Palace Restaurant"), FREUND("tripadvisor.com", "West Bank Nile Palace"), FREUND("wanderboat.ai", "West Bank Nile Palace")],
@@ -348,6 +348,10 @@
     nilevalley: { name: "Nile Valley Hotel", geo: [25.70429, 32.63363], q: "Nile Valley Hotel, Luxor", typ: "lokal", mahl: ["drinks", "abend"] },
     gezira: { name: "El Gezira", geo: [25.70508, 32.63283], q: "El Gezira Hotel, Luxor", typ: "lokal", mahl: ["drinks", "abend"] },
     winterpalace: { name: "Winter Palace", geo: [25.69624, 32.63801], q: "Sofitel Winter Palace, Luxor", typ: "lokal", mahl: ["drinks"] },
+    // Diese beiden aus euren Google-Maps-Links (Plus-Codes), nicht aus OpenStreetMap.
+    thebes: { name: "Thebes (Tebaa)", geo: [25.70194, 32.63294], q: "PJ2M+Q54, Luxor", typ: "lokal", mahl: ["fruehstueck", "mittag", "abend", "drinks"] },
+    hamada: { name: "Hamada Market", geo: [25.69996, 32.63189], q: "MJXJ+XQJ, Luxor", typ: "sonst", icon: "🛒",
+      txt: "Von euch eingetragen: laut Google Maps in Al Bairat am Westufer, rund 200 m vom Nubian House. Eine andere Quelle habe ich nicht gefunden, was es dort gibt und wann offen ist, also vor Ort sehen." },
   };
   // Weiterlesen zu jedem Ort: Lektionen und „Luxor zum Nachschlagen“ (reference/luxor.html#ort-…).
   const LEKTION = { 11: "../lessons/0011-beten-ist-besser-als-schlafen.html", 12: "../lessons/0012-pfeffer-in-der-wueste.html",
@@ -360,8 +364,8 @@
   for (const [ort, was] of Object.entries(LESEN)) {
     window.PLAN_ORTE[ort].lesen = was.map((x) => typeof x === "number" ? [`📖 Lektion ${x}`, LEKTION[x]] : ["📘 Luxor zum Nachschlagen", `luxor.html#ort-${x}`]);
   }
-  // Welcher Baustein liegt wo? Bausteine ohne Eintrag (Touren, Pausen, Koschari irgendwo, Thebes Bar & Grill
-  // mit unklarem Ufer, Snobs ohne gefundene Lage) bekommen keinen Pin; die Karte listet sie unter „Ohne Pin“.
+  // Welcher Baustein liegt wo? Bausteine ohne Eintrag (Touren, Pausen, Koschari irgendwo,
+  // Snobs ohne gefundene Lage) bekommen keinen Pin; die Karte listet sie unter „Ohne Pin“.
   const ORT = {
     tdk: "tdk", kv9: "tdk", tut: "tdk", sethos: "tdk", hatschepsut: "hatschepsut", deir: "deir", medinet: "medinet",
     memnon: "memnon", ramesseum: "ramesseum", koeniginnen: "koeniginnen", carter: "carter",
@@ -371,7 +375,7 @@
     feluke: "anleger-west", rad: "anleger-west",
     nubian: "nubian", tutanchamun: "tutanchamun", sunflower: "sunflower", maratonga: "maratonga", marsam: "marsam",
     wannas: "wannas", sahaby: "sahaby", sofra: "sofra", nilepalace: "nilepalace", sayeda: "sayeda", bluesky: "bluesky",
-    nilevalley: "nilevalley", gezira: "gezira", winterpalace: "winterpalace",
+    nilevalley: "nilevalley", gezira: "gezira", winterpalace: "winterpalace", thebes: "thebes",
   };
   window.PLAN_BAUSTEINE.forEach((b) => {
     if (!ORT[b.id]) return;
@@ -406,13 +410,13 @@
       // Nachmittag selbst: Medinet Habu liegt auf dem Heimweg vom Guide
       "d15-mittag": ["taxi-nachm", "maratonga", "-mittag-west", "-marsam"],
       "d15-nachmittag": ["medinet", "-deir", "memnon", "pause", "feluke", "-bluesky"],
-      "d15-abend": ["tutanchamun", "-nilepalace", "-gezira"],
+      "d15-abend": ["tutanchamun", "-thebes", "-nilepalace", "-gezira"],
       "d16-frueh": ["fr16g", "faehre", "karnak", "karnak-guide"],
       // Danach schlendern: Museum, Kaffee, Souk, und ein, zwei Dinge selbst
       "d16-vormittag": ["museum", "kaffee", "-mumien", "-corniche"],
       "d16-mittag": ["souk", "saft", "sofra", "-koschari"],
       "d16-nachmittag": ["pause16", "motorboot", "luxortempel"],
-      "d16-abend": ["sahaby", "-thebes", "-snobs", "-winterpalace", "-soundlight", "zurueck"],
+      "d16-abend": ["sahaby", "-snobs", "-winterpalace", "-soundlight", "zurueck"],
       "d17-morgen": ["fruehstueck"],
       "d17-abreise": ["abfahrt"],
     },
@@ -452,6 +456,8 @@
     ["gezira", "d14-nachmittag", "Dach nahe dem Anleger, auch am Ankunftstag für ein Bier zum Sonnenuntergang nur ein paar Schritte von der Unterkunft.", {}],
     ["gezira", "d14-abend", "Liegt nahe dem Anleger am Westufer, also auch am Ankunftsabend nur ein paar Schritte von der Unterkunft.", {}],
     ["gezira", "d15-nachmittag", "Nach der Feluke seid ihr wieder am Anleger, und El Gezira liegt in der Nähe: ein ruhiges Bier am Ende des Tages.", {}],
+    ["thebes", "d14-abend", "Auch für den ersten Abend: rund 300 m südlich des Anlegers, nahe eurer Unterkunft, mit der besten veganen Karte im Plan.", {}],
+    ["thebes", "d16-abend", "Oder erst mit der Fähre heim und dann auf eurer Seite essen: Das Thebes liegt nahe dem Anleger am Westufer, die Küche schließt gegen halb elf.", {}],
     ["winterpalace", "d16-nachmittag", "Das Hotel steht an der Corniche gleich neben dem Tempel von Luxor. Wer den Sonnenuntergang sehen will, trinkt hier gegen 17 Uhr etwas und geht danach in den Tempel: Einlass bis 19 Uhr.", {}],
   ];
 

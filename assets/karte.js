@@ -22,7 +22,6 @@
   };
   // Lokale ohne Pin und warum (die übrigen Bausteine ohne Ort sind Touren, Pausen und Wege).
   const OHNE_PIN = {
-    thebes: "Ufer unklar: The Luxor Guide sagt Ostufer, HappyCow Westufer.",
     snobs: "Lage in OpenStreetMap nicht gefunden.",
     koschari: "Gibt es in vielen Läden der Altstadt.",
     saft: "Saftstände überall in der Stadt.",

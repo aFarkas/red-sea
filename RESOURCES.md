@@ -243,6 +243,9 @@
   Offizielle Seite mit Speisekarte. sofraeg.com ist NICHT Sofra Luxor, sondern ein Haushaltswarenladen.
 - [HappyCow Luxor](https://www.happycow.net/widget/africa/egypt/luxor/) und [spinach.guide](https://spinach.guide/venues/cafe-restaurant-maratonga-14455/)
   Use for: vegane Optionen (Sofra, Wannas, Maratonga, Nubian House eher schwach).
+- [spinach.guide: Thebes Bar & Grill](https://spinach.guide/venues/thebes-bar-and-grill-14456/) und [HappyCow: Thebes Bar & Grill](https://www.happycow.net/reviews/thebes-bar-and-grill-luxor-327206)
+  Abgerufen 14.11.2026. Use for: eigene vegane Karte, 5–10 Gerichte, „sehr vegan-freundlich“, Dach mit Nilblick, Plus-Code PJ2M+Q54 = dasselbe Haus wie „Thebes (Tebaa) Restaurant“ auf Google Maps, also Westufer (The Luxor Guide schreibt fälschlich Ostufer). HappyCow: Gerichte aus Bewertungen bis Sept. 2025, ein Gast fand Ei-Mayo im veganen Burger, Zeiten Mo–Do, Sa–So 7–22:30, Fr ab 13 Uhr.
+- Hamada Market (Westufer, Al Bairat): nur der Google-Maps-Link der Nutzer, Plus-Code MJXJ+XQJ. Keine weitere Quelle gefunden.
 - [spinach.guide: Wannas Art Cafe](https://spinach.guide/venues/wannas-art-cafe-14451/)
   Use for: Lage in Ramla hinter dem Hotel Al Masala, nahe Sunflower und Westufer-Anleger; Zeiten etwa 9–22 Uhr. Blue Sky laut Bewertungen auf Trip.com ebenfalls in Ramla/Al Bairat am Nil. Grundlage der Zweitkarten im Reiseplan.
 
