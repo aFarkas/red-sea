@@ -303,7 +303,7 @@
   // txt, lesen: für Orte, die keine Karte im Plan haben (aus Lektionen und „Luxor zum Nachschlagen“); lesen auch sonst.
   // linie: Verlauf als Linie, etwa die Sphinx-Allee (OpenStreetMap, Weg 90384477).
   // mahl (nur Lokale): fruehstueck | mittag | abend | drinks, nach Öffnungszeiten und Angaben auf den Karten.
-  // ungefaehr: Lage nur aus einer Beschreibung abgeleitet. Die Unterkunft steht absichtlich nicht hier (öffentliches Repo).
+  // ungefaehr: Lage nur aus einer Beschreibung abgeleitet. Die Unterkunft selbst steht nicht hier (öffentliches Repo), nur der Weg nach Hause.
   window.PLAN_ORTE = {
     // Tempel und Gräber
     tdk: { name: "Tal der Könige", geo: [25.74049, 32.60176], q: "Valley of the Kings, Luxor", typ: "staette" },
@@ -331,6 +331,8 @@
     "anleger-ost": { name: "Fähranleger Ostufer", geo: [25.70845, 32.64388], q: "25.70845,32.64388", typ: "wege", icon: "⛴️" },
     krankenhaus: { name: "El Karnak International Hospital", geo: [25.70872, 32.64552], q: "El Karnak International Hospital, Luxor", typ: "wege", icon: "🏥",
       txt: "Gegenüber legt die Fähre am Ostufer an, kurz vor dem Luxor-Museum. Eine gute Wegmarke, und gut zu wissen, wo es ist." },
+    heim: { name: "Weg nach Hause (Golden Mountain)", geo: [25.7050978, 32.6312600], q: "25.7050978,32.6312600", typ: "wege", icon: "🏠",
+      txt: "Hier geht es nach Hause. Vom Fähranleger am Westufer gut 400 Meter nach Westen, landeinwärts." },
     bahnhof: { name: "Bahnhof Luxor", geo: [25.69654, 32.64497], q: "Luxor Railway Station", typ: "wege", icon: "🚉",
       txt: "Am Ostufer hinter der Altstadt und dem Souk. Eine Wegmarke, falls ihr euch in den Gassen verlauft." },
     // Lokale
