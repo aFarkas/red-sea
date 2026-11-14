@@ -731,6 +731,61 @@ window.CARDS = [
     antwort: `<p><em data-wort="w-shimaal">Schimāl</em>, <em data-wort="w-yimiin">yimīn</em>, <em data-wort="w-ala-tuul">ʿala tūl</em>. Und zum Anhalten <em data-wort="w-hina">hina</em>, hier.</p>
       <p>Dasselbe Wort, hocharabisch <em>schamāl</em> gesprochen, heißt Norden. Für links sagt man im Hocharabischen meist <em>yasār</em>.</p>`,
   },
+  {
+    id: "habu-torturm",
+    lektion: 15,
+    frage: "Was zeigen die Reliefs außen am Tor von Medinet Habu, und was zeigen sie oben in den Räumen?",
+    antwort: `<p>Außen Krieg: Der König erschlägt riesengroß die Feinde, darunter liegen sie gefesselt. Das Tor sieht aus wie eine syrische Festung.</p>
+      <p>Oben in den Räumen Spiel: Junge Frauen reichen ihm Essen, Getränke und Blumen, er spielt ein Brettspiel. Einige heißen „Kinder des Königs“, andere gehörten wohl zum Harem. Hier begann, so scheint es, die Verschwörung gegen Ramses III., während das Schöne Fest vom Wüstental lief.</p>`,
+  },
+  {
+    id: "habu-haende-zaehlen",
+    lektion: 15,
+    frage: "Wie zählten die Ägypter unter Ramses III. die gefallenen Feinde, und wo hat sich jemand verzählt?",
+    antwort: `<p>Nach abgeschlagenen Händen und Penissen. Die Soldaten bekamen für jedes Stück Gold, später Land. Schreiber zählten die Haufen vor dem König.</p>
+      <p>An der Nordwand von Medinet Habu ergeben die Zahlen über 38.000 Hände, aber nur 25.000 Penisse. Im zweiten Hof steht dieselbe Abrechnung ordentlich gerundet: vier Haufen zu je 3000.</p>`,
+  },
+  {
+    id: "habu-seeschlacht",
+    lektion: 15,
+    frage: "Warum steht die Seeschlacht gegen die Seevölker außen an der Nordwand und nicht im Hof?",
+    antwort: `<p>Weil sie zu groß war. Das Relief ist über 15 Meter lang, an den Wänden des ersten Hofs wären nur etwa 10 frei gewesen. So fanden es die Chicagoer Zeichner um Harold Nelson.</p>
+      <p>Vier ägyptische Schiffe mit Löwenkopf kämpfen gegen fünf der Seevölker mit Vogelköpfen an beiden Enden, eines ist gekentert. Ertrinkende strecken die Arme aus einem Wasser, dessen Farbe verschwunden ist.</p>`,
+  },
+  {
+    id: "habu-kratzer",
+    lektion: 15,
+    frage: "Was sind die tiefen senkrechten Rillen an den Außenwänden von Medinet Habu?",
+    antwort: `<p>Wahrscheinlich Spuren von Dorfbewohnern, die Steinstaub abschabten, als Heilmittel oder Glücksbringer, und ihn unten auffingen.</p>
+      <p>Die Rillen reichen nur so hoch, wie ein Mensch kam, der auf dem Schutt des späteren christlichen Dorfes Djeme stand. Sie zeigen also, wie hoch der Schutt einmal lag.</p>`,
+  },
+  {
+    id: "habu-farben",
+    lektion: 15,
+    frage: "Warum sind die Farben im zweiten Hof von Medinet Habu so gut erhalten?",
+    antwort: `<p>Weil Christen sie übermalt haben. Im zweiten Hof stand die Kirche des Dorfes Djeme. Die Christen schlugen die Königsstatuen an den Pfeilern ab, die Reliefs strichen sie nur weiß. Unter der Tünche blieben die Farben fast unversehrt.</p>
+      <p>Im 9. Jahrhundert verließen die Bewohner Djeme, warum, weiß niemand.</p>`,
+  },
+  {
+    id: "habu-bierzimmer",
+    lektion: 15,
+    frage: "Was taten einige Richter im Prozess gegen die Verschwörer, und was geschah mit ihnen?",
+    antwort: `<p>Sie gingen zu den angeklagten Frauen und feierten mit ihnen. Auf Ägyptisch heißt das wörtlich: Sie „machten ein Bierzimmer“. Zur Strafe wurden ihnen Nase und Ohren abgeschnitten, einer von ihnen, Paibes, nahm sich danach das Leben.</p>
+      <p>So steht es im Gerichtspapyrus von Turin. Den Verurteilten gab er neue Namen: Aus einem „Diener des Amun“ wurde „der blinde Diener“.</p>`,
+  },
+  {
+    id: "habu-mumie",
+    lektion: 15,
+    frage: "Was verraten die Mumien über den Tod Ramses’ III. und über seinen Sohn Pentawer?",
+    antwort: `<p>2012 zeigte der Computertomograph einen tiefen Schnitt durch die Kehle des Königs, darin ein Horusauge als Heilamulett. 2016 fand die Radiologin Sahar Saleem, dass ein Stück des großen Zehs abgehackt war: wohl mehrere Angreifer.</p>
+      <p>Eine zweite Mumie, ein junger Mann in einem unreinen Ziegenfell, ist mit Ramses III. in väterlicher Linie verwandt. Ein guter Kandidat für Pentawer, den Sohn der Königin Teje, der sich nach dem Urteil das Leben nahm.</p>`,
+  },
+  {
+    id: "habu-hatschepsut",
+    lektion: 15,
+    frage: "Wo begegnet euch in Medinet Habu Hatschepsut, obwohl ihr ihren großen Tempel gestrichen habt?",
+    antwort: `<p>Im kleinen Amun-Tempel gleich rechts hinter dem Tor. Sie hat ihn begonnen, ihr Neffe Thutmosis III. vollendete ihn und ersetzte ihren Namen im Allerheiligsten fast überall durch die seines Vaters und Großvaters.</p>`,
+  },
 ];
 
 // Umrechenkarten in beide Richtungen, gebaut von assets/umrechnen.js. Für jede Karte wird bei jedem Zeigen

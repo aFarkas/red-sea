@@ -30,8 +30,8 @@
 
   window.PLAN_BAUSTEINE = [
     // ---------- Westufer ----------
-    { id: "tdk", freund: 1, art: "west", t: "Tal der Könige", zeit: "7:00–9:30", dauer: "2–2,5 h", preis: 750, guide: "Guide lohnt",
-      txt: "Mit eurem Guide um 7 Uhr da. Ausflugsbusse kommen nach Reiseberichten ab etwa 8 Uhr, gegen 10 sind die Gräber voll. Also zuerst ins Tal, dann den Rest. Das Grundticket öffnet drei Gräber nach Wahl. Ramses III. (KV11) gehört zu den zehn, die zur Wahl stehen: Nehmt es als eines der drei. Ramses II. (KV7) ist nicht offen.",
+    { id: "tdk", freund: 1, art: "west", t: "Tal der Könige", zeit: "7:00–10:30", dauer: "2,5–3,5 h", preis: 750, guide: "Guide lohnt",
+      txt: "Mit eurem Guide um 7 Uhr da. Ausflugsbusse kommen nach Reiseberichten ab etwa 8 Uhr, gegen 10 sind die Gräber voll. Also zuerst ins Tal, dann den Rest. Das Grundticket öffnet drei Gräber nach Wahl. Ramses III. (KV11) gehört zu den zehn, die zur Wahl stehen: Nehmt es als eines der drei, am Nachmittag seht ihr in Medinet Habu seinen Tempel. Ramses II. (KV7) ist nicht offen. Ohne Hatschepsut habt ihr hier keine Eile.",
       more: `Welche Gräber offen sind, wechselt; es gilt die Tafel an der Kasse. Ramses III. offen, Ramses II. nicht: ${WS}. Die Zusatzgräber sind eigene Bausteine (Ramses V./VI., Tutanchamun, Sethos I.), zieht dazu, was ihr wollt. Hinter der Geschichte: <a href="../lessons/0013-ich-kann-die-hieroglyphen-nicht-lesen.html">Lektion 13</a>. Zeiten und Preis: <a href="${EGY}ValleyOfKings">offizielle Seite</a>. Busse ab etwa 8 Uhr: <a href="https://www.responsibletravel.com/holidays/egypt/travel-guide/how-to-avoid-the-crowds">Responsible Travel</a>; voll gegen 10 Uhr: <a href="https://www.findingouradventure.com/travel-diaries/valleyofthekings">Reisebericht</a>.` },
     { id: "kv9", freund: 1, art: "west", t: "+ Grab Ramses’ V./VI. (KV9)", zeit: "im Tal der Könige", dauer: "30 min", preis: 220, guide: "gut allein",
       txt: "Das Grab mit den Graffiti antiker Touristen: „Ich kann diese Schrift nicht lesen!“ Schaut knapp unter die Decke.",
@@ -42,15 +42,15 @@
     { id: "sethos", freund: 1, art: "west", t: "+ Grab Sethos’ I. (KV17)", zeit: "im Tal der Könige", dauer: "45 min", preis: 2000, guide: "gut allein",
       txt: "Eines der längsten und am reichsten bemalten Gräber im Tal. Teuerstes Zusatzticket.",
       more: `2000 Pfund pro Person, <a href="https://mota.gov.eg/media/5a2ja2iu/ticket-english-5-11-2024-1.pdf">Preisliste</a>.` },
-    { id: "hatschepsut", freund: 1, art: "west", t: "Tempel der Hatschepsut (Deir el-Bahari)", zeit: "ca. 9:45", dauer: "1 h", preis: 440, guide: "Guide lohnt",
+    { id: "hatschepsut", anders: "Euch wurde empfohlen, Hatschepsut zu streichen und dafür Medinet Habu in Ruhe anzuschauen. Deshalb weggehakt; wer sie doch will, holt sie mit „↺ wieder rein“ zurück. Ein Stück Hatschepsut seht ihr trotzdem: Den kleinen Amun-Tempel in Medinet Habu hat sie begonnen (Lektion 15).", freund: 1, art: "west", t: "Tempel der Hatschepsut (Deir el-Bahari)", zeit: "ca. 9:45", dauer: "1 h", preis: 440, guide: "Guide lohnt",
       txt: "Terrassen vor der Felswand. Auf der mittleren Terrasse links die Expedition ins Land Punt, mit Fischen aus dem Roten Meer.",
       more: `<a href="${EGY}HatshepsutTemple">Offizielle Seite</a>. <a href="../lessons/0013-ich-kann-die-hieroglyphen-nicht-lesen.html">Lektion 13</a>.` },
     { id: "deir", anders: "Nicht in eurer Guide-Tour. Steht aber in eurer Mission und liegt knapp einen Kilometer nördlich von Medinet Habu: Wer am Nachmittag noch Lust hat, nimmt es statt der Pause dazu. Eintritt 220 Pfund pro Person.", art: "west", t: "Deir el-Medina, Dorf der Grabbauer", zeit: "ab 6:00", dauer: "1 h", preis: 220, guide: "Guide lohnt",
       txt: "Hier wohnten die Handwerker der Königsgräber, die unter Ramses III. streikten. Steht in eurer Mission, fehlt aber in vielen Touren.",
       more: `Grab des Paschedu extra (120 Pfund). Liegt zwischen Medinet Habu und Hatschepsut, kostet also kaum Umweg. Preise: <a href="https://mota.gov.eg/media/5a2ja2iu/ticket-english-5-11-2024-1.pdf">Preisliste</a>.` },
-    { id: "medinet", freund: 1, art: "west", t: "Medinet Habu", zeit: "ab 6:00, letzter Einlass 16:00", dauer: "1,5–2 h", preis: 220, guide: "Guide lohnt",
-      txt: "Totentempel Ramses’ III., mit Seevölker-Schlacht auf der Außenwand und Farben, die an Decken und Säulen noch leuchten. Nachmittags oft ruhig.",
-      more: `<a href="${EGY}MedinetHabu">Offizielle Seite</a>. Gegenüber liegt das Café Maratonga (siehe Essen).` },
+    { id: "medinet", freund: 1, art: "west", t: "Medinet Habu", zeit: "ab 6:00, letzter Einlass 16:00", dauer: "1,5–2 h", preis: 220, guide: "gut allein",
+      txt: "Totentempel Ramses’ III.: Torburg, Seeschlacht gegen die Seevölker an der Nordwand außen, im zweiten Hof Farben, die unter der Tünche der Kopten überlebt haben. Nachmittags oft ruhig. Ihr geht allein, Lektion 15 ist euer Guide. Karte vorher an der Hauptkasse oder online, am Tempel gibt es keine.",
+      more: `Rundgang mit allen Stellen: <a href="../lessons/0015-ein-bierzimmer-fuer-die-richter.html">Lektion 15</a>. <a href="${EGY}MedinetHabu">Offizielle Seite</a>. Gegenüber liegt das Café Maratonga (siehe Essen).` },
     { id: "memnon", anders: "Euer Freund setzt die Kolosse vor das Mittagessen. Ich lege sie ans Ende, weil sie an der Hauptstraße Richtung Fähre liegen, also auf dem Heimweg. Beides geht, sie brauchen nur eine Viertelstunde.", freund: 1, art: "west", t: "Memnonkolosse", zeit: "jederzeit sichtbar", dauer: "15 min", preis: 0, guide: "gut allein",
       txt: "Zwei sitzende Riesen an der Hauptstraße, frei zugänglich. Sucht am nördlichen die Bruchlinie und die Inschriften auf den Beinen.",
       more: `Die Geschichte vom singenden Koloss und Kaiser Hadrian: <a href="../lessons/0013-ich-kann-die-hieroglyphen-nicht-lesen.html">Lektion 13</a>.` },
@@ -111,9 +111,9 @@
     { id: "ankommen", freund: 1, art: "orga", t: "Ankommen, auspacken, ans Nilufer", zeit: "ab ca. 15:00", dauer: "1–2 h", preis: null, guide: "—",
       txt: "Kein Tempel heute. Den Weg zum Fähranleger einmal ablaufen, dann wisst ihr morgen und übermorgen Bescheid.",
       more: "Euer Freund rät: am Ankunftstag auf dem Westufer bleiben." },
-    { id: "guide-west", freund: 1, gebucht: 1, art: "orga", t: "Euer Guide am Westufer: Tal der Könige und Hatschepsut", zeit: "7:00–11:00", dauer: "4 h", preis: null, guide: "Guide",
-      txt: "Um 7 Uhr beginnt ihr im Tal der Könige, mit dem Grab Ramses’ V./VI. und, statt des geschlossenen Ramses II., mit Ramses III. Danach der Tempel der Hatschepsut. Gegen 11 Uhr seid ihr fertig, der Nachmittag gehört euch.",
-      more: `Eure Nachricht an den Guide: <em>Sonntag: Wir möchten um 7:00 Uhr mit dem Tal der Könige beginnen, einschließlich des Grabes von Ramses V./VI. und, wenn möglich, von Ramses II. und/oder III. Anschließend möchten wir gerne den Tempel der Hatschepsut besuchen. Vier Stunden sollten für uns perfekt sein.</em><br>Ramses II. (KV7) ist nicht offen, Ramses III. (KV11) liegt auf dem Grundticket: ${WS}. Beim Guide klären: Abholzeit (das Tal liegt rund 20 Minuten Fahrt von euch, also gegen 6:40) und ob der Fahrer euch zum Schluss am Café Maratonga gegenüber Medinet Habu absetzt.` },
+    { id: "guide-west", freund: 1, gebucht: 1, art: "orga", t: "Euer Guide am Westufer: Tal der Könige", zeit: "7:00–11:00", dauer: "4 h", preis: null, guide: "Guide",
+      txt: "Um 7 Uhr beginnt ihr im Tal der Könige, mit dem Grab Ramses’ V./VI. und, statt des geschlossenen Ramses II., mit Ramses III. Hatschepsut ist gestrichen, also mehr Zeit im Tal. Danach setzt euch der Fahrer am Café Maratonga ab, Medinet Habu macht ihr selbst.",
+      more: `Eure Nachricht an den Guide: <em>Sonntag: Wir möchten um 7:00 Uhr mit dem Tal der Könige beginnen, einschließlich des Grabes von Ramses V./VI. und, wenn möglich, von Ramses II. und/oder III. Anschließend möchten wir gerne den Tempel der Hatschepsut besuchen. Vier Stunden sollten für uns perfekt sein.</em><br>Neu (14.11.): Hatschepsut fällt weg. Dem Guide sagen, dass ihr lieber mehr Zeit im Tal habt und er euch danach am Café Maratonga gegenüber Medinet Habu absetzt.<br>Ramses II. (KV7) ist nicht offen, Ramses III. (KV11) liegt auf dem Grundticket: ${WS}. Beim Guide klären: Abholzeit (das Tal liegt rund 20 Minuten Fahrt von euch, also gegen 6:40) und ob der Fahrer euch zum Schluss am Café Maratonga gegenüber Medinet Habu absetzt.` },
     { id: "taxi-west", art: "orga", t: "Selbst entdecken: Taxi für den Tag", zeit: "ab 6:30", dauer: "ganzer Tag", preis: null, guide: "selbst",
       txt: "Ein Fahrer bringt euch von Stätte zu Stätte und wartet. Ihr lest vor Ort die Lektionen. Billiger, freier, aber ohne Erklärungen.",
       more: `500–1000 Pfund für den Tag, je nach Verhandlung (<a href="../lessons/0014-fuenf-pfund-fuer-den-faehrmann.html">Lektion 14</a>).` },
@@ -122,7 +122,7 @@
     { id: "fr16g", art: "orga", t: "Früh aufstehen, um 6:30 los nach Karnak", zeit: "5:45–6:30", dauer: "45 min", preis: null, guide: "—",
       txt: "Fähre hinüber, drüben ein paar Minuten Taxi oder 25 Minuten zu Fuß: Um 7 Uhr wartet der Guide in Karnak." },
     { id: "taxi-nachm", art: "orga", t: "Mittags nach Medinet Habu, später heim", zeit: "ca. 11:00", dauer: "15 min", preis: null, guide: "selbst",
-      txt: "Am einfachsten setzt euch der Fahrer des Guides nach Hatschepsut am Café Maratonga ab, gegenüber Medinet Habu. Heim zur Fähre sind es knapp 5 Kilometer: den Fahrer fragen, ob er wartet (Preis vorher), oder per inDrive bestellen.",
+      txt: "Am einfachsten setzt euch der Fahrer des Guides nach dem Tal der Könige am Café Maratonga ab, gegenüber Medinet Habu. Wichtig: Die Karte für Medinet Habu gibt es nicht am Tempel. Lasst den Fahrer an der Hauptkasse halten oder kauft sie vorher online. Heim zur Fähre sind es knapp 5 Kilometer: den Fahrer fragen, ob er wartet (Preis vorher), oder per inDrive bestellen.",
       more: `inDrive und Taxi: <a href="../lessons/0014-fuenf-pfund-fuer-den-faehrmann.html">Lektion 14</a>.` },
     { id: "pause16", art: "orga", t: "Mittagspause in der Unterkunft", zeit: "ca. 14:00–15:30", dauer: "1,5 h", preis: null, guide: "—",
       txt: "Seit Viertel vor sechs auf den Beinen: mit der Fähre heim, ausruhen. Um halb vier mit dem Motorboot direkt zum Tempel von Luxor." },
@@ -225,6 +225,7 @@
   const MEMPHIS = ["🎓 Uni Memphis: Westufer", "https://www.memphis.edu/egypt/resources/colortour/westbank.php"];
   const L14 = ["📖 Lektion 14", "../lessons/0014-fuenf-pfund-fuer-den-faehrmann.html"];
   const L13 = ["📖 Lektion 13", "../lessons/0013-ich-kann-die-hieroglyphen-nicht-lesen.html"];
+  const L15 = ["📖 Lektion 15: euer Rundgang", "../lessons/0015-ein-bierzimmer-fuer-die-richter.html"];
   const GUIDES = ["👤 Private Guides in Luxor (GoWithGuide)", "https://gowithguide.com/egypt/luxor/guides"];
   const ANLEGER_W = "https://www.google.com/maps/search/?api=1&query=25.70491,32.63566";
   const ANLEGER_O = "https://www.google.com/maps/search/?api=1&query=25.70845,32.64388";
@@ -234,7 +235,7 @@
     kv9: [PREISE, L13], tut: [PREISE], sethos: [PREISE],
     hatschepsut: [OFF("HatshepsutTemple"), TICKETS],
     deir: [MEMPHIS, PREISE, TICKETS],
-    medinet: [OFF("MedinetHabu"), TICKETS],
+    medinet: [L15, OFF("MedinetHabu"), TICKETS],
     memnon: [L13, MEMPHIS],
     ramesseum: [OFF("Ramesseum"), TICKETS],
     koeniginnen: [OFF("ValleyoftheQueens"), TICKETS],
@@ -355,10 +356,11 @@
   };
   // Weiterlesen zu jedem Ort: Lektionen und „Luxor zum Nachschlagen“ (reference/luxor.html#ort-…).
   const LEKTION = { 11: "../lessons/0011-beten-ist-besser-als-schlafen.html", 12: "../lessons/0012-pfeffer-in-der-wueste.html",
-    13: "../lessons/0013-ich-kann-die-hieroglyphen-nicht-lesen.html", 14: "../lessons/0014-fuenf-pfund-fuer-den-faehrmann.html" };
+    13: "../lessons/0013-ich-kann-die-hieroglyphen-nicht-lesen.html", 14: "../lessons/0014-fuenf-pfund-fuer-den-faehrmann.html",
+    15: "../lessons/0015-ein-bierzimmer-fuer-die-richter.html" };
   const LESEN = {
     luxortempel: [11, 13, "luxortempel"], haggag: [11, "haggag"], karnak: [13, "karnak"], sphinx: [13, "sphinx"],
-    memnon: [13, "memnon"], tdk: [13, "tdk"], deir: [13, "deir"], medinet: [13, "medinet"], hatschepsut: [13, "hatschepsut"],
+    memnon: [13, "memnon"], tdk: [13, "tdk"], deir: [13, "deir"], medinet: [15, 13, "medinet"], hatschepsut: [13, 15, "hatschepsut"],
     "anleger-west": [14, "faehre"], "anleger-ost": [14, "faehre"], krankenhaus: [14, "faehre"], bahnhof: [14], souk: [12], corniche: [14],
   };
   for (const [ort, was] of Object.entries(LESEN)) {
@@ -406,7 +408,8 @@
       "d14-abend": ["nubian", "-sayeda", "-sunflower", "-wannas"],
       // Vormittage: eure Guides, wie angefragt
       "d15-frueh": ["fr15g", "guide-west", "-ballon", "-taxi-west"],
-      "d15-vormittag": ["tdk", "kv9", "-tut", "-sethos", "hatschepsut", "-carter"],
+      // Hatschepsut gestrichen (Empfehlung vom 14.11.), dafür mehr Zeit im Tal und Medinet Habu in Ruhe
+      "d15-vormittag": ["tdk", "kv9", "-tut", "-sethos", "-hatschepsut", "-carter"],
       // Nachmittag selbst: Medinet Habu liegt auf dem Heimweg vom Guide
       "d15-mittag": ["taxi-nachm", "maratonga", "-mittag-west", "-marsam"],
       "d15-nachmittag": ["medinet", "-deir", "memnon", "pause", "feluke", "-bluesky"],
