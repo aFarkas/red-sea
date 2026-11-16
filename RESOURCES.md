@@ -253,6 +253,18 @@
   - [egymonuments.com: Luxor Temple](https://egymonuments.com/details/LuxorTemple). Use for: ab 6 Uhr, letzter Einlass 19 Uhr, 500 Pfund.
   - Lage der Stationen (Lektion 16, `window.RUNDGANG`): Esri-Luftbild Zoom 19 und der Umriss des Bezirks aus Nominatim (Weg 1079039494); Kaiserzimmer nach dem GPS des Commons-Fotos „Luxor-Tempel Römische Fresken 06“ (Olaf Tausch).
 
+  - Lektion 17 (Karnak über die Sphinx-Allee, 16.11.2026):
+    [egymonuments.com: Karnak](https://egymonuments.com/details/KarnakTemple) (Winter ab 6 Uhr, letzter Einlass 16 Uhr, 600 Pfund);
+    [Egypt Telegraph, 24.4.2026](https://www.egypttelegraph.com/article/238074/) (Sommerzeiten 2026: Karnak 6–18 Uhr, Luxor-Tempel 7–21 Uhr, Sound and Light 20 Uhr Englisch, 21 Uhr zweite Sprache, arabisch nur donnerstags);
+    [Digital Karnak: Western Processional Way](https://digitalkarnak.ucsc.edu/western-processional-way) (40 Widder vor Pylon I, 52 im Hof, Amenophis III./Thutmosis IV., Ramses II. usurpiert, Pinedjem holt ~100 von Luxor, Osiris-Statuetten Ramses’ II. zwischen den Pfoten);
+    [Digital Karnak: Obelisks of Wadjet Hall](https://digitalkarnak.ucsc.edu/obelisks-of-wadjet-hall) (30 m, Rosengranit, Jubiläum Jahr 16, Füße ummauert, vielleicht von ihr selbst, Spitze des südlichen am Heiligen See);
+    [Memphis Hypostyle: Great Columns](https://www.memphis.edu/hypostyle/tour_hall/great_columns.php) und [Interior Scenes](https://www.memphis.edu/hypostyle/tour_hall/interior_scenes.php) (5,4 m Kapitelle, 100 Mann; Sethos erhaben im Norden, Ramses wechselt zu versenkt und arbeitet den Süden um, Spuren des Originals);
+    [Ahram Online 2021](https://english.ahram.org.eg/News/443339.aspx) (2700 m, 1057 Statuenplätze, 309 Sphingen, 748 leere Sockel; Seite gab 403, Zahlen aus dem Suchauszug);
+    [Explore Luxor: Sacred Lake](https://exploreluxor.org/the-sacred-lake-of-karnak) (Skarabäus Amenophis’ III., Umrunden als moderner Brauch);
+    [IFAO Cachette-Datenbank](https://www.ifao.egnet.net/bases/cachette/) und Jambon 2010, [BIFAO 109](https://www.ifao.egnet.net/bifao/109/13/) (26.12.1903, ~800 Statuen, 17.000 Bronzen, bis 1907; Seiten gaben 503, Angaben aus Suchauszügen);
+    [Archaeological Report 1903–04](https://digi.ub.uni-heidelberg.de/diglit/archaeological_report1903_1904/0041) (Pumpe, Grube im Wasser; Seite hinter Bot-Schutz, Zitat aus Suchauszug);
+    [Fodor’s: Luxor Temple](https://fodors.fodors.com/world/africa-and-middle-east/egypt/the-nile-valley-and-luxor/things-to-do/sights/reviews/temple-of-luxor-470645) („back door“ nach Karnak über die Allee).
+
 ### Reiseplan Luxor
 
 - [Offizielle Buchungsseite des Ministeriums, egymonuments.com](https://egymonuments.com/)
@@ -304,6 +316,7 @@
 - Lektion 15, Rundgang: Wann Medinet Habu im Winter wirklich schließt, ist offen; amtlich steht nur der letzte Einlass um 16 Uhr, Reiseseiten nennen 16 oder 17 Uhr. Ob das Café Maratonga am späten Nachmittag offen hat, ist nicht belegt (Trip.com: 5–22 Uhr, eine Seite „geschlossen“). Medinet Habu ist für den Sonnenuntergang ungünstig (letzter Einlass 16 Uhr, Tor schaut nach Osten); ob es nachts beleuchtet wird, nicht geprüft.
 - Lektion 15 (Medinet Habu): Ob die Treppe in die oberen Räume des Tors und der kleine Amun-Tempel derzeit offen sind, belegt keine aktuelle Quelle. Die Lage der Zählszene an der Nordwand ist aus der Reihenfolge bei Murnane abgeleitet (vor der Seeschlacht). Das Foto der Zählszene ist laut Commons-Beschreibung im zweiten Hof. Nur Trainingswissen: „gut dreißig Jahre“ Regierung (aus den Daten in Lektion 13 gerechnet), Thutmosis III. als Neffe der Hatschepsut (Murnane: „aunt“).
 - Lektion 16 (Tempel von Luxor), nur Trainingswissen: dass Ramses II. bei Kadesch nach eigenem Bericht fast allein siegte, als sein Heer floh, und dass die Schlacht unentschieden endete; Louis-Philippe als König 1836; die alte Moscheetür hoch über dem Hofboden (Höhe offen, siehe unten); Kartenzahlung an der Kasse nach Lektion 13. Sonne hinter den Westbergen etwas vor 17:00 nur geschätzt. Ob die Paviane-Szene am Sockel und der König im Streitwagen auf dem Pylon gut zu sehen sind, belegt kein Foto der Pylon-Reliefs. Ob die Scheinwerfer genau mit der Dämmerung angehen, ist nur aus Fotos geschlossen.
+- Lektion 17 (Karnak), nur Trainingswissen: Nektanebo I. als Bauherr der Menschenkopf-Sphingen; Inschrift von Napoleons Gelehrten mit Koordinaten in der Durchfahrt des ersten Pylons (nur Suchauszüge, keine gelesene Quelle); Lehmziegelrampe am ersten Pylon; Priester wuschen sich im Heiligen See; Hatschepsut vor Amun auf der Obeliskenspitze. Winterzeiten der Sound-and-Light-Show 2026 und ihr Weg durch den Tempel nicht belegt. Ob man die Allee abends betreten darf und wo genau sie in Karnak endet, nicht belegt.
 - Ob Preisschilder in ägyptischen Supermärkten arabische oder westliche Ziffern tragen, belegt keine Quelle. Das Gesetz verlangt nur Arabisch.
 
 - Ein guter Bestimmungsführer für das Rote Meer (deutsch), noch nicht geprüft.
