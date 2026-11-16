@@ -833,7 +833,7 @@ window.CARDS = [
     lektion: 17,
     frage: "Warum haben die Widder vor dem ersten Tor von Karnak drei Besitzer?",
     antwort: `<p>Gemeißelt wurden sie unter Amenophis III. und Thutmosis IV. Ramses II. schrieb seinen Namen darauf, danach standen sie vermutlich am Tempel von Luxor.</p>
-      <p>Um 1050 v. Chr. holte der Hohepriester Pinedjem rund hundert davon nach Karnak und setzte seinen Namen dazu. Die Widder sind den Weg über die Sphinx-Allee also schon vor euch gegangen. Zwischen ihren Pfoten steht ein kleiner Ramses.</p>`,
+      <p>Gut 200 Jahre später holte der Hohepriester Pinedjem rund hundert davon nach Karnak und setzte seinen Namen dazu. Die Widder sind den Weg über die Sphinx-Allee also schon vor euch gegangen. Zwischen ihren Pfoten steht ein kleiner Ramses.</p>`,
   },
   {
     id: "karnak-sphinx-allee",
