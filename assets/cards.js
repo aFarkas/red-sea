@@ -786,6 +786,48 @@ window.CARDS = [
     frage: "Wo begegnet euch in Medinet Habu Hatschepsut, obwohl ihr ihren großen Tempel gestrichen habt?",
     antwort: `<p>Im kleinen Amun-Tempel gleich rechts hinter dem Tor. Sie hat ihn begonnen, ihr Neffe Thutmosis III. vollendete ihn und ersetzte ihren Namen im Allerheiligsten fast überall durch die seines Vaters und Großvaters.</p>`,
   },
+  {
+    id: "luxor-paviane",
+    lektion: 16,
+    frage: "Was sitzt am Sockel des Obelisken vor dem Tempel von Luxor, und warum steht das Gegenstück nicht in Paris?",
+    antwort: `<p>Vier Paviane, die der aufgehenden Sonne zujubeln, und sie sind deutlich männlich. Der Pariser Obelisk kam 1836 mit vier ebensolchen Pavianen an.</p>
+      <p>Der König wollte keine nackten Paviane auf den Straßen und Plätzen von Paris. Der Obelisk kam auf die Place de la Concorde, die Affen direkt in den Louvre, wo sie bis heute stehen.</p>`,
+  },
+  {
+    id: "luxor-kolonnade-namen",
+    lektion: 16,
+    frage: "Wie viele Pharaonen haben an der Kolonnade im Tempel von Luxor gearbeitet, und wer hat gemogelt?",
+    antwort: `<p>Amenophis III. baute sie, sein Sohn Echnaton ließ sie liegen. Tutanchamun ließ die Wände mit dem Opet-Fest bebildern, Sethos I. machte sie fertig.</p>
+      <p>Dazwischen setzte Haremhab fast überall seinen eigenen Namen in die Ringe von Tutanchamun und Eje. Pharaonensport, wie in Karnak.</p>`,
+  },
+  {
+    id: "luxor-opet-fest",
+    lektion: 16,
+    frage: "Was zeigen die Reliefs vom Opet-Fest in der Kolonnade des Tempels von Luxor?",
+    antwort: `<p>Amuns Besuch aus Karnak: auf der rechten Wand die Hinfahrt nach Luxor, auf der linken die Heimfahrt. Männer ziehen die Götterschiffe an Seilen den Nil hinauf, Nubier tanzen, Musiker trommeln, Schlachter zerlegen den Festbraten.</p>
+      <p>Vor dem Tempeltor schlagen Akrobaten wohl Salto. Und der Chor singt: „Eine Trinkstelle ist ausgehauen … damit die Matrosen des Königs trinken.“ Der König im Lied heißt Haremhab, nachträglich eingesetzt.</p>`,
+  },
+  {
+    id: "luxor-kaiserzimmer",
+    lektion: 16,
+    frage: "Wie kommen römische Kaiser in den Tempel von Luxor?",
+    antwort: `<p>Um 300 n. Chr. lag hier eine Legion, Kaiser Diokletian ließ den Tempel mit einer Festungsmauer umgeben. Einen Saal machten die Soldaten zum Kaiserzimmer: Tür zugemauert, Nische mit Kuppel, die Hieroglyphen verputzt.</p>
+      <p>Auf den Putz malten Künstler Würdenträger, die dem Kaiser huldigen. Vom Kaiser blieb nur ein Fuß auf einem Schemel mit Edelsteinen. Wo der Putz fehlt, schaut Amun durch. Luxor heißt auf Arabisch al-Uqsur, „die Paläste“ oder „die Festungen“.</p>`,
+  },
+  {
+    id: "luxor-cachette",
+    lektion: 16,
+    frage: "Was lag bis 1989 unter dem Hof Amenophis’ III. im Tempel von Luxor?",
+    antwort: `<p>Eine Grube voller Statuen. Im Januar 1989 ebneten Arbeiter den Boden, die Axt eines Arbeiters traf auf einen Stein. Darunter: Amenophis III. in Quarzit, fast zweieinhalb Meter hoch, die kuhköpfige Hathor, General Haremhab.</p>
+      <p>„Niemand hat so etwas erwartet, weil hier jeden Tag so viele Touristen sind“, sagte der Ägyptologe Aly Hassan. Wer sie vergraben hat und warum, weiß niemand sicher. Seit 1991 stehen sie im Luxor-Museum.</p>`,
+  },
+  {
+    id: "luxor-ding-jinhao",
+    lektion: 16,
+    frage: "Was geschah 2013, als ein Junge seinen Namen in ein Relief im Tempel von Luxor ritzte?",
+    antwort: `<p>Ein Foto davon ging durchs Netz, Internetnutzer fanden den 15-Jährigen aus China, und seine Mutter entschuldigte sich öffentlich „beim ägyptischen Volk“. Ganz entfernen ließ sich die Ritzung nicht.</p>
+      <p>Die antiken Kritzler im Grab Ramses’ VI. kamen billiger davon.</p>`,
+  },
 ];
 
 // Umrechenkarten in beide Richtungen, gebaut von assets/umrechnen.js. Für jede Karte wird bei jedem Zeigen

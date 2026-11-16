@@ -73,7 +73,7 @@
       more: "Was ihr dort hört, hilft am Nachmittag im Tempel von Luxor, der ebenfalls Amun geweiht war. Eure Nachricht an den Guide: <em>Montag: Wir möchten um 7:00 Uhr mit dem Tempel von Karnak und dem Amun-Tempel beginnen. Wir denken, dass uns an diesem Tag etwa 2 Stunden reichen würden.</em>" },
     { id: "luxortempel", freund: 1, art: "ost", t: "Tempel von Luxor, bis es dunkel ist", zeit: "letzter Einlass 19:00", dauer: "1,5–2 h", preis: 500, guide: "gut allein",
       txt: "Gegen 16 Uhr hinein, im Tageslicht anschauen; die Sonne geht gegen 17 Uhr unter, dann gehen die Lichter an.",
-      more: `<a href="${EGY}LuxorTemple">Offizielle Seite</a>: letzter Einlass 19 Uhr, auch im Winter. Moschee Abu el-Haggag oben auf dem Tempel: <a href="../lessons/0011-beten-ist-besser-als-schlafen.html">Lektion 11</a>.` },
+      more: `<a href="${EGY}LuxorTemple">Offizielle Seite</a>: letzter Einlass 19 Uhr, auch im Winter. Moschee Abu el-Haggag oben auf dem Tempel: <a href="../lessons/0011-beten-ist-besser-als-schlafen.html">Lektion 11</a>. Rundgang zum Vorlesen bis in den Sonnenuntergang: <a href="../lessons/0016-zu-nackt-fuer-paris.html">Lektion 16</a>.` },
     { id: "souk", freund: 1, art: "ost", t: "Souk und Altstadt", zeit: "Nachmittag oder Abend", dauer: "1–2 h", preis: 0, guide: "gut allein",
       txt: "Der Markt hinter dem Tempel von Luxor, ein Teil überdacht. Vorne am meisten Schlepper, weiter hinten kaufen Einheimische. Gewürze, Tücher, Obst.",
       more: `Wikivoyage beschreibt den alten, teils mit Holzgitter überdachten Markt nahe dem Tempel und warnt vor viel Anwerben in der Hauptgasse (<a href="https://en.wikivoyage.org/wiki/Luxor">Wikivoyage Luxor</a>). Handeln und Gewürze: <a href="../lessons/0012-pfeffer-in-der-wueste.html">Lektion 12</a>, Zahlen: <a href="../lessons/0010-die-null-ist-ein-punkt.html">Lektion 10</a>.` },
@@ -359,9 +359,9 @@
   // Weiterlesen zu jedem Ort: Lektionen und „Luxor zum Nachschlagen“ (reference/luxor.html#ort-…).
   const LEKTION = { 11: "../lessons/0011-beten-ist-besser-als-schlafen.html", 12: "../lessons/0012-pfeffer-in-der-wueste.html",
     13: "../lessons/0013-ich-kann-die-hieroglyphen-nicht-lesen.html", 14: "../lessons/0014-fuenf-pfund-fuer-den-faehrmann.html",
-    15: "../lessons/0015-ein-bierzimmer-fuer-die-richter.html" };
+    15: "../lessons/0015-ein-bierzimmer-fuer-die-richter.html", 16: "../lessons/0016-zu-nackt-fuer-paris.html" };
   const LESEN = {
-    luxortempel: [11, 13, "luxortempel"], haggag: [11, "haggag"], karnak: [13, "karnak"], sphinx: [13, "sphinx"],
+    luxortempel: [16, 11, 13, "luxortempel"], haggag: [11, "haggag"], karnak: [13, "karnak"], sphinx: [13, "sphinx"],
     memnon: [13, "memnon"], tdk: [13, "tdk"], deir: [13, "deir"], medinet: [15, 13, "medinet"], hatschepsut: [13, 15, "hatschepsut"],
     "anleger-west": [14, "faehre"], "anleger-ost": [14, "faehre"], krankenhaus: [14, "faehre"], bahnhof: [14], souk: [12], corniche: [14],
   };
