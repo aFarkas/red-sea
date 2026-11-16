@@ -828,6 +828,48 @@ window.CARDS = [
     antwort: `<p>Ein Foto davon ging durchs Netz, Internetnutzer fanden den 15-Jährigen aus China, und seine Mutter entschuldigte sich öffentlich „beim ägyptischen Volk“. Ganz entfernen ließ sich die Ritzung nicht.</p>
       <p>Die antiken Kritzler im Grab Ramses’ VI. kamen billiger davon.</p>`,
   },
+  {
+    id: "karnak-widder",
+    lektion: 17,
+    frage: "Warum haben die Widder vor dem ersten Tor von Karnak drei Besitzer?",
+    antwort: `<p>Gemeißelt wurden sie unter Amenophis III. und Thutmosis IV. Ramses II. schrieb seinen Namen darauf, danach standen sie vermutlich am Tempel von Luxor.</p>
+      <p>Um 1050 v. Chr. holte der Hohepriester Pinedjem rund hundert davon nach Karnak und setzte seinen Namen dazu. Die Widder sind den Weg über die Sphinx-Allee also schon vor euch gegangen. Zwischen ihren Pfoten steht ein kleiner Ramses.</p>`,
+  },
+  {
+    id: "karnak-sphinx-allee",
+    lektion: 17,
+    frage: "Wie lang ist die Sphinx-Allee, und wie viele Sphingen sitzen noch darauf?",
+    antwort: `<p>2,7 Kilometer, zu Fuß gut eine halbe Stunde. Gezählt hat man 1057 Plätze für Statuen, aber nur auf 309 sitzt noch eine Sphinx, 748 Sockel sind leer.</p>
+      <p>Jahrhundertelang lag die Allee unter der Stadt. Am 25. November 2021 feierte Ägypten die Wiedereröffnung mit einem nächtlichen Umzug von Luxor nach Karnak.</p>`,
+  },
+  {
+    id: "karnak-relief",
+    lektion: 17,
+    frage: "Wie unterscheidet ihr im Säulensaal von Karnak die Bilder von Sethos I. und von Ramses II.?",
+    antwort: `<p>Sethos I. ließ in erhabenem Relief arbeiten: Die Figuren stehen aus der Wand heraus. Elegant, aber langsam. Sein Sohn Ramses II. wechselte bald zum versenkten Relief, bei dem nur die Umrisse eingegraben werden. Schneller.</p>
+      <p>Dann ließ Ramses auch die erhabenen Bilder im Süden umarbeiten, sogar die seines Vaters. Um manche Figur sieht man noch Kanten des Originals, wie einen Geist.</p>`,
+  },
+  {
+    id: "karnak-hatschepsut-obelisk",
+    lektion: 17,
+    frage: "Warum ist der Obelisk der Hatschepsut in Karnak so gut erhalten?",
+    antwort: `<p>Weil sein Fuß ummauert war. Lange hieß es, Thutmosis III. wollte die Königin verstecken. Neuere Forschung hält für möglich, dass sie es selbst so bauen ließ.</p>
+      <p>Er ist 30 Meter hoch, aus rosa Granit, und feiert ihr Regierungsjubiläum. Von seinem umgestürzten Zwilling liegt die Spitze am Heiligen See.</p>`,
+  },
+  {
+    id: "karnak-cachette",
+    lektion: 17,
+    frage: "Was fand Georges Legrain 1903 in Karnak, und warum dauerte die Bergung vier Jahre?",
+    antwort: `<p>Eine Grube voller Statuen: fast 800 aus Stein und etwa 17.000 aus Bronze, gefunden am 26. Dezember 1903 im Hof nördlich des Heiligen Sees.</p>
+      <p>Die Grube stand tief im Grundwasser. Ein Bericht von 1904 meint, Legrain brauche nur noch eine starke Pumpe. Gegraben wurde bis 1907. Die Grube im Tempel von Luxor von 1989 ist die kleine Schwester.</p>`,
+  },
+  {
+    id: "karnak-skarabaeus",
+    lektion: 17,
+    frage: "Warum laufen Besucher in Karnak um einen steinernen Käfer herum?",
+    antwort: `<p>Der Granit-Skarabäus am Heiligen See, gestiftet von Amenophis III., soll Glück bringen, wenn man ihn umrundet, meist siebenmal. Je nach Guide auch Liebe oder Kinder.</p>
+      <p>Der Brauch ist neu, nicht altägyptisch. Der Mistkäfer rollt seine Kugel wie der Sonnengott die Sonne, darum war er heilig.</p>`,
+  },
 ];
 
 // Umrechenkarten in beide Richtungen, gebaut von assets/umrechnen.js. Für jede Karte wird bei jedem Zeigen
